@@ -5,6 +5,7 @@ export default (theme) => ({
   name: {
     color: "white",
     paddingTop: 5,
+    marginBottom: -5,
   },
   GHlogo: {
     height: 52,

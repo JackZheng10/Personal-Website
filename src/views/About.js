@@ -63,7 +63,7 @@ class About extends Component {
                 <Typography variant="h4" className={classes.name}>
                   Computer Science Student
                 </Typography>
-                <Typography variant="body1" className={classes.name}>
+                <Typography variant="h6" className={classes.name}>
                   University of Florida, Class of 2022
                 </Typography>
               </div>

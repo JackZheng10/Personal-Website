@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { withStyles, Grid, Typography } from "@material-ui/core";
+import { withStyles, Grid, Typography, Link } from "@material-ui/core";
 import footerStyles from "../../styles/footerStyles";
 import GitHubLogo from "../../images/GitHubLogo.png";
 import LinkedInLogo from "../../images/LinkedInLogo.png";
@@ -56,6 +56,28 @@ class Footer extends Component {
               alt="LinkedIn Logo"
               onClick={this.redirectLI}
             />
+          </Grid>
+        </Grid>
+        <Grid
+          container
+          spacing={2}
+          direction="row"
+          justify="center"
+          alignItems="center"
+          className={classes.root}
+        >
+          <Grid item>
+            <Typography variant="body2">
+              Created by me!{" "}
+              <Link
+                color="primary"
+                target="_blank"
+                rel="noopener"
+                href="https://github.com/JackZheng10/Personal-Website"
+              >
+                Click to view the source code.
+              </Link>
+            </Typography>
           </Grid>
         </Grid>
       </React.Fragment>
