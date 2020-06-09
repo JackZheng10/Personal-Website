@@ -5,6 +5,9 @@ export default (theme) => ({
   wrapper: {
     width: 100 + theme.spacing(2),
   },
+  greeting: {
+    textAlign: "center",
+  },
 });
 
 /*

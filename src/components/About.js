@@ -37,7 +37,9 @@ class About extends Component {
         >
           <Grid item>
             <Fade in={this.state.showGreeting} timeout={3000}>
-              <Typography variant="h3">Hey, I'm Jack Zheng</Typography>
+              <Typography variant="h3" className={classes.greeting}>
+                Hey there, I'm Jack Zheng
+              </Typography>
             </Fade>
           </Grid>
         </Grid>
