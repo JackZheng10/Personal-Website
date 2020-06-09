@@ -1,11 +1,31 @@
 import React, { Component } from "react";
 import { Grid, Typography, withStyles, Fade } from "@material-ui/core";
 import PropTypes from "prop-types";
+import VizSensor from "react-visibility-sensor";
+import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import AboutPic from "../images/AboutPic.png";
 import aboutStyles from "../styles/aboutStyles";
 
+const cron = require("node-cron");
+
+// var task = cron.schedule("2 * * * * *", () => {
+//   console.log("will execute every other second until stopped");
+// });
+
+// task.stop();
+
+//todo: test on mobile: when small enough, change the topbar buttons to just iconbuttons + resize bottom images as they cause bleedingnpm s
+
 class About extends Component {
-  state = { showGreeting: false, showPic: false, showBio: false };
+  state = {
+    showGreeting: false,
+    showPic: false,
+    showBio: false,
+    showLearnMore: false,
+
+    showArrow: false,
+    scrollVisible: false,
+  };
 
   componentDidMount = () => {
     setTimeout(() => {
@@ -19,6 +39,20 @@ class About extends Component {
     setTimeout(() => {
       this.setState({ showBio: true });
     }, 3000);
+
+    setTimeout(() => {
+      this.setState({ showLearnMore: true });
+    }, 3000);
+
+    setTimeout(() => {
+      cron.schedule("*/1 * * * * *", () => {
+        this.setState({ showArrow: !this.state.showArrow });
+      });
+    }, 4000);
+  };
+
+  renderAboutCards = (visible) => {
+    this.setState({ scrollVisible: visible });
   };
 
   render() {
@@ -60,17 +94,72 @@ class About extends Component {
           <Grid item>
             <Fade in={this.state.showBio} timeout={3000}>
               <div style={{ textAlign: "center" }}>
-                <Typography variant="h4" className={classes.bioText}>
-                  Computer Science Student
-                </Typography>
-                <Typography variant="h6" className={classes.bioText}>
+                <Typography variant="h4">Computer Science Student</Typography>
+                <Typography variant="h6">
                   University of Florida, Class of 2022
                 </Typography>
               </div>
             </Fade>
           </Grid>
         </Grid>
+        <Grid
+          container
+          spacing={2}
+          direction="row"
+          justify="center"
+          alignItems="center"
+        >
+          <Grid item>
+            <Fade in={this.state.showLearnMore} timeout={3000}>
+              <Typography variant="h4" className={classes.greeting}>
+                Learn more about me
+              </Typography>
+            </Fade>
+          </Grid>
+        </Grid>
+        <Grid
+          container
+          spacing={2}
+          direction="row"
+          justify="center"
+          alignItems="center"
+        >
+          <Grid item>
+            <Fade in={this.state.showArrow} timeout={1000}>
+              <KeyboardArrowDownIcon fontSize="large" />
+            </Fade>
+          </Grid>
+        </Grid>
         <div style={{ height: 500 }}></div>
+        <Grid
+          container
+          spacing={2}
+          direction="row"
+          justify="center"
+          alignItems="center"
+        >
+          <VizSensor onChange={this.renderAboutCards}>
+            <React.Fragment>
+              <Grid item>
+                <Fade in={this.state.scrollVisible} timeout={10}>
+                  <h1>helooo</h1>
+                </Fade>
+              </Grid>
+              <Grid item>
+                <Fade in={this.state.scrollVisible} timeout={10}>
+                  <div style={{ textAlign: "center" }}>
+                    <Typography variant="h4">
+                      Computer Science Student
+                    </Typography>
+                    <Typography variant="h6">
+                      University of Florida, Class of 2022
+                    </Typography>
+                  </div>
+                </Fade>
+              </Grid>
+            </React.Fragment>
+          </VizSensor>
+        </Grid>
       </React.Fragment>
     );
   }
