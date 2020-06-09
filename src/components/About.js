@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Grid, Typography, withStyles, Fade } from "@material-ui/core";
 import PropTypes from "prop-types";
 import VizSensor from "react-visibility-sensor";
+import AboutCard from "./components/AboutCard";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import AboutPic from "../images/AboutPic.png";
 import aboutStyles from "../styles/aboutStyles";
@@ -22,9 +23,9 @@ class About extends Component {
     showPic: false,
     showBio: false,
     showLearnMore: false,
-
     showArrow: false,
-    scrollVisible: false,
+    showCard1: false,
+    showCard2: false,
   };
 
   componentDidMount = () => {
@@ -38,7 +39,7 @@ class About extends Component {
 
     setTimeout(() => {
       this.setState({ showBio: true });
-    }, 3000);
+    }, 2000);
 
     setTimeout(() => {
       this.setState({ showLearnMore: true });
@@ -51,8 +52,8 @@ class About extends Component {
     }, 4000);
   };
 
-  renderAboutCards = (visible) => {
-    this.setState({ scrollVisible: visible });
+  renderAboutCards = (isVisible, number) => {
+    this.setState({ ["showCard" + number]: isVisible });
   };
 
   render() {
@@ -130,7 +131,6 @@ class About extends Component {
             </Fade>
           </Grid>
         </Grid>
-        <div style={{ height: 500 }}></div>
         <Grid
           container
           spacing={2}
@@ -138,28 +138,36 @@ class About extends Component {
           justify="center"
           alignItems="center"
         >
-          <VizSensor onChange={this.renderAboutCards}>
-            <React.Fragment>
-              <Grid item>
-                <Fade in={this.state.scrollVisible} timeout={10}>
-                  <h1>helooo</h1>
-                </Fade>
-              </Grid>
-              <Grid item>
-                <Fade in={this.state.scrollVisible} timeout={10}>
-                  <div style={{ textAlign: "center" }}>
-                    <Typography variant="h4">
-                      Computer Science Student
-                    </Typography>
-                    <Typography variant="h6">
-                      University of Florida, Class of 2022
-                    </Typography>
-                  </div>
-                </Fade>
-              </Grid>
-            </React.Fragment>
+          <VizSensor
+            onChange={(isVisible) => {
+              this.renderAboutCards(isVisible, 1);
+            }}
+          >
+            <Grid item>
+              <Fade in={this.state.showCard1} timeout={2000}>
+                <div>
+                  <AboutCard />
+                </div>
+              </Fade>
+            </Grid>
+          </VizSensor>
+          <VizSensor
+            onChange={(isVisible) => {
+              this.renderAboutCards(isVisible, 2);
+            }}
+          >
+            <Grid item>
+              <Fade in={this.state.showCard2} timeout={2000}>
+                <div>
+                  <AboutCard />
+                </div>
+              </Fade>
+            </Grid>
           </VizSensor>
         </Grid>
+
+        <br />
+        <br />
       </React.Fragment>
     );
   }
