@@ -1,7 +1,4 @@
 export default (theme) => ({
-  name: {
-    color: "black",
-  },
   root: {
     height: 180,
   },

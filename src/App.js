@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
-import About from "./views/About";
-import Projects from "./views/Projects";
-import Resume from "./views/Resume";
-import Topbar from "./views/components/Topbar";
-import Footer from "./views/components/Footer";
+import About from "./components/About";
+import Projects from "./components/Projects";
+import Resume from "./components/Resume";
+import Topbar from "./components/components/Topbar";
+import Footer from "./components/components/Footer";
 
 //todo: themeprovider?
 

@@ -37,9 +37,7 @@ class About extends Component {
         >
           <Grid item>
             <Fade in={this.state.showGreeting} timeout={3000}>
-              <Typography variant="h3" className={classes.name}>
-                Hey, I'm Jack Zheng
-              </Typography>
+              <Typography variant="h3">Hey, I'm Jack Zheng</Typography>
             </Fade>
           </Grid>
         </Grid>
@@ -60,10 +58,10 @@ class About extends Component {
           <Grid item>
             <Fade in={this.state.showBio} timeout={3000}>
               <div style={{ textAlign: "center" }}>
-                <Typography variant="h4" className={classes.name}>
+                <Typography variant="h4" className={classes.bioText}>
                   Computer Science Student
                 </Typography>
-                <Typography variant="h6" className={classes.name}>
+                <Typography variant="h6" className={classes.bioText}>
                   University of Florida, Class of 2022
                 </Typography>
               </div>
