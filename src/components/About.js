@@ -14,6 +14,9 @@ import ProfilePic from "../images/ProfilePic.png";
 import UFLogo from "../images/UFLogo.jpg";
 import DevLogo from "../images/DevLogo.png";
 import HockeyLogo from "../images/HockeyLogo.png";
+import LaundrLogo from "../images/LaundrLogo.png";
+import UFCOELogo from "../images/UFCOELogo.png";
+import UFCOEdLogo from "../images/UFCOEdLogo.png";
 import aboutStyles from "../styles/aboutStyles";
 
 const cron = require("node-cron");
@@ -42,6 +45,9 @@ class About extends Component {
       showCard3: false,
       showLearnExp: false,
       showArrow2: false,
+      showExp1: false,
+      showExp2: false,
+      showExp3: false,
     };
 
     this.flashArrow2 = cron.schedule(
@@ -93,6 +99,10 @@ class About extends Component {
     this.setState({ ["showCard" + number]: isVisible });
   };
 
+  renderExperienceCards = (isVisible, number) => {
+    this.setState({ ["showExp" + number]: isVisible });
+  };
+
   handleXsVisible = () => {
     return this.props.width === "xs" ||
       this.props.width === "sm" ||
@@ -130,9 +140,8 @@ class About extends Component {
         this.flashArrow2.start();
       }, 1000);
     } else {
-      this.setState({ showArrow2: false }, () => {
-        this.flashArrow2.stop();
-      });
+      this.flashArrow2.stop();
+      this.setState({ showArrow2: false });
     }
   };
 
@@ -326,6 +335,75 @@ class About extends Component {
             </Grid>
           </VizSensor>
         </Grid>
+        <br />
+        <br />
+        <Grid
+          container
+          spacing={2}
+          direction="row"
+          justify="center"
+          alignItems="center"
+        >
+          <VizSensor
+            partialVisibility={this.handleXsVisible()}
+            onChange={(isVisible) => {
+              this.renderExperienceCards(isVisible, 1);
+            }}
+          >
+            <Grid item>
+              <Fade in={this.state.showExp1} timeout={this.handleXsTimeout(1)}>
+                <div>
+                  <AboutCard
+                    image={LaundrLogo}
+                    alt="Laundr Logo"
+                    title="Laundr"
+                    text="I'm a Junior at the University of Florida studying computer science. I was extremely addicted to computers as a kid - and I can say that not much has changed! Above all else, I'm grateful for what I'm learning along the way."
+                  />
+                </div>
+              </Fade>
+            </Grid>
+          </VizSensor>
+          <VizSensor
+            partialVisibility={this.handleXsVisible()}
+            onChange={(isVisible) => {
+              this.renderExperienceCards(isVisible, 2);
+            }}
+          >
+            <Grid item>
+              <Fade in={this.state.showExp2} timeout={this.handleXsTimeout(2)}>
+                <div>
+                  <AboutCard
+                    image={UFCOELogo}
+                    alt="UF CoE Logo"
+                    title="UF College of Engineering"
+                    text="I like to learn about new technologies and topics, so I spend a lot of time working on personal projects. I'm very interested in full-stack web development, but I've also worked with mobile applications before."
+                  />
+                </div>
+              </Fade>
+            </Grid>
+          </VizSensor>
+          <VizSensor
+            partialVisibility={this.handleXsVisible()}
+            onChange={(isVisible) => {
+              this.renderExperienceCards(isVisible, 3);
+            }}
+          >
+            <Grid item>
+              <Fade in={this.state.showExp3} timeout={this.handleXsTimeout(3)}>
+                <div>
+                  <AboutCard
+                    image={UFCOEdLogo}
+                    alt="UF CoE Logo"
+                    title="UF College of Education"
+                    text="When I'm not doing anything related to computer science, you'll likely find me at the gym, playing hockey (wherever I can find a rink), or chilling out with some music. Hit me up for some good recommendations. "
+                  />
+                </div>
+              </Fade>
+            </Grid>
+          </VizSensor>
+        </Grid>
+        <br />
+        <br />
         <br />
         <br />
       </React.Fragment>

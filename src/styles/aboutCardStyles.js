@@ -21,7 +21,7 @@ export default (theme) => ({
   },
   cardHeader: {
     textAlign: "center",
-    backgroundColor: "rgb(2, 46, 117)",
+    backgroundColor: "rgb(0, 153, 255)",
   },
   cardContent: {
     textAlign: "center",
