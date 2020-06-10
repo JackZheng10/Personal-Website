@@ -235,6 +235,7 @@ class About extends Component {
                 <div>
                   <AboutCard
                     image={UFLogo}
+                    alt="UF Logo"
                     title="I am a..."
                     text="I'm a Junior at the University of Florida studying computer science. I was extremely addicted to computers as a kid - and I can say that not much has changed! Above all else, I'm grateful for what I'm learning along the way."
                   />
@@ -253,6 +254,7 @@ class About extends Component {
                 <div>
                   <AboutCard
                     image={DevLogo}
+                    alt="Dev Logo"
                     title="I like to..."
                     text="I like to learn about new technologies and topics, so I spend a lot of time working on personal projects. I'm very interested in full-stack web development, but I've also worked with mobile applications before."
                   />
@@ -271,6 +273,7 @@ class About extends Component {
                 <div>
                   <AboutCard
                     image={HockeyLogo}
+                    alt="Hockey Logo"
                     title="In my free time..."
                     text="When I'm not doing anything related to computer science, you'll likely find me at the gym, playing hockey (wherever I can find a rink), or chilling out with some music. Hit me up for some good recommendations. "
                   />

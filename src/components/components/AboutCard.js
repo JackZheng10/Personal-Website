@@ -21,7 +21,7 @@ function AboutCard(props) {
 
   return (
     <div className={classes.layout}>
-      <Paper className={classes.root} elevation={24} variant="outlined">
+      <Card className={classes.root} elevation={10}>
         {/* <Card className={classes.card}> */}
         <CardHeader
           title={props.title}
@@ -31,7 +31,7 @@ function AboutCard(props) {
         <Divider />
         <CardMedia
           image={props.image}
-          title="Image"
+          title={props.alt}
           className={classes.media}
         />
         <CardContent className={classes.cardContent}>
@@ -39,7 +39,7 @@ function AboutCard(props) {
             {props.text}
           </Typography>
         </CardContent>
-      </Paper>
+      </Card>
     </div>
   );
 }
@@ -49,3 +49,12 @@ AboutCard.propTypes = {
 };
 
 export default withStyles(aboutCardStyles)(AboutCard);
+
+// state = { elevation: 0 };
+
+//   toggleElevation = () => {
+//     this.setState({ elevation: this.state.elevation === 0 ? 20 : 0 });
+//   };
+
+// onMouseOver={this.toggleElevation}
+// onMouseOut={this.toggleElevation}
