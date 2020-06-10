@@ -5,6 +5,8 @@ import footerStyles from "../../styles/footerStyles";
 import GitHubLogo from "../../images/GitHubLogo.png";
 import LinkedInLogo from "../../images/LinkedInLogo.png";
 
+//todo: fix weird gradients when applying it to footer
+
 class Footer extends Component {
   redirectGH = () => {
     window.open("https://github.com/JackZheng10");
@@ -67,7 +69,7 @@ class Footer extends Component {
           className={classes.root}
         >
           <Grid item>
-            <Typography variant="body2">
+            <Typography variant="body2" className={classes.centerText}>
               Created by me!{" "}
               <Link
                 color="primary"

@@ -1,10 +1,17 @@
 import React, { Component } from "react";
-import { Grid, Typography, withStyles, Fade } from "@material-ui/core";
+import {
+  Grid,
+  Typography,
+  withStyles,
+  Fade,
+  withWidth,
+} from "@material-ui/core";
 import PropTypes from "prop-types";
 import VizSensor from "react-visibility-sensor";
 import AboutCard from "./components/AboutCard";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
-import AboutPic from "../images/AboutPic.png";
+import ProfilePic from "../images/ProfilePic.png";
+import UFLogo from "../images/UFLogo.jpg";
 import aboutStyles from "../styles/aboutStyles";
 
 const cron = require("node-cron");
@@ -89,7 +96,11 @@ class About extends Component {
         >
           <Grid item>
             <Fade in={this.state.showPic} timeout={3000}>
-              <img src={AboutPic} alt="Profile Pic" />
+              <img
+                src={ProfilePic}
+                alt="Profile Pic"
+                className={classes.profilePic}
+              />
             </Fade>
           </Grid>
           <Grid item>
@@ -103,6 +114,8 @@ class About extends Component {
             </Fade>
           </Grid>
         </Grid>
+        <br />
+        <br />
         <Grid
           container
           spacing={2}
@@ -131,6 +144,8 @@ class About extends Component {
             </Fade>
           </Grid>
         </Grid>
+        <br />
+        <br />
         <Grid
           container
           spacing={2}
@@ -139,6 +154,7 @@ class About extends Component {
           alignItems="center"
         >
           <VizSensor
+            partialVisibility={this.props.width === "xs" ? true : false}
             onChange={(isVisible) => {
               this.renderAboutCards(isVisible, 1);
             }}
@@ -146,12 +162,17 @@ class About extends Component {
             <Grid item>
               <Fade in={this.state.showCard1} timeout={2000}>
                 <div>
-                  <AboutCard />
+                  <AboutCard
+                    image={UFLogo}
+                    title="I am a..."
+                    text="I'm a rising Junior at the University of Florida studying computer science. I was extremely addicted to computers as a kid - and I can say that not much has changed! Above all else, I'm grateful for what I've learned along the way and I can't wait to see where my future takes me.."
+                  />
                 </div>
               </Fade>
             </Grid>
           </VizSensor>
           <VizSensor
+            partialVisibility={this.props.width === "xs" ? true : false}
             onChange={(isVisible) => {
               this.renderAboutCards(isVisible, 2);
             }}
@@ -159,13 +180,12 @@ class About extends Component {
             <Grid item>
               <Fade in={this.state.showCard2} timeout={2000}>
                 <div>
-                  <AboutCard />
+                  <AboutCard title="I like to..." />
                 </div>
               </Fade>
             </Grid>
           </VizSensor>
         </Grid>
-
         <br />
         <br />
       </React.Fragment>
@@ -175,6 +195,7 @@ class About extends Component {
 
 About.propTypes = {
   className: PropTypes.string,
+  width: PropTypes.oneOf(["lg", "md", "sm", "xl", "xs"]).isRequired,
 };
 
-export default withStyles(aboutStyles)(About);
+export default withWidth()(withStyles(aboutStyles)(About));

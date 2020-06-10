@@ -8,6 +8,12 @@ export default (theme) => ({
   greeting: {
     textAlign: "center",
   },
+  profilePic: {
+    [theme.breakpoints.down(650)]: {
+      width: "90vw",
+      height: "auto",
+    },
+  },
 });
 
 /*
