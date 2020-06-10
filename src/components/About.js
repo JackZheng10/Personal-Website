@@ -29,6 +29,7 @@ const cron = require("node-cron");
 
 //todo: test on mobile: when small enough, change the topbar buttons to just iconbuttons + resize bottom images as they cause bleedingnpm s
 //todo: fix br spacings hehe
+//todo: images maybe look ratchet on mobile
 
 class About extends Component {
   constructor(props) {

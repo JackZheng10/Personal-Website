@@ -36,7 +36,7 @@ class Footer extends Component {
         >
           <Grid item>
             <Typography variant="h5" className={classes.name}>
-              Connect with me
+              Connect with me.
             </Typography>
           </Grid>
         </Grid>
