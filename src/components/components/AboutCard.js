@@ -30,7 +30,6 @@ function AboutCard(props) {
         <Divider />
         <CardMedia
           image={props.image}
-          component={"img"}
           title="Image"
           className={classes.media}
         />

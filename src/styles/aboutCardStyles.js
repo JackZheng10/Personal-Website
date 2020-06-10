@@ -7,7 +7,7 @@ export default (theme) => ({
   //   },
   root: {
     width: "100%",
-    height: 360,
+    height: "100%",
   },
   layout: {
     marginLeft: "auto",
@@ -39,7 +39,8 @@ export default (theme) => ({
     color: "white",
   },
   media: {
-    maxHeight: "100%",
+    height: 150,
     maxWidth: "100%",
+    backgroundSize: "auto",
   },
 });

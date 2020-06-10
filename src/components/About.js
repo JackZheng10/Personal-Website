@@ -12,6 +12,8 @@ import AboutCard from "./components/AboutCard";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import ProfilePic from "../images/ProfilePic.png";
 import UFLogo from "../images/UFLogo.jpg";
+import DevLogo from "../images/DevLogo.png";
+import HockeyLogo from "../images/HockeyLogo.png";
 import aboutStyles from "../styles/aboutStyles";
 
 const cron = require("node-cron");
@@ -65,11 +67,19 @@ class About extends Component {
   };
 
   handleXsVisible = () => {
-    return this.props.width === "xs" ? true : false;
+    return this.props.width === "xs" ||
+      this.props.width === "sm" ||
+      this.props.width === "md"
+      ? true
+      : false;
   };
 
   handleXsTimeout = (card) => {
-    if (this.props.width === "xs") {
+    if (
+      this.props.width === "xs" ||
+      this.props.width === "sm" ||
+      this.props.width === "md"
+    ) {
       return 2000;
     } else {
       switch (card) {
@@ -183,7 +193,7 @@ class About extends Component {
                   <AboutCard
                     image={UFLogo}
                     title="I am a..."
-                    text="I'm a rising Junior at the University of Florida studying computer science. I was extremely addicted to computers as a kid - and I can say that not much has changed! Above all else, I'm grateful for what I've learned along the way and I can't wait to see what comes next."
+                    text="I'm a Junior at the University of Florida studying computer science. I was extremely addicted to computers as a kid - and I can say that not much has changed! Above all else, I'm grateful for what I'm learning along the way."
                   />
                 </div>
               </Fade>
@@ -199,8 +209,9 @@ class About extends Component {
               <Fade in={this.state.showCard2} timeout={this.handleXsTimeout(2)}>
                 <div>
                   <AboutCard
+                    image={DevLogo}
                     title="I like to..."
-                    text="I like to learn about new technologies and topics, so you'll likely find me working on a personal project or struggling to keep up with a YouTube tutorial."
+                    text="I like to learn about new technologies and topics, so I spend a lot of time working on personal projects. I'm very interested in full-stack web development, but I've also worked with mobile applications before."
                   />
                 </div>
               </Fade>
@@ -215,7 +226,11 @@ class About extends Component {
             <Grid item>
               <Fade in={this.state.showCard3} timeout={this.handleXsTimeout(3)}>
                 <div>
-                  <AboutCard title="In my free time..." text="eat" />
+                  <AboutCard
+                    image={HockeyLogo}
+                    title="In my free time..."
+                    text="When I'm not doing anything related to computer science, you'll likely find me at the gym, playing hockey (wherever I can find a rink), or chilling out with some music. Hit me up for some good recommendations. "
+                  />
                 </div>
               </Fade>
             </Grid>
