@@ -33,6 +33,7 @@ class About extends Component {
     showArrow: false,
     showCard1: false,
     showCard2: false,
+    showCard3: false,
   };
 
   componentDidMount = () => {
@@ -61,6 +62,25 @@ class About extends Component {
 
   renderAboutCards = (isVisible, number) => {
     this.setState({ ["showCard" + number]: isVisible });
+  };
+
+  handleXsVisible = () => {
+    return this.props.width === "xs" ? true : false;
+  };
+
+  handleXsTimeout = (card) => {
+    if (this.props.width === "xs") {
+      return 2000;
+    } else {
+      switch (card) {
+        case 1:
+          return 1000;
+        case 2:
+          return 2000;
+        case 3:
+          return 3000;
+      }
+    }
   };
 
   render() {
@@ -107,9 +127,7 @@ class About extends Component {
             <Fade in={this.state.showBio} timeout={3000}>
               <div style={{ textAlign: "center" }}>
                 <Typography variant="h4">Computer Science Student</Typography>
-                <Typography variant="h6">
-                  University of Florida, Class of 2022
-                </Typography>
+                <Typography variant="h6">Aspiring Software Engineer</Typography>
               </div>
             </Fade>
           </Grid>
@@ -154,13 +172,13 @@ class About extends Component {
           alignItems="center"
         >
           <VizSensor
-            partialVisibility={this.props.width === "xs" ? true : false}
+            partialVisibility={this.handleXsVisible()}
             onChange={(isVisible) => {
               this.renderAboutCards(isVisible, 1);
             }}
           >
             <Grid item>
-              <Fade in={this.state.showCard1} timeout={2000}>
+              <Fade in={this.state.showCard1} timeout={this.handleXsTimeout(1)}>
                 <div>
                   <AboutCard
                     image={UFLogo}
@@ -172,15 +190,32 @@ class About extends Component {
             </Grid>
           </VizSensor>
           <VizSensor
-            partialVisibility={this.props.width === "xs" ? true : false}
+            partialVisibility={this.handleXsVisible()}
             onChange={(isVisible) => {
               this.renderAboutCards(isVisible, 2);
             }}
           >
             <Grid item>
-              <Fade in={this.state.showCard2} timeout={2000}>
+              <Fade in={this.state.showCard2} timeout={this.handleXsTimeout(2)}>
                 <div>
-                  <AboutCard title="I like to..." />
+                  <AboutCard
+                    title="I like to..."
+                    text="I like to learn about new technologies and topics, so you'll likely find me working on a personal project or struggling to keep up with a YouTube tutorial."
+                  />
+                </div>
+              </Fade>
+            </Grid>
+          </VizSensor>
+          <VizSensor
+            partialVisibility={this.handleXsVisible()}
+            onChange={(isVisible) => {
+              this.renderAboutCards(isVisible, 3);
+            }}
+          >
+            <Grid item>
+              <Fade in={this.state.showCard3} timeout={this.handleXsTimeout(3)}>
+                <div>
+                  <AboutCard title="In my free time..." text="eat" />
                 </div>
               </Fade>
             </Grid>

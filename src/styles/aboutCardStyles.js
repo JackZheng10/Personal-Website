@@ -7,6 +7,7 @@ export default (theme) => ({
   //   },
   root: {
     width: "100%",
+    height: 360,
   },
   layout: {
     marginLeft: "auto",
@@ -25,12 +26,14 @@ export default (theme) => ({
   cardContent: {
     textAlign: "center",
     backgroundColor: "rgb(0, 153, 255)",
+    height: "100%",
   },
   cardActions: {
     textAlign: "center",
   },
   text: {
     color: "white",
+    top: 50,
   },
   title: {
     color: "white",

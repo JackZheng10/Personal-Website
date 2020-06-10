@@ -9,6 +9,7 @@ import {
   IconButton,
   CardMedia,
   Divider,
+  Grid,
 } from "@material-ui/core";
 import PropTypes from "prop-types";
 import RotateLeftIcon from "@material-ui/icons/RotateLeft";
@@ -38,12 +39,6 @@ function AboutCard(props) {
             {props.text}
           </Typography>
         </CardContent>
-        {/* <CardActions className={classes.cardActions}>
-        <IconButton>
-          <RotateLeftIcon />
-        </IconButton>
-      </CardActions> */}
-        {/* </Card> */}
       </Card>
     </div>
   );
