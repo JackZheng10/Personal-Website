@@ -25,18 +25,45 @@ const cron = require("node-cron");
 // task.stop();
 
 //todo: test on mobile: when small enough, change the topbar buttons to just iconbuttons + resize bottom images as they cause bleedingnpm s
+//todo: fix br spacings hehe
 
 class About extends Component {
-  state = {
-    showGreeting: false,
-    showPic: false,
-    showBio: false,
-    showLearnMore: false,
-    showArrow: false,
-    showCard1: false,
-    showCard2: false,
-    showCard3: false,
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      showGreeting: false,
+      showPic: false,
+      showBio: false,
+      showLearnMore: false,
+      showArrow1: false,
+      showCard1: false,
+      showCard2: false,
+      showCard3: false,
+      showLearnExp: false,
+      showArrow2: false,
+    };
+
+    this.flashArrow2 = cron.schedule(
+      "*/1 * * * * *",
+      () => {
+        this.setState({ showArrow2: !this.state.showArrow2 });
+      },
+      { scheduled: false }
+    );
+  }
+  // state = {
+  //   showGreeting: false,
+  //   showPic: false,
+  //   showBio: false,
+  //   showLearnMore: false,
+  //   showArrow1: false,
+  //   showCard1: false,
+  //   showCard2: false,
+  //   showCard3: false,
+  //   showLearnExp: false,
+  //   showArrow2: false,
+  // };
 
   componentDidMount = () => {
     setTimeout(() => {
@@ -57,7 +84,7 @@ class About extends Component {
 
     setTimeout(() => {
       cron.schedule("*/1 * * * * *", () => {
-        this.setState({ showArrow: !this.state.showArrow });
+        this.setState({ showArrow1: !this.state.showArrow1 });
       });
     }, 4000);
   };
@@ -80,7 +107,7 @@ class About extends Component {
       this.props.width === "sm" ||
       this.props.width === "md"
     ) {
-      return 2000;
+      return 3000;
     } else {
       switch (card) {
         case 1:
@@ -90,6 +117,22 @@ class About extends Component {
         case 3:
           return 3000;
       }
+    }
+  };
+
+  renderLearnExp = (isVisible) => {
+    this.setState({ showLearnExp: isVisible });
+  };
+
+  renderArrow2 = (isVisible) => {
+    if (isVisible) {
+      setTimeout(() => {
+        this.flashArrow2.start();
+      }, 1000);
+    } else {
+      this.setState({ showArrow2: false }, () => {
+        this.flashArrow2.stop();
+      });
     }
   };
 
@@ -167,7 +210,7 @@ class About extends Component {
           alignItems="center"
         >
           <Grid item>
-            <Fade in={this.state.showArrow} timeout={1000}>
+            <Fade in={this.state.showArrow1} timeout={1000}>
               <KeyboardArrowDownIcon fontSize="large" />
             </Fade>
           </Grid>
@@ -232,6 +275,50 @@ class About extends Component {
                     text="When I'm not doing anything related to computer science, you'll likely find me at the gym, playing hockey (wherever I can find a rink), or chilling out with some music. Hit me up for some good recommendations. "
                   />
                 </div>
+              </Fade>
+            </Grid>
+          </VizSensor>
+        </Grid>
+        <br />
+        <br />
+        <br />
+        <br />
+        <Grid
+          container
+          spacing={2}
+          direction="row"
+          justify="center"
+          alignItems="center"
+        >
+          <VizSensor
+            onChange={(isVisible) => {
+              this.renderLearnExp(isVisible);
+            }}
+          >
+            <Grid item>
+              <Fade in={this.state.showLearnExp} timeout={3000}>
+                <Typography variant="h4" className={classes.greeting}>
+                  My experience
+                </Typography>
+              </Fade>
+            </Grid>
+          </VizSensor>
+        </Grid>
+        <Grid
+          container
+          spacing={2}
+          direction="row"
+          justify="center"
+          alignItems="center"
+        >
+          <VizSensor
+            onChange={(isVisible) => {
+              this.renderArrow2(isVisible);
+            }}
+          >
+            <Grid item>
+              <Fade in={this.state.showArrow2} timeout={1000}>
+                <KeyboardArrowDownIcon fontSize="large" />
               </Fade>
             </Grid>
           </VizSensor>

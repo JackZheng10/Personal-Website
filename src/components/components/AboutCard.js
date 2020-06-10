@@ -10,6 +10,7 @@ import {
   CardMedia,
   Divider,
   Grid,
+  Paper,
 } from "@material-ui/core";
 import PropTypes from "prop-types";
 import RotateLeftIcon from "@material-ui/icons/RotateLeft";
@@ -20,7 +21,7 @@ function AboutCard(props) {
 
   return (
     <div className={classes.layout}>
-      <Card className={classes.root}>
+      <Paper className={classes.root} elevation={24} variant="outlined">
         {/* <Card className={classes.card}> */}
         <CardHeader
           title={props.title}
@@ -38,7 +39,7 @@ function AboutCard(props) {
             {props.text}
           </Typography>
         </CardContent>
-      </Card>
+      </Paper>
     </div>
   );
 }
