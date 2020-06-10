@@ -4,6 +4,7 @@ import { withStyles, Grid, Typography, Link } from "@material-ui/core";
 import footerStyles from "../../styles/footerStyles";
 import GitHubLogo from "../../images/GitHubLogo.png";
 import LinkedInLogo from "../../images/LinkedInLogo.png";
+import EmailLogo from "../../images/EmailLogo.png";
 
 //todo: fix weird gradients when applying it to footer
 
@@ -14,6 +15,10 @@ class Footer extends Component {
 
   redirectLI = () => {
     window.open("https://www.linkedin.com/in/jackzheng10/");
+  };
+
+  redirectEmail = () => {
+    window.open("mailto:jackzheng10@yahoo.com");
   };
 
   render() {
@@ -31,7 +36,7 @@ class Footer extends Component {
         >
           <Grid item>
             <Typography variant="h5" className={classes.name}>
-              Connect with me!
+              Connect with me
             </Typography>
           </Grid>
         </Grid>
@@ -57,6 +62,14 @@ class Footer extends Component {
               className={classes.LIlogo}
               alt="LinkedIn Logo"
               onClick={this.redirectLI}
+            />
+          </Grid>
+          <Grid item>
+            <img
+              src={EmailLogo}
+              className={classes.emailLogo}
+              alt="Email Logo"
+              onClick={this.redirectEmail}
             />
           </Grid>
         </Grid>

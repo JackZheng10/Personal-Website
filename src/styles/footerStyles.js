@@ -26,6 +26,11 @@ export default (theme) => ({
     width: 138,
     cursor: "pointer",
   },
+  emailLogo: {
+    height: 52,
+    width: 52,
+    cursor: "pointer",
+  },
   centerText: {
     textAlign: "center",
   },

@@ -165,7 +165,7 @@ class About extends Component {
                   <AboutCard
                     image={UFLogo}
                     title="I am a..."
-                    text="I'm a rising Junior at the University of Florida studying computer science. I was extremely addicted to computers as a kid - and I can say that not much has changed! Above all else, I'm grateful for what I've learned along the way and I can't wait to see where my future takes me.."
+                    text="I'm a rising Junior at the University of Florida studying computer science. I was extremely addicted to computers as a kid - and I can say that not much has changed! Above all else, I'm grateful for what I've learned along the way and I can't wait to see what comes next."
                   />
                 </div>
               </Fade>
