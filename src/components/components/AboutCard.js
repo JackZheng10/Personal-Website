@@ -5,15 +5,10 @@ import {
   Card,
   CardHeader,
   CardContent,
-  CardActions,
-  IconButton,
   CardMedia,
   Divider,
-  Grid,
-  Paper,
 } from "@material-ui/core";
 import PropTypes from "prop-types";
-import RotateLeftIcon from "@material-ui/icons/RotateLeft";
 import aboutCardStyles from "../../styles/aboutCardStyles";
 
 function AboutCard(props) {

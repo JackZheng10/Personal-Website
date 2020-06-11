@@ -10,6 +10,7 @@ import CodeTest from "./components/CodeViewTest";
 import TabbedCodeTest from "./components/components/TabbedCodeView";
 
 //todo: themeprovider?
+//todo: make footer float to bottom. dont want the page to have to be long
 
 class App extends Component {
   state = { testCodeView: false };

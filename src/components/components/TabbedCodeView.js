@@ -11,27 +11,29 @@ import {
   xonokai,
 } from "react-syntax-highlighter/dist/esm/styles/prism";
 import PropTypes from "prop-types";
+import { About as AboutCode } from "../../codeFiles/About";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import tabbedCodeViewStyles from "../../styles/tabbedCodeViewStyles";
 
 const cron = require("node-cron");
-
-const code2 = `const a = "One";
-const b = "Two";
-console.log("Three");
-console.log("Four");`;
 
 const code = `const b = "Five"
 const c = "Six";
 console.log("Seven")`;
 
 const aboutFiles = [
-  { name: "About.js", code: code },
-  { name: "AboutOther.js", code: code2 },
+  { name: "About.js", code: AboutCode },
+  { name: "AboutOther.js", code: code },
 ];
 
 class TabbedCodeView extends Component {
-  state = { showIntro: false, showArrow: false, currentCode: code };
+  state = {
+    showIntro: false,
+    showArrow: false,
+    showButtons: false,
+    showCode: false,
+    currentCode: AboutCode,
+  };
 
   componentDidMount = () => {
     setTimeout(() => {
@@ -43,6 +45,14 @@ class TabbedCodeView extends Component {
         this.setState({ showArrow: !this.state.showArrow });
       });
     }, 1500);
+
+    setTimeout(() => {
+      this.setState({ showButtons: true });
+    }, 2500);
+
+    setTimeout(() => {
+      this.setState({ showCode: true });
+    }, 3500);
   };
 
   getFiles = (page) => {
@@ -135,18 +145,24 @@ class TabbedCodeView extends Component {
           </Grid>
         </Grid>
         <br />
-        <Grid
-          container
-          spacing={1}
-          direction="row"
-          justify="center"
-          alignItems="center"
-        >
-          {this.renderFileButtons(classes)}
-        </Grid>
-        <SyntaxHighlighter language="javascript" style={okaidia}>
-          {this.state.currentCode}
-        </SyntaxHighlighter>
+        <Fade in={this.state.showButtons} timeout={3000}>
+          <Grid
+            container
+            spacing={1}
+            direction="row"
+            justify="center"
+            alignItems="center"
+          >
+            {this.renderFileButtons(classes)}
+          </Grid>
+        </Fade>
+        <Fade in={this.state.showCode} timeout={1000}>
+          <div>
+            <SyntaxHighlighter language="javascript" style={vs}>
+              {this.state.currentCode}
+            </SyntaxHighlighter>
+          </div>
+        </Fade>
         <br />
         <br />
         <br />
