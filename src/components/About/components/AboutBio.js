@@ -8,16 +8,16 @@ import {
 } from "@material-ui/core";
 import PropTypes from "prop-types";
 import VizSensor from "react-visibility-sensor";
-import AboutCard from "./components/AboutCard";
+import AboutCard from "./AboutCard";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
-import ProfilePic from "../images/ProfilePic.png";
-import UFLogo from "../images/UFLogo.jpg";
-import DevLogo from "../images/DevLogo.png";
-import HockeyLogo from "../images/HockeyLogo.png";
-import LaundrLogo from "../images/LaundrLogo.png";
-import UFCOELogo from "../images/UFCOELogo.png";
-import UFCOEdLogo from "../images/UFCOEdLogo.png";
-import aboutStyles from "../styles/aboutStyles";
+import ProfilePic from "../../../images/ProfilePic.png";
+import UFLogo from "../../../images/UFLogo.jpg";
+import DevLogo from "../../../images/DevLogo.png";
+import HockeyLogo from "../../../images/HockeyLogo.png";
+import LaundrLogo from "../../../images/LaundrLogo.png";
+import UFCOELogo from "../../../images/UFCOELogo.png";
+import UFCOEdLogo from "../../../images/UFCOEdLogo.png";
+import aboutStyles from "../../../styles/aboutBioStyles";
 
 const cron = require("node-cron");
 
@@ -31,8 +31,9 @@ const cron = require("node-cron");
 //todo: fix br spacings hehe
 //todo: images maybe look ratchet on mobile
 //todo: use the window scroll to on every page to force starting at the top
+//todo: stay visible after shown, just use prev state, if true then keep true?
 
-class About extends Component {
+class AboutBio extends Component {
   constructor(props) {
     super(props);
 
@@ -62,18 +63,6 @@ class About extends Component {
       { scheduled: false }
     );
   }
-  // state = {
-  //   showGreeting: false,
-  //   showPic: false,
-  //   showBio: false,
-  //   showLearnMore: false,
-  //   showArrow1: false,
-  //   showCard1: false,
-  //   showCard2: false,
-  //   showCard3: false,
-  //   showLearnExp: false,
-  //   showArrow2: false,
-  // };
 
   componentDidMount = () => {
     setTimeout(() => {
@@ -154,8 +143,6 @@ class About extends Component {
 
     return (
       <React.Fragment>
-        <br />
-        <br />
         <Grid
           container
           spacing={2}
@@ -423,18 +410,14 @@ class About extends Component {
             </Grid>
           </VizSensor>
         </Grid>
-        <br />
-        <br />
-        <br />
-        <br />
       </React.Fragment>
     );
   }
 }
 
-About.propTypes = {
+AboutBio.propTypes = {
   className: PropTypes.string,
   width: PropTypes.oneOf(["lg", "md", "sm", "xl", "xs"]).isRequired,
 };
 
-export default withWidth()(withStyles(aboutStyles)(About));
+export default withWidth()(withStyles(aboutStyles)(AboutBio));

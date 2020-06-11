@@ -9,7 +9,7 @@ import {
   Divider,
 } from "@material-ui/core";
 import PropTypes from "prop-types";
-import aboutCardStyles from "../../styles/aboutCardStyles";
+import aboutCardStyles from "../../../styles/aboutCardStyles";
 
 function AboutCard(props) {
   const classes = props.classes;

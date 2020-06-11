@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
-import About from "./components/About";
+import About from "./components/About/About";
 import Projects from "./components/Projects";
 import Resume from "./components/Resume";
 import Topbar from "./components/components/Topbar";
@@ -13,7 +13,7 @@ import TabbedCodeTest from "./components/components/TabbedCodeView";
 //todo: make footer float to bottom. dont want the page to have to be long
 
 class App extends Component {
-  state = { testCodeView: false };
+  state = { aboutCodeView: false, testCodeView: false };
 
   toggleCodeView = (page) => {
     console.log("state: " + page + "CodeView");
@@ -34,7 +34,11 @@ class App extends Component {
       <React.Fragment>
         <Topbar toggleCodeView={this.toggleCodeView} />
         <Switch>
-          <Route exact path="/about" component={About} />
+          <Route
+            exact
+            path="/about"
+            render={() => <About viewCode={this.state.aboutCodeView} />}
+          />
           <Route exact path="/projects" component={Projects} />
           <Route exact path="/resume" component={Resume} />
           <Route exact path="/testTab" component={TabbedCodeTest} />

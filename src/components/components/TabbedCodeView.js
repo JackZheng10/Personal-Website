@@ -11,7 +11,7 @@ import {
   xonokai,
 } from "react-syntax-highlighter/dist/esm/styles/prism";
 import PropTypes from "prop-types";
-import { About as AboutCode } from "../../codeFiles/About";
+import { About as AboutCode } from "../../codeFiles/About/About";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import tabbedCodeViewStyles from "../../styles/tabbedCodeViewStyles";
 
@@ -24,19 +24,44 @@ const code = `const b = "Five"
 const c = "Six";
 console.log("Seven")`;
 
-const aboutFiles = [
-  { name: "About.js", code: AboutCode },
-  { name: "AboutOther.js", code: code },
+const commonFiles = [
+  { name: "TabbedCodeView.js", code: code },
+  { name: "Topbar.js", code: code },
+  { name: "Footer.js", code: code },
+  { name: "App.js", code: code },
+  { name: "topbarStyles.js", code: code },
+  { name: "footerStyles.js", code: code },
 ];
 
+const aboutFiles = [
+  { name: "About.js", code: code },
+  { name: "AboutCard.js", code: code },
+  { name: "aboutStyles.js", code: code },
+  { name: "aboutCardStyles.js", code: code },
+  ...commonFiles,
+];
+
+const projectFiles = [{ name: "Projects.js", code: AboutCode }, ...commonFiles];
+
+const resumeFiles = [{ name: "Resume.js", code: AboutCode }, ...commonFiles];
+
 class TabbedCodeView extends Component {
-  state = {
-    showIntro: false,
-    showArrow: false,
-    showButtons: false,
-    showCode: false,
-    currentCode: AboutCode,
-  };
+  constructor(props) {
+    super(props);
+
+    let page = window.location.pathname.substring(1);
+    let files = this.getFiles(page);
+
+    this.state = {
+      showIntro: false,
+      showArrow: false,
+      showButtons: false,
+      showCode: false,
+
+      files: files,
+      currentCode: files[0].code,
+    };
+  }
 
   componentDidMount = () => {
     setTimeout(() => {
@@ -62,6 +87,12 @@ class TabbedCodeView extends Component {
     switch (page) {
       case "testTab":
         return aboutFiles;
+      case "about":
+        return aboutFiles;
+      case "projects":
+        return projectFiles;
+      case "resume":
+        return resumeFiles;
     }
   };
 
@@ -86,11 +117,7 @@ class TabbedCodeView extends Component {
   };
 
   renderFileButtons = (classes) => {
-    let page = window.location.pathname.substring(1);
-
-    let files = this.getFiles(page);
-
-    return files.map((file) => {
+    return this.state.files.map((file) => {
       return (
         <Grid item>
           <Button
@@ -117,8 +144,6 @@ class TabbedCodeView extends Component {
 
     return (
       <React.Fragment>
-        <br />
-        <br />
         <Grid
           container
           spacing={2}
@@ -128,8 +153,8 @@ class TabbedCodeView extends Component {
         >
           <Grid item>
             <Fade in={this.state.showIntro} timeout={3000}>
-              <Typography variant="h4" className={classes.greeting}>
-                Here's all the code that makes the page you're on work
+              <Typography variant="h3" className={classes.greeting}>
+                Here's all the code that makes this page work
               </Typography>
             </Fade>
           </Grid>
@@ -166,10 +191,6 @@ class TabbedCodeView extends Component {
             </SyntaxHighlighter>
           </div>
         </Fade>
-        <br />
-        <br />
-        <br />
-        <br />
       </React.Fragment>
     );
   }
