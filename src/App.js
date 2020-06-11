@@ -10,16 +10,36 @@ import CodeTest from "./components/CodeViewTest";
 
 //todo: themeprovider?
 
-export default class App extends Component {
+class App extends Component {
+  state = { testCodeView: false };
+
+  toggleCodeView = (page) => {
+    console.log("state: " + page + "CodeView");
+    console.log("before: " + this.state.testCodeView);
+
+    this.setState(
+      (prevState) => ({
+        [page + "CodeView"]: !prevState[page + "CodeView"],
+      }),
+      () => {
+        console.log("after: " + this.state.testCodeView);
+      }
+    );
+  };
+
   render() {
     return (
       <React.Fragment>
-        <Topbar />
+        <Topbar toggleCodeView={this.toggleCodeView} />
         <Switch>
           <Route exact path="/about" component={About} />
           <Route exact path="/projects" component={Projects} />
           <Route exact path="/resume" component={Resume} />
-          <Route exact path="/codeTest" component={CodeTest} />
+          <Route
+            exact
+            path="/test"
+            render={() => <CodeTest viewCode={this.state.testCodeView} />}
+          />
           <Route path="/">
             <Redirect to="/about" />
           </Route>
@@ -29,3 +49,5 @@ export default class App extends Component {
     );
   }
 }
+
+export default App;
