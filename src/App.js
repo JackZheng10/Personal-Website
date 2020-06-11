@@ -11,20 +11,21 @@ import TabbedCodeTest from "./components/components/TabbedCodeView";
 
 //todo: themeprovider?
 //todo: make footer float to bottom. dont want the page to have to be long
+//todo: use localstorage to persist toggles of code! no need for function here, just access localstorage in the page
 
 class App extends Component {
   state = { aboutCodeView: false, testCodeView: false };
 
   toggleCodeView = (page) => {
     console.log("state: " + page + "CodeView");
-    console.log("before: " + this.state.testCodeView);
+    console.log("before: " + this.state.aboutCodeView);
 
     this.setState(
       (prevState) => ({
         [page + "CodeView"]: !prevState[page + "CodeView"],
       }),
       () => {
-        console.log("after: " + this.state.testCodeView);
+        console.log("after: " + this.state.aboutCodeView);
       }
     );
   };
