@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import { CodeViewer } from "react-extensible-code-viewer";
 import { Fade, Button } from "@material-ui/core";
-import "react-extensible-code-viewer/dist/index.css";
 
 const code = `
 const a = 2;
@@ -23,7 +21,7 @@ class Example extends Component {
           }}
         >
           <div>
-            <CodeViewer code={code} language="javascript" />
+            <h1>code view</h1>
           </div>
         </Fade>
         <Fade

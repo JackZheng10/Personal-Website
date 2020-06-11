@@ -1,10 +1,18 @@
 import React, { Component } from "react";
-import { CodeViewer } from "react-extensible-code-viewer";
 import { Fade, Button, withStyles, Grid, Typography } from "@material-ui/core";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import {
+  vs,
+  atomDark,
+  prism,
+  tomorrow,
+  okaidia,
+  solarizedlight,
+  xonokai,
+} from "react-syntax-highlighter/dist/esm/styles/prism";
 import PropTypes from "prop-types";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import tabbedCodeViewStyles from "../../styles/tabbedCodeViewStyles";
-import "react-extensible-code-viewer/dist/index.css";
 
 const cron = require("node-cron");
 
@@ -136,7 +144,9 @@ class TabbedCodeView extends Component {
         >
           {this.renderFileButtons(classes)}
         </Grid>
-        <CodeViewer code={this.state.currentCode} language="javascript" />
+        <SyntaxHighlighter language="javascript" style={okaidia}>
+          {this.state.currentCode}
+        </SyntaxHighlighter>
         <br />
         <br />
         <br />
