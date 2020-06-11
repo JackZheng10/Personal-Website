@@ -7,6 +7,7 @@ import Topbar from "./components/components/Topbar";
 import Footer from "./components/components/Footer";
 
 import CodeTest from "./components/CodeViewTest";
+import TabbedCodeTest from "./components/components/TabbedCodeView";
 
 //todo: themeprovider?
 
@@ -35,6 +36,7 @@ class App extends Component {
           <Route exact path="/about" component={About} />
           <Route exact path="/projects" component={Projects} />
           <Route exact path="/resume" component={Resume} />
+          <Route exact path="/testTab" component={TabbedCodeTest} />
           <Route
             exact
             path="/test"
