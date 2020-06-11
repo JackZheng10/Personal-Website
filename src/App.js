@@ -6,6 +6,8 @@ import Resume from "./components/Resume";
 import Topbar from "./components/components/Topbar";
 import Footer from "./components/components/Footer";
 
+import CodeTest from "./components/CodeViewTest";
+
 //todo: themeprovider?
 
 export default class App extends Component {
@@ -17,6 +19,7 @@ export default class App extends Component {
           <Route exact path="/about" component={About} />
           <Route exact path="/projects" component={Projects} />
           <Route exact path="/resume" component={Resume} />
+          <Route exact path="/codeTest" component={CodeTest} />
           <Route path="/">
             <Redirect to="/about" />
           </Route>
