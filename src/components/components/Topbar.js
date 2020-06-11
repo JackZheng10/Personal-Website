@@ -29,13 +29,28 @@ function Topbar(props) {
       <AppBar className={classes.root} position="fixed">
         <Toolbar>
           <Hidden only={["md", "lg", "xl"]}>
-            <IconButton className={classes.mobileButton} size="small">
+            <IconButton
+              className={classes.mobileButton}
+              size="small"
+              component={Link}
+              to="/about"
+            >
               <PersonIcon />
             </IconButton>
-            <IconButton className={classes.mobileButton} size="small">
+            <IconButton
+              className={classes.mobileButton}
+              size="small"
+              component={Link}
+              to="/projects"
+            >
               <BuildIcon />
             </IconButton>
-            <IconButton className={classes.mobileButton} size="small">
+            <IconButton
+              className={classes.mobileButton}
+              size="small"
+              component={Link}
+              to="/resume"
+            >
               <FindInPageIcon />
             </IconButton>
           </Hidden>
