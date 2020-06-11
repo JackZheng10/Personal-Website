@@ -15,6 +15,8 @@ import { About as AboutCode } from "../../codeFiles/About";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import tabbedCodeViewStyles from "../../styles/tabbedCodeViewStyles";
 
+//todo: make the code view button very obviously a toggle
+
 const cron = require("node-cron");
 
 const code = `const b = "Five"
@@ -52,7 +54,7 @@ class TabbedCodeView extends Component {
 
     setTimeout(() => {
       this.setState({ showCode: true });
-    }, 3500);
+    }, 2500);
   };
 
   getFiles = (page) => {
@@ -126,7 +128,7 @@ class TabbedCodeView extends Component {
           <Grid item>
             <Fade in={this.state.showIntro} timeout={3000}>
               <Typography variant="h4" className={classes.greeting}>
-                Here's all the code that makes this page work
+                Here's all the code that makes the page you're on work
               </Typography>
             </Fade>
           </Grid>
@@ -139,7 +141,7 @@ class TabbedCodeView extends Component {
           alignItems="center"
         >
           <Grid item>
-            <Fade in={this.state.showArrow} timeout={1000}>
+            <Fade in={this.state.showArrow} timeout={990}>
               <KeyboardArrowDownIcon fontSize="large" />
             </Fade>
           </Grid>
@@ -156,9 +158,9 @@ class TabbedCodeView extends Component {
             {this.renderFileButtons(classes)}
           </Grid>
         </Fade>
-        <Fade in={this.state.showCode} timeout={1000}>
+        <Fade in={this.state.showCode} timeout={3000}>
           <div>
-            <SyntaxHighlighter language="javascript" style={vs}>
+            <SyntaxHighlighter language="jsx" style={vs}>
               {this.state.currentCode}
             </SyntaxHighlighter>
           </div>

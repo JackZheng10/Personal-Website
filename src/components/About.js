@@ -220,7 +220,7 @@ class About extends Component {
           alignItems="center"
         >
           <Grid item>
-            <Fade in={this.state.showArrow1} timeout={1000}>
+            <Fade in={this.state.showArrow1} timeout={990}>
               <KeyboardArrowDownIcon fontSize="large" />
             </Fade>
           </Grid>
@@ -247,7 +247,10 @@ class About extends Component {
                     image={UFLogo}
                     alt="UF Logo"
                     title="I am a..."
-                    text="I'm a Junior at the University of Florida studying computer science. I was extremely addicted to computers as a kid - and I can say that not much has changed! Above all else, I'm grateful for what I'm learning along the way."
+                    text="I'm a Junior at the University of Florida 
+                    studying computer science. I was extremely addicted to computers as a kid
+                     - and I can say that not much has changed! 
+                    Above all else, I'm grateful for what I'm learning along the way."
                   />
                 </div>
               </Fade>
@@ -266,7 +269,10 @@ class About extends Component {
                     image={DevLogo}
                     alt="Dev Logo"
                     title="I like to..."
-                    text="I like to learn about new technologies and topics, so I spend a lot of time working on personal projects. I'm very interested in full-stack web development, but I've also worked with mobile applications before."
+                    text="I like to learn about new technologies and topics, 
+                    so I spend a lot of time working on personal projects. 
+                    I'm very interested in full-stack web development, 
+                    but I've also worked with mobile applications before."
                   />
                 </div>
               </Fade>
@@ -285,7 +291,9 @@ class About extends Component {
                     image={HockeyLogo}
                     alt="Hockey Logo"
                     title="In my free time..."
-                    text="When I'm not doing anything related to computer science, you'll likely find me at the gym, playing hockey (wherever I can find a rink), or chilling out with some music. Hit me up for some good recommendations. "
+                    text="When I'm not doing anything related to computer science, 
+                    you'll likely find me at the gym, playing hockey (wherever I can find a rink), 
+                    or chilling out with some music. Hit me up for some good recommendations. "
                   />
                 </div>
               </Fade>
@@ -330,7 +338,7 @@ class About extends Component {
             }}
           >
             <Grid item>
-              <Fade in={this.state.showArrow2} timeout={1000}>
+              <Fade in={this.state.showArrow2} timeout={990}>
                 <KeyboardArrowDownIcon fontSize="large" />
               </Fade>
             </Grid>
@@ -358,7 +366,10 @@ class About extends Component {
                     image={LaundrLogo}
                     alt="Laundr Logo"
                     title="Laundr"
-                    text="I'm a Junior at the University of Florida studying computer science. I was extremely addicted to computers as a kid - and I can say that not much has changed! Above all else, I'm grateful for what I'm learning along the way."
+                    text="I'm a Junior at the University of Florida 
+                    studying computer science. I was extremely addicted to computers as a kid
+                     - and I can say that not much has changed! 
+                    Above all else, I'm grateful for what I'm learning along the way."
                   />
                 </div>
               </Fade>
@@ -377,7 +388,10 @@ class About extends Component {
                     image={UFCOELogo}
                     alt="UF CoE Logo"
                     title="UF College of Engineering"
-                    text="I like to learn about new technologies and topics, so I spend a lot of time working on personal projects. I'm very interested in full-stack web development, but I've also worked with mobile applications before."
+                    text="I'm a Junior at the University of Florida 
+                    studying computer science. I was extremely addicted to computers as a kid
+                     - and I can say that not much has changed! 
+                    Above all else, I'm grateful for what I'm learning along the way."
                   />
                 </div>
               </Fade>
@@ -396,7 +410,10 @@ class About extends Component {
                     image={UFCOEdLogo}
                     alt="UF CoE Logo"
                     title="UF College of Education"
-                    text="When I'm not doing anything related to computer science, you'll likely find me at the gym, playing hockey (wherever I can find a rink), or chilling out with some music. Hit me up for some good recommendations. "
+                    text="I'm a Junior at the University of Florida 
+                    studying computer science. I was extremely addicted to computers as a kid
+                     - and I can say that not much has changed! 
+                    Above all else, I'm grateful for what I'm learning along the way."
                   />
                 </div>
               </Fade>
