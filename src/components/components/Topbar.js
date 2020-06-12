@@ -9,12 +9,12 @@ import {
   IconButton,
   Hidden,
   Switch,
-  FormControlLabel,
 } from "@material-ui/core";
 import PersonIcon from "@material-ui/icons/Person";
 import BuildIcon from "@material-ui/icons/Build";
 import FindInPageIcon from "@material-ui/icons/FindInPage";
 import CodeIcon from "@material-ui/icons/Code";
+import CropOriginalIcon from "@material-ui/icons/CropOriginal";
 import topbarStyles from "../../styles/topbarStyles";
 
 /*
@@ -23,90 +23,102 @@ click code button = toggle code view:
 -have function in app to change this state, pass down to toolbar and therefore to this button
 */
 
-class Topbar extends Component {
-  render() {
-    const classes = this.props.classes;
+function Topbar(props) {
+  let codeView = JSON.parse(localStorage.getItem("codeView"));
 
-    return (
-      <React.Fragment>
-        <AppBar className={classes.root} position="fixed">
-          <Toolbar>
-            <Hidden only={["md", "lg", "xl"]}>
-              <IconButton
-                className={classes.mobileButton}
-                size="small"
-                component={Link}
-                to="/about"
-              >
-                <PersonIcon />
-              </IconButton>
-              <IconButton
-                className={classes.mobileButton}
-                size="small"
-                component={Link}
-                to="/projects"
-              >
-                <BuildIcon />
-              </IconButton>
-              <IconButton
-                className={classes.mobileButton}
-                size="small"
-                component={Link}
-                to="/resume"
-              >
-                <FindInPageIcon />
-              </IconButton>
-            </Hidden>
-            <Hidden only={["sm", "xs"]}>
-              <Button
-                variant="outlined"
-                color="primary"
-                size="medium"
-                className={classes.button}
-                startIcon={<PersonIcon />}
-                component={Link}
-                to="/about"
-              >
-                About Me
-              </Button>
-              <Button
-                variant="outlined"
-                color="primary"
-                size="medium"
-                className={classes.button}
-                startIcon={<BuildIcon />}
-                component={Link}
-                to="/projects"
-              >
-                Projects
-              </Button>
-              <Button
-                variant="outlined"
-                color="primary"
-                size="medium"
-                className={classes.button}
-                startIcon={<FindInPageIcon />}
-                component={Link}
-                to="/resume"
-              >
-                Resume
-              </Button>
-            </Hidden>
-            <div className={classes.flexGrow} />
+  const classes = props.classes;
 
-            <CodeIcon fontSize="large" className={classes.codeButton} />
-            <Switch
-              color="default"
+  return (
+    <React.Fragment>
+      <AppBar className={classes.root} position="fixed">
+        <Toolbar>
+          <Hidden only={["md", "lg", "xl"]}>
+            <IconButton
+              className={classes.mobileButton}
               size="small"
-              onChange={this.props.toggleCodeView}
-              checked={JSON.parse(localStorage.getItem("viewCode"))}
-            />
-          </Toolbar>
-        </AppBar>
-        <div className={classes.offset} />
-      </React.Fragment>
-    );
-  }
+              component={Link}
+              to="/about"
+            >
+              <PersonIcon />
+            </IconButton>
+            <IconButton
+              className={classes.mobileButton}
+              size="small"
+              component={Link}
+              to="/projects"
+            >
+              <BuildIcon />
+            </IconButton>
+            <IconButton
+              className={classes.mobileButton}
+              size="small"
+              component={Link}
+              to="/resume"
+            >
+              <FindInPageIcon />
+            </IconButton>
+          </Hidden>
+          <Hidden only={["sm", "xs"]}>
+            <Button
+              variant="outlined"
+              color="primary"
+              size="medium"
+              className={classes.button}
+              startIcon={<PersonIcon />}
+              component={Link}
+              to="/about"
+            >
+              About Me
+            </Button>
+            <Button
+              variant="outlined"
+              color="primary"
+              size="medium"
+              className={classes.button}
+              startIcon={<BuildIcon />}
+              component={Link}
+              to="/projects"
+            >
+              Projects
+            </Button>
+            <Button
+              variant="outlined"
+              color="primary"
+              size="medium"
+              className={classes.button}
+              startIcon={<FindInPageIcon />}
+              component={Link}
+              to="/resume"
+            >
+              Resume
+            </Button>
+          </Hidden>
+          <div className={classes.flexGrow} />
+          <CropOriginalIcon
+            fontSize="large"
+            className={classes.codeButton}
+            style={{
+              display: codeView ? "none" : "block",
+            }}
+          />
+          <CodeIcon
+            fontSize="large"
+            className={classes.codeButton}
+            style={{
+              display: !codeView ? "none" : "block",
+            }}
+          />
+          <Switch
+            color="default"
+            size="small"
+            onChange={props.toggleCodeView}
+            checked={codeView}
+          />
+        </Toolbar>
+      </AppBar>
+      <div className={classes.offset} />
+    </React.Fragment>
+  );
 }
 
 Topbar.propTypes = {

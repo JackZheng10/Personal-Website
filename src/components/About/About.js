@@ -11,10 +11,9 @@ import TabbedCodeView from "../components/TabbedCodeView";
 
 class About extends Component {
   renderView = () => {
-    let viewCode = JSON.parse(localStorage.getItem("viewCode")) || false;
-    console.log("alert view code: " + viewCode);
+    let codeView = JSON.parse(localStorage.getItem("codeView")) || false;
 
-    if (!viewCode) {
+    if (!codeView) {
       console.log("entered 1");
       return <AboutBio />;
     } else {
