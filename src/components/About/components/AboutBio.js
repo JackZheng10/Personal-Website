@@ -89,7 +89,9 @@ class AboutBio extends Component {
   };
 
   renderAboutCards = (isVisible, number) => {
-    this.setState({ ["showCard" + number]: isVisible });
+    setTimeout(() => {
+      this.setState({ ["showCard" + number]: isVisible });
+    }, 100);
   };
 
   renderExperienceCards = (isVisible, number) => {
