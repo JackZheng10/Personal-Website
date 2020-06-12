@@ -8,12 +8,13 @@ export default (theme) => ({
     //   "linear-gradient(-120deg, #f3f3f5, #E90B8B, #352384, #333447)",
     // backgroundImage:
     //   "linear-gradient( 136deg, rgb(0, 153, 255) 15%, rgb(2, 46, 117) 50%, rgb(0, 153, 255) 100%)",
-    backgroundColor: "rgb(2, 46, 117)",
+    // backgroundColor: "rgb(2, 46, 117)",
+    backgroundImage:
+      "linear-gradient( 136deg, rgb(0, 153, 255) 15%, rgb(2, 46, 117) 50%, rgb(0, 153, 255) 100%)",
   },
   name: {
     color: "white",
-    paddingTop: 5,
-    marginBottom: -5,
+    paddingTop: 10,
   },
   GHlogo: {
     height: 52,

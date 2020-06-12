@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
+import { CssBaseline } from "@material-ui/core";
 import About from "./components/About/About";
 import Projects from "./components/Projects";
 import Resume from "./components/Resume";
@@ -41,26 +42,28 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <Topbar toggleCodeView={this.toggleCodeView} />
-        <Switch>
-          <Route
-            exact
-            path="/about"
-            render={() => <About viewCode={this.state.aboutCodeView} />}
-          />
-          <Route exact path="/projects" component={Projects} />
-          <Route exact path="/resume" component={Resume} />
-          <Route exact path="/testTab" component={TabbedCodeTest} />
-          <Route
-            exact
-            path="/test"
-            render={() => <CodeTest viewCode={this.state.testCodeView} />}
-          />
-          <Route path="/">
-            <Redirect to="/about" />
-          </Route>
-        </Switch>
-        <Footer />
+        <div style={{ backgroundColor: "grey" }}>
+          <Topbar toggleCodeView={this.toggleCodeView} />
+          <Switch>
+            <Route
+              exact
+              path="/about"
+              render={() => <About viewCode={this.state.aboutCodeView} />}
+            />
+            <Route exact path="/projects" component={Projects} />
+            <Route exact path="/resume" component={Resume} />
+            <Route exact path="/testTab" component={TabbedCodeTest} />
+            <Route
+              exact
+              path="/test"
+              render={() => <CodeTest viewCode={this.state.testCodeView} />}
+            />
+            <Route path="/">
+              <Redirect to="/about" />
+            </Route>
+          </Switch>
+          <Footer />
+        </div>
       </React.Fragment>
     );
   }

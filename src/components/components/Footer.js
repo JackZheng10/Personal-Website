@@ -28,71 +28,86 @@ class Footer extends Component {
       <React.Fragment>
         <Grid
           container
-          spacing={2}
-          direction="row"
+          direction="column"
           justify="center"
           alignItems="center"
           className={classes.root}
         >
           <Grid item>
-            <Typography variant="h5" className={classes.name}>
-              Connect with me.
-            </Typography>
-          </Grid>
-        </Grid>
-        <Grid
-          container
-          spacing={2}
-          direction="row"
-          justify="center"
-          alignItems="center"
-          className={classes.root}
-        >
-          <Grid item>
-            <img
-              src={GitHubLogo}
-              className={classes.GHlogo}
-              alt="GitHub Logo"
-              onClick={this.redirectGH}
-            />
+            <Grid
+              container
+              spacing={2}
+              direction="row"
+              justify="center"
+              alignItems="center"
+            >
+              <Grid item>
+                <Typography variant="h5" className={classes.name}>
+                  Connect with me.
+                </Typography>
+              </Grid>
+            </Grid>
           </Grid>
           <Grid item>
-            <img
-              src={LinkedInLogo}
-              className={classes.LIlogo}
-              alt="LinkedIn Logo"
-              onClick={this.redirectLI}
-            />
+            <Grid
+              container
+              spacing={2}
+              direction="row"
+              justify="center"
+              alignItems="center"
+            >
+              <Grid item>
+                <img
+                  src={GitHubLogo}
+                  className={classes.GHlogo}
+                  alt="GitHub Logo"
+                  onClick={this.redirectGH}
+                />
+              </Grid>
+              <Grid item>
+                <img
+                  src={LinkedInLogo}
+                  className={classes.LIlogo}
+                  alt="LinkedIn Logo"
+                  onClick={this.redirectLI}
+                />
+              </Grid>
+              <Grid item>
+                <img
+                  src={EmailLogo}
+                  className={classes.emailLogo}
+                  alt="Email Logo"
+                  onClick={this.redirectEmail}
+                />
+              </Grid>
+            </Grid>
           </Grid>
           <Grid item>
-            <img
-              src={EmailLogo}
-              className={classes.emailLogo}
-              alt="Email Logo"
-              onClick={this.redirectEmail}
-            />
-          </Grid>
-        </Grid>
-        <Grid
-          container
-          spacing={2}
-          direction="row"
-          justify="center"
-          alignItems="center"
-          className={classes.root}
-        >
-          <Grid item>
-            <Typography variant="body2" className={classes.centerText}>
-              Created by me!{" "}
-              <Link
-                color="primary"
-                target="_blank"
-                rel="noopener"
-                href="https://github.com/JackZheng10/Personal-Website"
-              >
-                Click to view the source code.
-              </Link>
-            </Typography>
+            <Grid
+              container
+              spacing={0}
+              direction="row"
+              justify="center"
+              alignItems="center"
+            >
+              <Grid item>
+                <Typography
+                  variant="body2"
+                  className={classes.centerText}
+                  gutterBottom
+                >
+                  Created by me!{" "}
+                  <Link
+                    color="primary"
+                    target="_blank"
+                    rel="noopener"
+                    href="https://github.com/JackZheng10/Personal-Website"
+                  >
+                    Click to view the source code.
+                  </Link>
+                </Typography>
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
       </React.Fragment>

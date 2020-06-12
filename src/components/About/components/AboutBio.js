@@ -143,272 +143,312 @@ class AboutBio extends Component {
 
     return (
       <React.Fragment>
-        <Grid
-          container
-          spacing={2}
-          direction="row"
-          justify="center"
-          alignItems="center"
-        >
+        <Grid container direction="column" justify="center" alignItems="center">
           <Grid item>
-            <Fade in={this.state.showGreeting} timeout={3000}>
-              <Typography variant="h3" className={classes.greeting}>
-                Hey there, I'm Jack Zheng
-              </Typography>
-            </Fade>
+            <Grid
+              container
+              spacing={2}
+              direction="row"
+              justify="center"
+              alignItems="center"
+            >
+              <Grid item>
+                <Fade in={this.state.showGreeting} timeout={3000}>
+                  <Typography variant="h3" className={classes.greeting}>
+                    Hey there, I'm Jack Zheng
+                  </Typography>
+                </Fade>
+              </Grid>
+            </Grid>
           </Grid>
-        </Grid>
-        <br />
-        <br />
-        <Grid
-          container
-          spacing={2}
-          direction="row"
-          justify="center"
-          alignItems="center"
-        >
+          <br />
+          <br />
           <Grid item>
-            <Fade in={this.state.showPic} timeout={3000}>
-              <img
-                src={ProfilePic}
-                alt="Profile Pic"
-                className={classes.profilePic}
-              />
-            </Fade>
+            <Grid
+              container
+              spacing={2}
+              direction="row"
+              justify="center"
+              alignItems="center"
+            >
+              <Grid item>
+                <Fade in={this.state.showPic} timeout={3000}>
+                  <img
+                    src={ProfilePic}
+                    alt="Profile Pic"
+                    className={classes.profilePic}
+                  />
+                </Fade>
+              </Grid>
+              <Grid item>
+                <Fade in={this.state.showBio} timeout={3000}>
+                  <div style={{ textAlign: "center" }}>
+                    <Typography variant="h4">
+                      Computer Science Student
+                    </Typography>
+                    <Typography variant="h6">
+                      Aspiring Software Engineer
+                    </Typography>
+                  </div>
+                </Fade>
+              </Grid>
+            </Grid>
+          </Grid>
+          <br />
+          <br />
+          <Grid item>
+            <Grid
+              container
+              spacing={2}
+              direction="row"
+              justify="center"
+              alignItems="center"
+            >
+              <Grid item>
+                <Fade in={this.state.showLearnMore} timeout={3000}>
+                  <Typography variant="h4" className={classes.greeting}>
+                    Learn more about me
+                  </Typography>
+                </Fade>
+              </Grid>
+            </Grid>
           </Grid>
           <Grid item>
-            <Fade in={this.state.showBio} timeout={3000}>
-              <div style={{ textAlign: "center" }}>
-                <Typography variant="h4">Computer Science Student</Typography>
-                <Typography variant="h6">Aspiring Software Engineer</Typography>
-              </div>
-            </Fade>
+            <Grid
+              container
+              spacing={2}
+              direction="row"
+              justify="center"
+              alignItems="center"
+            >
+              <Grid item>
+                <Fade in={this.state.showArrow1} timeout={990}>
+                  <KeyboardArrowDownIcon fontSize="large" />
+                </Fade>
+              </Grid>
+            </Grid>
           </Grid>
-        </Grid>
-        <br />
-        <br />
-        <Grid
-          container
-          spacing={2}
-          direction="row"
-          justify="center"
-          alignItems="center"
-        >
+          <br />
+          <br />
           <Grid item>
-            <Fade in={this.state.showLearnMore} timeout={3000}>
-              <Typography variant="h4" className={classes.greeting}>
-                Learn more about me
-              </Typography>
-            </Fade>
-          </Grid>
-        </Grid>
-        <Grid
-          container
-          spacing={2}
-          direction="row"
-          justify="center"
-          alignItems="center"
-        >
-          <Grid item>
-            <Fade in={this.state.showArrow1} timeout={990}>
-              <KeyboardArrowDownIcon fontSize="large" />
-            </Fade>
-          </Grid>
-        </Grid>
-        <br />
-        <br />
-        <Grid
-          container
-          spacing={2}
-          direction="row"
-          justify="center"
-          alignItems="center"
-        >
-          <VizSensor
-            partialVisibility={this.handleXsVisible()}
-            onChange={(isVisible) => {
-              this.renderAboutCards(isVisible, 1);
-            }}
-          >
-            <Grid item>
-              <Fade in={this.state.showCard1} timeout={this.handleXsTimeout(1)}>
-                <div>
-                  <AboutCard
-                    image={UFLogo}
-                    alt="UF Logo"
-                    title="I am a..."
-                    text="I'm a Junior at the University of Florida 
+            <Grid
+              container
+              spacing={2}
+              direction="row"
+              justify="center"
+              alignItems="center"
+            >
+              <VizSensor
+                partialVisibility={this.handleXsVisible()}
+                onChange={(isVisible) => {
+                  this.renderAboutCards(isVisible, 1);
+                }}
+              >
+                <Grid item>
+                  <Fade
+                    in={this.state.showCard1}
+                    timeout={this.handleXsTimeout(1)}
+                  >
+                    <div>
+                      <AboutCard
+                        image={UFLogo}
+                        alt="UF Logo"
+                        title="I am a..."
+                        text="I'm a Junior at the University of Florida 
                     studying computer science. I was extremely addicted to computers as a kid
                      - and I can say that not much has changed! 
                     Above all else, I'm grateful for what I'm learning along the way."
-                  />
-                </div>
-              </Fade>
-            </Grid>
-          </VizSensor>
-          <VizSensor
-            partialVisibility={this.handleXsVisible()}
-            onChange={(isVisible) => {
-              this.renderAboutCards(isVisible, 2);
-            }}
-          >
-            <Grid item>
-              <Fade in={this.state.showCard2} timeout={this.handleXsTimeout(2)}>
-                <div>
-                  <AboutCard
-                    image={DevLogo}
-                    alt="Dev Logo"
-                    title="I like to..."
-                    text="I like to learn about new technologies and topics, 
+                      />
+                    </div>
+                  </Fade>
+                </Grid>
+              </VizSensor>
+              <VizSensor
+                partialVisibility={this.handleXsVisible()}
+                onChange={(isVisible) => {
+                  this.renderAboutCards(isVisible, 2);
+                }}
+              >
+                <Grid item>
+                  <Fade
+                    in={this.state.showCard2}
+                    timeout={this.handleXsTimeout(2)}
+                  >
+                    <div>
+                      <AboutCard
+                        image={DevLogo}
+                        alt="Dev Logo"
+                        title="I like to..."
+                        text="I like to learn about new technologies and topics, 
                     so I spend a lot of time working on personal projects. 
                     I'm very interested in full-stack web development, 
                     but I've also worked with mobile applications before."
-                  />
-                </div>
-              </Fade>
-            </Grid>
-          </VizSensor>
-          <VizSensor
-            partialVisibility={this.handleXsVisible()}
-            onChange={(isVisible) => {
-              this.renderAboutCards(isVisible, 3);
-            }}
-          >
-            <Grid item>
-              <Fade in={this.state.showCard3} timeout={this.handleXsTimeout(3)}>
-                <div>
-                  <AboutCard
-                    image={HockeyLogo}
-                    alt="Hockey Logo"
-                    title="In my free time..."
-                    text="When I'm not doing anything related to computer science, 
+                      />
+                    </div>
+                  </Fade>
+                </Grid>
+              </VizSensor>
+              <VizSensor
+                partialVisibility={this.handleXsVisible()}
+                onChange={(isVisible) => {
+                  this.renderAboutCards(isVisible, 3);
+                }}
+              >
+                <Grid item>
+                  <Fade
+                    in={this.state.showCard3}
+                    timeout={this.handleXsTimeout(3)}
+                  >
+                    <div>
+                      <AboutCard
+                        image={HockeyLogo}
+                        alt="Hockey Logo"
+                        title="In my free time..."
+                        text="When I'm not doing anything related to computer science, 
                     you'll likely find me at the gym, playing hockey (wherever I can find a rink), 
                     or chilling out with some music. Hit me up for some good recommendations. "
-                  />
-                </div>
-              </Fade>
+                      />
+                    </div>
+                  </Fade>
+                </Grid>
+              </VizSensor>
             </Grid>
-          </VizSensor>
-        </Grid>
-        <br />
-        <br />
-        <br />
-        <br />
-        <Grid
-          container
-          spacing={2}
-          direction="row"
-          justify="center"
-          alignItems="center"
-        >
-          <VizSensor
-            onChange={(isVisible) => {
-              this.renderLearnExp(isVisible);
-            }}
-          >
-            <Grid item>
-              <Fade in={this.state.showLearnExp} timeout={3000}>
-                <Typography variant="h4" className={classes.greeting}>
-                  My experience
-                </Typography>
-              </Fade>
+          </Grid>
+          <br />
+          <br />
+          <br />
+          <br />
+          <Grid item>
+            <Grid
+              container
+              spacing={2}
+              direction="row"
+              justify="center"
+              alignItems="center"
+            >
+              <VizSensor
+                onChange={(isVisible) => {
+                  this.renderLearnExp(isVisible);
+                }}
+              >
+                <Grid item>
+                  <Fade in={this.state.showLearnExp} timeout={3000}>
+                    <Typography variant="h4" className={classes.greeting}>
+                      My experience
+                    </Typography>
+                  </Fade>
+                </Grid>
+              </VizSensor>
             </Grid>
-          </VizSensor>
-        </Grid>
-        <Grid
-          container
-          spacing={2}
-          direction="row"
-          justify="center"
-          alignItems="center"
-        >
-          <VizSensor
-            onChange={(isVisible) => {
-              this.renderArrow2(isVisible);
-            }}
-          >
-            <Grid item>
-              <Fade in={this.state.showArrow2} timeout={990}>
-                <KeyboardArrowDownIcon fontSize="large" />
-              </Fade>
+          </Grid>
+          <Grid item>
+            <Grid
+              container
+              spacing={2}
+              direction="row"
+              justify="center"
+              alignItems="center"
+            >
+              <VizSensor
+                onChange={(isVisible) => {
+                  this.renderArrow2(isVisible);
+                }}
+              >
+                <Grid item>
+                  <Fade in={this.state.showArrow2} timeout={990}>
+                    <KeyboardArrowDownIcon fontSize="large" />
+                  </Fade>
+                </Grid>
+              </VizSensor>
             </Grid>
-          </VizSensor>
-        </Grid>
-        <br />
-        <br />
-        <Grid
-          container
-          spacing={2}
-          direction="row"
-          justify="center"
-          alignItems="center"
-        >
-          <VizSensor
-            partialVisibility={this.handleXsVisible()}
-            onChange={(isVisible) => {
-              this.renderExperienceCards(isVisible, 1);
-            }}
-          >
-            <Grid item>
-              <Fade in={this.state.showExp1} timeout={this.handleXsTimeout(1)}>
-                <div>
-                  <AboutCard
-                    image={LaundrLogo}
-                    alt="Laundr Logo"
-                    title="Laundr"
-                    text="I'm a Junior at the University of Florida 
+          </Grid>
+          <br />
+          <br />
+          <Grid item>
+            <Grid
+              container
+              spacing={2}
+              direction="row"
+              justify="center"
+              alignItems="center"
+            >
+              <VizSensor
+                partialVisibility={this.handleXsVisible()}
+                onChange={(isVisible) => {
+                  this.renderExperienceCards(isVisible, 1);
+                }}
+              >
+                <Grid item>
+                  <Fade
+                    in={this.state.showExp1}
+                    timeout={this.handleXsTimeout(1)}
+                  >
+                    <div>
+                      <AboutCard
+                        image={LaundrLogo}
+                        alt="Laundr Logo"
+                        title="Laundr"
+                        text="I'm a Junior at the University of Florida 
                     studying computer science. I was extremely addicted to computers as a kid
                      - and I can say that not much has changed! 
                     Above all else, I'm grateful for what I'm learning along the way."
-                  />
-                </div>
-              </Fade>
-            </Grid>
-          </VizSensor>
-          <VizSensor
-            partialVisibility={this.handleXsVisible()}
-            onChange={(isVisible) => {
-              this.renderExperienceCards(isVisible, 2);
-            }}
-          >
-            <Grid item>
-              <Fade in={this.state.showExp2} timeout={this.handleXsTimeout(2)}>
-                <div>
-                  <AboutCard
-                    image={UFCOELogo}
-                    alt="UF CoE Logo"
-                    title="UF College of Engineering"
-                    text="I'm a Junior at the University of Florida 
+                      />
+                    </div>
+                  </Fade>
+                </Grid>
+              </VizSensor>
+              <VizSensor
+                partialVisibility={this.handleXsVisible()}
+                onChange={(isVisible) => {
+                  this.renderExperienceCards(isVisible, 2);
+                }}
+              >
+                <Grid item>
+                  <Fade
+                    in={this.state.showExp2}
+                    timeout={this.handleXsTimeout(2)}
+                  >
+                    <div>
+                      <AboutCard
+                        image={UFCOELogo}
+                        alt="UF CoE Logo"
+                        title="UF College of Engineering"
+                        text="I'm a Junior at the University of Florida 
                     studying computer science. I was extremely addicted to computers as a kid
                      - and I can say that not much has changed! 
                     Above all else, I'm grateful for what I'm learning along the way."
-                  />
-                </div>
-              </Fade>
-            </Grid>
-          </VizSensor>
-          <VizSensor
-            partialVisibility={this.handleXsVisible()}
-            onChange={(isVisible) => {
-              this.renderExperienceCards(isVisible, 3);
-            }}
-          >
-            <Grid item>
-              <Fade in={this.state.showExp3} timeout={this.handleXsTimeout(3)}>
-                <div>
-                  <AboutCard
-                    image={UFCOEdLogo}
-                    alt="UF CoE Logo"
-                    title="UF College of Education"
-                    text="I'm a Junior at the University of Florida 
+                      />
+                    </div>
+                  </Fade>
+                </Grid>
+              </VizSensor>
+              <VizSensor
+                partialVisibility={this.handleXsVisible()}
+                onChange={(isVisible) => {
+                  this.renderExperienceCards(isVisible, 3);
+                }}
+              >
+                <Grid item>
+                  <Fade
+                    in={this.state.showExp3}
+                    timeout={this.handleXsTimeout(3)}
+                  >
+                    <div>
+                      <AboutCard
+                        image={UFCOEdLogo}
+                        alt="UF CoE Logo"
+                        title="UF College of Education"
+                        text="I'm a Junior at the University of Florida 
                     studying computer science. I was extremely addicted to computers as a kid
                      - and I can say that not much has changed! 
                     Above all else, I'm grateful for what I'm learning along the way."
-                  />
-                </div>
-              </Fade>
+                      />
+                    </div>
+                  </Fade>
+                </Grid>
+              </VizSensor>
             </Grid>
-          </VizSensor>
+          </Grid>
         </Grid>
       </React.Fragment>
     );
