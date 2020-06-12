@@ -28,6 +28,7 @@ class App extends Component {
     //     console.log("after: " + this.state.aboutCodeView);
     //   }
     // );
+    //alert("height: " + window.innerHeight);
 
     console.log("view code: " + event.target.checked);
 
@@ -41,7 +42,12 @@ class App extends Component {
     return (
       <React.Fragment>
         <Topbar toggleCodeView={this.toggleCodeView} />
-        <div style={{ backgroundColor: "grey", minHeight: "100vh" }}>
+        <div
+          style={{
+            backgroundColor: "grey",
+            minHeight: window.innerHeight - 186.89,
+          }}
+        >
           <Switch>
             <Route
               exact

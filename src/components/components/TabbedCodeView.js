@@ -25,6 +25,13 @@ const code = `const b = "Five"
 const c = "Six";
 console.log("Seven")`;
 
+const code2 = `const b = "Five"
+const c = "Six";
+console.log("Seven")
+const b = "Five"
+const c = "Six";
+console.log("Seven")`;
+
 const commonFiles = [
   { name: "TabbedCodeView.js", code: code },
   { name: "Topbar.js", code: code },
@@ -36,7 +43,7 @@ const commonFiles = [
 
 const aboutFiles = [
   { name: "About.js", code: code },
-  { name: "AboutCard.js", code: code },
+  { name: "AboutCard.js", code: code2 },
   { name: "aboutStyles.js", code: code },
   { name: "aboutCardStyles.js", code: code },
   ...commonFiles,
