@@ -123,6 +123,28 @@ class AboutBio extends Component {
     }
   };
 
+  handleXsSpacing = () => {
+    if (
+      this.props.width === "xs" ||
+      this.props.width === "sm" ||
+      this.props.width === "md"
+    ) {
+      return 0;
+    } else {
+      return 2;
+    }
+  };
+
+  handleXsPadding = () => {
+    if (
+      this.props.width === "xs" ||
+      this.props.width === "sm" ||
+      this.props.width === "md"
+    ) {
+      return 8;
+    }
+  };
+
   renderLearnExp = (isVisible) => {
     this.setState({ showLearnExp: isVisible });
   };
@@ -147,7 +169,7 @@ class AboutBio extends Component {
           <Grid item>
             <Grid
               container
-              spacing={2}
+              spacing={0}
               direction="row"
               justify="center"
               alignItems="center"
@@ -166,7 +188,7 @@ class AboutBio extends Component {
           <Grid item>
             <Grid
               container
-              spacing={2}
+              spacing={0}
               direction="row"
               justify="center"
               alignItems="center"
@@ -199,7 +221,7 @@ class AboutBio extends Component {
           <Grid item>
             <Grid
               container
-              spacing={2}
+              spacing={0}
               direction="row"
               justify="center"
               alignItems="center"
@@ -216,7 +238,7 @@ class AboutBio extends Component {
           <Grid item>
             <Grid
               container
-              spacing={2}
+              spacing={0}
               direction="row"
               justify="center"
               alignItems="center"
@@ -233,7 +255,7 @@ class AboutBio extends Component {
           <Grid item>
             <Grid
               container
-              spacing={2}
+              spacing={this.handleXsSpacing()}
               direction="row"
               justify="center"
               alignItems="center"
@@ -244,7 +266,7 @@ class AboutBio extends Component {
                   this.renderAboutCards(isVisible, 1);
                 }}
               >
-                <Grid item>
+                <Grid item style={{ padding: this.handleXsPadding() }}>
                   <Fade
                     in={this.state.showCard1}
                     timeout={this.handleXsTimeout(1)}
@@ -269,7 +291,7 @@ class AboutBio extends Component {
                   this.renderAboutCards(isVisible, 2);
                 }}
               >
-                <Grid item>
+                <Grid item style={{ padding: this.handleXsPadding() }}>
                   <Fade
                     in={this.state.showCard2}
                     timeout={this.handleXsTimeout(2)}
@@ -294,7 +316,7 @@ class AboutBio extends Component {
                   this.renderAboutCards(isVisible, 3);
                 }}
               >
-                <Grid item>
+                <Grid item style={{ padding: this.handleXsPadding() }}>
                   <Fade
                     in={this.state.showCard3}
                     timeout={this.handleXsTimeout(3)}
@@ -321,7 +343,7 @@ class AboutBio extends Component {
           <Grid item>
             <Grid
               container
-              spacing={2}
+              spacing={0}
               direction="row"
               justify="center"
               alignItems="center"
@@ -344,7 +366,7 @@ class AboutBio extends Component {
           <Grid item>
             <Grid
               container
-              spacing={2}
+              spacing={0}
               direction="row"
               justify="center"
               alignItems="center"
@@ -367,7 +389,8 @@ class AboutBio extends Component {
           <Grid item>
             <Grid
               container
-              spacing={2}
+              spacing={this.handleXsSpacing()}
+              style={{ padding: this.handleXsPadding() }}
               direction="row"
               justify="center"
               alignItems="center"
@@ -378,7 +401,7 @@ class AboutBio extends Component {
                   this.renderExperienceCards(isVisible, 1);
                 }}
               >
-                <Grid item>
+                <Grid item style={{ padding: this.handleXsPadding() }}>
                   <Fade
                     in={this.state.showExp1}
                     timeout={this.handleXsTimeout(1)}
@@ -403,7 +426,7 @@ class AboutBio extends Component {
                   this.renderExperienceCards(isVisible, 2);
                 }}
               >
-                <Grid item>
+                <Grid item style={{ padding: this.handleXsPadding() }}>
                   <Fade
                     in={this.state.showExp2}
                     timeout={this.handleXsTimeout(2)}
@@ -428,7 +451,7 @@ class AboutBio extends Component {
                   this.renderExperienceCards(isVisible, 3);
                 }}
               >
-                <Grid item>
+                <Grid item style={{ padding: this.handleXsPadding() }}>
                   <Fade
                     in={this.state.showExp3}
                     timeout={this.handleXsTimeout(3)}

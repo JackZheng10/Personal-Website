@@ -36,7 +36,7 @@ class Footer extends Component {
           <Grid item>
             <Grid
               container
-              spacing={2}
+              spacing={0}
               direction="row"
               justify="center"
               alignItems="center"
@@ -51,7 +51,7 @@ class Footer extends Component {
           <Grid item>
             <Grid
               container
-              spacing={2}
+              spacing={0}
               direction="row"
               justify="center"
               alignItems="center"
@@ -63,7 +63,9 @@ class Footer extends Component {
                   alt="GitHub Logo"
                   onClick={this.redirectGH}
                 />
+                &nbsp;&nbsp;&nbsp;
               </Grid>
+
               <Grid item>
                 <img
                   src={LinkedInLogo}
@@ -71,6 +73,7 @@ class Footer extends Component {
                   alt="LinkedIn Logo"
                   onClick={this.redirectLI}
                 />
+                &nbsp;&nbsp;&nbsp;
               </Grid>
               <Grid item>
                 <img

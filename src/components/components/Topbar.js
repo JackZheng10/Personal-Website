@@ -9,6 +9,7 @@ import {
   IconButton,
   Hidden,
   Switch,
+  Fade,
 } from "@material-ui/core";
 import PersonIcon from "@material-ui/icons/Person";
 import BuildIcon from "@material-ui/icons/Build";
@@ -94,20 +95,25 @@ function Topbar(props) {
             </Button>
           </Hidden>
           <div className={classes.flexGrow} />
-          <CropOriginalIcon
-            fontSize="large"
-            className={classes.codeButton}
+          <Fade
+            in={!codeView}
+            timeout={3000}
             style={{
               display: codeView ? "none" : "block",
             }}
-          />
-          <CodeIcon
-            fontSize="large"
-            className={classes.codeButton}
+          >
+            <CropOriginalIcon fontSize="large" className={classes.codeButton} />
+          </Fade>
+          <Fade
+            in={codeView}
+            timeout={3000}
             style={{
               display: !codeView ? "none" : "block",
             }}
-          />
+          >
+            <CodeIcon fontSize="large" className={classes.codeButton} />
+          </Fade>
+
           <Switch
             color="default"
             size="small"

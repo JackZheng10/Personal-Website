@@ -44,6 +44,7 @@ class App extends Component {
       <React.Fragment>
         <div style={{ backgroundColor: "grey" }}>
           <Topbar toggleCodeView={this.toggleCodeView} />
+
           <Switch>
             <Route
               exact
@@ -62,6 +63,7 @@ class App extends Component {
               <Redirect to="/about" />
             </Route>
           </Switch>
+
           <Footer />
         </div>
       </React.Fragment>

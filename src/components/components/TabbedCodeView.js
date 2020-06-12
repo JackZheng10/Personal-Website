@@ -17,6 +17,7 @@ import tabbedCodeViewStyles from "../../styles/tabbedCodeViewStyles";
 
 //todo: make the code view button very obviously a toggle
 //todo: do the code file exports like the material dashboard ppl did, just export out of the file!
+//todo: spacing={2} creates weird padding when screen is small enough
 
 const cron = require("node-cron");
 
@@ -147,51 +148,64 @@ class TabbedCodeView extends Component {
       <React.Fragment>
         <Grid
           container
-          spacing={2}
-          direction="row"
+          direction="column"
           justify="center"
           alignItems="center"
+          className={classes.root}
         >
           <Grid item>
-            <Fade in={this.state.showIntro} timeout={3000}>
-              <Typography variant="h3" className={classes.greeting}>
-                Here's all the code that makes this page work
-              </Typography>
-            </Fade>
+            <Grid
+              container
+              direction="row"
+              justify="center"
+              alignItems="center"
+            >
+              <Grid item>
+                <Fade in={this.state.showIntro} timeout={3000}>
+                  <Typography variant="h3" className={classes.greeting}>
+                    Here's all the code that makes this page work
+                  </Typography>
+                </Fade>
+              </Grid>
+            </Grid>
           </Grid>
-        </Grid>
-        <Grid
-          container
-          spacing={2}
-          direction="row"
-          justify="center"
-          alignItems="center"
-        >
           <Grid item>
-            <Fade in={this.state.showArrow} timeout={990}>
-              <KeyboardArrowDownIcon fontSize="large" />
+            <Grid
+              container
+              spacing={0}
+              direction="row"
+              justify="center"
+              alignItems="center"
+            >
+              <Grid item>
+                <Fade in={this.state.showArrow} timeout={990}>
+                  <KeyboardArrowDownIcon fontSize="large" />
+                </Fade>
+              </Grid>
+            </Grid>
+          </Grid>
+          <br />
+          <Grid item>
+            <Fade in={this.state.showButtons} timeout={3000}>
+              <Grid
+                container
+                spacing={0}
+                direction="row"
+                justify="center"
+                alignItems="center"
+              >
+                {this.renderFileButtons(classes)}
+              </Grid>
             </Fade>
           </Grid>
+          <Fade in={this.state.showCode} timeout={3000}>
+            <div style={{ width: "90%" }}>
+              <SyntaxHighlighter language="jsx" style={vs}>
+                {this.state.currentCode}
+              </SyntaxHighlighter>
+            </div>
+          </Fade>
         </Grid>
-        <br />
-        <Fade in={this.state.showButtons} timeout={3000}>
-          <Grid
-            container
-            spacing={1}
-            direction="row"
-            justify="center"
-            alignItems="center"
-          >
-            {this.renderFileButtons(classes)}
-          </Grid>
-        </Fade>
-        <Fade in={this.state.showCode} timeout={3000}>
-          <div>
-            <SyntaxHighlighter language="jsx" style={vs}>
-              {this.state.currentCode}
-            </SyntaxHighlighter>
-          </div>
-        </Fade>
       </React.Fragment>
     );
   }

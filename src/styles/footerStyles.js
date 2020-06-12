@@ -20,7 +20,6 @@ export default (theme) => ({
     height: 52,
     width: 125,
     cursor: "pointer",
-    zIndex: 10,
   },
   LIlogo: {
     height: 34,
