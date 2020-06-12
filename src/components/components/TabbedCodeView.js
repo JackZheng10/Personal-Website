@@ -200,7 +200,7 @@ class TabbedCodeView extends Component {
           </Grid>
           <Fade in={this.state.showCode} timeout={3000}>
             <div style={{ width: "90%" }}>
-              <SyntaxHighlighter language="jsx" style={vs}>
+              <SyntaxHighlighter language="jsx" style={okaidia}>
                 {this.state.currentCode}
               </SyntaxHighlighter>
             </div>

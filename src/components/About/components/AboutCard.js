@@ -11,6 +11,8 @@ import {
 import PropTypes from "prop-types";
 import aboutCardStyles from "../../../styles/aboutCardStyles";
 
+//todo: weird corner clipping w/solid main background
+
 function AboutCard(props) {
   const classes = props.classes;
 

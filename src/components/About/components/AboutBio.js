@@ -119,6 +119,8 @@ class AboutBio extends Component {
           return 2000;
         case 3:
           return 3000;
+        default:
+          return 3000;
       }
     }
   };
