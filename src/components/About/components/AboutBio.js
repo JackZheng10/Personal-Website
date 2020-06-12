@@ -55,6 +55,14 @@ class AboutBio extends Component {
       showExp3: false,
     };
 
+    this.flashArrow1 = cron.schedule(
+      "*/1 * * * * *",
+      () => {
+        this.setState({ showArrow1: !this.state.showArrow1 });
+      },
+      { scheduled: false }
+    );
+
     this.flashArrow2 = cron.schedule(
       "*/1 * * * * *",
       () => {
@@ -82,12 +90,11 @@ class AboutBio extends Component {
     }, 3000);
 
     setTimeout(() => {
-      cron.schedule("*/1 * * * * *", () => {
-        this.setState({ showArrow1: !this.state.showArrow1 });
-      });
+      this.flashArrow1.start();
     }, 4000);
   };
 
+  //todo: testing delay on card vis so no ghost cards on switch back to normal view
   renderAboutCards = (isVisible, number) => {
     setTimeout(() => {
       this.setState({ ["showCard" + number]: isVisible });

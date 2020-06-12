@@ -69,6 +69,14 @@ class TabbedCodeView extends Component {
       files: files,
       currentCode: files[0].code,
     };
+
+    this.flashArrow = cron.schedule(
+      "*/1 * * * * *",
+      () => {
+        this.setState({ showArrow: !this.state.showArrow });
+      },
+      { scheduled: false }
+    );
   }
 
   componentDidMount = () => {
@@ -77,9 +85,7 @@ class TabbedCodeView extends Component {
     }, 500);
 
     setTimeout(() => {
-      cron.schedule("*/1 * * * * *", () => {
-        this.setState({ showArrow: !this.state.showArrow });
-      });
+      this.flashArrow.start();
     }, 1500);
 
     setTimeout(() => {
@@ -170,7 +176,7 @@ class TabbedCodeView extends Component {
               <Grid item>
                 <Fade in={this.state.showIntro} timeout={3000}>
                   <Typography variant="h3" className={classes.greeting}>
-                    Here's all the code that makes this page work
+                    Here's (most of) the code that makes this page work
                   </Typography>
                 </Fade>
               </Grid>

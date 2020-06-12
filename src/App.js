@@ -42,6 +42,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <Topbar toggleCodeView={this.toggleCodeView} />
+        {/*find better solution to sticky footer - will not account for window resizing since not re-rendered*/}
         <div
           style={{
             backgroundColor: "grey",
