@@ -6,6 +6,7 @@ import Resume from "./components/Resume";
 import Topbar from "./components/components/Topbar";
 import Footer from "./components/components/Footer";
 import TabbedCodeTest from "./components/components/TabbedCodeView";
+import ParallaxTest from "./components/temp/Parallax";
 
 //todo: themeprovider?
 //todo: make footer float to bottom. dont want the page to have to be long
@@ -58,6 +59,7 @@ class App extends Component {
             <Route exact path="/projects" component={Projects} />
             <Route exact path="/resume" component={Resume} />
             <Route exact path="/testTab" component={TabbedCodeTest} />
+            <Route exact path="/testPar" component={ParallaxTest} />
             <Route path="/">
               <Redirect to="/about" />
             </Route>
