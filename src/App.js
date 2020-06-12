@@ -8,6 +8,9 @@ import Footer from "./components/components/Footer";
 import TabbedCodeTest from "./components/components/TabbedCodeView";
 import ParallaxTest from "./components/temp/Parallax";
 
+//testing
+import Particles from "react-particles-js";
+
 //todo: themeprovider?
 //todo: make footer float to bottom. dont want the page to have to be long
 //todo: use localstorage to persist toggles of code! no need for function here, just access localstorage in the page
@@ -50,6 +53,26 @@ class App extends Component {
             minHeight: window.innerHeight - 186.89,
           }}
         >
+          {/* <Particles
+            params={{
+              particles: {
+                number: {
+                  value: 50,
+                },
+                size: {
+                  value: 3,
+                },
+              },
+              interactivity: {
+                events: {
+                  onhover: {
+                    enable: true,
+                    mode: "repulse",
+                  },
+                },
+              },
+            }}
+          /> */}
           <Switch>
             <Route
               exact
@@ -65,6 +88,7 @@ class App extends Component {
             </Route>
           </Switch>
         </div>
+
         <Footer />
       </React.Fragment>
     );
