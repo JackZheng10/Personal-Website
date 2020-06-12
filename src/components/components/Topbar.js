@@ -8,6 +8,8 @@ import {
   withStyles,
   IconButton,
   Hidden,
+  Switch,
+  FormControlLabel,
 } from "@material-ui/core";
 import PersonIcon from "@material-ui/icons/Person";
 import BuildIcon from "@material-ui/icons/Build";
@@ -22,12 +24,6 @@ click code button = toggle code view:
 */
 
 class Topbar extends Component {
-  handleCodeView = () => {
-    let page = window.location.pathname.substring(1);
-
-    this.props.toggleCodeView(page);
-  };
-
   render() {
     const classes = this.props.classes;
 
@@ -97,13 +93,14 @@ class Topbar extends Component {
               </Button>
             </Hidden>
             <div className={classes.flexGrow} />
-            <IconButton
-              className={classes.codeButton}
+
+            <CodeIcon fontSize="large" className={classes.codeButton} />
+            <Switch
+              color="default"
               size="small"
-              onClick={this.handleCodeView}
-            >
-              <CodeIcon fontSize="large" />
-            </IconButton>
+              onChange={this.props.toggleCodeView}
+              checked={JSON.parse(localStorage.getItem("viewCode"))}
+            />
           </Toolbar>
         </AppBar>
         <div className={classes.offset} />

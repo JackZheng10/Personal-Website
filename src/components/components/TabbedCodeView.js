@@ -117,12 +117,13 @@ class TabbedCodeView extends Component {
   };
 
   renderFileButtons = (classes) => {
-    return this.state.files.map((file) => {
+    return this.state.files.map((file, index) => {
       return (
         <Grid item>
           <Button
             variant="contained"
             size="medium"
+            key={index}
             className={classes.button}
             style={{
               backgroundColor: this.handleSelectedBG(file.code),

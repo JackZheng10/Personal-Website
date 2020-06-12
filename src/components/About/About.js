@@ -11,10 +11,15 @@ import TabbedCodeView from "../components/TabbedCodeView";
 
 class About extends Component {
   renderView = () => {
-    if (this.props.viewCode) {
-      return <TabbedCodeView />;
-    } else {
+    let viewCode = JSON.parse(localStorage.getItem("viewCode")) || false;
+    console.log("alert view code: " + viewCode);
+
+    if (!viewCode) {
+      console.log("entered 1");
       return <AboutBio />;
+    } else {
+      console.log("entered 2");
+      return <TabbedCodeView />;
     }
   };
 

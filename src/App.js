@@ -14,20 +14,26 @@ import TabbedCodeTest from "./components/components/TabbedCodeView";
 //todo: use localstorage to persist toggles of code! no need for function here, just access localstorage in the page
 
 class App extends Component {
-  state = { aboutCodeView: false, testCodeView: false };
+  state = { codeView: false };
 
-  toggleCodeView = (page) => {
-    console.log("state: " + page + "CodeView");
-    console.log("before: " + this.state.aboutCodeView);
+  toggleCodeView = (event) => {
+    // console.log("state: " + page + "CodeView");
+    // console.log("before: " + this.state.aboutCodeView);
 
-    this.setState(
-      (prevState) => ({
-        [page + "CodeView"]: !prevState[page + "CodeView"],
-      }),
-      () => {
-        console.log("after: " + this.state.aboutCodeView);
-      }
-    );
+    // this.setState(
+    //   (prevState) => ({
+    //     [page + "CodeView"]: !prevState[page + "CodeView"],
+    //   }),
+    //   () => {
+    //     console.log("after: " + this.state.aboutCodeView);
+    //   }
+    // );
+    console.log("view code: " + event.target.checked);
+
+    //BRO IT'S A STRING AHHH I DIDN'T KNOW
+    localStorage.setItem("viewCode", event.target.checked);
+
+    this.setState({ codeView: event.target.checked });
   };
 
   render() {
