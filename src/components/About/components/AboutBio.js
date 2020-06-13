@@ -166,8 +166,9 @@ class AboutBio extends Component {
         this.flashArrow2.start();
       }, 1000);
     } else {
+      this.setState({ showArrow2: false }); //review this change, wanted to see if it fixed the arrow not disppearing
+      //grid container causes the syntax highlighter to have an auto width
       this.flashArrow2.stop();
-      this.setState({ showArrow2: false });
     }
   };
 

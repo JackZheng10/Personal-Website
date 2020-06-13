@@ -31,6 +31,7 @@ function AboutCard(props) {
           title={props.alt}
           className={classes.media}
         />
+        <Divider />
         <CardContent className={classes.cardContent}>
           <Typography variant="body1" className={classes.text}>
             {props.text}

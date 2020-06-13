@@ -107,6 +107,8 @@ class TabbedCodeView extends Component {
         return projectFiles;
       case "resume":
         return resumeFiles;
+      default:
+        return commonFiles;
     }
   };
 
@@ -197,6 +199,7 @@ class TabbedCodeView extends Component {
               </Grid>
             </Grid>
           </Grid>
+          <br />
           <br />
           <Grid item>
             <Fade in={this.state.showButtons} timeout={3000}>
