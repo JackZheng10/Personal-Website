@@ -13,6 +13,7 @@ import Footer from "./components/components/Footer";
 import TabbedCodeTest from "./components/components/TabbedCodeView";
 import ParallaxTest from "./components/temp/Parallax";
 import theme from "./theme";
+import "./particlesStyles.css";
 
 //testing
 import Particles from "react-particles-js";
@@ -23,26 +24,12 @@ import Particles from "react-particles-js";
 //todo: darkmode?
 //todo: vis sensor on arrows? keep non-vis on main titles
 //todo: port to gatsby?
+//todo: {/*find better solution to sticky footer - will not account for window resizing since not re-rendered*/}
 
 class App extends Component {
   state = { codeView: false };
 
   toggleCodeView = (event) => {
-    // console.log("state: " + page + "CodeView");
-    // console.log("before: " + this.state.aboutCodeView);
-
-    // this.setState(
-    //   (prevState) => ({
-    //     [page + "CodeView"]: !prevState[page + "CodeView"],
-    //   }),
-    //   () => {
-    //     console.log("after: " + this.state.aboutCodeView);
-    //   }
-    // );
-    //alert("height: " + window.innerHeight);
-
-    console.log("view code: " + event.target.checked);
-
     //BRO IT'S A STRING AHHH I DIDN'T KNOW
     localStorage.setItem("codeView", event.target.checked);
 
@@ -52,53 +39,54 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
+        <Particles
+          params={{
+            particles: {
+              size: {
+                value: 5,
+              },
+              color: {
+                value: "#0ff",
+              },
+              lineLinked: {
+                distance: 100,
+              },
+              number: {
+                value: 100,
+              },
+            },
+          }}
+          id="particlesBG"
+        />
         <MuiThemeProvider theme={theme}>
           <CssBaseline />
           <Topbar toggleCodeView={this.toggleCodeView} />
-          {/*find better solution to sticky footer - will not account for window resizing since not re-rendered*/}
-          <div
+
+          {/* <div
             style={{
               // backgroundImage: `url(${Moon})`,
-              backgroundColor: "rgb(0, 153, 150)",
+              backgroundColor: "rgb(51, 174, 255)",
               // minHeight: window.innerHeight - 186.89,
               minHeight: "100vh", //might be crap
             }}
-          >
-            {/* <Particles
-            params={{
-              particles: {
-                number: {
-                  value: 50,
-                },
-                size: {
-                  value: 3,
-                },
-              },
-              interactivity: {
-                events: {
-                  onhover: {
-                    enable: true,
-                    mode: "repulse",
-                  },
-                },
-              },
-            }}
-          /> */}
-            <Switch>
-              <Route
-                exact
-                path="/about"
-                render={() => <About viewCode={this.state.aboutCodeView} />}
-              />
-              <Route exact path="/projects" component={Projects} />
-              <Route exact path="/resume" component={Resume} />
-              <Route exact path="/testTab" component={TabbedCodeTest} />
-              <Route exact path="/testPar" component={ParallaxTest} />
-              <Route path="/">
-                <Redirect to="/about" />
-              </Route>
-            </Switch>
-          </div>
+            
+          > */}
+
+          <Switch>
+            <Route
+              exact
+              path="/about"
+              render={() => <About viewCode={this.state.aboutCodeView} />}
+            />
+            <Route exact path="/projects" component={Projects} />
+            <Route exact path="/resume" component={Resume} />
+            <Route exact path="/testTab" component={TabbedCodeTest} />
+            <Route exact path="/testPar" component={ParallaxTest} />
+            <Route path="/">
+              <Redirect to="/about" />
+            </Route>
+          </Switch>
+          {/* </div> */}
           <Footer />
         </MuiThemeProvider>
       </React.Fragment>
