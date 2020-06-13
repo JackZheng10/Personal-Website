@@ -19,6 +19,10 @@ import UFCOELogo from "../../../images/UFCOELogo.png";
 import UFCOEdLogo from "../../../images/UFCOEdLogo.png";
 import aboutStyles from "../../../styles/aboutBioStyles";
 
+//test
+import FlareComponent from "flare-react";
+import Success from "../../temp/Success.flr";
+
 const cron = require("node-cron");
 
 //todo: test on mobile: when small enough, change the topbar buttons to just iconbuttons + resize bottom images as they cause bleedingnpm s

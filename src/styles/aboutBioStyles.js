@@ -13,6 +13,7 @@ export default (theme) => ({
       width: "90vw",
       height: "auto",
     },
+    border: "5px solid #021a40",
   },
 });
 

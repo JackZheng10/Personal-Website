@@ -15,6 +15,10 @@ import { About as AboutCode } from "../../codeFiles/About/About";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import tabbedCodeViewStyles from "../../styles/tabbedCodeViewStyles";
 
+//test
+// import FlareComponent from "flare-react";
+// import Success from "../temp/Success.flr";
+
 //todo: make the code view button very obviously a toggle
 //todo: do the code file exports like the material dashboard ppl did, just export out of the file!
 //todo: spacing={2} creates weird padding when screen is small enough
@@ -161,6 +165,14 @@ class TabbedCodeView extends Component {
 
     return (
       <React.Fragment>
+        {/* <FlareComponent
+          width={200}
+          height={200}
+          animationName="coding"
+          file={Success}
+          width={500}
+          height={500}
+        /> */}
         <Grid
           container
           direction="column"
