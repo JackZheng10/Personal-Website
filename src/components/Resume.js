@@ -11,6 +11,7 @@ import {
   CardActions,
   IconButton,
 } from "@material-ui/core";
+import { SizeMe } from "react-sizeme";
 import { Document, Page, pdfjs } from "react-pdf";
 import PropTypes from "prop-types";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
@@ -61,8 +62,8 @@ class Resume extends Component {
     }, 2500);
   };
 
-  onDocumentLoadSuccess = ({ numPages }) => {
-    this.setState({ numPages: numPages });
+  handleDownload = () => {
+    alert(1);
   };
 
   render() {
@@ -122,30 +123,30 @@ class Resume extends Component {
             >
               <Grid item>
                 <Fade in={this.state.showResume} timeout={3000}>
-                  <div>
-                    <div className={classes.layout}>
-                      <Card className={classes.root} elevation={10}>
-                        <CardContent className={classes.cardContent}>
-                          {/* <Document
-                            file={ResumePDF}
-                            onLoadSuccess={this.onDocumentLoadSuccess}
-                            onLoadError={console.error}
-                          >
-                            <Page
-                              pageNumber={this.state.pageNumber}
-                              scale={0.5}
-                            />
-                          </Document> */}
-                          <h1>hi</h1>
-                        </CardContent>
-                        <Divider />
-                        <CardActions className={classes.cardActions}>
-                          <IconButton onClick={this.handleDownload}>
-                            <GetAppIcon fontSize="default" />
-                          </IconButton>
-                        </CardActions>
-                      </Card>
-                    </div>
+                  <div className={classes.layout}>
+                    <Card className={classes.root} elevation={10}>
+                      <CardContent className={classes.cardContent}>
+                        <SizeMe
+                          monitorWidth
+                          refreshRate={144}
+                          refreshMode={"debounce"}
+                          render={({ size }) => (
+                            <React.Fragment>
+                              <Document file={ResumePDF}>
+                                <Page width={size.width} pageNumber={1} />
+                              </Document>
+                            </React.Fragment>
+                          )}
+                        />
+                      </CardContent>
+                      <Divider />
+                      <CardActions
+                        className={classes.cardActions}
+                        onClick={this.handleDownload}
+                      >
+                        <GetAppIcon fontSize="large" />
+                      </CardActions>
+                    </Card>
                   </div>
                 </Fade>
               </Grid>

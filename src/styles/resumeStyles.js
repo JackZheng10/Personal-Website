@@ -10,7 +10,7 @@ export default (theme) => ({
     marginLeft: "auto",
     marginRight: "auto",
     [theme.breakpoints.up(649)]: {
-      width: 400,
+      width: 500,
     },
     [theme.breakpoints.down(650)]: {
       width: "90vw",
@@ -24,5 +24,6 @@ export default (theme) => ({
   cardActions: {
     justifyContent: "center",
     backgroundColor: "white",
+    cursor: "pointer",
   },
 });
