@@ -26,6 +26,7 @@ const cron = require("node-cron");
 //todo: images maybe look ratchet on mobile
 //todo: use the window scroll to on every page to force starting at the top
 //todo: stay visible after shown, just use prev state, if true then keep true? w/viz sensor
+//todo: find out why sometimes when switching to this, the about cards flash as if it was visible
 
 class AboutBio extends Component {
   constructor(props) {
@@ -182,7 +183,8 @@ class AboutBio extends Component {
             >
               <Grid item>
                 <Fade in={this.state.showGreeting} timeout={3000}>
-                  <Typography variant="h3" className={classes.greeting}>
+                  <Typography variant="h1" className={classes.greeting}>
+                    {/*todo: make bigger normal, smaller on mobile sizes*/}
                     Hey there, I'm Jack Zheng
                   </Typography>
                 </Fade>
@@ -211,10 +213,10 @@ class AboutBio extends Component {
               <Grid item>
                 <Fade in={this.state.showBio} timeout={3000}>
                   <div style={{ textAlign: "center" }}>
-                    <Typography variant="h4">
+                    <Typography variant="h3">
                       Computer Science Student
                     </Typography>
-                    <Typography variant="h6">
+                    <Typography variant="h5">
                       Aspiring Software Engineer
                     </Typography>
                   </div>
@@ -234,7 +236,7 @@ class AboutBio extends Component {
             >
               <Grid item>
                 <Fade in={this.state.showLearnMore} timeout={3000}>
-                  <Typography variant="h4" className={classes.greeting}>
+                  <Typography variant="h3" className={classes.greeting}>
                     Learn more about me
                   </Typography>
                 </Fade>

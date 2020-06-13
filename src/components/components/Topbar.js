@@ -91,6 +91,12 @@ function Topbar(props) {
             </Button>
           </Hidden>
           <div className={classes.flexGrow} />
+          <Switch
+            color="default"
+            size="small"
+            onChange={props.toggleCodeView}
+            checked={codeView}
+          />
           <Fade
             in={!codeView}
             timeout={3000}
@@ -109,13 +115,6 @@ function Topbar(props) {
           >
             <CodeIcon fontSize="large" className={classes.codeButton} />
           </Fade>
-
-          <Switch
-            color="default"
-            size="small"
-            onChange={props.toggleCodeView}
-            checked={codeView}
-          />
         </Toolbar>
       </AppBar>
       <div className={classes.offset} />
