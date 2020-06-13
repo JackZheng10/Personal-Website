@@ -184,7 +184,7 @@ class AboutBio extends Component {
               <Grid item>
                 <Fade in={this.state.showGreeting} timeout={3000}>
                   <Typography variant="h1" className={classes.greeting}>
-                    {/*todo: make bigger normal, smaller on mobile sizes*/}
+                    {/*todo: make bigger normal, smaller on mobile sizes, same method as xs stuff. do for all headings.*/}
                     Hey there, I'm Jack Zheng
                   </Typography>
                 </Fade>

@@ -42,17 +42,20 @@ class App extends Component {
         <Particles
           params={{
             particles: {
-              size: {
-                value: 5,
-              },
-              color: {
-                value: "#0ff",
-              },
-              lineLinked: {
-                distance: 100,
-              },
               number: {
-                value: 100,
+                value: 50,
+              },
+              size: {
+                value: 3,
+              },
+            },
+            interactivity: {
+              detectsOn: "window",
+              events: {
+                onhover: {
+                  enable: true,
+                  mode: "repulse",
+                },
               },
             },
           }}
