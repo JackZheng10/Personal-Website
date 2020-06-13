@@ -12,6 +12,7 @@ export default (theme) => ({
   layout: {
     marginLeft: "auto",
     marginRight: "auto",
+    height: 400, //todo: fine, but make text centered vertically. might change depending on final font
     [theme.breakpoints.up(649)]: {
       width: 400,
     },

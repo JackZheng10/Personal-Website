@@ -6,8 +6,6 @@ import GitHubLogo from "../../images/GitHubLogo.png";
 import LinkedInLogo from "../../images/LinkedInLogo.png";
 import EmailLogo from "../../images/EmailLogo.png";
 
-//todo: fix weird gradients when applying it to footer
-
 class Footer extends Component {
   redirectGH = () => {
     window.open("https://github.com/JackZheng10");

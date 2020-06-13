@@ -18,7 +18,11 @@
     "react-scripts": "3.4.1",
     "react-sizeme": "^2.6.12",
     "react-syntax-highlighter": "^12.2.1",
-    "react-visibility-sensor": "^5.1.1"
+    "react-visibility-sensor": "^5.1.1",
+    "typeface-barlow": "0.0.71",
+    "typeface-open-sans": "0.0.75",
+    "typeface-poppins": "0.0.72",
+    "typeface-pt-sans": "0.0.72"
   },
   "scripts": {
     "start": "react-scripts start",
