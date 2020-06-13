@@ -18,11 +18,7 @@ import CodeIcon from "@material-ui/icons/Code";
 import CropOriginalIcon from "@material-ui/icons/CropOriginal";
 import topbarStyles from "../../styles/topbarStyles";
 
-/*
-click code button = toggle code view:
--have state in App, passdown codeView bool to different pages
--have function in app to change this state, pass down to toolbar and therefore to this button
-*/
+//todo: maybe indicator for which page youre on, just extract from path
 
 function Topbar(props) {
   let codeView = JSON.parse(localStorage.getItem("codeView"));

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import {
   Fade,
-  Button,
   withStyles,
   Grid,
   Typography,
@@ -9,7 +8,6 @@ import {
   CardContent,
   Divider,
   CardActions,
-  IconButton,
 } from "@material-ui/core";
 import { SizeMe } from "react-sizeme";
 import { Document, Page, pdfjs } from "react-pdf";
@@ -18,14 +16,12 @@ import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import GetAppIcon from "@material-ui/icons/GetApp";
 import resumeStyles from "../styles/resumeStyles";
 import ResumePDF from "../files/PDFTest.pdf";
-// import { Document, Page } from "react-pdf";
-// import { Document, Page } from "react-pdf/build/entry.noworker";
-
+import "react-pdf/dist/Page/AnnotationLayer.css";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
-// import PDFTest from "../files/PDFTest.pdf";
-
 const cron = require("node-cron");
+
+//todo: give placeholder height for loading element so the page doesnt collapse randomly on refresh
 
 class Resume extends Component {
   constructor(props) {
@@ -63,7 +59,7 @@ class Resume extends Component {
   };
 
   handleDownload = () => {
-    alert(1);
+    window.open(ResumePDF);
   };
 
   render() {
@@ -127,7 +123,7 @@ class Resume extends Component {
                     <Card className={classes.root} elevation={10}>
                       <CardContent className={classes.cardContent}>
                         <SizeMe
-                          monitorWidth
+                          monitorWidth //or height?
                           refreshRate={144}
                           refreshMode={"debounce"}
                           render={({ size }) => (

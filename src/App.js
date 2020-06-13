@@ -15,8 +15,9 @@ import Particles from "react-particles-js";
 //todo: make footer float to bottom. dont want the page to have to be long
 //todo: use localstorage to persist toggles of code! no need for function here, just access localstorage in the page
 //todo: make sure there aren't unecessary class components. be impressive man
-//todo: make footer stick to bottom, but footer + main is minheight 100vh
+//todo: make footer stick to bottom, but footer + main is minheight 100vh. doesnt account resize. try window event listener
 //todo: darkmode?
+//todo: vis sensor on arrows? keep non-vis on main titles
 
 class App extends Component {
   state = { codeView: false };
@@ -51,8 +52,9 @@ class App extends Component {
         <div
           style={{
             // backgroundImage: `url(${Moon})`,
-            backgroundColor: "rgb(0, 153, 255)",
-            minHeight: window.innerHeight - 186.89,
+            backgroundColor: "rgb(0, 153, 150)",
+            // minHeight: window.innerHeight - 186.89,
+            minHeight: "100vh", //might be crap
           }}
         >
           {/* <Particles
