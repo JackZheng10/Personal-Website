@@ -8,7 +8,6 @@ export default (theme) => ({
   greeting: {
     textAlign: "center",
     fontWeight: 600,
-
     [theme.breakpoints.up(1701)]: {
       fontSize: 96,
     },
@@ -50,6 +49,8 @@ export default (theme) => ({
     },
     [theme.breakpoints.down(751)]: {
       fontSize: 46,
+      paddingLeft: 5,
+      paddingRight: 5,
     },
   },
   bioTitle: {
@@ -217,5 +218,3 @@ export default (theme) => ({
 });
 
 //STARTING AT 750: vertical view
-//todo: fix large spacing at top at more vertical views, change font of section headers as well
-//^^ maybe when the greeting splits into 2 rows

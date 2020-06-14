@@ -35,3 +35,5 @@ export default (theme) => ({
     textAlign: "center",
   },
 });
+
+//todo: at ~300 px the pictures become too large and it bleeds
