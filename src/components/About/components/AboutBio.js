@@ -68,6 +68,7 @@ class AboutBio extends Component {
       { scheduled: false }
     );
 
+    //todo: remove logic stuff for experience section viz sensor
     this.flashArrow2 = cron.schedule(
       "*/1 * * * * *",
       () => {
@@ -242,7 +243,11 @@ class AboutBio extends Component {
             >
               <Grid item className={classes.profilePic}>
                 <Fade in={this.state.showPic} timeout={3000}>
-                  <img src={ProfilePic} alt="Profile Pic" />
+                  <img
+                    src={ProfilePic}
+                    alt="Profile Pic"
+                    className={classes.profilePicSrc}
+                  />
                 </Fade>
               </Grid>
               <Grid item className={classes.bioItem}>

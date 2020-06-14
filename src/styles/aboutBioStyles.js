@@ -172,6 +172,12 @@ export default (theme) => ({
     },
     order: 1,
   },
+  profilePicSrc: {
+    [theme.breakpoints.down(471)]: {
+      width: "90vw",
+      height: "auto",
+    },
+  },
   learnSection: {
     backgroundColor: "#63c1ff",
     width: "100%",
@@ -186,6 +192,8 @@ export default (theme) => ({
 });
 
 //STARTING AT 750: vertical view
+//todo: fix large spacing at top at more vertical views, change font of section headers as well
+//^^ maybe when the greeting splits into 2 rows
 
 /*
   name: {
