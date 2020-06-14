@@ -30,7 +30,7 @@ function Topbar(props) {
     <React.Fragment>
       <AppBar className={classes.root} position="fixed">
         <Toolbar>
-          <Hidden only={["md", "lg", "xl"]}>
+          <Hidden only={["lg", "xl", "md", "sm"]}>
             <IconButton
               className={classes.mobileButton}
               size="small"
@@ -56,7 +56,7 @@ function Topbar(props) {
               <FindInPageIcon />
             </IconButton>
           </Hidden>
-          <Hidden only={["sm", "xs"]}>
+          <Hidden only={["xs"]}>
             <Button
               variant="outlined"
               color="primary"
