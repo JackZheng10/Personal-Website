@@ -8,6 +8,7 @@ export default (theme) => ({
   greeting: {
     textAlign: "center",
     fontWeight: 600,
+
     [theme.breakpoints.up(1701)]: {
       fontSize: 96,
     },
@@ -144,6 +145,25 @@ export default (theme) => ({
   sectionHeader: {
     textAlign: "center",
     fontWeight: 600,
+
+    [theme.breakpoints.down(532)]: {
+      fontSize: 48 * Math.pow(0.92, 1),
+    },
+    [theme.breakpoints.down(490)]: {
+      fontSize: 48 * Math.pow(0.92, 2),
+    },
+    [theme.breakpoints.down(445)]: {
+      fontSize: 48 * Math.pow(0.92, 3),
+    },
+    [theme.breakpoints.down(410)]: {
+      fontSize: 48 * Math.pow(0.92, 4),
+    },
+    [theme.breakpoints.down(375)]: {
+      fontSize: 48 * Math.pow(0.92, 5),
+    },
+    [theme.breakpoints.down(343)]: {
+      fontSize: 48 * Math.pow(0.92, 6),
+    },
   },
   profilePic: {
     marginLeft: "auto",
@@ -189,37 +209,11 @@ export default (theme) => ({
       marginBottom: 15,
     },
   },
+  pageContainer: {
+    [theme.breakpoints.down(751)]: {},
+  },
 });
 
 //STARTING AT 750: vertical view
 //todo: fix large spacing at top at more vertical views, change font of section headers as well
 //^^ maybe when the greeting splits into 2 rows
-//todo: container vs grid vs box vs paper vs card
-
-/*
-  name: {
-      color: "white",
-    },
-    greenButton: {
-      backgroundImage: "linear-gradient(to right, #58ed76, #014f11) ",
-      color: "white",
-    },
-    redButton: {
-      backgroundImage: "linear-gradient(to right, #fa4b4b, #750000) ",
-      color: "white",
-    },
-    card: {
-      width: "auto",
-    },
-    cardHeader: {
-      textAlign: "center",
-      backgroundColor: "rgb(249, 122, 22)",
-    },
-    cardContent: {
-      textAlign: "center",
-      backgroundColor: "rgb(245, 146, 70)",
-    },
-    cardActions: {
-      justifyContent: "center",
-    },
-  */

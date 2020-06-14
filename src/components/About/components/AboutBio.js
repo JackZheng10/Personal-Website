@@ -33,7 +33,6 @@ const cron = require("node-cron");
 //todo: use the window scroll to on every page to force starting at the top
 //todo: stay visible after shown, just use prev state, if true then keep true? w/viz sensor
 //todo: find out why sometimes when switching to this, the about cards flash as if it was visible
-//todo: for headers, make bigger normal, smaller on mobile sizes, same method as xs stuff. do for all headings.
 //todo: collapsing on refresh or revisit? maybe because of the particle bg or fade?? remove fades on bio to see why. it shouldnt bug out when removed
 //todo: on refesh at width 1222 in dev mode, wierd shifting of bio text. maybe a bug
 //todo: redo visibility stuff. and fading as well.
@@ -180,61 +179,18 @@ class AboutBio extends Component {
     }
   };
 
-  handleXsGreeting = () => {
-    //better performance w/ifs? change rest probably. https://stackoverflow.com/questions/6665997/switch-statement-for-greater-than-less-than
-    let width = window.innerWidth;
-
-    if (width >= 1700) {
-      return "h1";
-    } else if (width >= 1300) {
-      return "h2";
-    } else if (width >= 1100) {
-      return "h3";
-    } else if (width >= 900) {
-      return "h4";
-    } else if (width >= 600) {
-      return "h5";
-    }
-  };
-
-  handleXsBioTitle = () => {
-    let width = window.innerWidth;
-
-    if (width >= 1700) {
-      return "h3";
-    } else if (width >= 1300) {
-      return "h4";
-    } else if (width >= 1100) {
-      return "h4";
-    } else if (width >= 900) {
-      return "h5";
-    } else if (width >= 600) {
-      return "h6";
-    }
-  };
-
-  handleXsBio = () => {
-    let width = window.innerWidth;
-
-    if (width >= 1700) {
-      return "h5";
-    } else if (width >= 1300) {
-      return "h5";
-    } else if (width >= 900) {
-      return "h6";
-    } else if (width >= 600) {
-      return "subtitle1";
-    }
-  };
-
   render() {
     const classes = this.props.classes;
 
     return (
       <React.Fragment>
-        <Grid container direction="column" justify="center" alignItems="center">
-          <br />
-          <br />
+        <Grid
+          container
+          direction="column"
+          justify="center"
+          alignItems="center"
+          className={classes.pageContainer}
+        >
           <Grid item>
             <Grid
               container
