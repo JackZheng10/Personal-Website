@@ -6,6 +6,7 @@ import {
   Fade,
   withWidth,
   Box,
+  Paper,
 } from "@material-ui/core";
 import PropTypes from "prop-types";
 import VizSensor from "react-visibility-sensor";
@@ -33,9 +34,9 @@ const cron = require("node-cron");
 //todo: stay visible after shown, just use prev state, if true then keep true? w/viz sensor
 //todo: find out why sometimes when switching to this, the about cards flash as if it was visible
 //todo: for headers, make bigger normal, smaller on mobile sizes, same method as xs stuff. do for all headings.
-//todo: collapsing on refresh???
+//todo: collapsing on refresh or revisit? maybe because of the particle bg or fade?? remove fades on bio to see why. it shouldnt bug out when removed
 //todo: on refesh at width 1222 in dev mode, wierd shifting of bio text. maybe a bug
-//todo: redo visibility stuff.
+//todo: redo visibility stuff. and fading as well.
 //todo: still fade in the greeting first, or only do it on width 750 or less (when vertical view starts)
 
 class AboutBio extends Component {
@@ -270,7 +271,7 @@ class AboutBio extends Component {
           </Grid>
           <br />
           <br />
-          <Box boxShadow={20} className={classes.infoSection}>
+          <Paper elevation={24} className={classes.infoSection}>
             <br />
             <br />
             <Grid item>
@@ -383,12 +384,12 @@ class AboutBio extends Component {
             </Grid>
             <br />
             <br />
-          </Box>
+          </Paper>
           <br />
           <br />
           <br />
           <br />
-          <Box boxShadow={20} className={classes.infoSection}>
+          <Paper elevation={24} className={classes.infoSection}>
             <br />
             <br />
             <Grid item>
@@ -530,7 +531,7 @@ class AboutBio extends Component {
             </Grid>
             <br />
             <br />
-          </Box>
+          </Paper>
         </Grid>
       </React.Fragment>
     );

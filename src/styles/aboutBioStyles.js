@@ -194,6 +194,7 @@ export default (theme) => ({
 //STARTING AT 750: vertical view
 //todo: fix large spacing at top at more vertical views, change font of section headers as well
 //^^ maybe when the greeting splits into 2 rows
+//todo: container vs grid vs box vs paper vs card
 
 /*
   name: {
