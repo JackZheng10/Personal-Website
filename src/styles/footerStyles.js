@@ -10,7 +10,7 @@ export default (theme) => ({
     //   "linear-gradient( 136deg, rgb(0, 153, 255) 15%, rgb(2, 46, 117) 50%, rgb(0, 153, 255) 100%)",
     // backgroundColor: "rgb(2, 46, 117)",
     backgroundImage:
-      "linear-gradient( 136deg, rgb(0, 153, 255) 15%, rgb(2, 46, 117) 50%, rgb(0, 153, 255) 100%)",
+      "linear-gradient( 136deg, rgb(0, 153, 255) 15%, rgb(0, 153, 255) 50%, rgb(0, 153, 255) 100%)",
   },
   name: {
     color: "white",

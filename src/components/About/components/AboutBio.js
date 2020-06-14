@@ -5,6 +5,7 @@ import {
   withStyles,
   Fade,
   withWidth,
+  Box,
 } from "@material-ui/core";
 import PropTypes from "prop-types";
 import VizSensor from "react-visibility-sensor";
@@ -31,6 +32,11 @@ const cron = require("node-cron");
 //todo: use the window scroll to on every page to force starting at the top
 //todo: stay visible after shown, just use prev state, if true then keep true? w/viz sensor
 //todo: find out why sometimes when switching to this, the about cards flash as if it was visible
+//todo: for headers, make bigger normal, smaller on mobile sizes, same method as xs stuff. do for all headings.
+//todo: collapsing on refresh???
+//todo: on refesh at width 1222 in dev mode, wierd shifting of bio text. maybe a bug
+//todo: redo visibility stuff.
+//todo: still fade in the greeting first, or only do it on width 750 or less (when vertical view starts)
 
 class AboutBio extends Component {
   constructor(props) {
@@ -171,30 +177,59 @@ class AboutBio extends Component {
     }
   };
 
+  handleXsGreeting = () => {
+    //better performance w/ifs? change rest probably. https://stackoverflow.com/questions/6665997/switch-statement-for-greater-than-less-than
+    let width = window.innerWidth;
+
+    if (width >= 1700) {
+      return "h1";
+    } else if (width >= 1300) {
+      return "h2";
+    } else if (width >= 1100) {
+      return "h3";
+    } else if (width >= 900) {
+      return "h4";
+    } else if (width >= 600) {
+      return "h5";
+    }
+  };
+
+  handleXsBioTitle = () => {
+    let width = window.innerWidth;
+
+    if (width >= 1700) {
+      return "h3";
+    } else if (width >= 1300) {
+      return "h4";
+    } else if (width >= 1100) {
+      return "h4";
+    } else if (width >= 900) {
+      return "h5";
+    } else if (width >= 600) {
+      return "h6";
+    }
+  };
+
+  handleXsBio = () => {
+    let width = window.innerWidth;
+
+    if (width >= 1700) {
+      return "h5";
+    } else if (width >= 1300) {
+      return "h5";
+    } else if (width >= 900) {
+      return "h6";
+    } else if (width >= 600) {
+      return "subtitle1";
+    }
+  };
+
   render() {
     const classes = this.props.classes;
 
     return (
       <React.Fragment>
         <Grid container direction="column" justify="center" alignItems="center">
-          <Grid item>
-            <Grid
-              container
-              spacing={0}
-              direction="row"
-              justify="center"
-              alignItems="center"
-            >
-              <Grid item>
-                <Fade in={this.state.showGreeting} timeout={3000}>
-                  <Typography variant="h1" className={classes.greeting}>
-                    {/*todo: make bigger normal, smaller on mobile sizes, same method as xs stuff. do for all headings.*/}
-                    Hey there, I'm Jack Zheng
-                  </Typography>
-                </Fade>
-              </Grid>
-            </Grid>
-          </Grid>
           <br />
           <br />
           <Grid item>
@@ -205,22 +240,22 @@ class AboutBio extends Component {
               justify="center"
               alignItems="center"
             >
-              <Grid item>
+              <Grid item className={classes.profilePic}>
                 <Fade in={this.state.showPic} timeout={3000}>
-                  <img
-                    src={ProfilePic}
-                    alt="Profile Pic"
-                    className={classes.profilePic}
-                  />
+                  <img src={ProfilePic} alt="Profile Pic" />
                 </Fade>
               </Grid>
               <Grid item>
                 <Fade in={this.state.showBio} timeout={3000}>
                   <div style={{ textAlign: "center" }}>
-                    <Typography variant="h3">
+                    <Typography variant="h1" className={classes.greeting}>
+                      Hey there, I'm Jack Zheng
+                    </Typography>
+                    <br />
+                    <Typography variant="h2" className={classes.bioTitle}>
                       Computer Science Student
                     </Typography>
-                    <Typography variant="h5">
+                    <Typography variant="h4" className={classes.bio}>
                       Aspiring Software Engineer
                     </Typography>
                   </div>
@@ -230,124 +265,120 @@ class AboutBio extends Component {
           </Grid>
           <br />
           <br />
-          <Grid item>
-            <Grid
-              container
-              spacing={0}
-              direction="row"
-              justify="center"
-              alignItems="center"
-            >
-              <Grid item>
-                <Fade in={this.state.showLearnMore} timeout={3000}>
-                  <Typography variant="h3" className={classes.greeting}>
-                    Learn more about me
-                  </Typography>
-                </Fade>
-              </Grid>
-            </Grid>
-          </Grid>
-          <Grid item>
-            <Grid
-              container
-              spacing={0}
-              direction="row"
-              justify="center"
-              alignItems="center"
-            >
-              <Grid item>
-                <Fade in={this.state.showArrow1} timeout={990}>
-                  <KeyboardArrowDownIcon fontSize="large" />
-                </Fade>
-              </Grid>
-            </Grid>
-          </Grid>
-          <br />
-          <br />
-          <Grid item>
-            <Grid
-              container
-              spacing={this.handleXsSpacing()}
-              direction="row"
-              justify="center"
-              alignItems="center"
-            >
-              <VizSensor
-                partialVisibility={this.handleXsVisible()}
-                onChange={(isVisible) => {
-                  this.renderAboutCards(isVisible, 1);
-                }}
+          <Box boxShadow={20} className={classes.learnSection}>
+            <br />
+            <br />
+            <Grid item>
+              <Grid
+                container
+                spacing={0}
+                direction="column"
+                justify="center"
+                alignItems="center"
               >
-                <Grid item style={{ padding: this.handleXsPadding() }}>
-                  <Fade
-                    in={this.state.showCard1}
-                    timeout={this.handleXsTimeout(1)}
+                <Grid item>
+                  <Fade in={this.state.showLearnMore} timeout={3000}>
+                    <Typography variant="h3" className={classes.sectionHeader}>
+                      Learn more about me
+                    </Typography>
+                  </Fade>
+                </Grid>
+                <Grid item>
+                  <Fade in={this.state.showArrow1} timeout={990}>
+                    <KeyboardArrowDownIcon fontSize="large" />
+                  </Fade>
+                </Grid>
+                <br />
+                <br />
+                <Grid item>
+                  <Grid
+                    container
+                    spacing={this.handleXsSpacing()}
+                    direction="row"
+                    justify="center"
+                    alignItems="center"
                   >
-                    <div>
-                      <AboutCard
-                        image={UFLogo}
-                        alt="UF Logo"
-                        title="I am a..."
-                        text="I'm a Junior at the University of Florida 
+                    <VizSensor
+                      partialVisibility={this.handleXsVisible()}
+                      onChange={(isVisible) => {
+                        this.renderAboutCards(isVisible, 1);
+                      }}
+                    >
+                      <Grid item style={{ padding: this.handleXsPadding() }}>
+                        <Fade
+                          in={this.state.showCard1}
+                          timeout={this.handleXsTimeout(1)}
+                        >
+                          <div>
+                            <AboutCard
+                              image={UFLogo}
+                              alt="UF Logo"
+                              title="I am a..."
+                              text="I'm a Junior at the University of Florida 
                     studying computer science. I was extremely addicted to computers as a kid
                      - and I can say that not much has changed! 
                     Above all else, I'm grateful for what I'm learning along the way."
-                      />
-                    </div>
-                  </Fade>
-                </Grid>
-              </VizSensor>
-              <VizSensor
-                partialVisibility={this.handleXsVisible()}
-                onChange={(isVisible) => {
-                  this.renderAboutCards(isVisible, 2);
-                }}
-              >
-                <Grid item style={{ padding: this.handleXsPadding() }}>
-                  <Fade
-                    in={this.state.showCard2}
-                    timeout={this.handleXsTimeout(2)}
-                  >
-                    <div>
-                      <AboutCard
-                        image={DevLogo}
-                        alt="Dev Logo"
-                        title="I like to..."
-                        text="I like to learn about new technologies and topics, 
+                            />
+                          </div>
+                        </Fade>
+                      </Grid>
+                    </VizSensor>
+                    <VizSensor
+                      partialVisibility={this.handleXsVisible()}
+                      onChange={(isVisible) => {
+                        this.renderAboutCards(isVisible, 2);
+                      }}
+                    >
+                      <Grid item style={{ padding: this.handleXsPadding() }}>
+                        <Fade
+                          in={this.state.showCard2}
+                          timeout={this.handleXsTimeout(2)}
+                        >
+                          <div>
+                            <AboutCard
+                              image={DevLogo}
+                              alt="Dev Logo"
+                              title="I like to..."
+                              text="I like to learn about new technologies and topics, 
                     so I spend a lot of time working on personal projects. 
                     I'm very interested in full-stack web development, 
                     but I've also worked with mobile applications before."
-                      />
-                    </div>
-                  </Fade>
+                            />
+                          </div>
+                        </Fade>
+                      </Grid>
+                    </VizSensor>
+                    <VizSensor
+                      partialVisibility={this.handleXsVisible()}
+                      onChange={(isVisible) => {
+                        this.renderAboutCards(isVisible, 3);
+                      }}
+                    >
+                      <Grid item style={{ padding: this.handleXsPadding() }}>
+                        <Fade
+                          in={this.state.showCard3}
+                          timeout={this.handleXsTimeout(3)}
+                        >
+                          <div>
+                            <AboutCard
+                              image={HockeyLogo}
+                              alt="Hockey Logo"
+                              title="In my free time..."
+                              text="When I'm not doing anything related to computer science, 
+                              you'll likely find me at the gym, playing hockey (wherever I can find a rink), 
+                            or chilling out with some music. Hit me up for some good recommendations. "
+                            />
+                          </div>
+                        </Fade>
+                      </Grid>
+                    </VizSensor>
+                  </Grid>
                 </Grid>
-              </VizSensor>
-              <VizSensor
-                partialVisibility={this.handleXsVisible()}
-                onChange={(isVisible) => {
-                  this.renderAboutCards(isVisible, 3);
-                }}
-              >
-                <Grid item style={{ padding: this.handleXsPadding() }}>
-                  <Fade
-                    in={this.state.showCard3}
-                    timeout={this.handleXsTimeout(3)}
-                  >
-                    <div>
-                      <AboutCard
-                        image={HockeyLogo}
-                        alt="Hockey Logo"
-                        title="In my free time..."
-                        text="When I'm not doing anything related to computer science, 
-                    you'll likely find me at the gym, playing hockey (wherever I can find a rink), 
-                    or chilling out with some music. Hit me up for some good recommendations. "
-                      />
-                    </div>
-                  </Fade>
-                </Grid>
-              </VizSensor>
+              </Grid>
             </Grid>
-          </Grid>
+            <br />
+            <br />
+          </Box>
           <br />
           <br />
           <br />
@@ -367,7 +398,7 @@ class AboutBio extends Component {
               >
                 <Grid item>
                   <Fade in={this.state.showLearnExp} timeout={3000}>
-                    <Typography variant="h4" className={classes.greeting}>
+                    <Typography variant="h4" className={classes.sectionHeader}>
                       My experience
                     </Typography>
                   </Fade>
