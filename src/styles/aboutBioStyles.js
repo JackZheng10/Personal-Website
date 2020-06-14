@@ -47,7 +47,7 @@ export default (theme) => ({
     [theme.breakpoints.down(800)]: {
       fontSize: 33,
     },
-    [theme.breakpoints.down(752)]: {
+    [theme.breakpoints.down(751)]: {
       fontSize: 46,
     },
   },
@@ -92,7 +92,7 @@ export default (theme) => ({
     [theme.breakpoints.down(800)]: {
       fontSize: 23,
     },
-    [theme.breakpoints.down(752)]: {
+    [theme.breakpoints.down(751)]: {
       fontSize: 31,
     },
   },
@@ -137,7 +137,7 @@ export default (theme) => ({
     [theme.breakpoints.down(800)]: {
       fontSize: 16,
     },
-    [theme.breakpoints.down(752)]: {
+    [theme.breakpoints.down(751)]: {
       fontSize: 20,
     },
   },
@@ -148,9 +148,8 @@ export default (theme) => ({
   profilePic: {
     marginLeft: "auto",
     marginRight: "auto",
-    [theme.breakpoints.up(752)]: {
-      marginBottom: -100,
-    },
+    zIndex: -1,
+    marginBottom: -100,
     [theme.breakpoints.down(1160)]: {
       marginRight: -50,
     },
@@ -166,16 +165,27 @@ export default (theme) => ({
     [theme.breakpoints.down(780)]: {
       marginRight: -120,
     },
-    [theme.breakpoints.down(752)]: {
+    [theme.breakpoints.down(751)]: {
+      //actually only applies at 750 AND down. should test for up too
       marginRight: "auto",
+      order: 2,
     },
-    zIndex: -1,
+    order: 1,
   },
   learnSection: {
     backgroundColor: "#63c1ff",
     width: "100%",
   },
+  bioItem: {
+    order: 2,
+    [theme.breakpoints.down(751)]: {
+      order: 1,
+      marginBottom: 15,
+    },
+  },
 });
+
+//STARTING AT 750: vertical view
 
 /*
   name: {

@@ -19,6 +19,7 @@ import CropOriginalIcon from "@material-ui/icons/CropOriginal";
 import topbarStyles from "../../styles/topbarStyles";
 
 //todo: maybe indicator for which page youre on, just extract from path
+//todo: maybe change when mobile buttons appear. when vertical view starts @750. probably use fade since hidden doesnt have a true/false
 
 function Topbar(props) {
   let codeView = JSON.parse(localStorage.getItem("codeView"));

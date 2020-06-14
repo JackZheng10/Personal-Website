@@ -245,7 +245,7 @@ class AboutBio extends Component {
                   <img src={ProfilePic} alt="Profile Pic" />
                 </Fade>
               </Grid>
-              <Grid item>
+              <Grid item className={classes.bioItem}>
                 <Fade in={this.state.showBio} timeout={3000}>
                   <div style={{ textAlign: "center" }}>
                     <Typography variant="h1" className={classes.greeting}>
@@ -383,138 +383,149 @@ class AboutBio extends Component {
           <br />
           <br />
           <br />
-          <Grid item>
-            <Grid
-              container
-              spacing={0}
-              direction="row"
-              justify="center"
-              alignItems="center"
-            >
-              <VizSensor
-                onChange={(isVisible) => {
-                  this.renderLearnExp(isVisible);
-                }}
+          <Box boxShadow={20} className={classes.learnSection}>
+            <br />
+            <br />
+            <Grid item>
+              <Grid
+                container
+                spacing={0}
+                direction="column"
+                justify="center"
+                alignItems="center"
               >
                 <Grid item>
-                  <Fade in={this.state.showLearnExp} timeout={3000}>
-                    <Typography variant="h4" className={classes.sectionHeader}>
-                      My experience
-                    </Typography>
-                  </Fade>
+                  {/* <VizSensor
+                    onChange={(isVisible) => {
+                      this.renderLearnExp(isVisible);
+                    }}
+                  > */}
+                  <Grid item>
+                    <Fade in={this.state.showLearnMore} timeout={3000}>
+                      <Typography
+                        variant="h3"
+                        className={classes.sectionHeader}
+                      >
+                        My experience
+                      </Typography>
+                    </Fade>
+                  </Grid>
+                  {/* </VizSensor> */}
                 </Grid>
-              </VizSensor>
-            </Grid>
-          </Grid>
-          <Grid item>
-            <Grid
-              container
-              spacing={0}
-              direction="row"
-              justify="center"
-              alignItems="center"
-            >
-              <VizSensor
-                onChange={(isVisible) => {
-                  this.renderArrow2(isVisible);
-                }}
-              >
                 <Grid item>
-                  <Fade in={this.state.showArrow2} timeout={990}>
-                    <KeyboardArrowDownIcon fontSize="large" />
-                  </Fade>
+                  <Grid
+                    container
+                    spacing={0}
+                    direction="row"
+                    justify="center"
+                    alignItems="center"
+                  >
+                    {/* <VizSensor
+                      onChange={(isVisible) => {
+                        this.renderArrow2(isVisible);
+                      }}
+                    > */}
+                    <Grid item>
+                      <Fade in={this.state.showArrow1} timeout={990}>
+                        <KeyboardArrowDownIcon fontSize="large" />
+                      </Fade>
+                    </Grid>
+                    {/* </VizSensor> */}
+                  </Grid>
                 </Grid>
-              </VizSensor>
+                <br />
+                <br />
+                <Grid item>
+                  <Grid
+                    container
+                    spacing={this.handleXsSpacing()}
+                    style={{ padding: this.handleXsPadding() }}
+                    direction="row"
+                    justify="center"
+                    alignItems="center"
+                  >
+                    <VizSensor
+                      partialVisibility={this.handleXsVisible()}
+                      onChange={(isVisible) => {
+                        this.renderExperienceCards(isVisible, 1);
+                      }}
+                    >
+                      <Grid item style={{ padding: this.handleXsPadding() }}>
+                        <Fade
+                          in={this.state.showExp1}
+                          timeout={this.handleXsTimeout(1)}
+                        >
+                          <div>
+                            <AboutCard
+                              image={LaundrLogo}
+                              alt="Laundr Logo"
+                              title="Laundr"
+                              text="I'm a Junior at the University of Florida 
+                    studying computer science. I was extremely addicted to computers as a kid
+                     - and I can say that not much has changed! 
+                    Above all else, I'm grateful for what I'm learning along the way."
+                            />
+                          </div>
+                        </Fade>
+                      </Grid>
+                    </VizSensor>
+                    <VizSensor
+                      partialVisibility={this.handleXsVisible()}
+                      onChange={(isVisible) => {
+                        this.renderExperienceCards(isVisible, 2);
+                      }}
+                    >
+                      <Grid item style={{ padding: this.handleXsPadding() }}>
+                        <Fade
+                          in={this.state.showExp2}
+                          timeout={this.handleXsTimeout(2)}
+                        >
+                          <div>
+                            <AboutCard
+                              image={UFCOELogo}
+                              alt="UF CoE Logo"
+                              title="UF College of Engineering"
+                              text="I'm a Junior at the University of Florida 
+                    studying computer science. I was extremely addicted to computers as a kid
+                     - and I can say that not much has changed! 
+                    Above all else, I'm grateful for what I'm learning along the way."
+                            />
+                          </div>
+                        </Fade>
+                      </Grid>
+                    </VizSensor>
+                    <VizSensor
+                      partialVisibility={this.handleXsVisible()}
+                      onChange={(isVisible) => {
+                        this.renderExperienceCards(isVisible, 3);
+                      }}
+                    >
+                      <Grid item style={{ padding: this.handleXsPadding() }}>
+                        <Fade
+                          in={this.state.showExp3}
+                          timeout={this.handleXsTimeout(3)}
+                        >
+                          <div>
+                            <AboutCard
+                              image={UFCOEdLogo}
+                              alt="UF CoE Logo"
+                              title="UF College of Education"
+                              text="I'm a Junior at the University of Florida 
+                    studying computer science. I was extremely addicted to computers as a kid
+                     - and I can say that not much has changed! 
+                    Above all else, I'm grateful for what I'm learning along the way."
+                            />
+                          </div>
+                        </Fade>
+                      </Grid>
+                    </VizSensor>
+                  </Grid>
+                </Grid>
+              </Grid>
             </Grid>
-          </Grid>
-          <br />
-          <br />
-          <Grid item>
-            <Grid
-              container
-              spacing={this.handleXsSpacing()}
-              style={{ padding: this.handleXsPadding() }}
-              direction="row"
-              justify="center"
-              alignItems="center"
-            >
-              <VizSensor
-                partialVisibility={this.handleXsVisible()}
-                onChange={(isVisible) => {
-                  this.renderExperienceCards(isVisible, 1);
-                }}
-              >
-                <Grid item style={{ padding: this.handleXsPadding() }}>
-                  <Fade
-                    in={this.state.showExp1}
-                    timeout={this.handleXsTimeout(1)}
-                  >
-                    <div>
-                      <AboutCard
-                        image={LaundrLogo}
-                        alt="Laundr Logo"
-                        title="Laundr"
-                        text="I'm a Junior at the University of Florida 
-                    studying computer science. I was extremely addicted to computers as a kid
-                     - and I can say that not much has changed! 
-                    Above all else, I'm grateful for what I'm learning along the way."
-                      />
-                    </div>
-                  </Fade>
-                </Grid>
-              </VizSensor>
-              <VizSensor
-                partialVisibility={this.handleXsVisible()}
-                onChange={(isVisible) => {
-                  this.renderExperienceCards(isVisible, 2);
-                }}
-              >
-                <Grid item style={{ padding: this.handleXsPadding() }}>
-                  <Fade
-                    in={this.state.showExp2}
-                    timeout={this.handleXsTimeout(2)}
-                  >
-                    <div>
-                      <AboutCard
-                        image={UFCOELogo}
-                        alt="UF CoE Logo"
-                        title="UF College of Engineering"
-                        text="I'm a Junior at the University of Florida 
-                    studying computer science. I was extremely addicted to computers as a kid
-                     - and I can say that not much has changed! 
-                    Above all else, I'm grateful for what I'm learning along the way."
-                      />
-                    </div>
-                  </Fade>
-                </Grid>
-              </VizSensor>
-              <VizSensor
-                partialVisibility={this.handleXsVisible()}
-                onChange={(isVisible) => {
-                  this.renderExperienceCards(isVisible, 3);
-                }}
-              >
-                <Grid item style={{ padding: this.handleXsPadding() }}>
-                  <Fade
-                    in={this.state.showExp3}
-                    timeout={this.handleXsTimeout(3)}
-                  >
-                    <div>
-                      <AboutCard
-                        image={UFCOEdLogo}
-                        alt="UF CoE Logo"
-                        title="UF College of Education"
-                        text="I'm a Junior at the University of Florida 
-                    studying computer science. I was extremely addicted to computers as a kid
-                     - and I can say that not much has changed! 
-                    Above all else, I'm grateful for what I'm learning along the way."
-                      />
-                    </div>
-                  </Fade>
-                </Grid>
-              </VizSensor>
-            </Grid>
-          </Grid>
+            <br />
+            <br />
+          </Box>
         </Grid>
       </React.Fragment>
     );
