@@ -145,7 +145,9 @@ export default (theme) => ({
   sectionHeader: {
     textAlign: "center",
     fontWeight: 600,
-
+    [theme.breakpoints.down(751)]: {
+      marginTop: -25,
+    },
     [theme.breakpoints.down(532)]: {
       fontSize: 48 * Math.pow(0.92, 1),
     },
