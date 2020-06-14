@@ -250,7 +250,7 @@ class AboutBio extends Component {
                   />
                 </Fade>
               </Grid>
-              <Grid item className={classes.bioItem}>
+              <Grid item className={classes.bio}>
                 <Fade in={this.state.showBio} timeout={3000}>
                   <div style={{ textAlign: "center" }}>
                     <Typography variant="h1" className={classes.greeting}>
@@ -260,7 +260,7 @@ class AboutBio extends Component {
                     <Typography variant="h2" className={classes.bioTitle}>
                       Computer Science Student
                     </Typography>
-                    <Typography variant="h4" className={classes.bio}>
+                    <Typography variant="h4" className={classes.bioText}>
                       Aspiring Software Engineer
                     </Typography>
                   </div>
@@ -270,7 +270,7 @@ class AboutBio extends Component {
           </Grid>
           <br />
           <br />
-          <Box boxShadow={20} className={classes.learnSection}>
+          <Box boxShadow={20} className={classes.infoSection}>
             <br />
             <br />
             <Grid item>
@@ -388,7 +388,7 @@ class AboutBio extends Component {
           <br />
           <br />
           <br />
-          <Box boxShadow={20} className={classes.learnSection}>
+          <Box boxShadow={20} className={classes.infoSection}>
             <br />
             <br />
             <Grid item>

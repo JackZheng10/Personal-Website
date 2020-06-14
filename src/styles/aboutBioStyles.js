@@ -96,7 +96,7 @@ export default (theme) => ({
       fontSize: 31,
     },
   },
-  bio: {
+  bioText: {
     textAlign: "center",
     [theme.breakpoints.up(1701)]: {
       fontSize: 34,
@@ -143,7 +143,7 @@ export default (theme) => ({
   },
   sectionHeader: {
     textAlign: "center",
-    fontWeight: 500,
+    fontWeight: 600,
   },
   profilePic: {
     marginLeft: "auto",
@@ -178,11 +178,11 @@ export default (theme) => ({
       height: "auto",
     },
   },
-  learnSection: {
+  infoSection: {
     backgroundColor: "#63c1ff",
     width: "100%",
   },
-  bioItem: {
+  bio: {
     order: 2,
     [theme.breakpoints.down(751)]: {
       order: 1,
