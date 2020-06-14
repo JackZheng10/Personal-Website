@@ -38,6 +38,7 @@ const cron = require("node-cron");
 //todo: on refesh at width 1222 in dev mode, wierd shifting of bio text. maybe a bug
 //todo: redo visibility stuff. and fading as well.
 //todo: still fade in the greeting first, or only do it on width 750 or less (when vertical view starts)
+//todo: maybe change timings back (to before 6/14)
 
 class AboutBio extends Component {
   constructor(props) {
@@ -86,19 +87,19 @@ class AboutBio extends Component {
 
     setTimeout(() => {
       this.setState({ showPic: true });
-    }, 2000);
+    }, 1000);
 
     setTimeout(() => {
       this.setState({ showBio: true });
-    }, 2000);
+    }, 1000);
 
     setTimeout(() => {
       this.setState({ showLearnMore: true });
-    }, 3000);
+    }, 2000);
 
     setTimeout(() => {
       this.flashArrow1.start();
-    }, 4000);
+    }, 3000);
   };
 
   //todo: testing delay on card vis so no ghost cards on switch back to normal view

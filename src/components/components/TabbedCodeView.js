@@ -86,19 +86,19 @@ class TabbedCodeView extends Component {
   componentDidMount = () => {
     setTimeout(() => {
       this.setState({ showIntro: true });
-    }, 500);
+    }, 1000);
 
     setTimeout(() => {
       this.flashArrow.start();
-    }, 1500);
+    }, 2000);
 
     setTimeout(() => {
       this.setState({ showButtons: true });
-    }, 2500);
+    }, 3000);
 
     setTimeout(() => {
       this.setState({ showCode: true });
-    }, 2500);
+    }, 3000);
   };
 
   getFiles = (page) => {
