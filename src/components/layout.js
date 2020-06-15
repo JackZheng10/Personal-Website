@@ -20,12 +20,6 @@ import Footer from "./Footer";
 //todo: !!!with gatsby transfer, the code toggle button doesn't work
 
 class Layout extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = { codeView: false };
-  }
-
   toggleCodeView = (event) => {
     //BRO IT'S A STRING AHHH I DIDN'T KNOW
     if (typeof localStorage !== "undefined") {
@@ -33,12 +27,8 @@ class Layout extends Component {
     }
     console.log("Code view changed to: " + event.target.checked);
 
-    this.setState({ codeView: event.target.checked });
+    this.props.toggleCodeView(event.target.checked);
   };
-
-  componentDidUpdate() {
-    console.log("updated!");
-  }
 
   render() {
     return (

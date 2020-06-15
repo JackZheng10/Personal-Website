@@ -9,6 +9,7 @@ import {
   //   Divider,
   //   CardActions,
 } from "@material-ui/core";
+import Layout from "../components/layout";
 import PropTypes from "prop-types";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import projectsStyles from "../styles/projectsStyles";
@@ -49,7 +50,7 @@ class Projects extends Component {
     const classes = this.props.classes;
 
     return (
-      <React.Fragment>
+      <Layout>
         <br />
         <br />
         <Grid
@@ -110,7 +111,7 @@ class Projects extends Component {
         <br />
         <br />
         <br />
-      </React.Fragment>
+      </Layout>
     );
   }
 }

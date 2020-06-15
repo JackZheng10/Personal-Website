@@ -5,8 +5,16 @@ import TabbedCodeView from "../components/TabbedCodeView";
 
 //todo: move away from br as spacing, just calculate how many pixels its taking up instead and use that for margin.
 //todo: get rid of unecessary react.fragment
+//todo: solution is to pass a callback into layout and have layout call it, but i dont want to make a function in every page for it.
+//important: will not rerender if props are same.
 
 class About extends Component {
+  state = { codeView: false };
+
+  toggleCodeView = (codeView) => {
+    this.setState({ codeView });
+  };
+
   renderView = () => {
     let codeView = false;
 
@@ -25,7 +33,7 @@ class About extends Component {
 
   render() {
     return (
-      <Layout>
+      <Layout toggleCodeView={this.toggleCodeView}>
         <br />
         <br />
         {this.renderView()}

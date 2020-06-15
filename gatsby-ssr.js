@@ -48,13 +48,11 @@ function Wrapper(props) {
       <ThemeProvider theme={theme}>
         {/* <StylesProvider injectFirst> */}
         <CssBaseline />
-
         {props.children}
-
         {/* </StylesProvider> */}
       </ThemeProvider>
     </React.StrictMode>
   );
 }
 
-export const wrapPageElement = ({ element }) => <Wrapper>{element}</Wrapper>;
+export const wrapRootElement = ({ element }) => <Wrapper>{element}</Wrapper>;

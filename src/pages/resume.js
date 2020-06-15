@@ -11,6 +11,7 @@ import {
 } from "@material-ui/core";
 import { SizeMe } from "react-sizeme";
 import { Document, Page, pdfjs } from "react-pdf";
+import Layout from "../components/layout";
 import PropTypes from "prop-types";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import GetAppIcon from "@material-ui/icons/GetApp";
@@ -68,7 +69,7 @@ class Resume extends Component {
     const classes = this.props.classes;
 
     return (
-      <React.Fragment>
+      <Layout>
         <br />
         <br />
         <Grid
@@ -155,7 +156,7 @@ class Resume extends Component {
         <br />
         <br />
         <br />
-      </React.Fragment>
+      </Layout>
     );
   }
 }
