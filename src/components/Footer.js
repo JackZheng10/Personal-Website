@@ -1,22 +1,28 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { withStyles, Grid, Typography, Link } from "@material-ui/core";
-import footerStyles from "../../styles/footerStyles";
-import GitHubLogo from "../../images/GitHubLogo.png";
-import LinkedInLogo from "../../images/LinkedInLogo.png";
-import EmailLogo from "../../images/EmailLogo.png";
+import footerStyles from "../styles/footerStyles";
+import GitHubLogo from "../images/GitHubLogo.png";
+import LinkedInLogo from "../images/LinkedInLogo.png";
+import EmailLogo from "../images/EmailLogo.png";
 
 class Footer extends Component {
   redirectGH = () => {
-    window.open("https://github.com/JackZheng10");
+    if (typeof window !== `undefined`) {
+      window.open("https://github.com/JackZheng10");
+    }
   };
 
   redirectLI = () => {
-    window.open("https://www.linkedin.com/in/jackzheng10/");
+    if (typeof window !== `undefined`) {
+      window.open("https://www.linkedin.com/in/jackzheng10/");
+    }
   };
 
   redirectEmail = () => {
-    window.open("mailto:jackzheng10@yahoo.com");
+    if (typeof window !== `undefined`) {
+      window.open("mailto:jackzheng10@yahoo.com");
+    }
   };
 
   render() {

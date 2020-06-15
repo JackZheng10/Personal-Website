@@ -59,7 +59,9 @@ class Resume extends Component {
   };
 
   handleDownload = () => {
-    window.open(ResumePDF);
+    if (typeof window !== `undefined`) {
+      window.open(ResumePDF);
+    }
   };
 
   render() {

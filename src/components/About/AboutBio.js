@@ -5,25 +5,24 @@ import {
   withStyles,
   Fade,
   withWidth,
-  Box,
   Paper,
 } from "@material-ui/core";
 import PropTypes from "prop-types";
 import VizSensor from "react-visibility-sensor";
 import AboutCard from "./AboutCard";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
-import ProfilePic from "../../../images/ProfilePic.png";
-import UFLogo from "../../../images/UFLogo.jpg";
-import DevLogo from "../../../images/DevLogo.png";
-import HockeyLogo from "../../../images/HockeyLogo.png";
-import LaundrLogo from "../../../images/LaundrLogo.png";
-import UFCOELogo from "../../../images/UFCOELogo.png";
-import UFCOEdLogo from "../../../images/UFCOEdLogo.png";
-import aboutStyles from "../../../styles/aboutBioStyles";
+import ProfilePic from "../../images/ProfilePic.png";
+import UFLogo from "../../images/UFLogo.jpg";
+import DevLogo from "../../images/DevLogo.png";
+import HockeyLogo from "../../images/HockeyLogo.png";
+import LaundrLogo from "../../images/LaundrLogo.png";
+import UFCOELogo from "../../images/UFCOELogo.png";
+import UFCOEdLogo from "../../images/UFCOEdLogo.png";
+import aboutStyles from "../../styles/aboutBioStyles";
 
 //test
-import FlareComponent from "flare-react";
-import Success from "../../temp/Success.flr";
+// import FlareComponent from "flare-react"
+// import Success from "../temp/Success.flr"
 
 const cron = require("node-cron");
 
@@ -43,7 +42,9 @@ class AboutBio extends Component {
   constructor(props) {
     super(props);
 
-    window.scrollTo(0, 0);
+    if (typeof window !== `undefined`) {
+      window.scrollTo(0, 0);
+    }
 
     this.state = {
       showGreeting: false,

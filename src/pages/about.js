@@ -1,25 +1,31 @@
 import React, { Component } from "react";
-import AboutBio from "./components/AboutBio";
+import Layout from "../components/layout";
+import AboutBio from "../components/About/AboutBio";
 import TabbedCodeView from "../components/TabbedCodeView";
 
 //todo: move away from br as spacing, just calculate how many pixels its taking up instead and use that for margin.
+//todo: get rid of unecessary react.fragment
 
 class About extends Component {
   renderView = () => {
-    let codeView = JSON.parse(localStorage.getItem("codeView")) || false;
+    let codeView = false;
+
+    if (typeof localStorage !== "undefined") {
+      codeView = JSON.parse(localStorage.getItem("codeView")) || false;
+    }
 
     if (!codeView) {
-      console.log("entered 1");
+      console.log("Rendering bio");
       return <AboutBio />;
     } else {
-      console.log("entered 2");
+      console.log("Rendering code view");
       return <TabbedCodeView />;
     }
   };
 
   render() {
     return (
-      <React.Fragment>
+      <Layout>
         <br />
         <br />
         {this.renderView()}
@@ -27,7 +33,7 @@ class About extends Component {
         <br />
         <br />
         <br />
-      </React.Fragment>
+      </Layout>
     );
   }
 }
