@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { withStyles, Grid, Typography, Link } from "@material-ui/core";
-import footerStyles from "../styles/footerStyles";
-import GitHubLogo from "../images/GitHubLogo.png";
-import LinkedInLogo from "../images/LinkedInLogo.png";
-import EmailLogo from "../images/EmailLogo.png";
+import footerStyles from "../../../styles/footerStyles";
+import GitHubLogo from "../../../images/GitHubLogo.png";
+import LinkedInLogo from "../../../images/LinkedInLogo.png";
+import EmailLogo from "../../../images/EmailLogo.png";
 
 class Footer extends Component {
   redirectGH = () => {

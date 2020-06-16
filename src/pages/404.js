@@ -1,10 +1,34 @@
-import React from "react";
+import React, { Component } from "react";
+import { Typography } from "@material-ui/core";
+import Layout from "../components/Layout/Layout";
 
-const NotFoundPage = () => (
-  <div>
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </div>
-);
+//todo: make this text responsive
 
-export default NotFoundPage;
+class NotFound extends Component {
+  toggleCodeView = () => {
+    alert(
+      "This should do nothing. Disable the toggle for this page, pass bool prop -> Layout -> Topbar"
+    );
+  };
+
+  render() {
+    return (
+      <Layout toggleCodeView={this.toggleCodeView}>
+        <br />
+        <br />
+        <Typography
+          variant="h3"
+          style={{ textAlign: "center", fontWeight: 600 }}
+        >
+          Oops! Page not found.
+        </Typography>
+        <br />
+        <br />
+        <br />
+        <br />
+      </Layout>
+    );
+  }
+}
+
+export default NotFound;

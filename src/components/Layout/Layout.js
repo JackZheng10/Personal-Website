@@ -5,8 +5,8 @@
  */
 
 import React, { Component } from "react";
-import Topbar from "./Topbar";
-import Footer from "./Footer";
+import Topbar from "./components/Topbar";
+import Footer from "./components/Footer";
 
 //todo: make footer float to bottom. dont want the page to have to be long
 //todo: make sure there aren't unecessary class components. be impressive man

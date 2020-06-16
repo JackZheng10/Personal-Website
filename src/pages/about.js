@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Layout from "../components/layout";
-import AboutBio from "../components/About/AboutBio";
+import Layout from "../components/Layout/Layout";
+import AboutView from "../components/About/AboutView";
 import TabbedCodeView from "../components/TabbedCodeView";
 
 //todo: move away from br as spacing, just calculate how many pixels its taking up instead and use that for margin.
@@ -25,7 +25,7 @@ class About extends Component {
 
     if (!codeView) {
       console.log("Rendering bio");
-      return <AboutBio />;
+      return <AboutView />;
     } else {
       console.log("Rendering code view");
       return <TabbedCodeView />;

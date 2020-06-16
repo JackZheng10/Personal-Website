@@ -9,7 +9,7 @@ import {
 } from "@material-ui/core";
 import PropTypes from "prop-types";
 import VizSensor from "react-visibility-sensor";
-import AboutCard from "./AboutCard";
+import AboutCard from "./components/AboutCard";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import ProfilePic from "../../images/ProfilePic.png";
 import UFLogo from "../../images/UFLogo.jpg";
@@ -18,7 +18,7 @@ import HockeyLogo from "../../images/HockeyLogo.png";
 import LaundrLogo from "../../images/LaundrLogo.png";
 import UFCOELogo from "../../images/UFCOELogo.png";
 import UFCOEdLogo from "../../images/UFCOEdLogo.png";
-import aboutStyles from "../../styles/aboutBioStyles";
+import aboutViewStyles from "../../styles/aboutViewStyles";
 
 //test
 // import FlareComponent from "flare-react"
@@ -38,7 +38,7 @@ const cron = require("node-cron");
 //todo: still fade in the greeting first, or only do it on width 750 or less (when vertical view starts)
 //todo: maybe change timings back (to before 6/14)
 
-class AboutBio extends Component {
+class AboutView extends Component {
   constructor(props) {
     super(props);
 
@@ -496,9 +496,9 @@ class AboutBio extends Component {
   }
 }
 
-AboutBio.propTypes = {
+AboutView.propTypes = {
   className: PropTypes.string,
   width: PropTypes.oneOf(["lg", "md", "sm", "xl", "xs"]).isRequired,
 };
 
-export default withWidth()(withStyles(aboutStyles)(AboutBio));
+export default withWidth()(withStyles(aboutViewStyles)(AboutView));

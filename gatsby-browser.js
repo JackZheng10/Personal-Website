@@ -4,11 +4,9 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-import React, { Component } from "react";
+import React from "react";
 import { CssBaseline, ThemeProvider } from "@material-ui/core";
 // import { StylesProvider } from "@material-ui/styles";
-import Topbar from "./src/components/Topbar";
-import Footer from "./src/components/Footer";
 import theme from "./src/styles/theme";
 import "./src/styles/particlesStyles.css";
 
