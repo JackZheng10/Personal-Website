@@ -28,7 +28,6 @@ const cron = require("node-cron");
 
 //todo: test on mobile: when small enough, change the topbar buttons to just iconbuttons + resize bottom images as they cause bleedingnpm s
 //todo: fix br spacings hehe
-//todo: images maybe look ratchet on mobile
 //todo: use the window scroll to on every page to force starting at the top
 //todo: stay visible after shown, just use prev state, if true then keep true? w/viz sensor
 //todo: find out why sometimes when switching to this, the about cards flash as if it was visible
@@ -37,6 +36,8 @@ const cron = require("node-cron");
 //todo: redo visibility stuff. and fading as well.
 //todo: still fade in the greeting first, or only do it on width 750 or less (when vertical view starts)
 //todo: maybe change timings back (to before 6/14)
+//todo: make card text smaller on smaller views as it bleeds. also do for images :)
+//todo: add dates to experience cards?
 
 class AboutView extends Component {
   constructor(props) {
@@ -424,10 +425,10 @@ class AboutView extends Component {
                               image={LaundrLogo}
                               alt="Laundr Logo"
                               title="Laundr"
-                              text="I'm a Junior at the University of Florida 
-                    studying computer science. I was extremely addicted to computers as a kid
-                     - and I can say that not much has changed! 
-                    Above all else, I'm grateful for what I'm learning along the way."
+                              text="I'm a Software Engineering Intern at Laundr, an on-demand laundry service.
+                               I work with Xamarin Forms, ASP.NET, MySQL, and C# to implement and debug features on their
+                               iOS and Android application. I'm also the sole developer for their upcoming web application.
+                              "
                             />
                           </div>
                         </Fade>
@@ -449,10 +450,9 @@ class AboutView extends Component {
                               image={UFCOELogo}
                               alt="UF CoE Logo"
                               title="UF College of Engineering"
-                              text="I'm a Junior at the University of Florida 
-                    studying computer science. I was extremely addicted to computers as a kid
-                     - and I can say that not much has changed! 
-                    Above all else, I'm grateful for what I'm learning along the way."
+                              text="I'm currently a TA for CEN3031 (Introduction to Software Engineering) and COP3503
+                               (Programming Fundamentals 2). This involves topics related to programming concepts, C++, the MERN stack, and software development.
+                               I help lead weekly labs, discussions, lessons, and office hours as well as produce instructional videos."
                             />
                           </div>
                         </Fade>
@@ -474,10 +474,10 @@ class AboutView extends Component {
                               image={UFCOEdLogo}
                               alt="UF CoE Logo"
                               title="UF College of Education"
-                              text="I'm a Junior at the University of Florida 
-                    studying computer science. I was extremely addicted to computers as a kid
-                     - and I can say that not much has changed! 
-                    Above all else, I'm grateful for what I'm learning along the way."
+                              text="I was formerly an Undergraduate Research Assistant under Dr. Zhihui Fang,
+                              studying K-12 students' informational writing for nominal complexity. I was involved with 
+                              data collection, analysis, management, and the synthesis of a currently-submitted
+                              research paper for which I am a co-author."
                             />
                           </div>
                         </Fade>

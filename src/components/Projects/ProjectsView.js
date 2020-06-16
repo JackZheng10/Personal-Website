@@ -15,7 +15,10 @@ import projectsViewStyles from "../../styles/projectsViewStyles";
 
 const cron = require("node-cron");
 
-//todo: give placeholder height for loading element so the page doesnt collapse randomly on refresh
+//todo: use blur on about cards before they fade in? keep visible after first time or this blur visible on screen all the time
+//todo: maybe change font. this is default wordpress font so ppl might think i used wordpress :(
+//todo: fix FOUC: https://github.com/gatsbyjs/gatsby/issues/15097
+//todo: fix particlesBG being clumped when screen resizes
 
 class ProjectsView extends Component {
   constructor(props) {
