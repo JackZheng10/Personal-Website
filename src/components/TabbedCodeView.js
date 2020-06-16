@@ -2,18 +2,18 @@ import React, { Component } from "react";
 import { Fade, Button, withStyles, Grid, Typography } from "@material-ui/core";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import {
-  vs,
-  atomDark,
-  prism,
-  tomorrow,
+  // vs,
+  // atomDark,
+  // prism,
+  // tomorrow,
   okaidia,
-  solarizedlight,
-  xonokai,
+  // solarizedlight,
+  // xonokai,
 } from "react-syntax-highlighter/dist/esm/styles/prism";
 import PropTypes from "prop-types";
-import { About as AboutCode } from "../../codeFiles/About/About";
+import { About as AboutCode } from "../codeFiles/About/About";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
-import tabbedCodeViewStyles from "../../styles/tabbedCodeViewStyles";
+import tabbedCodeViewStyles from "../styles/tabbedCodeViewStyles";
 
 //test
 // import FlareComponent from "flare-react";
@@ -61,8 +61,12 @@ class TabbedCodeView extends Component {
   constructor(props) {
     super(props);
 
-    let page = window.location.pathname.substring(1);
-    let files = this.getFiles(page);
+    let files = [];
+
+    if (typeof window !== `undefined`) {
+      let page = window.location.pathname.substring(1);
+      files = this.getFiles(page);
+    }
 
     this.state = {
       showIntro: false,

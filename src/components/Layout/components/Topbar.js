@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import {
   AppBar,
@@ -16,13 +16,17 @@ import BuildIcon from "@material-ui/icons/Build";
 import FindInPageIcon from "@material-ui/icons/FindInPage";
 import CodeIcon from "@material-ui/icons/Code";
 import CropOriginalIcon from "@material-ui/icons/CropOriginal";
-import topbarStyles from "../../styles/topbarStyles";
+import topbarStyles from "../../../styles/topbarStyles";
 
 //todo: maybe indicator for which page youre on, just extract from path
 //todo: maybe change when mobile buttons appear. when vertical view starts @750. probably use fade since hidden doesnt have a true/false
 
 function Topbar(props) {
-  let codeView = JSON.parse(localStorage.getItem("codeView"));
+  let codeView = false;
+
+  if (typeof localStorage !== "undefined") {
+    codeView = JSON.parse(localStorage.getItem("codeView")) || false;
+  }
 
   const classes = props.classes;
 
