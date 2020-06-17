@@ -22,7 +22,6 @@ import Particles from "react-particles-js";
 //todo: {/*find better solution to sticky footer - will not account for window resizing since not re-rendered*/}
 //todo: work on cleaning up unecessary styles/code
 //todo: !!!FIX FOUC (flash of unstyled content). solutions available for gatsby deployment.
-//todo: !!!with gatsby transfer, the code toggle button doesn't work
 
 function Wrapper(props) {
   return (
