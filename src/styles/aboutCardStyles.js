@@ -34,7 +34,7 @@ export default (theme) => ({
   },
   text: {
     color: "white",
-    top: 50,
+    // top: 50, //todo: prob dont need
   },
   title: {
     color: "white",

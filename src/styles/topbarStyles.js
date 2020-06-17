@@ -16,7 +16,7 @@ export default (theme) => ({
     color: "white",
     borderColor: "white",
     "&:hover": {
-      backgroundColor: "grey",
+      backgroundColor: "#47b4fc",
       borderColor: "white",
     },
   },
