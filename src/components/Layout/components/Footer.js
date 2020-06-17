@@ -6,6 +6,8 @@ import GitHubLogo from "../../../images/GitHubLogo.png";
 import LinkedInLogo from "../../../images/LinkedInLogo.png";
 import EmailLogo from "../../../images/EmailLogo.png";
 
+//todo: use icons when on mobile for footer images? or just resize.
+
 class Footer extends Component {
   redirectGH = () => {
     if (typeof window !== `undefined`) {

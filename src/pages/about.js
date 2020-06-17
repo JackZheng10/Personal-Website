@@ -3,12 +3,6 @@ import Layout from "../components/Layout/Layout";
 import AboutView from "../components/About/AboutView";
 import TabbedCodeView from "../components/TabbedCodeView";
 
-//todo: move away from br as spacing, just calculate how many pixels its taking up instead and use that for margin.
-//todo: get rid of unecessary react.fragment
-//todo: solution is to pass a callback into layout and have layout call it, but i dont want to make a function in every page for it.
-//important: will not rerender if props are same.
-//todo: maybe move layout back into the wrapper, research more about wrapRoot vs wrapPage. if it doesnt get rerendered at all, keep it in layout. also maybe move particles into layout?
-
 class About extends Component {
   state = { codeView: false };
 

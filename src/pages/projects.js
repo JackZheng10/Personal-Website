@@ -8,6 +8,9 @@ import TabbedCodeView from "../components/TabbedCodeView";
 //todo: solution is to pass a callback into layout and have layout call it, but i dont want to make a function in every page for it.
 //important: will not rerender if props are same.
 //todo: maybe move layout back into the wrapper, research more about wrapRoot vs wrapPage. if it doesnt get rerendered at all, keep it in layout. also maybe move particles into layout?
+//todo: work on site metadata/SEO, also text in browser tab. icon, color in browser tab too.
+//todo: fix stuttering for main pic on iphone?
+//todo: option for single page scrolling to other pages: https://github.com/alvarotrigo/react-fullpage
 
 class Projects extends Component {
   state = { codeView: false };

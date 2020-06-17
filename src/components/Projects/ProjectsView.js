@@ -10,6 +10,7 @@ import {
   //   CardActions,
 } from "@material-ui/core";
 import PropTypes from "prop-types";
+import ProjectCard from "./components/ProjectCard";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import projectsViewStyles from "../../styles/projectsViewStyles";
 
@@ -19,6 +20,7 @@ const cron = require("node-cron");
 //todo: maybe change font. this is default wordpress font so ppl might think i used wordpress :(
 //todo: fix FOUC: https://github.com/gatsbyjs/gatsby/issues/15097
 //todo: fix particlesBG being clumped when screen resizes
+//
 
 class ProjectsView extends Component {
   constructor(props) {
@@ -96,7 +98,7 @@ class ProjectsView extends Component {
             alignItems="center"
           >
             <Grid item>
-              <h1>projects go here</h1>
+              <ProjectCard />
             </Grid>
           </Grid>
         </Grid>

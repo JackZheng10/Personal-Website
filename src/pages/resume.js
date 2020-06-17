@@ -3,6 +3,8 @@ import Layout from "../components/Layout/Layout";
 import ResumeView from "../components/Resume/ResumeView";
 import TabbedCodeView from "../components/TabbedCodeView";
 
+//todo: make download button download it directly?
+
 class Resume extends Component {
   state = { codeView: false };
 
