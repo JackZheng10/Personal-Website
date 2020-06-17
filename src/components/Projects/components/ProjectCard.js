@@ -12,6 +12,8 @@ import {
 import PropTypes from "prop-types";
 import projectCardStyles from "../../../styles/projectCardStyles";
 
+//todo: movile - shows whitespace at bottom when swiping since doesnt resize automatically?
+
 class ProjectsCard extends Component {
   render() {
     const classes = this.props.classes;

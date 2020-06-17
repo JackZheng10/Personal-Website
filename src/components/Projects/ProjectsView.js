@@ -66,7 +66,7 @@ class ProjectsView extends Component {
             <Grid item>
               <Fade in={this.state.showIntro} timeout={3000}>
                 <Typography variant="h3" className={classes.greeting}>
-                  Explore some of my projects
+                  Explore some of the projects I've built
                 </Typography>
               </Fade>
             </Grid>
