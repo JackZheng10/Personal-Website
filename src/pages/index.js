@@ -12,8 +12,8 @@ function App() {
       style={{ height: "100vh" }}
     >
       <Grid item>
-        <Typography variant="h3">
-          Under construction, please check back soon!
+        <Typography variant="h3" style={{ fontWeight: 600 }}>
+          Under construction. Please check back soon!
         </Typography>
       </Grid>
     </Grid>
