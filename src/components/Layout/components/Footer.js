@@ -30,93 +30,94 @@ class Footer extends Component {
 
     return (
       <React.Fragment>
-        <Grid
-          container
-          direction="column"
-          justify="center"
-          alignItems="center"
-          className={classes.root}
-        >
-          <Grid item>
-            <Grid
-              container
-              spacing={0}
-              direction="row"
-              justify="center"
-              alignItems="center"
-            >
-              <Grid item>
-                <Typography variant="h5" className={classes.name}>
-                  Connect with me.
-                </Typography>
+        <div className={classes.footer}>
+          <Grid
+            container
+            direction="column"
+            justify="center"
+            alignItems="center"
+          >
+            <Grid item>
+              <Grid
+                container
+                spacing={0}
+                direction="row"
+                justify="center"
+                alignItems="center"
+              >
+                <Grid item>
+                  <Typography variant="h5" className={classes.name}>
+                    Connect with me.
+                  </Typography>
+                </Grid>
               </Grid>
             </Grid>
-          </Grid>
-          <Grid item>
-            <Grid
-              container
-              spacing={0}
-              direction="row"
-              justify="center"
-              alignItems="center"
-            >
-              <Grid item>
-                <img
-                  src={GitHubLogo}
-                  className={classes.GHlogo}
-                  alt="GitHub Logo"
-                  onClick={this.redirectGH}
-                />
-                &nbsp;&nbsp;&nbsp;
-              </Grid>
+            <Grid item>
+              <Grid
+                container
+                spacing={0}
+                direction="row"
+                justify="center"
+                alignItems="center"
+              >
+                <Grid item>
+                  <img
+                    src={GitHubLogo}
+                    className={classes.GHlogo}
+                    alt="GitHub Logo"
+                    onClick={this.redirectGH}
+                  />
+                  &nbsp;&nbsp;&nbsp;
+                </Grid>
 
-              <Grid item>
-                <img
-                  src={LinkedInLogo}
-                  className={classes.LIlogo}
-                  alt="LinkedIn Logo"
-                  onClick={this.redirectLI}
-                />
-                &nbsp;&nbsp;&nbsp;
-              </Grid>
-              <Grid item>
-                <img
-                  src={EmailLogo}
-                  className={classes.emailLogo}
-                  alt="Email Logo"
-                  onClick={this.redirectEmail}
-                />
+                <Grid item>
+                  <img
+                    src={LinkedInLogo}
+                    className={classes.LIlogo}
+                    alt="LinkedIn Logo"
+                    onClick={this.redirectLI}
+                  />
+                  &nbsp;&nbsp;&nbsp;
+                </Grid>
+                <Grid item>
+                  <img
+                    src={EmailLogo}
+                    className={classes.emailLogo}
+                    alt="Email Logo"
+                    onClick={this.redirectEmail}
+                  />
+                </Grid>
               </Grid>
             </Grid>
-          </Grid>
-          <Grid item>
-            <Grid
-              container
-              spacing={0}
-              direction="row"
-              justify="center"
-              alignItems="center"
-            >
-              <Grid item>
-                <Typography
-                  variant="body2"
-                  className={classes.centerText}
-                  gutterBottom
-                >
-                  Created by me!{" "}
-                  <Link
-                    color="primary"
-                    target="_blank"
-                    rel="noopener"
-                    href="https://github.com/JackZheng10/Personal-Website"
+            <Grid item>
+              <Grid
+                container
+                spacing={0}
+                direction="row"
+                justify="center"
+                alignItems="center"
+              >
+                <Grid item>
+                  <Typography
+                    variant="body2"
+                    className={classes.centerText}
+                    gutterBottom
                   >
-                    Click to view the source code.
-                  </Link>
-                </Typography>
+                    Created by me!{" "}
+                    <Link
+                      color="primary"
+                      target="_blank"
+                      rel="noopener"
+                      href="https://github.com/JackZheng10/Personal-Website"
+                    >
+                      Click to view the source code.
+                    </Link>
+                  </Typography>
+                </Grid>
               </Grid>
             </Grid>
           </Grid>
-        </Grid>
+        </div>
       </React.Fragment>
     );
   }

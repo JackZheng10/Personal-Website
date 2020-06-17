@@ -32,11 +32,17 @@ class Layout extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          minHeight: "100vh",
+        }}
+      >
         <Topbar toggleCodeView={this.toggleCodeView} />
         {this.props.children}
         <Footer />
-      </React.Fragment>
+      </div>
     );
   }
 }
