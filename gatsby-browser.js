@@ -6,22 +6,9 @@
 
 import React from "react";
 import { CssBaseline, ThemeProvider } from "@material-ui/core";
-// import { StylesProvider } from "@material-ui/styles";
 import theme from "./src/styles/theme";
 import "./src/styles/particlesStyles.css";
-
-//testing
 import Particles from "react-particles-js";
-
-//todo: make footer float to bottom. dont want the page to have to be long
-//todo: make sure there aren't unecessary class components. be impressive man
-//todo: make footer stick to bottom, but footer + main is minheight 100vh. doesnt account resize. try window event listener
-//todo: darkmode?
-//todo: vis sensor on arrows? keep non-vis on main titles
-//todo: port to gatsby?
-//todo: {/*find better solution to sticky footer - will not account for window resizing since not re-rendered*/}
-//todo: work on cleaning up unecessary styles/code
-//todo: !!!FIX FOUC (flash of unstyled content). solutions available for gatsby deployment.
 
 function Wrapper(props) {
   return (
@@ -54,10 +41,8 @@ function Wrapper(props) {
         id="particlesBG"
       />
       <ThemeProvider theme={theme}>
-        {/* <StylesProvider injectFirst> */}
         <CssBaseline />
         {props.children}
-        {/* </StylesProvider> */}
       </ThemeProvider>
     </React.StrictMode>
   );

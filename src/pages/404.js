@@ -1,34 +1,23 @@
-import React, { Component } from "react";
-import { Typography } from "@material-ui/core";
-import Layout from "../components/Layout/Layout";
+import React from "react";
+import { Grid, Typography } from "@material-ui/core";
 
-//todo: make this text responsive
-
-class NotFound extends Component {
-  toggleCodeView = () => {
-    alert(
-      "This should do nothing. Disable the toggle for this page, pass bool prop -> Layout -> Topbar"
-    );
-  };
-
-  render() {
-    return (
-      <Layout toggleCodeView={this.toggleCodeView}>
-        <br />
-        <br />
-        <Typography
-          variant="h3"
-          style={{ textAlign: "center", fontWeight: 600 }}
-        >
-          Oops! Page not found.
+function NotFound() {
+  return (
+    <Grid
+      container
+      spacing={0}
+      align="center"
+      justify="center"
+      direction="column"
+      style={{ height: "100vh" }}
+    >
+      <Grid item>
+        <Typography variant="h3">
+          Under construction, please check back soon!
         </Typography>
-        <br />
-        <br />
-        <br />
-        <br />
-      </Layout>
-    );
-  }
+      </Grid>
+    </Grid>
+  );
 }
 
 export default NotFound;

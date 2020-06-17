@@ -4,15 +4,10 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-import React, { Component } from "react";
+import React from "react";
 import { CssBaseline, ThemeProvider } from "@material-ui/core";
-// import { StylesProvider } from "@material-ui/styles";
-import Topbar from "./src/components/Layout/components/Topbar";
-import Footer from "./src/components/Layout/components/Footer";
 import theme from "./src/styles/theme";
 import "./src/styles/particlesStyles.css";
-
-//testing
 import Particles from "react-particles-js";
 
 function Wrapper(props) {
@@ -46,10 +41,8 @@ function Wrapper(props) {
         id="particlesBG"
       />
       <ThemeProvider theme={theme}>
-        {/* <StylesProvider injectFirst> */}
         <CssBaseline />
         {props.children}
-        {/* </StylesProvider> */}
       </ThemeProvider>
     </React.StrictMode>
   );
