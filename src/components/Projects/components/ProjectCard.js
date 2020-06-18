@@ -16,7 +16,7 @@ import PropTypes from "prop-types";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import projectCardStyles from "../../../styles/projectCardStyles";
 
-import testImage from "../../../images/TestImage.jpg";
+import testImage from "../../../images/testImage.jpg";
 
 //todo: movile - shows whitespace at bottom when swiping since doesnt resize automatically?
 //todo: the messed up images are due to the actual image...the codesanbox image works right
@@ -33,7 +33,7 @@ class ProjectsCard extends Component {
       <div className={classes.layout}>
         <Card className={classes.root} elevation={10}>
           <CardHeader
-            title="Placeholder"
+            title={this.props.title}
             titleTypographyProps={{ variant: "h3", className: classes.title }}
             className={classes.cardHeader}
           />
