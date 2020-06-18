@@ -4,6 +4,8 @@ import Layout from "../../components/Layout/Layout";
 import AboutView from "../../components/About/AboutView";
 import TabbedCodeView from "../../components/TabbedCodeView";
 
+import "../../styles/fullpage.css";
+
 class About extends Component {
   state = { codeView: false };
 
@@ -30,15 +32,17 @@ class About extends Component {
   render() {
     return (
       <React.Fragment>
-        {/* <Layout toggleCodeView={this.toggleCodeView}> */}
-        <br />
-        <br />
-        {this.renderView()}
-        <br />
-        <br />
-        <br />
-        <br />
-        {/* </Layout> */}
+        <div className="page">
+          {/* <Layout toggleCodeView={this.toggleCodeView}> */}
+          <br />
+          <br />
+          {this.renderView()}
+          <br />
+          <br />
+          <br />
+          <br />
+          {/* </Layout> */}
+        </div>
       </React.Fragment>
     );
   }

@@ -12,21 +12,22 @@ import {
 import About from "./components/About";
 import Projects from "./components/Projects";
 import Resume from "./components/Resume";
+import "../styles/fullpage.css";
 
 const media = [
   {
     slug: "about",
-    className: "about",
+    className: "",
     children: <About />,
   },
   {
     slug: "projects",
-    className: "projects",
+    className: "",
     children: <Projects />,
   },
   {
     slug: "resume",
-    className: "resume",
+    className: "",
     children: <Resume />,
   },
 ];

@@ -25,13 +25,13 @@ import Footer from "./src/components/Layout/components/Footer";
 import "react-awesome-slider/dist/styles.css";
 
 function Wrapper(props) {
-  let page;
+  let slug;
 
   if (typeof window !== `undefined`) {
-    page = window.location.pathname.substring(1);
+    slug = window.location.pathname.substring(1) || "about";
   }
 
-  const slug = page;
+  // const slug = "about";
 
   return (
     <React.StrictMode>
