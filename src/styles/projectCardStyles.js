@@ -7,7 +7,7 @@ export default (theme) => ({
     marginLeft: "auto",
     marginRight: "auto",
     height: "auto",
-    width: 800,
+    width: 600,
     [theme.breakpoints.down(900)]: {
       width: "90vw",
     },
@@ -18,10 +18,10 @@ export default (theme) => ({
   },
   cardContent: {
     textAlign: "center",
-    backgroundColor: "#63c1ff",
+    backgroundColor: "rgb(0, 153, 255)",
     height: "100%",
   },
-  text: {
+  contentText: {
     color: "white",
   },
   title: {
@@ -38,5 +38,9 @@ export default (theme) => ({
     "&:hover": {
       backgroundColor: "#47b4fc",
     },
+  },
+  media: {
+    height: 0,
+    paddingTop: "56.25%", // 16:9
   },
 });

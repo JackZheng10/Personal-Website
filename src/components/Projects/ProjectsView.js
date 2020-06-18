@@ -92,11 +92,14 @@ class ProjectsView extends Component {
         <Grid item>
           <Grid
             container
-            spacing={0}
+            spacing={2}
             direction="row"
             justify="center"
             alignItems="center"
           >
+            <Grid item>
+              <ProjectCard />
+            </Grid>
             <Grid item>
               <ProjectCard />
             </Grid>

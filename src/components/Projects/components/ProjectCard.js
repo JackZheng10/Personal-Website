@@ -16,7 +16,10 @@ import PropTypes from "prop-types";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import projectCardStyles from "../../../styles/projectCardStyles";
 
+import testImage from "../../../images/LaundrLogo.png";
+
 //todo: movile - shows whitespace at bottom when swiping since doesnt resize automatically?
+//todo: the messed up images are due to the actual image...the codesanbox image works right
 
 class ProjectsCard extends Component {
   handleCodeLink = () => {
@@ -35,8 +38,14 @@ class ProjectsCard extends Component {
             className={classes.cardHeader}
           />
           {/* <Divider /> */}
+          <CardMedia
+            className={classes.media}
+            image="https://image.freepik.com/free-vector/modern-kitchen-interior-background-template-cartoon-dinner-room-with-furniture_33099-131.jpg"
+            title="placeholder"
+          />
+          {/* <Divider /> */}
           <CardContent className={classes.cardContent}>
-            <Typography variant="body1" className={classes.text}>
+            <Typography variant="body1" className={classes.contentText}>
               "Placeholder"
             </Typography>
           </CardContent>
