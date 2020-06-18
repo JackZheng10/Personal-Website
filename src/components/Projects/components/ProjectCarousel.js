@@ -6,8 +6,13 @@ import {
   Typography,
   Button,
   Fade,
+  IconButton,
 } from "@material-ui/core";
+import PropTypes from "prop-types";
+import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
+import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ProjectCard from "../components/ProjectCard";
+import projectCarouselStyles from "../../../styles/projectCarouselStyles";
 
 class ProjectCarousel extends Component {
   state = { currentProject: 0 };
@@ -21,6 +26,8 @@ class ProjectCarousel extends Component {
   };
 
   render() {
+    const classes = this.props.classes;
+
     return (
       <React.Fragment>
         <Grid
@@ -31,7 +38,12 @@ class ProjectCarousel extends Component {
           alignItems="center"
         >
           <Grid item>
-            <Button onClick={this.handlePrevProject}>BACK</Button>
+            <IconButton
+              onClick={this.handlePrevProject}
+              className={classes.button}
+            >
+              <ChevronLeftIcon fontSize="large" />
+            </IconButton>
           </Grid>
           <Grid item>
             <div style={{ overflow: "hidden" }}>
@@ -70,7 +82,12 @@ class ProjectCarousel extends Component {
             </div>
           </Grid>
           <Grid item>
-            <Button onClick={this.handleNextProject}>FORWARD</Button>
+            <IconButton
+              onClick={this.handleNextProject}
+              className={classes.button}
+            >
+              <ChevronRightIcon fontSize="large" />
+            </IconButton>
           </Grid>
         </Grid>
       </React.Fragment>
@@ -78,4 +95,8 @@ class ProjectCarousel extends Component {
   }
 }
 
-export default ProjectCarousel;
+ProjectCarousel.propTypes = {
+  className: PropTypes.string,
+};
+
+export default withStyles(projectCarouselStyles)(ProjectCarousel);
