@@ -100,9 +100,6 @@ class ProjectsView extends Component {
             <Grid item>
               <ProjectCard />
             </Grid>
-            <Grid item>
-              <ProjectCard />
-            </Grid>
           </Grid>
         </Grid>
       </Grid>

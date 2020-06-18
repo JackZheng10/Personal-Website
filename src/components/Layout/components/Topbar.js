@@ -21,6 +21,7 @@ import topbarStyles from "../../../styles/topbarStyles";
 //todo: maybe indicator for which page youre on, just extract from path
 //todo: maybe change when mobile buttons appear. when vertical view starts @750. probably use fade since hidden doesnt have a true/false
 //todo: eh style the buttons better
+//todo: maybe dont fade toggle icon in since will fade on every page/refresh
 
 function Topbar(props) {
   let codeView = false;

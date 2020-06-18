@@ -14,6 +14,7 @@ import aboutCardStyles from "../../../styles/aboutCardStyles";
 //todo: weird corner clipping w/solid main background
 //todo: for images: https://mui.wertarbyte.com/#material-ui-image
 //todo: for image auto resize see: https://codesandbox.io/s/material-ui-card-4r83e?file=/src/index.js:700-720
+//todo: ^^ make image fit into 16:9 box!
 //todo: hovers? https://codesandbox.io/s/material-ui-card-styling-example-ewc5j?file=/src/index.js
 
 function AboutCard(props) {

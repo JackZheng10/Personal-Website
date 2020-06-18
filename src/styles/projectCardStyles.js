@@ -7,7 +7,7 @@ export default (theme) => ({
     marginLeft: "auto",
     marginRight: "auto",
     height: "auto",
-    width: 600,
+    width: 750,
     [theme.breakpoints.down(900)]: {
       width: "90vw",
     },
@@ -31,6 +31,9 @@ export default (theme) => ({
   buttonContainer: {
     display: "flex",
     alignItems: "center",
+  },
+  cardActions: {
+    backgroundColor: "white",
   },
   button: {
     backgroundColor: "rgb(0, 153, 255)",

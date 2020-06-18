@@ -16,7 +16,7 @@ import PropTypes from "prop-types";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import projectCardStyles from "../../../styles/projectCardStyles";
 
-import testImage from "../../../images/LaundrLogo.png";
+import testImage from "../../../images/TestImage.jpg";
 
 //todo: movile - shows whitespace at bottom when swiping since doesnt resize automatically?
 //todo: the messed up images are due to the actual image...the codesanbox image works right
@@ -40,7 +40,7 @@ class ProjectsCard extends Component {
           {/* <Divider /> */}
           <CardMedia
             className={classes.media}
-            image="https://image.freepik.com/free-vector/modern-kitchen-interior-background-template-cartoon-dinner-room-with-furniture_33099-131.jpg"
+            image={testImage}
             title="placeholder"
           />
           {/* <Divider /> */}
@@ -50,7 +50,7 @@ class ProjectsCard extends Component {
             </Typography>
           </CardContent>
           {/* <Divider /> */}
-          <CardActions>
+          <CardActions className={classes.cardActions}>
             <Grid container justify="center">
               <Grid item className={classes.buttonContainer}>
                 <Button
