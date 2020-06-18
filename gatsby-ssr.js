@@ -4,53 +4,72 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-import React, { Component } from "react";
+import React from "react";
 import { CssBaseline, ThemeProvider } from "@material-ui/core";
 // import { StylesProvider } from "@material-ui/styles";
-import Topbar from "./src/components/Layout/components/Topbar";
-import Footer from "./src/components/Layout/components/Footer";
 import theme from "./src/styles/theme";
 import "./src/styles/particlesStyles.css";
 
 //testing
 import Particles from "react-particles-js";
 
+//fullpage stuff
+import {
+  Provider,
+  Link,
+  withNavigationContext,
+  withNavigationHandlers,
+} from "react-awesome-slider/dist/navigation";
+import Topbar from "./src/components/Layout/components/Topbar";
+import Footer from "./src/components/Layout/components/Footer";
+import "react-awesome-slider/dist/styles.css";
+
 function Wrapper(props) {
+  let page;
+
+  if (typeof window !== `undefined`) {
+    page = window.location.pathname.substring(1);
+  }
+
+  const slug = page;
+
   return (
     <React.StrictMode>
-      <Particles
-        params={{
-          background: {
-            color: {
-              value: "#33aeff",
-            },
-          },
-          particles: {
-            number: {
-              value: 100,
-            },
-            size: {
-              value: 5,
-            },
-          },
-          interactivity: {
-            detectsOn: "window",
-            events: {
-              onhover: {
-                enable: true,
-                mode: "repulse",
+      <Provider slug={slug}>
+        <Particles
+          params={{
+            background: {
+              color: {
+                value: "#33aeff",
               },
             },
-          },
-        }}
-        id="particlesBG"
-      />
-      <ThemeProvider theme={theme}>
-        {/* <StylesProvider injectFirst> */}
-        <CssBaseline />
-        {props.children}
-        {/* </StylesProvider> */}
-      </ThemeProvider>
+            particles: {
+              number: {
+                value: 100,
+              },
+              size: {
+                value: 5,
+              },
+            },
+            interactivity: {
+              detectsOn: "window",
+              events: {
+                onhover: {
+                  enable: true,
+                  mode: "repulse",
+                },
+              },
+            },
+          }}
+          id="particlesBG"
+        />
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Topbar />
+          {props.children}
+          <Footer />
+        </ThemeProvider>
+      </Provider>
     </React.StrictMode>
   );
 }

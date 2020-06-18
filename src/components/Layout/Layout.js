@@ -1,23 +1,49 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
-
 import React, { Component } from "react";
 import Topbar from "./components/Topbar";
 import Footer from "./components/Footer";
 
-//todo: make footer float to bottom. dont want the page to have to be long
-//todo: make sure there aren't unecessary class components. be impressive man
-//todo: make footer stick to bottom, but footer + main is minheight 100vh. doesnt account resize. try window event listener
-//todo: darkmode?
-//todo: vis sensor on arrows? keep non-vis on main titles
-//todo: port to gatsby?
-//todo: {/*find better solution to sticky footer - will not account for window resizing since not re-rendered*/}
-//todo: work on cleaning up unecessary styles/code
-//todo: !!!FIX FOUC (flash of unstyled content). solutions available for gatsby deployment.
-//todo: !!!with gatsby transfer, the code toggle button doesn't work
+//fullpage slider stuff
+import AwesomeSlider from "react-awesome-slider";
+import "react-awesome-slider/dist/styles.css";
+import {
+  Provider,
+  Link,
+  withNavigationContext,
+  withNavigationHandlers,
+} from "react-awesome-slider/dist/navigation";
+
+import About from "../../pages/about";
+import Projects from "../../pages/projects";
+import Resume from "../../pages/resume";
+
+// Wrapp the AwesomeSlider component with the navigationHandlers
+const NavigationSlider = withNavigationHandlers(AwesomeSlider);
+
+// Create an AwesomeSlider instance with some content
+const Slider = () => {
+  return (
+    <NavigationSlider
+      className="awesome-slider"
+      media={[
+        {
+          slug: "about",
+          className: "about",
+          children: <About />,
+        },
+        {
+          slug: "projects",
+          className: "projects",
+          children: <Projects />,
+        },
+        {
+          slug: "resume",
+          className: "resume",
+          children: <Resume />,
+        },
+      ]}
+    />
+  );
+};
 
 class Layout extends Component {
   toggleCodeView = (event) => {
@@ -31,6 +57,8 @@ class Layout extends Component {
   };
 
   render() {
+    const slug = "about";
+
     return (
       <div
         style={{
@@ -39,9 +67,12 @@ class Layout extends Component {
           minHeight: "100vh",
         }}
       >
+        {/* <Provider slug={slug}> */}
         <Topbar toggleCodeView={this.toggleCodeView} />
+        {/* <NavigationSlider /> */}
         {this.props.children}
         <Footer />
+        {/* </Provider> */}
       </div>
     );
   }
