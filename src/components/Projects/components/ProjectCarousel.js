@@ -15,7 +15,27 @@ import ProjectCard from "../components/ProjectCard";
 import projectCarouselStyles from "../../../styles/projectCarouselStyles";
 
 class ProjectCarousel extends Component {
-  state = { currentProject: 0 };
+  constructor(props) {
+    super(props);
+
+    this.state = { currentProject: 0, numProjects: this.props.projectCount };
+  }
+
+  renderProjectCards = () => {
+    return this.props.children.map((child, index) => {
+      return (
+        <Fade
+          in={this.state.currentProject === index}
+          timeout={3000}
+          style={{
+            display: !(this.state.currentProject === index) ? "none" : "block",
+          }}
+        >
+          <div>{child}</div>
+        </Fade>
+      );
+    });
+  };
 
   handleNextProject = () => {
     this.setState({ currentProject: this.state.currentProject + 1 });
@@ -45,42 +65,7 @@ class ProjectCarousel extends Component {
               <ChevronLeftIcon fontSize="large" />
             </IconButton>
           </Grid>
-          <Grid item>
-            <div style={{ overflow: "hidden" }}>
-              <Slide
-                in={this.state.currentProject === 0}
-                direction="left"
-                timeout={2000}
-                style={{
-                  display: !(this.state.currentProject === 0)
-                    ? "none"
-                    : "block",
-                  transitionDelay:
-                    this.state.currentProject === 0 ? "500ms" : "0ms",
-                }}
-              >
-                <div>
-                  <ProjectCard title="P1" />
-                </div>
-              </Slide>
-              <Slide
-                in={this.state.currentProject === 1}
-                direction="left"
-                timeout={2000}
-                style={{
-                  display: !(this.state.currentProject === 1)
-                    ? "none"
-                    : "block",
-                  transitionDelay:
-                    this.state.currentProject === 1 ? "500ms" : "0ms",
-                }}
-              >
-                <div>
-                  <ProjectCard title="P2" />
-                </div>
-              </Slide>
-            </div>
-          </Grid>
+          <Grid item>{this.renderProjectCards()}</Grid>
           <Grid item>
             <IconButton
               onClick={this.handleNextProject}

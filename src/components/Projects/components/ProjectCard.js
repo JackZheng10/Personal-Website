@@ -37,6 +37,7 @@ class ProjectsCard extends Component {
             titleTypographyProps={{ variant: "h3", className: classes.title }}
             className={classes.cardHeader}
           />
+
           {/* <Divider /> */}
           <CardMedia
             className={classes.media}

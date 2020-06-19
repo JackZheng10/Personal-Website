@@ -9,6 +9,7 @@ import {
 } from "@material-ui/core";
 import PropTypes from "prop-types";
 import ProjectCarousel from "./components/ProjectCarousel";
+import ProjectCard from "./components/ProjectCard";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import projectsViewStyles from "../../styles/projectsViewStyles";
 
@@ -102,7 +103,11 @@ class ProjectsView extends Component {
               alignItems="center"
             >
               <Grid item>
-                <ProjectCarousel />
+                <ProjectCarousel projectCount={2}>
+                  <ProjectCard title="P1" />
+                  <ProjectCard title="P2" />
+                  <ProjectCard title="P3" />
+                </ProjectCarousel>
               </Grid>
             </Grid>
           </Grid>
