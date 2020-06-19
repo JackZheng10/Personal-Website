@@ -27,7 +27,7 @@ class ProjectsView extends Component {
     this.state = {
       showIntro: false,
       showArrow: false,
-      showProject1: false,
+      showProjects: false,
     };
 
     this.flashArrow = cron.schedule(
@@ -47,6 +47,10 @@ class ProjectsView extends Component {
     setTimeout(() => {
       this.flashArrow.start();
     }, 2000);
+
+    setTimeout(() => {
+      this.setState({ showProjects: true });
+    }, 3000);
   };
 
   render() {
@@ -103,11 +107,15 @@ class ProjectsView extends Component {
               alignItems="center"
             >
               <Grid item>
-                <ProjectCarousel projectCount={2}>
-                  <ProjectCard title="P1" />
-                  <ProjectCard title="P2" />
-                  <ProjectCard title="P3" />
-                </ProjectCarousel>
+                <Fade in={this.state.showProjects} timeout={3000}>
+                  <div>
+                    <ProjectCarousel projectCount={2}>
+                      <ProjectCard title="P1" />
+                      <ProjectCard title="P2" />
+                      <ProjectCard title="P3" />
+                    </ProjectCarousel>
+                  </div>
+                </Fade>
               </Grid>
             </Grid>
           </Grid>
