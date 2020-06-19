@@ -10,8 +10,8 @@ import {
   withWidth,
 } from "@material-ui/core";
 import PropTypes from "prop-types";
-import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+import ArrowBackIosOutlinedIcon from "@material-ui/icons/ArrowBackIosOutlined";
+import ArrowForwardIosOutlinedIcon from "@material-ui/icons/ArrowForwardIosOutlined";
 import ProjectCard from "../components/ProjectCard";
 import projectCarouselStyles from "../../../styles/projectCarouselStyles";
 
@@ -71,7 +71,7 @@ class ProjectCarousel extends Component {
               onClick={this.handlePrevProject}
               className={classes.button}
             >
-              <ChevronLeftIcon fontSize="large" />
+              <ArrowBackIosOutlinedIcon fontSize="large" />
             </IconButton>
           </Grid>
           <Grid item className={classes.projectCards}>
@@ -82,7 +82,7 @@ class ProjectCarousel extends Component {
               onClick={this.handleNextProject}
               className={classes.button}
             >
-              <ChevronRightIcon fontSize="large" />
+              <ArrowForwardIosOutlinedIcon fontSize="large" />
             </IconButton>
           </Grid>
           <Grid item className={classes.columnButtons}>
@@ -90,13 +90,13 @@ class ProjectCarousel extends Component {
               onClick={this.handlePrevProject}
               className={classes.button}
             >
-              <ChevronLeftIcon fontSize="large" />
+              <ArrowBackIosOutlinedIcon fontSize="large" />
             </IconButton>
             <IconButton
               onClick={this.handleNextProject}
               className={classes.button}
             >
-              <ChevronRightIcon fontSize="large" />
+              <ArrowForwardIosOutlinedIcon fontSize="large" />
             </IconButton>
           </Grid>
         </Grid>

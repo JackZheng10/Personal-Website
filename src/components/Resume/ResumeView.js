@@ -22,6 +22,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 const cron = require("node-cron");
 
 //todo: give placeholder height for loading element so the page doesnt collapse randomly on refresh
+//todo: make download button ripple, see MUI button page below custom
 
 class ResumeView extends Component {
   constructor(props) {

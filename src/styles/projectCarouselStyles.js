@@ -1,6 +1,6 @@
 export default (theme) => ({
   button: {
-    color: "black",
+    color: "white",
   },
   rowButton: {
     [theme.breakpoints.down("sm")]: {
