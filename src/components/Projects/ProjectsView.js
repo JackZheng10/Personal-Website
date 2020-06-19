@@ -10,6 +10,7 @@ import {
 import PropTypes from "prop-types";
 import ProjectCarousel from "./components/ProjectCarousel";
 import ProjectCard from "./components/ProjectCard";
+import testImage from "../../images/testImage.jpg";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import projectsViewStyles from "../../styles/projectsViewStyles";
 
@@ -110,7 +111,20 @@ class ProjectsView extends Component {
                 <Fade in={this.state.showProjects} timeout={3000}>
                   <div>
                     <ProjectCarousel projectCount={2}>
-                      <ProjectCard title="P1" />
+                      <ProjectCard
+                        title="P1"
+                        media={[
+                          {
+                            source: testImage,
+                          },
+                          {
+                            source: testImage,
+                          },
+                          {
+                            source: testImage,
+                          },
+                        ]}
+                      />
                       <ProjectCard title="P2" />
                       <ProjectCard title="P3" />
                     </ProjectCarousel>

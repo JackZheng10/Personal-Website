@@ -48,4 +48,7 @@ export default (theme) => ({
     height: 0,
     paddingTop: "56.25%", // 16:9
   },
+  imageSlider: {
+    marginBottom: 50,
+  },
 });

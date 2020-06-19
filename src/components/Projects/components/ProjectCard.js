@@ -18,6 +18,10 @@ import projectCardStyles from "../../../styles/projectCardStyles";
 
 import testImage from "../../../images/testImage.jpg";
 
+//image carousel test
+import AwesomeSlider from "react-awesome-slider";
+import "react-awesome-slider/dist/styles.css";
+
 //todo: movile - shows whitespace at bottom when swiping since doesnt resize automatically?
 //todo: the messed up images are due to the actual image...the codesanbox image works right
 
@@ -38,13 +42,26 @@ class ProjectsCard extends Component {
             className={classes.cardHeader}
           />
 
-          {/* <Divider /> */}
-          <CardMedia
-            className={classes.media}
-            image={testImage}
-            title="placeholder"
-          />
-          {/* <Divider /> */}
+          {/* <CardContent className={classes.cardContent}>
+            <CardMedia
+              className={classes.media}
+              image={testImage}
+              title="placeholder"
+            />
+          </CardContent> */}
+          {/* <div>
+            <CardMedia
+              className={classes.media}
+              image={testImage}
+              title="placeholder"
+            />
+          </div> */}
+          <div>
+            <AwesomeSlider
+              className={classes.imageSlider}
+              media={this.props.media}
+            />
+          </div>
           <CardContent className={classes.cardContent}>
             <Typography variant="body1" className={classes.contentText}>
               "Placeholder"
