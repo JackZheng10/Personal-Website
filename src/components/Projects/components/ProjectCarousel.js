@@ -7,12 +7,15 @@ import {
   Button,
   Fade,
   IconButton,
+  withWidth,
 } from "@material-ui/core";
 import PropTypes from "prop-types";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ProjectCard from "../components/ProjectCard";
 import projectCarouselStyles from "../../../styles/projectCarouselStyles";
+
+//todo: add explicit spacing={0} to containers
 
 class ProjectCarousel extends Component {
   constructor(props) {
@@ -45,6 +48,12 @@ class ProjectCarousel extends Component {
     this.setState({ currentProject: this.state.currentProject - 1 });
   };
 
+  handleXsDirection = () => {
+    return this.props.width === "xs" || this.props.width === "sm"
+      ? "column"
+      : "row";
+  };
+
   render() {
     const classes = this.props.classes;
 
@@ -52,12 +61,12 @@ class ProjectCarousel extends Component {
       <React.Fragment>
         <Grid
           container
-          spacing={2}
-          direction="row"
+          spacing={0}
+          direction={this.handleXsDirection()}
           justify="center"
           alignItems="center"
         >
-          <Grid item>
+          <Grid item className={classes.rowButton}>
             <IconButton
               onClick={this.handlePrevProject}
               className={classes.button}
@@ -65,8 +74,24 @@ class ProjectCarousel extends Component {
               <ChevronLeftIcon fontSize="large" />
             </IconButton>
           </Grid>
-          <Grid item>{this.renderProjectCards()}</Grid>
-          <Grid item>
+          <Grid item className={classes.projectCards}>
+            {this.renderProjectCards()}
+          </Grid>
+          <Grid item className={classes.rowButton}>
+            <IconButton
+              onClick={this.handleNextProject}
+              className={classes.button}
+            >
+              <ChevronRightIcon fontSize="large" />
+            </IconButton>
+          </Grid>
+          <Grid item className={classes.columnButtons}>
+            <IconButton
+              onClick={this.handlePrevProject}
+              className={classes.button}
+            >
+              <ChevronLeftIcon fontSize="large" />
+            </IconButton>
             <IconButton
               onClick={this.handleNextProject}
               className={classes.button}
@@ -84,4 +109,4 @@ ProjectCarousel.propTypes = {
   className: PropTypes.string,
 };
 
-export default withStyles(projectCarouselStyles)(ProjectCarousel);
+export default withWidth()(withStyles(projectCarouselStyles)(ProjectCarousel));
