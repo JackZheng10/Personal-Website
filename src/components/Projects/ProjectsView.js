@@ -100,32 +100,32 @@ class ProjectsView extends Component {
           <br />
           <br />
           <Grid item>
-            <Grid
-              container
-              spacing={0}
-              direction="row"
-              justify="center"
-              alignItems="center"
-            >
-              <Grid item>
-                <Fade in={this.state.showProjects} timeout={3000}>
-                  <div>
-                    <ProjectCarousel projectCount={2}>
-                      <ProjectCard
-                        title="P1"
-                        description="Placeholder"
-                        images={[testImage, testImage]}
-                      />
-                      <ProjectCard
-                        title="P2"
-                        description="Placeholder"
-                        images={[testImage]}
-                      />
-                    </ProjectCarousel>
-                  </div>
-                </Fade>
-              </Grid>
-            </Grid>
+            <Fade in={this.state.showProjects} timeout={3000}>
+              <div style={{ padding: 16 }}>
+                <Grid
+                  container
+                  spacing={4}
+                  direction="row"
+                  justify="center"
+                  alignItems="center"
+                >
+                  <Grid item>
+                    <ProjectCard
+                      title="P1"
+                      description="Placeholder"
+                      images={[testImage, testImage]}
+                    />
+                  </Grid>
+                  <Grid item>
+                    <ProjectCard
+                      title="P1"
+                      description="Placeholder"
+                      images={[testImage, testImage]}
+                    />
+                  </Grid>
+                </Grid>
+              </div>
+            </Fade>
           </Grid>
         </Grid>
       </React.Fragment>
