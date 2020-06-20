@@ -20,6 +20,7 @@ const cron = require("node-cron");
 //todo: maybe change font. this is default wordpress font so ppl might think i used wordpress :(
 //todo: fix FOUC: https://github.com/gatsbyjs/gatsby/issues/15097
 //todo: fix particlesBG being clumped when screen resizes
+//todo: responsive title text
 
 class ProjectsView extends Component {
   constructor(props) {
@@ -76,7 +77,7 @@ class ProjectsView extends Component {
               <Grid item>
                 <Fade in={this.state.showIntro} timeout={3000}>
                   <Typography variant="h3" className={classes.greeting}>
-                    Explore some of the projects I've built
+                    Explore some of the projects I've worked on
                   </Typography>
                 </Fade>
               </Grid>
@@ -111,15 +112,36 @@ class ProjectsView extends Component {
                 >
                   <Grid item>
                     <ProjectCard
-                      title="P1"
+                      title="Laundr Web App"
                       description="Placeholder"
                       images={[testImage, testImage, testImage, testImage]}
                     />
                   </Grid>
                   <Grid item>
                     <ProjectCard
-                      title="P1"
+                      title="SnapScan"
                       description="Placeholder"
+                      images={[testImage, testImage]}
+                    />
+                  </Grid>
+                  <Grid item>
+                    <ProjectCard
+                      title="Gonzalo Law Client Portal"
+                      description="Placeholder"
+                      images={[testImage, testImage]}
+                    />
+                  </Grid>
+                  <Grid item>
+                    <ProjectCard
+                      title="Eat Me"
+                      description="Placeholder"
+                      images={[testImage, testImage]}
+                    />
+                  </Grid>
+                  <Grid item>
+                    <ProjectCard
+                      title="Portfolio"
+                      description="The website you're on right now!"
                       images={[testImage, testImage]}
                     />
                   </Grid>

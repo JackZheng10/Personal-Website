@@ -26,18 +26,15 @@ import aboutViewStyles from "../../styles/aboutViewStyles";
 
 const cron = require("node-cron");
 
-//todo: test on mobile: when small enough, change the topbar buttons to just iconbuttons + resize bottom images as they cause bleedingnpm s
+//todo: test on mobile: when small enough, change the topbar buttons to just iconbuttons + resize bottom images as they cause bleedings
 //todo: fix br spacings hehe
 //todo: use the window scroll to on every page to force starting at the top
 //todo: stay visible after shown, just use prev state, if true then keep true? w/viz sensor
 //todo: find out why sometimes when switching to this, the about cards flash as if it was visible
-//todo: collapsing on refresh or revisit? maybe because of the particle bg or fade?? remove fades on bio to see why. it shouldnt bug out when removed
-//todo: on refesh at width 1222 in dev mode, wierd shifting of bio text. maybe a bug
 //todo: redo visibility stuff. and fading as well.
-//todo: still fade in the greeting first, or only do it on width 750 or less (when vertical view starts)
 //todo: maybe change timings back (to before 6/14)
-//todo: make card text smaller on smaller views as it bleeds. also do for images :)
 //todo: add dates to experience cards?
+//todo: margin vs padding? get this together.
 
 class AboutView extends Component {
   constructor(props) {

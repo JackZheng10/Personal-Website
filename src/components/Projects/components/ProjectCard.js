@@ -24,6 +24,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 
 //todo: movile - shows whitespace at bottom when swiping since doesnt resize automatically?
 //todo: the messed up images are due to the actual image...the codesanbox image works right
+//todo: responsive resize text
 
 class ProjectCard extends Component {
   handleCodeLink = () => {
@@ -82,7 +83,7 @@ class ProjectCard extends Component {
             autoPlay
             infiniteLoop
             transitionTime={1000}
-            interval={10000}
+            interval={15000}
           >
             {this.renderImages(classes)}
           </Carousel>
