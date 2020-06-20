@@ -231,9 +231,9 @@ class AboutView extends Component {
           <br />
           <br />
           <Paper elevation={24} className={classes.infoSection}>
-            <br />
-            <br />
-            <Grid item>
+            {/* <br />
+            <br /> */}
+            <Grid item className={classes.sectionContent}>
               <Grid
                 container
                 spacing={0}
@@ -341,17 +341,17 @@ class AboutView extends Component {
                 </Grid>
               </Grid>
             </Grid>
-            <br />
-            <br />
+            {/* <br />
+            <br /> */}
           </Paper>
           <br />
           <br />
           <br />
           <br />
           <Paper elevation={24} className={classes.infoSection}>
-            <br />
-            <br />
-            <Grid item>
+            {/* <br />
+            <br /> */}
+            <Grid item className={classes.sectionContent}>
               <Grid
                 container
                 spacing={0}
@@ -427,8 +427,8 @@ class AboutView extends Component {
                               title="Laundr"
                               text="I'm a Software Engineering Intern at Laundr, an on-demand laundry service.
                                I work with Xamarin Forms, ASP.NET, MySQL, and C# to implement and debug features on their
-                               iOS and Android application. I'm also the sole developer for their upcoming web application.
-                              "
+                               iOS and Android application. I'm also the sole developer for their upcoming web application
+                                that's built with the MERN stack."
                             />
                           </div>
                         </Fade>
@@ -450,9 +450,9 @@ class AboutView extends Component {
                               image={UFCOELogo}
                               alt="UF CoE Logo"
                               title="UF College of Engineering"
-                              text="I'm currently a TA for CEN3031 (Introduction to Software Engineering) and COP3503
-                               (Programming Fundamentals 2). This involves topics related to programming concepts, C++, the MERN stack, and software development.
-                               I help lead weekly labs, discussions, lessons, and office hours as well as produce instructional videos."
+                              text="I'm a teaching assistant for CEN3031 (Introduction to Software Engineering) and COP3503
+                               (Programming Fundamentals 2). I deal with topics related to programming concepts, C++, the MERN stack, and software development.
+                               I help lead weekly labs, lessons, and office hours as well as produce instructional videos."
                             />
                           </div>
                         </Fade>
@@ -487,8 +487,8 @@ class AboutView extends Component {
                 </Grid>
               </Grid>
             </Grid>
-            <br />
-            <br />
+            {/* <br />
+            <br /> */}
           </Paper>
         </Grid>
       </React.Fragment>

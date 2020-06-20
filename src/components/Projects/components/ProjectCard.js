@@ -77,12 +77,12 @@ class ProjectCard extends Component {
             renderArrowPrev={(onClickHandler) => {
               return this.renderPrevButton(onClickHandler, classes);
             }}
-            statusFormatter={(current, total) => ""}
+            showStatus={false}
             showThumbs={false}
             autoPlay
             infiniteLoop
             transitionTime={1000}
-            interval={6000}
+            interval={10000}
           >
             {this.renderImages(classes)}
           </Carousel>

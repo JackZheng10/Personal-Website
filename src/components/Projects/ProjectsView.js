@@ -113,7 +113,7 @@ class ProjectsView extends Component {
                     <ProjectCard
                       title="P1"
                       description="Placeholder"
-                      images={[testImage, testImage]}
+                      images={[testImage, testImage, testImage, testImage]}
                     />
                   </Grid>
                   <Grid item>

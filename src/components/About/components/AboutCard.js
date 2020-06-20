@@ -7,6 +7,7 @@ import {
   CardContent,
   CardMedia,
   Divider,
+  Grid,
 } from "@material-ui/core";
 import PropTypes from "prop-types";
 import aboutCardStyles from "../../../styles/aboutCardStyles";
@@ -37,9 +38,13 @@ function AboutCard(props) {
         />
         <Divider />
         <CardContent className={classes.cardContent}>
-          <Typography variant="body1" className={classes.text}>
-            {props.text}
-          </Typography>
+          <Grid container spacing={0} direction="column" justify="flex-end">
+            <Grid item>
+              <Typography variant="body1" className={classes.text}>
+                {props.text}
+              </Typography>
+            </Grid>
+          </Grid>
         </CardContent>
       </Card>
     </div>

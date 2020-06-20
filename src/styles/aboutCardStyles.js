@@ -12,7 +12,7 @@ export default (theme) => ({
   layout: {
     marginLeft: "auto",
     marginRight: "auto",
-    height: 400, //todo: fine, but make text centered vertically. might change depending on final font
+    minHeight: 400, //todo: fine, but make text centered vertically. might change depending on final font
     [theme.breakpoints.up(450)]: {
       width: 400,
     },
@@ -34,7 +34,6 @@ export default (theme) => ({
   },
   text: {
     color: "white",
-    // top: 50, //todo: prob dont need
   },
   title: {
     color: "white",

@@ -168,6 +168,10 @@ export default (theme) => ({
       fontSize: 48 * Math.pow(0.92, 6),
     },
   },
+  sectionContent: {
+    marginTop: 40,
+    marginBottom: 40,
+  },
   profilePic: {
     marginLeft: "auto",
     marginRight: "auto",
