@@ -22,7 +22,6 @@ export default (theme) => ({
     textAlign: "center",
     backgroundColor: "rgb(0, 153, 255)",
     height: "100%",
-    marginTop: -55,
   },
   contentText: {
     color: "white",

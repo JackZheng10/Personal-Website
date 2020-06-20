@@ -67,6 +67,12 @@ class ProjectsCard extends Component {
             renderArrowPrev={(onClickHandler) => {
               return this.renderPrevButton(onClickHandler, classes);
             }}
+            statusFormatter={(current, total) => ""}
+            showThumbs={false}
+            autoPlay
+            infiniteLoop
+            transitionTime={1000}
+            interval={6000}
           >
             <CardMedia
               className={classes.media}
