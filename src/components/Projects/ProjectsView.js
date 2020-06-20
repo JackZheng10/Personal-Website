@@ -111,9 +111,16 @@ class ProjectsView extends Component {
                 <Fade in={this.state.showProjects} timeout={3000}>
                   <div>
                     <ProjectCarousel projectCount={2}>
-                      <ProjectCard title="P1" />
-                      <ProjectCard title="P2" />
-                      <ProjectCard title="P3" />
+                      <ProjectCard
+                        title="P1"
+                        description="Placeholder"
+                        images={[testImage, testImage]}
+                      />
+                      <ProjectCard
+                        title="P2"
+                        description="Placeholder"
+                        images={[testImage]}
+                      />
                     </ProjectCarousel>
                   </div>
                 </Fade>

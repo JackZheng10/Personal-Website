@@ -18,8 +18,6 @@ import { Carousel } from "react-responsive-carousel";
 import PropTypes from "prop-types";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import projectCardStyles from "../../../styles/projectCardStyles";
-import testImage from "../../../images/testImage.jpg";
-import testImage2 from "../../../images/testImage2.jpg";
 import ArrowBackIosOutlinedIcon from "@material-ui/icons/ArrowBackIosOutlined";
 import ArrowForwardIosOutlinedIcon from "@material-ui/icons/ArrowForwardIosOutlined";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
@@ -27,7 +25,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 //todo: movile - shows whitespace at bottom when swiping since doesnt resize automatically?
 //todo: the messed up images are due to the actual image...the codesanbox image works right
 
-class ProjectsCard extends Component {
+class ProjectCard extends Component {
   handleCodeLink = () => {
     alert("Navigate");
   };
@@ -48,6 +46,19 @@ class ProjectsCard extends Component {
     );
   };
 
+  renderImages = (classes) => {
+    return this.props.images.map((image, index) => {
+      return (
+        <CardMedia
+          className={classes.media}
+          image={image}
+          title="Project Picture"
+          key={index}
+        />
+      );
+    });
+  };
+
   render() {
     const classes = this.props.classes;
 
@@ -59,7 +70,6 @@ class ProjectsCard extends Component {
             titleTypographyProps={{ variant: "h3", className: classes.title }}
             className={classes.cardHeader}
           />
-
           <Carousel
             renderArrowNext={(onClickHandler) => {
               return this.renderNextButton(onClickHandler, classes);
@@ -74,21 +84,11 @@ class ProjectsCard extends Component {
             transitionTime={1000}
             interval={6000}
           >
-            <CardMedia
-              className={classes.media}
-              image={testImage}
-              title="placeholder"
-            />
-            <CardMedia
-              className={classes.media}
-              image={testImage}
-              title="placeholder"
-            />
+            {this.renderImages(classes)}
           </Carousel>
-
           <CardContent className={classes.cardContent}>
             <Typography variant="body1" className={classes.contentText}>
-              "Placeholder"
+              {this.props.description}
             </Typography>
           </CardContent>
           {/* <Divider /> */}
@@ -114,8 +114,8 @@ class ProjectsCard extends Component {
   }
 }
 
-ProjectsCard.propTypes = {
+ProjectCard.propTypes = {
   className: PropTypes.string,
 };
 
-export default withStyles(projectCardStyles)(ProjectsCard);
+export default withStyles(projectCardStyles)(ProjectCard);

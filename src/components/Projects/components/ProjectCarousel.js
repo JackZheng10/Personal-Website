@@ -31,6 +31,7 @@ class ProjectCarousel extends Component {
           style={{
             display: !(this.state.currentProject === index) ? "none" : "block",
           }}
+          key={index}
         >
           <div>{child}</div>
         </Fade>
