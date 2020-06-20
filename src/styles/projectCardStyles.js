@@ -22,6 +22,7 @@ export default (theme) => ({
     textAlign: "center",
     backgroundColor: "rgb(0, 153, 255)",
     height: "100%",
+    marginTop: -55,
   },
   contentText: {
     color: "white",
@@ -48,7 +49,18 @@ export default (theme) => ({
     height: 0,
     paddingTop: "56.25%", // 16:9
   },
-  imageSlider: {
-    marginBottom: 50,
+  imageButtonRight: {
+    color: "rgb(0, 153, 255)",
+    position: "absolute",
+    top: "45%",
+    zIndex: 2,
+    right: 10,
+  },
+  imageButtonLeft: {
+    color: "rgb(0, 153, 255)",
+    position: "absolute",
+    top: "45%",
+    zIndex: 2,
+    left: 10,
   },
 });

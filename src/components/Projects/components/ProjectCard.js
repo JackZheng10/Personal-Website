@@ -10,17 +10,19 @@ import {
   CardMedia,
   Divider,
   CardActions,
+  Icon,
   Button,
+  IconButton,
 } from "@material-ui/core";
+import { Carousel } from "react-responsive-carousel";
 import PropTypes from "prop-types";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import projectCardStyles from "../../../styles/projectCardStyles";
-
 import testImage from "../../../images/testImage.jpg";
-
-//image carousel test
-import AwesomeSlider from "react-awesome-slider";
-import "react-awesome-slider/dist/styles.css";
+import testImage2 from "../../../images/testImage2.jpg";
+import ArrowBackIosOutlinedIcon from "@material-ui/icons/ArrowBackIosOutlined";
+import ArrowForwardIosOutlinedIcon from "@material-ui/icons/ArrowForwardIosOutlined";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
 //todo: movile - shows whitespace at bottom when swiping since doesnt resize automatically?
 //todo: the messed up images are due to the actual image...the codesanbox image works right
@@ -28,6 +30,22 @@ import "react-awesome-slider/dist/styles.css";
 class ProjectsCard extends Component {
   handleCodeLink = () => {
     alert("Navigate");
+  };
+
+  renderNextButton = (onClickHandler, classes) => {
+    return (
+      <IconButton className={classes.imageButtonRight} onClick={onClickHandler}>
+        <ArrowForwardIosOutlinedIcon fontSize="large" />
+      </IconButton>
+    );
+  };
+
+  renderPrevButton = (onClickHandler, classes) => {
+    return (
+      <IconButton className={classes.imageButtonLeft} onClick={onClickHandler}>
+        <ArrowBackIosOutlinedIcon fontSize="large" />
+      </IconButton>
+    );
   };
 
   render() {
@@ -42,26 +60,26 @@ class ProjectsCard extends Component {
             className={classes.cardHeader}
           />
 
-          {/* <CardContent className={classes.cardContent}>
+          <Carousel
+            renderArrowNext={(onClickHandler) => {
+              return this.renderNextButton(onClickHandler, classes);
+            }}
+            renderArrowPrev={(onClickHandler) => {
+              return this.renderPrevButton(onClickHandler, classes);
+            }}
+          >
             <CardMedia
               className={classes.media}
               image={testImage}
               title="placeholder"
             />
-          </CardContent> */}
-          {/* <div>
             <CardMedia
               className={classes.media}
               image={testImage}
               title="placeholder"
             />
-          </div> */}
-          <div>
-            <AwesomeSlider
-              className={classes.imageSlider}
-              media={this.props.media}
-            />
-          </div>
+          </Carousel>
+
           <CardContent className={classes.cardContent}>
             <Typography variant="body1" className={classes.contentText}>
               "Placeholder"

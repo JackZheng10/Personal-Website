@@ -9,10 +9,8 @@ import {
   IconButton,
   withWidth,
 } from "@material-ui/core";
+import { FaChevronCircleRight, FaChevronCircleLeft } from "react-icons/fa";
 import PropTypes from "prop-types";
-import ArrowBackIosOutlinedIcon from "@material-ui/icons/ArrowBackIosOutlined";
-import ArrowForwardIosOutlinedIcon from "@material-ui/icons/ArrowForwardIosOutlined";
-import ProjectCard from "../components/ProjectCard";
 import projectCarouselStyles from "../../../styles/projectCarouselStyles";
 
 //todo: add explicit spacing={0} to containers
@@ -71,7 +69,7 @@ class ProjectCarousel extends Component {
               onClick={this.handlePrevProject}
               className={classes.button}
             >
-              <ArrowBackIosOutlinedIcon fontSize="large" />
+              <FaChevronCircleLeft className={classes.buttonIcon} />
             </IconButton>
           </Grid>
           <Grid item className={classes.projectCards}>
@@ -82,7 +80,7 @@ class ProjectCarousel extends Component {
               onClick={this.handleNextProject}
               className={classes.button}
             >
-              <ArrowForwardIosOutlinedIcon fontSize="large" />
+              <FaChevronCircleRight className={classes.buttonIcon} />
             </IconButton>
           </Grid>
           <Grid item className={classes.columnButtons}>
@@ -90,13 +88,13 @@ class ProjectCarousel extends Component {
               onClick={this.handlePrevProject}
               className={classes.button}
             >
-              <ArrowBackIosOutlinedIcon fontSize="large" />
+              <FaChevronCircleLeft className={classes.buttonIcon} />
             </IconButton>
             <IconButton
               onClick={this.handleNextProject}
               className={classes.button}
             >
-              <ArrowForwardIosOutlinedIcon fontSize="large" />
+              <FaChevronCircleRight className={classes.buttonIcon} />
             </IconButton>
           </Grid>
         </Grid>
