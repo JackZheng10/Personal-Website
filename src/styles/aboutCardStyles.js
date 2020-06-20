@@ -8,6 +8,7 @@ export default (theme) => ({
   root: {
     width: "100%",
     height: "100%",
+    backgroundColor: "transparent",
   },
   layout: {
     marginLeft: "auto",
@@ -34,13 +35,20 @@ export default (theme) => ({
   },
   text: {
     color: "white",
+    [theme.breakpoints.down(410)]: {
+      fontSize: 14,
+    },
   },
   title: {
     color: "white",
+    [theme.breakpoints.down(410)]: {
+      fontSize: 22,
+    },
   },
   media: {
-    height: 150,
-    maxWidth: "100%",
-    backgroundSize: "auto",
+    height: 0,
+    paddingTop: "56.25%", // 16:9
+    marginTop: 5,
+    marginBottom: 5,
   },
 });

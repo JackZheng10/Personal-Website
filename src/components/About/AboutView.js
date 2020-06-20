@@ -12,12 +12,12 @@ import VizSensor from "react-visibility-sensor";
 import AboutCard from "./components/AboutCard";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import ProfilePic from "../../images/ProfilePic.png";
-import UFLogo from "../../images/UFLogo.jpg";
-import DevLogo from "../../images/DevLogo.png";
-import HockeyLogo from "../../images/HockeyLogo.png";
-import LaundrLogo from "../../images/LaundrLogo.png";
-import UFCOELogo from "../../images/UFCOELogo.png";
-import UFCOEdLogo from "../../images/UFCOEdLogo.png";
+import UFLogo from "../../images/temp/UFLogo.png";
+import DevLogo from "../../images/temp/DevLogo.png";
+import HockeyLogo from "../../images/temp/HockeyLogo.png";
+import LaundrLogo from "../../images/temp/LaundrLogo.png";
+import UFCOELogo from "../../images/temp/UFCOELogo.png";
+import UFCOEdLogo from "../../images/temp/UFCOEdLogo.png";
 import aboutViewStyles from "../../styles/aboutViewStyles";
 
 //test
