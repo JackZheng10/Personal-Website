@@ -21,6 +21,7 @@ const cron = require("node-cron");
 //todo: fix FOUC: https://github.com/gatsbyjs/gatsby/issues/15097
 //todo: fix particlesBG being clumped when screen resizes
 //todo: responsive title text
+//todo: margin top and gap between arrow responsive?
 
 class ProjectsView extends Component {
   constructor(props) {

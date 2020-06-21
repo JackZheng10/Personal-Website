@@ -29,6 +29,24 @@ export default (theme) => ({
   title: {
     color: "white",
     fontWeight: 600,
+    [theme.breakpoints.down(550)]: {
+      fontSize: 48 * Math.pow(0.92, 1),
+    },
+    [theme.breakpoints.down(450)]: {
+      fontSize: 48 * Math.pow(0.92, 2),
+    },
+    [theme.breakpoints.down(410)]: {
+      fontSize: 48 * Math.pow(0.92, 3),
+    },
+    [theme.breakpoints.down(370)]: {
+      fontSize: 48 * Math.pow(0.92, 4),
+    },
+    [theme.breakpoints.down(345)]: {
+      fontSize: 48 * Math.pow(0.92, 5),
+    },
+    [theme.breakpoints.down(320)]: {
+      fontSize: 48 * Math.pow(0.92, 6),
+    },
   },
   buttonContainer: {
     display: "flex",
