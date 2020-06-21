@@ -4,11 +4,9 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-import React, { Component } from "react";
+import React from "react";
 import { CssBaseline, ThemeProvider } from "@material-ui/core";
 // import { StylesProvider } from "@material-ui/styles";
-import Topbar from "./src/components/Layout/components/Topbar";
-import Footer from "./src/components/Layout/components/Footer";
 import theme from "./src/styles/theme";
 import "./src/styles/particlesStyles.css";
 
@@ -22,7 +20,7 @@ function Wrapper(props) {
         params={{
           background: {
             color: {
-              value: "#33aeff",
+              value: "#f5f1ed",
             },
           },
           particles: {
@@ -31,6 +29,14 @@ function Wrapper(props) {
             },
             size: {
               value: 5,
+            },
+            color: {
+              value: "rgb(0, 153, 255)",
+            },
+            links: {
+              color: {
+                value: "rgb(0, 153, 255)",
+              },
             },
           },
           interactivity: {
