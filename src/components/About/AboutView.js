@@ -102,13 +102,19 @@ class AboutView extends Component {
 
   //todo: testing delay on card vis so no ghost cards on switch back to normal view
   renderAboutCards = (isVisible, number) => {
-    setTimeout(() => {
+    let prevState = this.state["showCard" + number];
+
+    if (!prevState && isVisible) {
       this.setState({ ["showCard" + number]: isVisible });
-    }, 100);
+    }
   };
 
   renderExperienceCards = (isVisible, number) => {
-    this.setState({ ["showExp" + number]: isVisible });
+    let prevState = this.state["showExp" + number];
+
+    if (!prevState && isVisible) {
+      this.setState({ ["showExp" + number]: isVisible });
+    }
   };
 
   handleXsVisible = () => {

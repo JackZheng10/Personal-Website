@@ -8,7 +8,7 @@ export default (theme) => ({
   root: {
     width: "100%",
     height: "100%",
-    backgroundColor: "transparent",
+    backgroundColor: "white",
   },
   layout: {
     marginLeft: "auto",
