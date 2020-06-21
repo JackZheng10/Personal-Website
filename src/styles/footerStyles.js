@@ -3,7 +3,7 @@ export default (theme) => ({
     marginTop: "auto",
     // backgroundImage:
     //   "linear-gradient( 136deg, rgb(0, 153, 255) 15%, rgb(0, 153, 255) 50%, rgb(0, 153, 255) 100%)",
-    backgroundColor: "#004e89",
+    backgroundColor: "rgb(0, 153, 255)",
   },
   name: {
     color: "white",
