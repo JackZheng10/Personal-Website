@@ -206,7 +206,7 @@ export default (theme) => ({
     },
   },
   infoSection: {
-    backgroundColor: "#63c1ff",
+    backgroundColor: "#004e89",
     width: "100%",
   },
   bio: {

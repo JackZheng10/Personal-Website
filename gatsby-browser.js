@@ -20,7 +20,7 @@ function Wrapper(props) {
         params={{
           background: {
             color: {
-              value: "#33aeff",
+              value: "#f5f1ed",
             },
           },
           particles: {
@@ -29,6 +29,14 @@ function Wrapper(props) {
             },
             size: {
               value: 5,
+            },
+            color: {
+              value: "rgb(0, 153, 255)",
+            },
+            links: {
+              color: {
+                value: "rgb(0, 153, 255)",
+              },
             },
           },
           interactivity: {
