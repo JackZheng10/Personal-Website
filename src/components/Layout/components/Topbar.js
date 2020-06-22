@@ -11,6 +11,7 @@ import {
   Switch,
   Fade,
 } from "@material-ui/core";
+import { motion } from "framer-motion";
 import PersonIcon from "@material-ui/icons/Person";
 import BuildIcon from "@material-ui/icons/Build";
 import FindInPageIcon from "@material-ui/icons/FindInPage";
@@ -63,39 +64,45 @@ function Topbar(props) {
             </IconButton>
           </Hidden>
           <Hidden only={["xs"]}>
-            <Button
-              variant="outlined"
-              color="primary"
-              size="medium"
-              className={classes.button}
-              startIcon={<PersonIcon />}
-              component={Link}
-              to="/about"
-            >
-              About Me
-            </Button>
-            <Button
-              variant="outlined"
-              color="primary"
-              size="medium"
-              className={classes.button}
-              startIcon={<BuildIcon />}
-              component={Link}
-              to="/projects"
-            >
-              Projects
-            </Button>
-            <Button
-              variant="outlined"
-              color="primary"
-              size="medium"
-              className={classes.button}
-              startIcon={<FindInPageIcon />}
-              component={Link}
-              to="/resume"
-            >
-              Resume
-            </Button>
+            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+              <Button
+                variant="outlined"
+                color="primary"
+                size="medium"
+                className={classes.button}
+                startIcon={<PersonIcon />}
+                component={Link}
+                to="/about"
+              >
+                About Me
+              </Button>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+              <Button
+                variant="outlined"
+                color="primary"
+                size="medium"
+                className={classes.button}
+                startIcon={<BuildIcon />}
+                component={Link}
+                to="/projects"
+              >
+                Projects
+              </Button>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+              <Button
+                variant="outlined"
+                color="primary"
+                size="medium"
+                className={classes.button}
+                startIcon={<FindInPageIcon />}
+                component={Link}
+                to="/resume"
+              >
+                Resume
+              </Button>
+            </motion.div>
           </Hidden>
           <div className={classes.flexGrow} />
           <Switch

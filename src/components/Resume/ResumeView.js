@@ -17,6 +17,9 @@ import GetAppIcon from "@material-ui/icons/GetApp";
 import resumeViewStyles from "../../styles/resumeViewStyles";
 import ResumePDF from "../../files/PDFTest.pdf";
 import "react-pdf/dist/Page/AnnotationLayer.css";
+
+//animation test
+import { motion } from "framer-motion";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const cron = require("node-cron");
@@ -79,11 +82,15 @@ class ResumeView extends Component {
         <Grid item>
           <Grid container direction="row" justify="center" alignItems="center">
             <Grid item>
-              <Fade in={this.state.showIntro} timeout={3000}>
+              {/* <Fade in={this.state.showIntro} timeout={3000}> */}
+              <motion.div
+                animate={{ scale: [0, 1.2, 1.4, 1.6, 1.8, 1.6, 1.4, 1.2, 1] }}
+              >
                 <Typography variant="h3" className={classes.greeting}>
                   Download the latest version of my resume
                 </Typography>
-              </Fade>
+              </motion.div>
+              {/* </Fade> */}
             </Grid>
           </Grid>
         </Grid>
