@@ -84,7 +84,11 @@ class ResumeView extends Component {
             <Grid item>
               {/* <Fade in={this.state.showIntro} timeout={3000}> */}
               <motion.div
-                animate={{ scale: [0, 1, 1.5, 2, 1.5, 1] }}
+                animate={{
+                  scale: [1, 2, 2, 1, 1],
+                  rotate: [0, 0, 270, 270, 0],
+                  borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+                }}
                 transition={{ duration: 1 }}
               >
                 <Typography variant="h3" className={classes.greeting}>
