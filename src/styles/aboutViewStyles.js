@@ -208,6 +208,7 @@ export default (theme) => ({
   infoSection: {
     backgroundColor: "rgb(0, 153, 255)",
     width: "100%",
+    boxShadow: "0 0 20px",
   },
   bio: {
     order: 2,

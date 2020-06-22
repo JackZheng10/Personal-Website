@@ -35,6 +35,7 @@ const cron = require("node-cron");
 //todo: maybe change timings back (to before 6/14)
 //todo: add dates to experience cards?
 //todo: margin vs padding? get this together.
+//todo: boxshadow to top of the paper
 
 class AboutView extends Component {
   constructor(props) {
@@ -233,7 +234,7 @@ class AboutView extends Component {
           </Grid>
           <br />
           <br />
-          <Paper elevation={24} className={classes.infoSection}>
+          <Paper className={classes.infoSection}>
             {/* <br />
             <br /> */}
             <Grid item className={classes.sectionContent}>
@@ -351,7 +352,7 @@ class AboutView extends Component {
           <br />
           <br />
           <br />
-          <Paper elevation={24} className={classes.infoSection}>
+          <Paper className={classes.infoSection}>
             {/* <br />
             <br /> */}
             <Grid item className={classes.sectionContent}>

@@ -23,11 +23,11 @@ export default (theme) => ({
   },
   cardHeader: {
     textAlign: "center",
-    backgroundColor: "rgb(0, 78, 137)",
+    backgroundColor: "#63c1ff",
   },
   cardContent: {
     textAlign: "center",
-    backgroundColor: "rgb(0, 78, 137)",
+    backgroundColor: "#63c1ff",
     height: "100%",
   },
   cardActions: {
