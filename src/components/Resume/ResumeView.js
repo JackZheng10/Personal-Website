@@ -84,7 +84,8 @@ class ResumeView extends Component {
             <Grid item>
               {/* <Fade in={this.state.showIntro} timeout={3000}> */}
               <motion.div
-                animate={{ scale: [0, 1.2, 1.4, 1.6, 1.8, 1.6, 1.4, 1.2, 1] }}
+                animate={{ scale: [0, 1, 1.5, 2, 1.5, 1] }}
+                transition={{ duration: 1 }}
               >
                 <Typography variant="h3" className={classes.greeting}>
                   Download the latest version of my resume
