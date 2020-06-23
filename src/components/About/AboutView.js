@@ -7,6 +7,7 @@ import {
   withWidth,
   Paper,
 } from "@material-ui/core";
+import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 import VizSensor from "react-visibility-sensor";
 import AboutCard from "./components/AboutCard";
@@ -25,6 +26,10 @@ import aboutViewStyles from "../../styles/aboutViewStyles";
 // import Success from "../temp/Success.flr"
 
 const cron = require("node-cron");
+
+const animations = {
+  bio: { y: [50, 40, 30, 20, 10, 0], opacity: [0, 1] },
+};
 
 //todo: test on mobile: when small enough, change the topbar buttons to just iconbuttons + resize bottom images as they cause bleedings
 //todo: fix br spacings hehe
@@ -215,20 +220,38 @@ class AboutView extends Component {
                 </Fade>
               </Grid>
               <Grid item className={classes.bio}>
-                <Fade in={this.state.showBio} timeout={3000}>
-                  <div style={{ textAlign: "center" }}>
-                    <Typography variant="h1" className={classes.greeting}>
-                      Hey there, I'm Jack Zheng
-                    </Typography>
-                    <br />
-                    <Typography variant="h2" className={classes.bioTitle}>
-                      Computer Science Student
-                    </Typography>
-                    <Typography variant="h4" className={classes.bioText}>
-                      Aspiring Software Engineer
-                    </Typography>
-                  </div>
-                </Fade>
+                {/* <Fade in={this.state.showBio} timeout={3000}> */}
+
+                <motion.div
+                  variants={animations}
+                  animate="bio"
+                  transition={{ delay: 1 }}
+                >
+                  <Typography variant="h1" className={classes.greeting}>
+                    Hey there, I'm Jack Zheng
+                  </Typography>
+                </motion.div>
+                <br />
+                <motion.div
+                  variants={animations}
+                  animate="bio"
+                  transition={{ delay: 2 }}
+                >
+                  <Typography variant="h2" className={classes.bioTitle}>
+                    Computer Science Student
+                  </Typography>
+                </motion.div>
+                <motion.div
+                  variants={animations}
+                  animate="bio"
+                  transition={{ delay: 3 }}
+                >
+                  <Typography variant="h4" className={classes.bioText}>
+                    Aspiring Software Engineer
+                  </Typography>
+                </motion.div>
+
+                {/* </Fade> */}
               </Grid>
             </Grid>
           </Grid>
