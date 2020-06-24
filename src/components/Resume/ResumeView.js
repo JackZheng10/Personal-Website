@@ -9,6 +9,7 @@ import {
   Divider,
   CardActions,
 } from "@material-ui/core";
+import { motion } from "framer-motion";
 import { SizeMe } from "react-sizeme";
 import { Document, Page, pdfjs } from "react-pdf";
 import PropTypes from "prop-types";
@@ -17,12 +18,13 @@ import GetAppIcon from "@material-ui/icons/GetApp";
 import resumeViewStyles from "../../styles/resumeViewStyles";
 import ResumePDF from "../../files/PDFTest.pdf";
 import "react-pdf/dist/Page/AnnotationLayer.css";
-
-//animation test
-import { motion } from "framer-motion";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const cron = require("node-cron");
+
+const animations = {
+  bio: { y: [50, 0], opacity: [0, 0.5, 1] },
+};
 
 //todo: give placeholder height for loading element so the page doesnt collapse randomly on refresh
 //todo: make download button ripple, see MUI button page below custom
@@ -82,20 +84,17 @@ class ResumeView extends Component {
         <Grid item>
           <Grid container direction="row" justify="center" alignItems="center">
             <Grid item>
-              <Fade in={this.state.showIntro} timeout={3000}>
-                {/* <motion.div
-                animate={{
-                  scale: [1, 2, 2, 1, 1],
-                  rotate: [0, 0, 270, 270, 0],
-                  borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-                }}
-                transition={{ duration: 1 }}
-              > */}
+              {/* <Fade in={this.state.showIntro} timeout={3000}> */}
+              <motion.div
+                variants={animations}
+                animate="bio"
+                transition={{ delay: 0.5, duration: 1 }}
+              >
                 <Typography variant="h3" className={classes.greeting}>
                   Download the latest version of my resume
                 </Typography>
-                {/* </motion.div> */}
-              </Fade>
+              </motion.div>
+              {/* </Fade> */}
             </Grid>
           </Grid>
         </Grid>
