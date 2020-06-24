@@ -37,7 +37,7 @@ export default (theme) => ({
   },
   cardContent: {
     textAlign: "center",
-    backgroundColor: "white",
+    backgroundColor: "#ededed",
     height: "100%",
   },
   cardActions: {
