@@ -28,21 +28,24 @@ export default (theme) => ({
   layout: {
     marginLeft: "auto",
     marginRight: "auto",
-    [theme.breakpoints.up(649)]: {
-      width: 500,
+    [theme.breakpoints.up(830)]: {
+      width: 800,
     },
-    [theme.breakpoints.down(650)]: {
+    [theme.breakpoints.down(830)]: {
       width: "90vw",
     },
   },
   cardContent: {
     textAlign: "center",
-    backgroundColor: "rgb(0, 153, 255)",
+    backgroundColor: "white",
     height: "100%",
   },
   cardActions: {
     justifyContent: "center",
-    backgroundColor: "white",
+    backgroundColor: "rgb(0, 153, 255)",
     cursor: "pointer",
+  },
+  icon: {
+    color: "white",
   },
 });

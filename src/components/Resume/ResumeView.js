@@ -127,6 +127,13 @@ class ResumeView extends Component {
               <Fade in={this.state.showResume} timeout={3000}>
                 <div className={classes.layout}>
                   <Card className={classes.root} elevation={10}>
+                    <CardActions
+                      className={classes.cardActions}
+                      onClick={this.handleDownload}
+                    >
+                      <GetAppIcon fontSize="large" className={classes.icon} />
+                    </CardActions>
+                    <Divider />
                     <CardContent className={classes.cardContent}>
                       <SizeMe
                         monitorWidth //or height?
@@ -141,13 +148,6 @@ class ResumeView extends Component {
                         )}
                       />
                     </CardContent>
-                    <Divider />
-                    <CardActions
-                      className={classes.cardActions}
-                      onClick={this.handleDownload}
-                    >
-                      <GetAppIcon fontSize="large" />
-                    </CardActions>
                   </Card>
                 </div>
               </Fade>
