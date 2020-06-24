@@ -18,7 +18,8 @@ import projectsViewStyles from "../../styles/projectsViewStyles";
 const cron = require("node-cron");
 
 const animations = {
-  bio: { y: [50, 0], opacity: [0, 0.5, 1] },
+  slide: { y: [50, 0], opacity: [0, 0.5, 1] },
+  hidden: { opacity: 0 },
 };
 
 //todo: use blur on about cards before they fade in? keep visible after first time or this blur visible on screen all the time
@@ -84,7 +85,8 @@ class ProjectsView extends Component {
                 {/* <Fade in={this.state.showIntro} timeout={3000}> */}
                 <motion.div
                   variants={animations}
-                  animate="bio"
+                  animate="slide"
+                  initial="hidden"
                   transition={{ delay: 0.5, duration: 1 }}
                 >
                   <Typography variant="h3" className={classes.greeting}>

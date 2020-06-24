@@ -28,7 +28,8 @@ import aboutViewStyles from "../../styles/aboutViewStyles";
 const cron = require("node-cron");
 
 const animations = {
-  bio: { y: [50, 0], opacity: [0, 0.5, 1] },
+  slide: { y: [50, 0], opacity: [0, 0.5, 1] },
+  hidden: { opacity: 0 },
 };
 
 //todo: test on mobile: when small enough, change the topbar buttons to just iconbuttons + resize bottom images as they cause bleedings
@@ -223,7 +224,8 @@ class AboutView extends Component {
                 {/* <Fade in={this.state.showBio} timeout={3000}> */}
                 <motion.div
                   variants={animations}
-                  animate="bio"
+                  animate="slide"
+                  initial="hidden"
                   transition={{ delay: 0.5 }}
                 >
                   <Typography variant="h1" className={classes.greeting}>
@@ -233,7 +235,8 @@ class AboutView extends Component {
                 <br />
                 <motion.div
                   variants={animations}
-                  animate="bio"
+                  animate="slide"
+                  initial="hidden"
                   transition={{ delay: 1.5 }}
                 >
                   <Typography variant="h2" className={classes.bioTitle}>
@@ -242,7 +245,8 @@ class AboutView extends Component {
                 </motion.div>
                 <motion.div
                   variants={animations}
-                  animate="bio"
+                  animate="slide"
+                  initial="hidden"
                   transition={{ delay: 2.5 }}
                 >
                   <Typography variant="h4" className={classes.bioText}>
