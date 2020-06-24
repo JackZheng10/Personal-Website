@@ -308,9 +308,8 @@ class AboutView extends Component {
                               alt="UF Logo"
                               title="I am a..."
                               text="I'm a Junior at the University of Florida 
-                    studying computer science. I was extremely addicted to computers as a kid
-                     - and I can say that not much has changed! 
-                    Above all else, I'm grateful for what I'm learning along the way."
+                    studying computer science. I'm grateful for everything that I'm learning along the way, and
+                     I can't wait to see where my future takes me."
                             />
                           </div>
                         </Fade>
@@ -483,7 +482,7 @@ class AboutView extends Component {
                               title="UF College of Engineering"
                               text="I'm a teaching assistant for CEN3031 (Introduction to Software Engineering) and COP3503
                                (Programming Fundamentals 2). I deal with topics related to programming concepts, C++, the MERN stack, and software development.
-                               I help lead weekly labs, lessons, and office hours as well as produce instructional videos."
+                               I lead weekly labs, lessons, and office hours as well as produce instructional videos."
                             />
                           </div>
                         </Fade>

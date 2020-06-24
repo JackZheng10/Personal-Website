@@ -1,14 +1,18 @@
 import { createMuiTheme } from "@material-ui/core";
 import openSans from "typeface-open-sans";
+import robotoSlab from "typeface-roboto-slab";
+import tWeb from "typeface-titillium-web";
+
+//todo: work on color pallette
 
 const theme = createMuiTheme({
   typography: {
-    fontFamily: "Open Sans",
+    fontFamily: "Titillium Web",
   },
   overrides: {
     MuiCssBaseline: {
       "@global": {
-        "@font-face": [openSans],
+        "@font-face": [tWeb],
       },
     },
   },

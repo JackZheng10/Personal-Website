@@ -29,7 +29,9 @@
     "react-sizeme": "^2.6.12",
     "react-syntax-highlighter": "^12.2.1",
     "react-visibility-sensor": "^5.1.1",
-    "typeface-open-sans": "0.0.75"
+    "typeface-open-sans": "0.0.75",
+    "typeface-roboto-slab": "^1.1.4",
+    "typeface-titillium-web": "0.0.72"
   },
   "devDependencies": {
     "prettier": "2.0.5"
