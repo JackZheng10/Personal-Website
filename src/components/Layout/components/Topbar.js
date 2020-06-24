@@ -10,6 +10,8 @@ import {
   Hidden,
   Switch,
   Fade,
+  Paper,
+  Grid,
 } from "@material-ui/core";
 import { motion } from "framer-motion";
 import PersonIcon from "@material-ui/icons/Person";
@@ -64,7 +66,13 @@ function Topbar(props) {
             </IconButton>
           </Hidden>
           <Hidden only={["xs"]}>
-            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              transformTemplate={(props, transform) =>
+                transform.replace(" translateZ(0)", "")
+              }
+            >
               <Button
                 variant="outlined"
                 color="primary"
@@ -77,7 +85,13 @@ function Topbar(props) {
                 About Me
               </Button>
             </motion.div>
-            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              transformTemplate={(props, transform) =>
+                transform.replace(" translateZ(0)", "")
+              }
+            >
               <Button
                 variant="outlined"
                 color="primary"
@@ -90,7 +104,13 @@ function Topbar(props) {
                 Projects
               </Button>
             </motion.div>
-            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              transformTemplate={(props, transform) =>
+                transform.replace(" translateZ(0)", "")
+              }
+            >
               <Button
                 variant="outlined"
                 color="primary"
@@ -105,12 +125,22 @@ function Topbar(props) {
             </motion.div>
           </Hidden>
           <div className={classes.flexGrow} />
+          {/* <Grid
+            container
+            direction="row"
+            justify="flex-end"
+            alignItems="center"
+            style={{ backgroundColor: "red" }}
+          >
+            <Grid item> */}
           <Switch
             color="default"
             size="small"
             onChange={props.toggleCodeView}
             checked={codeView}
           />
+          {/* </Grid>
+            <Grid item> */}
           <Fade
             in={!codeView}
             timeout={3000}
@@ -129,6 +159,8 @@ function Topbar(props) {
           >
             <CodeIcon fontSize="large" className={classes.codeButton} />
           </Fade>
+          {/* </Grid>
+          </Grid> */}
         </Toolbar>
       </AppBar>
       <div className={classes.offset} />

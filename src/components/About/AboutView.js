@@ -28,7 +28,7 @@ import aboutViewStyles from "../../styles/aboutViewStyles";
 const cron = require("node-cron");
 
 const animations = {
-  bio: { y: [50, 40, 30, 20, 10, 0], opacity: [0, 1] },
+  bio: { y: [50, 0], opacity: [0, 0.5, 1] },
 };
 
 //todo: test on mobile: when small enough, change the topbar buttons to just iconbuttons + resize bottom images as they cause bleedings
@@ -55,7 +55,7 @@ class AboutView extends Component {
       showPic: false,
       showBio: false,
       showLearnMore: false,
-      showArrow1: false,
+      showArrow: false,
       showCard1: false,
       showCard2: false,
       showCard3: false,
@@ -66,10 +66,10 @@ class AboutView extends Component {
       showExp3: false,
     };
 
-    this.flashArrow1 = cron.schedule(
+    this.flashArrow = cron.schedule(
       "*/1 * * * * *",
       () => {
-        this.setState({ showArrow1: !this.state.showArrow1 });
+        this.setState({ showArrow: !this.state.showArrow });
       },
       { scheduled: false }
     );
@@ -99,11 +99,11 @@ class AboutView extends Component {
 
     setTimeout(() => {
       this.setState({ showLearnMore: true });
-    }, 2000);
+    }, 3000);
 
     setTimeout(() => {
-      this.flashArrow1.start();
-    }, 3000);
+      this.flashArrow.start();
+    }, 4000);
   };
 
   //todo: testing delay on card vis so no ghost cards on switch back to normal view
@@ -211,21 +211,20 @@ class AboutView extends Component {
               alignItems="center"
             >
               <Grid item className={classes.profilePic}>
-                <Fade in={this.state.showPic} timeout={3000}>
-                  <img
-                    src={ProfilePic}
-                    alt="Profile Pic"
-                    className={classes.profilePicSrc}
-                  />
-                </Fade>
+                {/* <Fade in={this.state.showPic} timeout={3000}> */}
+                <img
+                  src={ProfilePic}
+                  alt="Profile Pic"
+                  className={classes.profilePicSrc}
+                />
+                {/* </Fade> */}
               </Grid>
               <Grid item className={classes.bio}>
                 {/* <Fade in={this.state.showBio} timeout={3000}> */}
-
                 <motion.div
                   variants={animations}
                   animate="bio"
-                  transition={{ delay: 1 }}
+                  transition={{ delay: 0.5 }}
                 >
                   <Typography variant="h1" className={classes.greeting}>
                     Hey there, I'm Jack Zheng
@@ -235,7 +234,7 @@ class AboutView extends Component {
                 <motion.div
                   variants={animations}
                   animate="bio"
-                  transition={{ delay: 2 }}
+                  transition={{ delay: 1.5 }}
                 >
                   <Typography variant="h2" className={classes.bioTitle}>
                     Computer Science Student
@@ -244,13 +243,12 @@ class AboutView extends Component {
                 <motion.div
                   variants={animations}
                   animate="bio"
-                  transition={{ delay: 3 }}
+                  transition={{ delay: 2.5 }}
                 >
                   <Typography variant="h4" className={classes.bioText}>
                     Aspiring Software Engineer
                   </Typography>
                 </motion.div>
-
                 {/* </Fade> */}
               </Grid>
             </Grid>
@@ -276,8 +274,11 @@ class AboutView extends Component {
                   </Fade>
                 </Grid>
                 <Grid item>
-                  <Fade in={this.state.showArrow1} timeout={990}>
-                    <KeyboardArrowDownIcon fontSize="large" />
+                  <Fade in={this.state.showArrow} timeout={990}>
+                    <KeyboardArrowDownIcon
+                      fontSize="large"
+                      className={classes.sectionArrow}
+                    />
                   </Fade>
                 </Grid>
                 <br />
@@ -418,8 +419,11 @@ class AboutView extends Component {
                       }}
                     > */}
                     <Grid item>
-                      <Fade in={this.state.showArrow1} timeout={990}>
-                        <KeyboardArrowDownIcon fontSize="large" />
+                      <Fade in={this.state.showArrow} timeout={990}>
+                        <KeyboardArrowDownIcon
+                          fontSize="large"
+                          className={classes.sectionArrow}
+                        />
                       </Fade>
                     </Grid>
                     {/* </VizSensor> */}

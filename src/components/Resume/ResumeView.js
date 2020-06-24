@@ -51,15 +51,15 @@ class ResumeView extends Component {
   componentDidMount = () => {
     setTimeout(() => {
       this.setState({ showIntro: true });
-    }, 1000);
+    }, 500);
 
     setTimeout(() => {
       this.flashArrow.start();
-    }, 2000);
+    }, 1500);
 
     setTimeout(() => {
       this.setState({ showResume: true });
-    }, 3000);
+    }, 2500);
   };
 
   handleDownload = () => {
@@ -82,20 +82,20 @@ class ResumeView extends Component {
         <Grid item>
           <Grid container direction="row" justify="center" alignItems="center">
             <Grid item>
-              {/* <Fade in={this.state.showIntro} timeout={3000}> */}
-              <motion.div
+              <Fade in={this.state.showIntro} timeout={3000}>
+                {/* <motion.div
                 animate={{
                   scale: [1, 2, 2, 1, 1],
                   rotate: [0, 0, 270, 270, 0],
                   borderRadius: ["20%", "20%", "50%", "50%", "20%"],
                 }}
                 transition={{ duration: 1 }}
-              >
+              > */}
                 <Typography variant="h3" className={classes.greeting}>
                   Download the latest version of my resume
                 </Typography>
-              </motion.div>
-              {/* </Fade> */}
+                {/* </motion.div> */}
+              </Fade>
             </Grid>
           </Grid>
         </Grid>

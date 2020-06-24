@@ -45,15 +45,15 @@ class ProjectsView extends Component {
   componentDidMount = () => {
     setTimeout(() => {
       this.setState({ showIntro: true });
-    }, 1000);
+    }, 500);
 
     setTimeout(() => {
       this.flashArrow.start();
-    }, 2000);
+    }, 1500);
 
     setTimeout(() => {
       this.setState({ showProjects: true });
-    }, 3000);
+    }, 2500);
   };
 
   render() {
