@@ -9,6 +9,7 @@ import {
   Divider,
   CardActions,
 } from "@material-ui/core";
+import { motion } from "framer-motion";
 import { SizeMe } from "react-sizeme";
 import { Document, Page, pdfjs } from "react-pdf";
 import PropTypes from "prop-types";
@@ -20,6 +21,10 @@ import "react-pdf/dist/Page/AnnotationLayer.css";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const cron = require("node-cron");
+
+const animations = {
+  bio: { y: [50, 0], opacity: [0, 0.5, 1] },
+};
 
 //todo: give placeholder height for loading element so the page doesnt collapse randomly on refresh
 //todo: make download button ripple, see MUI button page below custom
@@ -48,15 +53,15 @@ class ResumeView extends Component {
   componentDidMount = () => {
     setTimeout(() => {
       this.setState({ showIntro: true });
-    }, 1000);
+    }, 500);
 
     setTimeout(() => {
       this.flashArrow.start();
-    }, 2000);
+    }, 1500);
 
     setTimeout(() => {
       this.setState({ showResume: true });
-    }, 3000);
+    }, 2500);
   };
 
   handleDownload = () => {
@@ -79,11 +84,17 @@ class ResumeView extends Component {
         <Grid item>
           <Grid container direction="row" justify="center" alignItems="center">
             <Grid item>
-              <Fade in={this.state.showIntro} timeout={3000}>
+              {/* <Fade in={this.state.showIntro} timeout={3000}> */}
+              <motion.div
+                variants={animations}
+                animate="bio"
+                transition={{ delay: 0.5, duration: 1 }}
+              >
                 <Typography variant="h3" className={classes.greeting}>
                   Download the latest version of my resume
                 </Typography>
-              </Fade>
+              </motion.div>
+              {/* </Fade> */}
             </Grid>
           </Grid>
         </Grid>
@@ -116,6 +127,13 @@ class ResumeView extends Component {
               <Fade in={this.state.showResume} timeout={3000}>
                 <div className={classes.layout}>
                   <Card className={classes.root} elevation={10}>
+                    <CardActions
+                      className={classes.cardActions}
+                      onClick={this.handleDownload}
+                    >
+                      <GetAppIcon fontSize="large" className={classes.icon} />
+                    </CardActions>
+                    <Divider />
                     <CardContent className={classes.cardContent}>
                       <SizeMe
                         monitorWidth //or height?
@@ -130,13 +148,6 @@ class ResumeView extends Component {
                         )}
                       />
                     </CardContent>
-                    <Divider />
-                    <CardActions
-                      className={classes.cardActions}
-                      onClick={this.handleDownload}
-                    >
-                      <GetAppIcon fontSize="large" />
-                    </CardActions>
                   </Card>
                 </div>
               </Fade>

@@ -145,6 +145,7 @@ export default (theme) => ({
   },
   sectionHeader: {
     textAlign: "center",
+    color: "white",
     fontWeight: 600,
     [theme.breakpoints.down(751)]: {
       marginTop: -25,
@@ -172,12 +173,15 @@ export default (theme) => ({
     marginTop: 40,
     marginBottom: 40,
   },
+  sectionArrow: {
+    color: "white",
+  },
   profilePic: {
     marginLeft: "auto",
     marginRight: "auto",
     zIndex: -1,
     marginBottom: -100,
-    [theme.breakpoints.down(1160)]: {
+    [theme.breakpoints.down(1230)]: {
       marginRight: -50,
     },
     [theme.breakpoints.down(920)]: {

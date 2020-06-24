@@ -4,6 +4,7 @@ export default (theme) => ({
     // backgroundImage:
     //   "linear-gradient( 136deg, rgb(0, 153, 255) 15%, rgb(0, 153, 255) 50%, rgb(0, 153, 255) 100%)",
     backgroundColor: "rgb(0, 153, 255)",
+    boxShadow: "0 0 20px",
   },
   name: {
     color: "white",

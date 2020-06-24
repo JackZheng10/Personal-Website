@@ -7,6 +7,7 @@ import {
   withWidth,
   Paper,
 } from "@material-ui/core";
+import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 import VizSensor from "react-visibility-sensor";
 import AboutCard from "./components/AboutCard";
@@ -25,6 +26,10 @@ import aboutViewStyles from "../../styles/aboutViewStyles";
 // import Success from "../temp/Success.flr"
 
 const cron = require("node-cron");
+
+const animations = {
+  bio: { y: [50, 0], opacity: [0, 0.5, 1] },
+};
 
 //todo: test on mobile: when small enough, change the topbar buttons to just iconbuttons + resize bottom images as they cause bleedings
 //todo: fix br spacings hehe
@@ -50,7 +55,7 @@ class AboutView extends Component {
       showPic: false,
       showBio: false,
       showLearnMore: false,
-      showArrow1: false,
+      showArrow: false,
       showCard1: false,
       showCard2: false,
       showCard3: false,
@@ -61,10 +66,10 @@ class AboutView extends Component {
       showExp3: false,
     };
 
-    this.flashArrow1 = cron.schedule(
+    this.flashArrow = cron.schedule(
       "*/1 * * * * *",
       () => {
-        this.setState({ showArrow1: !this.state.showArrow1 });
+        this.setState({ showArrow: !this.state.showArrow });
       },
       { scheduled: false }
     );
@@ -94,11 +99,11 @@ class AboutView extends Component {
 
     setTimeout(() => {
       this.setState({ showLearnMore: true });
-    }, 2000);
+    }, 3000);
 
     setTimeout(() => {
-      this.flashArrow1.start();
-    }, 3000);
+      this.flashArrow.start();
+    }, 4000);
   };
 
   //todo: testing delay on card vis so no ghost cards on switch back to normal view
@@ -206,29 +211,45 @@ class AboutView extends Component {
               alignItems="center"
             >
               <Grid item className={classes.profilePic}>
-                <Fade in={this.state.showPic} timeout={3000}>
-                  <img
-                    src={ProfilePic}
-                    alt="Profile Pic"
-                    className={classes.profilePicSrc}
-                  />
-                </Fade>
+                {/* <Fade in={this.state.showPic} timeout={3000}> */}
+                <img
+                  src={ProfilePic}
+                  alt="Profile Pic"
+                  className={classes.profilePicSrc}
+                />
+                {/* </Fade> */}
               </Grid>
               <Grid item className={classes.bio}>
-                <Fade in={this.state.showBio} timeout={3000}>
-                  <div style={{ textAlign: "center" }}>
-                    <Typography variant="h1" className={classes.greeting}>
-                      Hey there, I'm Jack Zheng
-                    </Typography>
-                    <br />
-                    <Typography variant="h2" className={classes.bioTitle}>
-                      Computer Science Student
-                    </Typography>
-                    <Typography variant="h4" className={classes.bioText}>
-                      Aspiring Software Engineer
-                    </Typography>
-                  </div>
-                </Fade>
+                {/* <Fade in={this.state.showBio} timeout={3000}> */}
+                <motion.div
+                  variants={animations}
+                  animate="bio"
+                  transition={{ delay: 0.5 }}
+                >
+                  <Typography variant="h1" className={classes.greeting}>
+                    Hey there, I'm Jack Zheng
+                  </Typography>
+                </motion.div>
+                <br />
+                <motion.div
+                  variants={animations}
+                  animate="bio"
+                  transition={{ delay: 1.5 }}
+                >
+                  <Typography variant="h2" className={classes.bioTitle}>
+                    Computer Science Student
+                  </Typography>
+                </motion.div>
+                <motion.div
+                  variants={animations}
+                  animate="bio"
+                  transition={{ delay: 2.5 }}
+                >
+                  <Typography variant="h4" className={classes.bioText}>
+                    Aspiring Software Engineer
+                  </Typography>
+                </motion.div>
+                {/* </Fade> */}
               </Grid>
             </Grid>
           </Grid>
@@ -253,8 +274,11 @@ class AboutView extends Component {
                   </Fade>
                 </Grid>
                 <Grid item>
-                  <Fade in={this.state.showArrow1} timeout={990}>
-                    <KeyboardArrowDownIcon fontSize="large" />
+                  <Fade in={this.state.showArrow} timeout={990}>
+                    <KeyboardArrowDownIcon
+                      fontSize="large"
+                      className={classes.sectionArrow}
+                    />
                   </Fade>
                 </Grid>
                 <br />
@@ -284,9 +308,8 @@ class AboutView extends Component {
                               alt="UF Logo"
                               title="I am a..."
                               text="I'm a Junior at the University of Florida 
-                    studying computer science. I was extremely addicted to computers as a kid
-                     - and I can say that not much has changed! 
-                    Above all else, I'm grateful for what I'm learning along the way."
+                    studying computer science. I'm grateful for everything that I'm learning along the way, and
+                     I can't wait to see where my future takes me."
                             />
                           </div>
                         </Fade>
@@ -395,8 +418,11 @@ class AboutView extends Component {
                       }}
                     > */}
                     <Grid item>
-                      <Fade in={this.state.showArrow1} timeout={990}>
-                        <KeyboardArrowDownIcon fontSize="large" />
+                      <Fade in={this.state.showArrow} timeout={990}>
+                        <KeyboardArrowDownIcon
+                          fontSize="large"
+                          className={classes.sectionArrow}
+                        />
                       </Fade>
                     </Grid>
                     {/* </VizSensor> */}
@@ -456,7 +482,7 @@ class AboutView extends Component {
                               title="UF College of Engineering"
                               text="I'm a teaching assistant for CEN3031 (Introduction to Software Engineering) and COP3503
                                (Programming Fundamentals 2). I deal with topics related to programming concepts, C++, the MERN stack, and software development.
-                               I help lead weekly labs, lessons, and office hours as well as produce instructional videos."
+                               I lead weekly labs, lessons, and office hours as well as produce instructional videos."
                             />
                           </div>
                         </Fade>

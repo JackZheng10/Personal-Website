@@ -10,7 +10,10 @@ import {
   Hidden,
   Switch,
   Fade,
+  Paper,
+  Grid,
 } from "@material-ui/core";
+import { motion } from "framer-motion";
 import PersonIcon from "@material-ui/icons/Person";
 import BuildIcon from "@material-ui/icons/Build";
 import FindInPageIcon from "@material-ui/icons/FindInPage";
@@ -63,47 +66,81 @@ function Topbar(props) {
             </IconButton>
           </Hidden>
           <Hidden only={["xs"]}>
-            <Button
-              variant="outlined"
-              color="primary"
-              size="medium"
-              className={classes.button}
-              startIcon={<PersonIcon />}
-              component={Link}
-              to="/about"
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              transformTemplate={(props, transform) =>
+                transform.replace(" translateZ(0)", "")
+              }
             >
-              About Me
-            </Button>
-            <Button
-              variant="outlined"
-              color="primary"
-              size="medium"
-              className={classes.button}
-              startIcon={<BuildIcon />}
-              component={Link}
-              to="/projects"
+              <Button
+                variant="outlined"
+                color="primary"
+                size="medium"
+                className={classes.button}
+                startIcon={<PersonIcon />}
+                component={Link}
+                to="/about"
+              >
+                About Me
+              </Button>
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              transformTemplate={(props, transform) =>
+                transform.replace(" translateZ(0)", "")
+              }
             >
-              Projects
-            </Button>
-            <Button
-              variant="outlined"
-              color="primary"
-              size="medium"
-              className={classes.button}
-              startIcon={<FindInPageIcon />}
-              component={Link}
-              to="/resume"
+              <Button
+                variant="outlined"
+                color="primary"
+                size="medium"
+                className={classes.button}
+                startIcon={<BuildIcon />}
+                component={Link}
+                to="/projects"
+              >
+                Projects
+              </Button>
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              transformTemplate={(props, transform) =>
+                transform.replace(" translateZ(0)", "")
+              }
             >
-              Resume
-            </Button>
+              <Button
+                variant="outlined"
+                color="primary"
+                size="medium"
+                className={classes.button}
+                startIcon={<FindInPageIcon />}
+                component={Link}
+                to="/resume"
+              >
+                Resume
+              </Button>
+            </motion.div>
           </Hidden>
           <div className={classes.flexGrow} />
+          {/* <Grid
+            container
+            direction="row"
+            justify="flex-end"
+            alignItems="center"
+            style={{ backgroundColor: "red" }}
+          >
+            <Grid item> */}
           <Switch
             color="default"
             size="small"
             onChange={props.toggleCodeView}
             checked={codeView}
           />
+          {/* </Grid>
+            <Grid item> */}
           <Fade
             in={!codeView}
             timeout={3000}
@@ -122,6 +159,8 @@ function Topbar(props) {
           >
             <CodeIcon fontSize="large" className={classes.codeButton} />
           </Fade>
+          {/* </Grid>
+          </Grid> */}
         </Toolbar>
       </AppBar>
       <div className={classes.offset} />
