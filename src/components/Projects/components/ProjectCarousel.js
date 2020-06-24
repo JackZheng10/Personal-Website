@@ -9,7 +9,7 @@ import {
   IconButton,
   withWidth,
 } from "@material-ui/core";
-import { FaChevronCircleRight, FaChevronCircleLeft } from "react-icons/fa";
+// import { FaChevronCircleRight, FaChevronCircleLeft } from "react-icons/fa";
 import PropTypes from "prop-types";
 import projectCarouselStyles from "../../../styles/projectCarouselStyles";
 
@@ -70,7 +70,7 @@ class ProjectCarousel extends Component {
               onClick={this.handlePrevProject}
               className={classes.button}
             >
-              <FaChevronCircleLeft className={classes.buttonIcon} />
+              {/* <FaChevronCircleLeft className={classes.buttonIcon} /> */}
             </IconButton>
           </Grid>
           <Grid item className={classes.projectCards}>
@@ -81,7 +81,7 @@ class ProjectCarousel extends Component {
               onClick={this.handleNextProject}
               className={classes.button}
             >
-              <FaChevronCircleRight className={classes.buttonIcon} />
+              {/* <FaChevronCircleRight className={classes.buttonIcon} /> */}
             </IconButton>
           </Grid>
           <Grid item className={classes.columnButtons}>
@@ -89,13 +89,13 @@ class ProjectCarousel extends Component {
               onClick={this.handlePrevProject}
               className={classes.button}
             >
-              <FaChevronCircleLeft className={classes.buttonIcon} />
+              {/* <FaChevronCircleLeft className={classes.buttonIcon} /> */}
             </IconButton>
             <IconButton
               onClick={this.handleNextProject}
               className={classes.button}
             >
-              <FaChevronCircleRight className={classes.buttonIcon} />
+              {/* <FaChevronCircleRight className={classes.buttonIcon} /> */}
             </IconButton>
           </Grid>
         </Grid>

@@ -1,6 +1,5 @@
 import { createMuiTheme } from "@material-ui/core";
 import openSans from "typeface-open-sans";
-import robotoSlab from "typeface-roboto-slab";
 import tWeb from "typeface-titillium-web";
 
 //todo: work on color pallette
