@@ -6,6 +6,7 @@
 
 import React from "react";
 import { CssBaseline, ThemeProvider } from "@material-ui/core";
+import { Helmet } from "react-helmet";
 // import { StylesProvider } from "@material-ui/styles";
 import theme from "./src/styles/theme";
 import "./src/styles/particlesStyles.css";
@@ -16,6 +17,11 @@ import Particles from "react-particles-js";
 function Wrapper(props) {
   return (
     <React.StrictMode>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Jack Zheng</title>
+        <link rel="canonical" href="https://jackzheng.dev/" />
+      </Helmet>
       <Particles
         params={{
           background: {
