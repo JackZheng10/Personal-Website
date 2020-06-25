@@ -58,7 +58,7 @@ class ResumeView extends Component {
 
     setTimeout(() => {
       this.flashArrow.start();
-    }, 1500);
+    }, 1000);
 
     setTimeout(() => {
       this.setState({ showResume: true });
@@ -131,7 +131,7 @@ class ResumeView extends Component {
                 variants={animations}
                 animate="slide"
                 initial="hidden"
-                transition={{ delay: 3, duration: 1, ease: "easeOut" }}
+                transition={{ delay: 2.5, duration: 1, ease: "easeOut" }}
               >
                 <div className={classes.layout}>
                   <Card className={classes.root} elevation={10}>

@@ -100,7 +100,7 @@ class TabbedCodeView extends Component {
 
     setTimeout(() => {
       this.flashArrow.start();
-    }, 1500);
+    }, 1000);
 
     setTimeout(() => {
       this.setState({ showButtons: true });
@@ -244,7 +244,7 @@ class TabbedCodeView extends Component {
               variants={animations}
               animate="slide"
               initial="hidden"
-              transition={{ delay: 3, duration: 1, ease: "easeOut" }}
+              transition={{ delay: 2.5, duration: 1, ease: "easeOut" }}
             >
               <Grid
                 container
@@ -265,7 +265,7 @@ class TabbedCodeView extends Component {
               variants={animations}
               animate="slide"
               initial="hidden"
-              transition={{ delay: 3.5, duration: 1, ease: "easeOut" }}
+              transition={{ delay: 3, duration: 1, ease: "easeOut" }}
             >
               <SyntaxHighlighter language="jsx" style={okaidia}>
                 {this.state.currentCode}

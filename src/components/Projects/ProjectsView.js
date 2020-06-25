@@ -55,7 +55,7 @@ class ProjectsView extends Component {
 
     setTimeout(() => {
       this.flashArrow.start();
-    }, 1500);
+    }, 1000);
 
     setTimeout(() => {
       this.setState({ showProjects: true });
@@ -129,7 +129,7 @@ class ProjectsView extends Component {
                     variants={animations}
                     animate="slide"
                     initial="hidden"
-                    transition={{ delay: 3, duration: 1, ease: "easeOut" }}
+                    transition={{ delay: 2.5, duration: 1, ease: "easeOut" }}
                   >
                     <ProjectCard
                       title="Laundr Web App"
@@ -143,7 +143,7 @@ class ProjectsView extends Component {
                     variants={animations}
                     animate="slide"
                     initial="hidden"
-                    transition={{ delay: 3.5, duration: 1, ease: "easeOut" }}
+                    transition={{ delay: 3, duration: 1, ease: "easeOut" }}
                   >
                     <ProjectCard
                       title="SnapScan"
@@ -157,7 +157,7 @@ class ProjectsView extends Component {
                     variants={animations}
                     animate="slide"
                     initial="hidden"
-                    transition={{ delay: 4, duration: 1, ease: "easeOut" }}
+                    transition={{ delay: 3.5, duration: 1, ease: "easeOut" }}
                   >
                     <ProjectCard
                       title="Gonzalo Law Client Portal"
@@ -171,7 +171,7 @@ class ProjectsView extends Component {
                     variants={animations}
                     animate="slide"
                     initial="hidden"
-                    transition={{ delay: 4.5, duration: 1, ease: "easeOut" }}
+                    transition={{ delay: 4, duration: 1, ease: "easeOut" }}
                   >
                     <ProjectCard
                       title="Eat Me"
@@ -185,7 +185,7 @@ class ProjectsView extends Component {
                     variants={animations}
                     animate="slide"
                     initial="hidden"
-                    transition={{ delay: 5, duration: 1, ease: "easeOut" }}
+                    transition={{ delay: 4.5, duration: 1, ease: "easeOut" }}
                   >
                     <ProjectCard
                       title="Portfolio"
