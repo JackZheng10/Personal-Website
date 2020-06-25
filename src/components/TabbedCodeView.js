@@ -10,6 +10,7 @@ import {
   // solarizedlight,
   // xonokai,
 } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 import { About as AboutCode } from "../codeFiles/About/About";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
@@ -24,6 +25,11 @@ import tabbedCodeViewStyles from "../styles/tabbedCodeViewStyles";
 //todo: spacing={2} creates weird padding when screen is small enough
 
 const cron = require("node-cron");
+
+const animations = {
+  slide: { y: [50, 0], opacity: [0, 0.5, 1] },
+  hidden: { opacity: 0 },
+};
 
 const code = `const b = "Five"
 const c = "Six";
@@ -94,7 +100,7 @@ class TabbedCodeView extends Component {
 
     setTimeout(() => {
       this.flashArrow.start();
-    }, 2000);
+    }, 1500);
 
     setTimeout(() => {
       this.setState({ showButtons: true });
@@ -144,21 +150,29 @@ class TabbedCodeView extends Component {
     return this.state.files.map((file, index) => {
       return (
         <Grid item>
-          <Button
-            variant="contained"
-            size="medium"
-            key={index}
-            className={classes.button}
-            style={{
-              backgroundColor: this.handleSelectedBG(file.code),
-              color: this.handleSelectedText(file.code),
-            }}
-            onClick={() => {
-              this.setFile(file.code);
-            }}
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            transformTemplate={(props, transform) =>
+              transform.replace(" translateZ(0)", "")
+            }
           >
-            {file.name}
-          </Button>
+            <Button
+              variant="contained"
+              size="medium"
+              key={index}
+              className={classes.button}
+              style={{
+                backgroundColor: this.handleSelectedBG(file.code),
+                color: this.handleSelectedText(file.code),
+              }}
+              onClick={() => {
+                this.setFile(file.code);
+              }}
+            >
+              {file.name}
+            </Button>
+          </motion.div>
         </Grid>
       );
     });
@@ -192,11 +206,18 @@ class TabbedCodeView extends Component {
               alignItems="center"
             >
               <Grid item>
-                <Fade in={this.state.showIntro} timeout={3000}>
+                {/* <Fade in={this.state.showIntro} timeout={3000}> */}
+                <motion.div
+                  variants={animations}
+                  animate="slide"
+                  initial="hidden"
+                  transition={{ delay: 0.5, duration: 1, ease: "easeOut" }}
+                >
                   <Typography variant="h3" className={classes.greeting}>
                     Here's (most of) the code that makes this page work
                   </Typography>
-                </Fade>
+                </motion.div>
+                {/* </Fade> */}
               </Grid>
             </Grid>
           </Grid>
@@ -218,7 +239,13 @@ class TabbedCodeView extends Component {
           <br />
           <br />
           <Grid item>
-            <Fade in={this.state.showButtons} timeout={3000}>
+            {/* <Fade in={this.state.showButtons} timeout={3000}> */}
+            <motion.div
+              variants={animations}
+              animate="slide"
+              initial="hidden"
+              transition={{ delay: 3, duration: 1, ease: "easeOut" }}
+            >
               <Grid
                 container
                 spacing={0}
@@ -228,15 +255,25 @@ class TabbedCodeView extends Component {
               >
                 {this.renderFileButtons(classes)}
               </Grid>
-            </Fade>
+            </motion.div>
+            {/* </Fade> */}
           </Grid>
-          <Fade in={this.state.showCode} timeout={3000}>
-            <div style={{ width: "90%" }}>
+          {/* <Fade in={this.state.showCode} timeout={3000}> */}
+
+          <div style={{ width: "90%" }}>
+            <motion.div
+              variants={animations}
+              animate="slide"
+              initial="hidden"
+              transition={{ delay: 3.5, duration: 1, ease: "easeOut" }}
+            >
               <SyntaxHighlighter language="jsx" style={okaidia}>
                 {this.state.currentCode}
               </SyntaxHighlighter>
-            </div>
-          </Fade>
+            </motion.div>
+          </div>
+
+          {/* </Fade> */}
         </Grid>
       </React.Fragment>
     );

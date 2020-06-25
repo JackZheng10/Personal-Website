@@ -13,12 +13,12 @@ import VizSensor from "react-visibility-sensor";
 import AboutCard from "./components/AboutCard";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import ProfilePic from "../../images/ProfilePic.png";
-import UFLogo from "../../images/temp/UFLogo.png";
-import DevLogo from "../../images/temp/DevLogo.png";
-import HockeyLogo from "../../images/temp/HockeyLogo.png";
-import LaundrLogo from "../../images/temp/LaundrLogo.png";
-import UFCOELogo from "../../images/temp/UFCOELogo.png";
-import UFCOEdLogo from "../../images/temp/UFCOEdLogo.png";
+import UFLogo from "../../images/UFLogo.png";
+import DevLogo from "../../images/DevLogo.png";
+import HockeyLogo from "../../images/HockeyLogo.png";
+import LaundrLogo from "../../images/LaundrLogo.png";
+import UFCOELogo from "../../images/UFCOELogo.png";
+import UFCOEdLogo from "../../images/UFCOEdLogo.png";
 import aboutViewStyles from "../../styles/aboutViewStyles";
 
 //test
@@ -100,11 +100,11 @@ class AboutView extends Component {
 
     setTimeout(() => {
       this.setState({ showLearnMore: true });
-    }, 3000);
+    }, 2000);
 
     setTimeout(() => {
       this.flashArrow.start();
-    }, 4000);
+    }, 3000);
   };
 
   //todo: testing delay on card vis so no ghost cards on switch back to normal view
@@ -226,7 +226,7 @@ class AboutView extends Component {
                   variants={animations}
                   animate="slide"
                   initial="hidden"
-                  transition={{ delay: 0.5 }}
+                  transition={{ delay: 0.5, duration: 1, ease: "easeOut" }}
                 >
                   <Typography variant="h1" className={classes.greeting}>
                     Hey there, I'm Jack Zheng
@@ -237,7 +237,7 @@ class AboutView extends Component {
                   variants={animations}
                   animate="slide"
                   initial="hidden"
-                  transition={{ delay: 1.5 }}
+                  transition={{ delay: 1.5, duration: 1, ease: "easeOut" }}
                 >
                   <Typography variant="h2" className={classes.bioTitle}>
                     Computer Science Student
@@ -247,7 +247,7 @@ class AboutView extends Component {
                   variants={animations}
                   animate="slide"
                   initial="hidden"
-                  transition={{ delay: 2.5 }}
+                  transition={{ delay: 1.5, duration: 1, ease: "easeOut" }}
                 >
                   <Typography variant="h4" className={classes.bioText}>
                     Aspiring Software Engineer

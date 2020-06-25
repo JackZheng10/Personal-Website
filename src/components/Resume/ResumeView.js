@@ -90,7 +90,7 @@ class ResumeView extends Component {
                 variants={animations}
                 animate="slide"
                 initial="hidden"
-                transition={{ delay: 0.5, duration: 1 }}
+                transition={{ delay: 0.5, duration: 1, ease: "easeOut" }}
               >
                 <Typography variant="h3" className={classes.greeting}>
                   Download the latest version of my resume
@@ -126,7 +126,13 @@ class ResumeView extends Component {
             alignItems="center"
           >
             <Grid item>
-              <Fade in={this.state.showResume} timeout={3000}>
+              {/* <Fade in={this.state.showResume} timeout={3000}> */}
+              <motion.div
+                variants={animations}
+                animate="slide"
+                initial="hidden"
+                transition={{ delay: 3, duration: 1, ease: "easeOut" }}
+              >
                 <div className={classes.layout}>
                   <Card className={classes.root} elevation={10}>
                     <CardActions
@@ -152,7 +158,8 @@ class ResumeView extends Component {
                     </CardContent>
                   </Card>
                 </div>
-              </Fade>
+              </motion.div>
+              {/* </Fade> */}
             </Grid>
           </Grid>
         </Grid>

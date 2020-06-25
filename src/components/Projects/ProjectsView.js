@@ -87,7 +87,7 @@ class ProjectsView extends Component {
                   variants={animations}
                   animate="slide"
                   initial="hidden"
-                  transition={{ delay: 0.5, duration: 1 }}
+                  transition={{ delay: 0.5, duration: 1, ease: "easeOut" }}
                 >
                   <Typography variant="h3" className={classes.greeting}>
                     Explore some of the projects I've worked on
@@ -115,53 +115,88 @@ class ProjectsView extends Component {
           <br />
           <br />
           <Grid item>
-            <Fade in={this.state.showProjects} timeout={3000}>
-              <div style={{ padding: 16 }}>
-                <Grid
-                  container
-                  spacing={4}
-                  direction="row"
-                  justify="center"
-                  alignItems="center"
-                >
-                  <Grid item>
+            {/* <Fade in={this.state.showProjects} timeout={3000}> */}
+            <div style={{ padding: 16 }}>
+              <Grid
+                container
+                spacing={4}
+                direction="row"
+                justify="center"
+                alignItems="center"
+              >
+                <Grid item>
+                  <motion.div
+                    variants={animations}
+                    animate="slide"
+                    initial="hidden"
+                    transition={{ delay: 3, duration: 1, ease: "easeOut" }}
+                  >
                     <ProjectCard
                       title="Laundr Web App"
                       description="Placeholder"
                       images={[testImage, testImage, testImage, testImage]}
                     />
-                  </Grid>
-                  <Grid item>
+                  </motion.div>
+                </Grid>
+                <Grid item>
+                  <motion.div
+                    variants={animations}
+                    animate="slide"
+                    initial="hidden"
+                    transition={{ delay: 3.5, duration: 1, ease: "easeOut" }}
+                  >
                     <ProjectCard
                       title="SnapScan"
                       description="Placeholder"
                       images={[testImage, testImage]}
                     />
-                  </Grid>
-                  <Grid item>
+                  </motion.div>
+                </Grid>
+                <Grid item>
+                  <motion.div
+                    variants={animations}
+                    animate="slide"
+                    initial="hidden"
+                    transition={{ delay: 4, duration: 1, ease: "easeOut" }}
+                  >
                     <ProjectCard
                       title="Gonzalo Law Client Portal"
                       description="Placeholder"
                       images={[testImage, testImage]}
                     />
-                  </Grid>
-                  <Grid item>
+                  </motion.div>
+                </Grid>
+                <Grid item>
+                  <motion.div
+                    variants={animations}
+                    animate="slide"
+                    initial="hidden"
+                    transition={{ delay: 4.5, duration: 1, ease: "easeOut" }}
+                  >
                     <ProjectCard
                       title="Eat Me"
                       description="Placeholder"
                       images={[testImage, testImage]}
                     />
-                  </Grid>
-                  <Grid item>
+                  </motion.div>
+                </Grid>
+                <Grid item>
+                  <motion.div
+                    variants={animations}
+                    animate="slide"
+                    initial="hidden"
+                    transition={{ delay: 5, duration: 1, ease: "easeOut" }}
+                  >
                     <ProjectCard
                       title="Portfolio"
                       description="The website you're on right now!"
                       images={[testImage, testImage]}
                     />
-                  </Grid>
+                  </motion.div>
                 </Grid>
-              </div>
-            </Fade>
+              </Grid>
+            </div>
+            {/* </Fade> */}
           </Grid>
         </Grid>
       </React.Fragment>
