@@ -132,7 +132,7 @@ class TabbedCodeView extends Component {
 
   handleSelectedBG = (code) => {
     if (this.state.currentCode === code) {
-      return "rgb(2, 46, 117)";
+      return "rgb(0, 153, 255)";
     } else {
       return "white";
     }
@@ -142,7 +142,7 @@ class TabbedCodeView extends Component {
     if (this.state.currentCode === code) {
       return "white";
     } else {
-      return "rgb(2, 46, 117)";
+      return "rgb(0, 153, 255)";
     }
   };
 

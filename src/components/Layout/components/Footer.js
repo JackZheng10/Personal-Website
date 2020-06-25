@@ -1,10 +1,20 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { withStyles, Grid, Typography, Link } from "@material-ui/core";
+import {
+  withStyles,
+  Grid,
+  Typography,
+  Link,
+  Hidden,
+  IconButton,
+} from "@material-ui/core";
 import footerStyles from "../../../styles/footerStyles";
 import GitHubLogo from "../../../images/GitHubLogo.png";
+import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInLogo from "../../../images/LinkedInLogo.png";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import EmailLogo from "../../../images/EmailLogo.png";
+import EmailIcon from "@material-ui/icons/Email";
 
 //todo: use icons when on mobile for footer images? or just resize.
 
@@ -62,33 +72,60 @@ class Footer extends Component {
                 justify="center"
                 alignItems="center"
               >
-                <Grid item>
-                  <img
-                    src={GitHubLogo}
-                    className={classes.GHlogo}
-                    alt="GitHub Logo"
-                    onClick={this.redirectGH}
-                  />
-                  &nbsp;&nbsp;&nbsp;
-                </Grid>
-
-                <Grid item>
-                  <img
-                    src={LinkedInLogo}
-                    className={classes.LIlogo}
-                    alt="LinkedIn Logo"
-                    onClick={this.redirectLI}
-                  />
-                  &nbsp;&nbsp;&nbsp;
-                </Grid>
-                <Grid item>
-                  <img
-                    src={EmailLogo}
-                    className={classes.emailLogo}
-                    alt="Email Logo"
-                    onClick={this.redirectEmail}
-                  />
-                </Grid>
+                <Hidden only={["lg", "xl", "md", "sm"]}>
+                  <Grid item>
+                    <IconButton onClick={this.redirectGH}>
+                      <GitHubIcon
+                        fontSize="large"
+                        className={classes.GHMobile}
+                      />
+                    </IconButton>
+                  </Grid>
+                  <Grid item>
+                    <IconButton onClick={this.redirectLI}>
+                      <LinkedInIcon
+                        fontSize="large"
+                        className={classes.LIMobile}
+                      />
+                    </IconButton>
+                  </Grid>
+                  <Grid item>
+                    <IconButton onClick={this.redirectEmail}>
+                      <EmailIcon
+                        fontSize="large"
+                        className={classes.emailMobile}
+                      />
+                    </IconButton>
+                  </Grid>
+                </Hidden>
+                <Hidden only={["xs"]}>
+                  <Grid item>
+                    <img
+                      src={GitHubLogo}
+                      className={classes.GH}
+                      alt="GitHub Logo"
+                      onClick={this.redirectGH}
+                    />
+                    &nbsp;&nbsp;&nbsp;
+                  </Grid>
+                  <Grid item>
+                    <img
+                      src={LinkedInLogo}
+                      className={classes.LI}
+                      alt="LinkedIn Logo"
+                      onClick={this.redirectLI}
+                    />
+                    &nbsp;&nbsp;&nbsp;
+                  </Grid>
+                  <Grid item>
+                    <img
+                      src={EmailLogo}
+                      className={classes.email}
+                      alt="Email Logo"
+                      onClick={this.redirectEmail}
+                    />
+                  </Grid>
+                </Hidden>
               </Grid>
             </Grid>
             <Grid item>
@@ -105,7 +142,7 @@ class Footer extends Component {
                     className={classes.centerText}
                     gutterBottom
                   >
-                    Created by me!{" "}
+                    Created by me with ❤️!{" "}
                     <Link
                       color="primary"
                       target="_blank"

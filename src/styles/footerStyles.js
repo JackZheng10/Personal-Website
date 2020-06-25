@@ -10,23 +10,32 @@ export default (theme) => ({
     color: "white",
     paddingTop: 10,
   },
-  GHlogo: {
+  GH: {
     height: 52,
     width: 125,
     cursor: "pointer",
   },
-  LIlogo: {
+  LI: {
     height: 34,
     width: 138,
     cursor: "pointer",
   },
-  emailLogo: {
+  email: {
     height: 52,
     width: 52,
     cursor: "pointer",
   },
   centerText: {
     textAlign: "center",
+  },
+  GHMobile: {
+    color: "black",
+  },
+  LIMobile: {
+    color: "#2464b4",
+  },
+  emailMobile: {
+    color: "black",
   },
 });
 
