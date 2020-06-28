@@ -133,7 +133,7 @@ class ProjectsView extends Component {
                   >
                     <ProjectCard
                       title="Laundr Web App"
-                      description="Placeholder"
+                      description="Web application for Laundr, an on-demand laundry service. Handles users, drivers, washers, and admins. "
                       images={[testImage, testImage, testImage, testImage]}
                     />
                   </motion.div>
@@ -147,7 +147,7 @@ class ProjectsView extends Component {
                   >
                     <ProjectCard
                       title="SnapScan"
-                      description="Placeholder"
+                      description="Mobile app that scans your receipts and helps you track your spending habits."
                       images={[testImage, testImage]}
                     />
                   </motion.div>
@@ -161,7 +161,7 @@ class ProjectsView extends Component {
                   >
                     <ProjectCard
                       title="Gonzalo Law Client Portal"
-                      description="Placeholder"
+                      description="Client portal for Gonzalo Law that lets clients see their projects, calendar, and payments..."
                       images={[testImage, testImage]}
                     />
                   </motion.div>
@@ -175,7 +175,7 @@ class ProjectsView extends Component {
                   >
                     <ProjectCard
                       title="Eat Me"
-                      description="Placeholder"
+                      description="Mobile application..."
                       images={[testImage, testImage]}
                     />
                   </motion.div>
@@ -189,7 +189,7 @@ class ProjectsView extends Component {
                   >
                     <ProjectCard
                       title="Portfolio"
-                      description="The website you're on right now!"
+                      description="The website you're on right now! "
                       images={[testImage, testImage]}
                     />
                   </motion.div>
