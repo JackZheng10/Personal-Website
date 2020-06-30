@@ -67,7 +67,7 @@ class ResumeView extends Component {
 
   handleDownload = () => {
     if (typeof window !== `undefined`) {
-      window.open(ResumePDF);
+      window.open(Resume);
     }
   };
 
