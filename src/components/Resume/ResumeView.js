@@ -16,7 +16,7 @@ import PropTypes from "prop-types";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import GetAppIcon from "@material-ui/icons/GetApp";
 import resumeViewStyles from "../../styles/resumeViewStyles";
-import ResumePDF from "../../files/PDFTest.pdf";
+import Resume from "../../files/JackZheng_Resume.pdf";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -149,7 +149,7 @@ class ResumeView extends Component {
                         refreshMode={"debounce"}
                         render={({ size }) => (
                           <React.Fragment>
-                            <Document file={ResumePDF}>
+                            <Document file={Resume}>
                               <Page width={size.width} pageNumber={1} />
                             </Document>
                           </React.Fragment>

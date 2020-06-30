@@ -132,9 +132,9 @@ class ProjectsView extends Component {
                     transition={{ delay: 2.5, duration: 1, ease: "easeOut" }}
                   >
                     <ProjectCard
-                      title="Laundr"
+                      title="Laundr Web App"
                       description="A web application for Laundr, an on-demand laundry service. Allows users to place orders, purchase
-                      subscriptions, and track their order. Also lets drivers and washers accept orders. Comes with an admin
+                      subscriptions, and track their order. Also lets drivers and washers handle orders. Comes with an admin
                       panel to manage everything! Currently a work in progress."
                       images={[testImage, testImage, testImage, testImage]}
                       link="https://github.com/JackZheng10/Laundr-Web-App"
@@ -166,7 +166,7 @@ class ProjectsView extends Component {
                     transition={{ delay: 3.5, duration: 1, ease: "easeOut" }}
                   >
                     <ProjectCard
-                      title="Gonzalo Law"
+                      title="Gonzalo Law Client Portal"
                       description="A client portal for Gonzalo Law to assist with legal procedures. Users can register, 
                       recover their password, view projects and their progress, download/upload files, and view their 
                       calendar. Admins can create/delete projects, update their progress, upload files, update user calendars, and delete users."
