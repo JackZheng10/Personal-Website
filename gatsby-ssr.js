@@ -49,8 +49,7 @@ function Wrapper(props) {
             detectsOn: "window",
             events: {
               onhover: {
-                enable: true,
-                mode: "repulse",
+                enable: false,
               },
             },
           },

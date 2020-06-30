@@ -28,7 +28,9 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 
 class ProjectCard extends Component {
   handleCodeLink = () => {
-    alert("Navigate");
+    if (typeof window !== `undefined`) {
+      window.open(this.props.link);
+    }
   };
 
   renderNextButton = (onClickHandler, classes) => {

@@ -132,9 +132,12 @@ class ProjectsView extends Component {
                     transition={{ delay: 2.5, duration: 1, ease: "easeOut" }}
                   >
                     <ProjectCard
-                      title="Laundr Web App"
-                      description="Web application for Laundr, an on-demand laundry service. Handles users, drivers, washers, and admins. "
+                      title="Laundr"
+                      description="A web application for Laundr, an on-demand laundry service. Allows users to place orders, purchase
+                      subscriptions, and track their order. Also lets drivers and washers accept orders. Comes with an admin
+                      panel to manage everything! Currently a work in progress."
                       images={[testImage, testImage, testImage, testImage]}
+                      link="https://github.com/JackZheng10/Laundr-Web-App"
                     />
                   </motion.div>
                 </Grid>
@@ -147,8 +150,11 @@ class ProjectsView extends Component {
                   >
                     <ProjectCard
                       title="SnapScan"
-                      description="Mobile app that scans your receipts and helps you track your spending habits."
+                      description="A mobile application made during SwampHacks VI that allows users to track their expenses 
+                      in a variety of categories by taking a picture of their receipts, extracting information on purchases, 
+                      and generating thorough analyses based on purchase history."
                       images={[testImage, testImage]}
+                      link="https://github.com/JackZheng10/SwampHacks2020_SnapScan"
                     />
                   </motion.div>
                 </Grid>
@@ -160,9 +166,12 @@ class ProjectsView extends Component {
                     transition={{ delay: 3.5, duration: 1, ease: "easeOut" }}
                   >
                     <ProjectCard
-                      title="Gonzalo Law Client Portal"
-                      description="Client portal for Gonzalo Law that lets clients see their projects, calendar, and payments..."
+                      title="Gonzalo Law"
+                      description="A client portal for Gonzalo Law to assist with legal procedures. Users can register, 
+                      recover their password, view projects and their progress, download/upload files, and view their 
+                      calendar. Admins can create/delete projects, update their progress, upload files, update user calendars, and delete users."
                       images={[testImage, testImage]}
+                      link="https://github.com/JackZheng10/Gonzalo-Law-Client-Portal"
                     />
                   </motion.div>
                 </Grid>
@@ -175,8 +184,11 @@ class ProjectsView extends Component {
                   >
                     <ProjectCard
                       title="Eat Me"
-                      description="Mobile application..."
+                      description="A mobile application that allows users to group together and decide on a place to eat through an individual 
+                      swipe-and-match experience. Users can evaluate a variety of factors including price, Yelp rating, and distance. Spend less 
+                      time deciding and more time eating! Currently a work in progress."
                       images={[testImage, testImage]}
+                      link="https://github.com/JackZheng10/Eat-Me"
                     />
                   </motion.div>
                 </Grid>
@@ -189,8 +201,9 @@ class ProjectsView extends Component {
                   >
                     <ProjectCard
                       title="Portfolio"
-                      description="The website you're on right now! "
+                      description="The website you're on right now, made to showcase information about myself!"
                       images={[testImage, testImage]}
+                      link="https://github.com/JackZheng10/Personal-Website"
                     />
                   </motion.div>
                 </Grid>
