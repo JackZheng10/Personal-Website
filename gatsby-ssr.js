@@ -56,12 +56,12 @@ function Wrapper(props) {
         }}
         id="particlesBG"
       />
-      <ThemeProvider theme={theme}>
-        <StylesProvider injectFirst>
-          <CssBaseline />
-          {props.children}
-        </StylesProvider>
-      </ThemeProvider>
+      {/* <ThemeProvider theme={theme}>
+        <StylesProvider injectFirst> */}
+      <CssBaseline />
+      {props.children}
+      {/* </StylesProvider>
+      </ThemeProvider> */}
     </React.StrictMode>
   );
 }
