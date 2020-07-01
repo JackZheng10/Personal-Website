@@ -12,6 +12,16 @@ import PropTypes from "prop-types";
 import ProjectCarousel from "./components/ProjectCarousel";
 import ProjectCard from "./components/ProjectCard";
 import testImage from "../../images/testImage.jpg";
+import {
+  LWA1,
+  LWA2,
+  LWA3,
+  LWA4,
+  LWA5,
+  LWA6,
+  LWA7,
+} from "../../images/Projects/LaundrWebApp";
+import { SS1, SS2, SS3, SS4, SS5 } from "../../images/Projects/SnapScan";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import projectsViewStyles from "../../styles/projectsViewStyles";
 
@@ -136,7 +146,7 @@ class ProjectsView extends Component {
                       description="A web application for Laundr, an on-demand laundry service. Allows users to place orders, purchase
                       subscriptions, and track their order. Also lets drivers and washers handle orders. Comes with an admin
                       panel to manage everything! Currently a work in progress."
-                      images={[testImage, testImage, testImage, testImage]}
+                      images={[LWA1, LWA2, LWA3, LWA4, LWA5, LWA6, LWA7]}
                       link="https://github.com/JackZheng10/Laundr-Web-App"
                     />
                   </motion.div>
@@ -153,7 +163,7 @@ class ProjectsView extends Component {
                       description="A mobile application made during SwampHacks VI that allows users to track their expenses 
                       in a variety of categories by taking a picture of their receipts, extracting information on purchases, 
                       and generating thorough analyses based on purchase history."
-                      images={[testImage, testImage]}
+                      images={[SS1, SS2, SS3, SS4, SS5]}
                       link="https://github.com/JackZheng10/SwampHacks2020_SnapScan"
                     />
                   </motion.div>
