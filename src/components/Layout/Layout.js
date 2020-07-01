@@ -20,6 +20,18 @@ import Footer from "./components/Footer";
 //todo: !!!with gatsby transfer, the code toggle button doesn't work
 
 class Layout extends Component {
+  componentDidMount = () => {
+    window.addEventListener("storage", (event) => {
+      if (event.key === "codeView") {
+        if (typeof localStorage !== "undefined") {
+          localStorage.setItem("toggledBefore", true);
+        }
+
+        this.props.toggleCodeView(event.newValue);
+      }
+    });
+  };
+
   toggleCodeView = (event) => {
     //BRO IT'S A STRING AHHH I DIDN'T KNOW
     if (typeof localStorage !== "undefined") {
