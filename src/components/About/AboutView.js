@@ -8,17 +8,19 @@ import {
   Paper,
 } from "@material-ui/core";
 import { motion } from "framer-motion";
+import {
+  Me,
+  UF,
+  Dev,
+  Hockey,
+  Laundr,
+  UFCoEng,
+  UFCoEd,
+} from "../../images/AboutMe";
 import PropTypes from "prop-types";
 import VizSensor from "react-visibility-sensor";
 import AboutCard from "./components/AboutCard";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
-import ProfilePic from "../../images/ProfilePic.png";
-import UFLogo from "../../images/UFLogo.png";
-import DevLogo from "../../images/DevLogo.png";
-import HockeyLogo from "../../images/HockeyLogo.png";
-import LaundrLogo from "../../images/LaundrLogo.png";
-import UFCOELogo from "../../images/UFCOELogo.png";
-import UFCOEdLogo from "../../images/UFCOEdLogo.png";
 import aboutViewStyles from "../../styles/aboutViewStyles";
 
 //test
@@ -42,6 +44,7 @@ const animations = {
 //todo: add dates to experience cards?
 //todo: margin vs padding? get this together.
 //todo: boxshadow to top of the paper
+//todo: restructure images. rename, move to own folder, do imports like projects
 
 class AboutView extends Component {
   constructor(props) {
@@ -214,7 +217,7 @@ class AboutView extends Component {
               <Grid item className={classes.profilePic}>
                 {/* <Fade in={this.state.showPic} timeout={3000}> */}
                 <img
-                  src={ProfilePic}
+                  src={Me}
                   alt="Profile Pic"
                   className={classes.profilePicSrc}
                 />
@@ -308,7 +311,7 @@ class AboutView extends Component {
                         >
                           <div>
                             <AboutCard
-                              image={UFLogo}
+                              image={UF}
                               alt="UF Logo"
                               title="I am a..."
                               text="I'm a Junior at the University of Florida 
@@ -332,7 +335,7 @@ class AboutView extends Component {
                         >
                           <div>
                             <AboutCard
-                              image={DevLogo}
+                              image={Dev}
                               alt="Dev Logo"
                               title="I like to..."
                               text="I like to learn about new technologies and topics, 
@@ -357,7 +360,7 @@ class AboutView extends Component {
                         >
                           <div>
                             <AboutCard
-                              image={HockeyLogo}
+                              image={Hockey}
                               alt="Hockey Logo"
                               title="In my free time..."
                               text="When I'm not doing anything related to computer science, 
@@ -456,7 +459,7 @@ class AboutView extends Component {
                         >
                           <div>
                             <AboutCard
-                              image={LaundrLogo}
+                              image={Laundr}
                               alt="Laundr Logo"
                               title="Laundr"
                               text="I'm a Software Engineering Intern at Laundr, an on-demand laundry service.
@@ -481,7 +484,7 @@ class AboutView extends Component {
                         >
                           <div>
                             <AboutCard
-                              image={UFCOELogo}
+                              image={UFCoEng}
                               alt="UF CoE Logo"
                               title="UF College of Engineering"
                               text="I'm a teaching assistant for CEN3031 (Introduction to Software Engineering) and COP3503
@@ -505,7 +508,7 @@ class AboutView extends Component {
                         >
                           <div>
                             <AboutCard
-                              image={UFCOEdLogo}
+                              image={UFCoEd}
                               alt="UF CoE Logo"
                               title="UF College of Education"
                               text="I was formerly an Undergraduate Research Assistant under Dr. Zhihui Fang,

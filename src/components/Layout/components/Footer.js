@@ -8,13 +8,11 @@ import {
   Hidden,
   IconButton,
 } from "@material-ui/core";
-import footerStyles from "../../../styles/footerStyles";
-import GitHubLogo from "../../../images/GitHubLogo.png";
+import { GitHub, LinkedIn, Email } from "../../../images/Footer";
 import GitHubIcon from "@material-ui/icons/GitHub";
-import LinkedInLogo from "../../../images/LinkedInLogo.png";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import EmailLogo from "../../../images/EmailLogo.png";
 import EmailIcon from "@material-ui/icons/Email";
+import footerStyles from "../../../styles/footerStyles";
 
 //todo: use icons when on mobile for footer images? or just resize.
 
@@ -101,7 +99,7 @@ class Footer extends Component {
                 <Hidden only={["xs"]}>
                   <Grid item>
                     <img
-                      src={GitHubLogo}
+                      src={GitHub}
                       className={classes.GH}
                       alt="GitHub Logo"
                       onClick={this.redirectGH}
@@ -110,7 +108,7 @@ class Footer extends Component {
                   </Grid>
                   <Grid item>
                     <img
-                      src={LinkedInLogo}
+                      src={LinkedIn}
                       className={classes.LI}
                       alt="LinkedIn Logo"
                       onClick={this.redirectLI}
@@ -119,7 +117,7 @@ class Footer extends Component {
                   </Grid>
                   <Grid item>
                     <img
-                      src={EmailLogo}
+                      src={Email}
                       className={classes.email}
                       alt="Email Logo"
                       onClick={this.redirectEmail}

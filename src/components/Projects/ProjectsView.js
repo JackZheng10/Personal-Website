@@ -8,10 +8,6 @@ import {
   Fade,
 } from "@material-ui/core";
 import { motion } from "framer-motion";
-import PropTypes from "prop-types";
-import ProjectCarousel from "./components/ProjectCarousel";
-import ProjectCard from "./components/ProjectCard";
-import testImage from "../../images/testImage.jpg";
 import {
   LWA1,
   LWA2,
@@ -22,6 +18,18 @@ import {
   LWA7,
 } from "../../images/Projects/LaundrWebApp";
 import { SS1, SS2, SS3, SS4, SS5 } from "../../images/Projects/SnapScan";
+import {
+  GLCP1,
+  GLCP2,
+  GLCP3,
+  GLCP4,
+  GLCP5,
+} from "../../images/Projects/GonzaloLawClientPortal";
+import { EM1 } from "../../images/Projects/EatMe";
+import { PS1 } from "../../images/Projects/PersonalSite";
+import PropTypes from "prop-types";
+import ProjectCarousel from "./components/ProjectCarousel";
+import ProjectCard from "./components/ProjectCard";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import projectsViewStyles from "../../styles/projectsViewStyles";
 
@@ -180,7 +188,7 @@ class ProjectsView extends Component {
                       description="A client portal for Gonzalo Law to assist with legal procedures. Users can register, 
                       recover their password, view projects and their progress, download/upload files, and view their 
                       calendar. Admins can create/delete projects, update their progress, upload files, update user calendars, and delete users."
-                      images={[testImage, testImage]}
+                      images={[GLCP1, GLCP2, GLCP3, GLCP4, GLCP5]}
                       link="https://github.com/JackZheng10/Gonzalo-Law-Client-Portal"
                     />
                   </motion.div>
@@ -197,7 +205,7 @@ class ProjectsView extends Component {
                       description="A mobile application that allows users to group together and decide on a place to eat through an individual 
                       swipe-and-match experience. Users can evaluate a variety of factors including price, Yelp rating, and distance. Spend less 
                       time deciding and more time eating! Currently a work in progress."
-                      images={[testImage, testImage]}
+                      images={[EM1]}
                       link="https://github.com/JackZheng10/Eat-Me"
                     />
                   </motion.div>
@@ -210,9 +218,9 @@ class ProjectsView extends Component {
                     transition={{ delay: 4.5, duration: 1, ease: "easeOut" }}
                   >
                     <ProjectCard
-                      title="Portfolio"
+                      title="Personal Website"
                       description="The website you're on right now, made to showcase information about myself!"
-                      images={[testImage, testImage]}
+                      images={[PS1]}
                       link="https://github.com/JackZheng10/Personal-Website"
                     />
                   </motion.div>
