@@ -7,7 +7,7 @@
 import React from "react";
 import { CssBaseline, ThemeProvider } from "@material-ui/core";
 import { Helmet } from "react-helmet";
-// import { StylesProvider } from "@material-ui/styles";
+import { StylesProvider } from "@material-ui/styles";
 import theme from "./src/styles/theme";
 import "./src/styles/particlesStyles.css";
 
@@ -57,10 +57,10 @@ function Wrapper(props) {
         id="particlesBG"
       />
       <ThemeProvider theme={theme}>
-        {/* <StylesProvider injectFirst> */}
-        <CssBaseline />
-        {props.children}
-        {/* </StylesProvider> */}
+        <StylesProvider injectFirst>
+          <CssBaseline />
+          {props.children}
+        </StylesProvider>
       </ThemeProvider>
     </React.StrictMode>
   );
