@@ -25,7 +25,10 @@ class Layout extends Component {
     if (typeof localStorage !== "undefined") {
       localStorage.setItem("codeView", event.target.checked);
     }
-    console.log("Code view changed to: " + event.target.checked);
+
+    if (typeof localStorage !== "undefined") {
+      localStorage.setItem("toggledBefore", true);
+    }
 
     this.props.toggleCodeView(event.target.checked);
   };

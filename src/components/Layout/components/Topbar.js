@@ -10,8 +10,8 @@ import {
   Hidden,
   Switch,
   Fade,
-  Paper,
-  Grid,
+  Tooltip,
+  Typography,
 } from "@material-ui/core";
 import { motion } from "framer-motion";
 import PersonIcon from "@material-ui/icons/Person";
@@ -28,9 +28,14 @@ import topbarStyles from "../../../styles/topbarStyles";
 
 function Topbar(props) {
   let codeView = false;
+  let toggledBefore = false;
 
   if (typeof localStorage !== "undefined") {
     codeView = JSON.parse(localStorage.getItem("codeView")) || false;
+  }
+
+  if (typeof localStorage !== "undefined") {
+    toggledBefore = JSON.parse(localStorage.getItem("toggledBefore")) || false;
   }
 
   const classes = props.classes;
@@ -125,25 +130,27 @@ function Topbar(props) {
             </motion.div>
           </Hidden>
           <div className={classes.flexGrow} />
-          {/* <Grid
-            container
-            direction="row"
-            justify="flex-end"
-            alignItems="center"
-            style={{ backgroundColor: "red" }}
+          <Tooltip
+            open={!toggledBefore}
+            title={
+              <Typography variant="body1">
+                Click to toggle code view!
+              </Typography>
+            }
+            TransitionComponent={Fade}
+            TransitionProps={{ timeout: 0 }}
+            arrow
           >
-            <Grid item> */}
-          <Switch
-            color="default"
-            size="small"
-            onChange={props.toggleCodeView}
-            checked={codeView}
-          />
-          {/* </Grid>
-            <Grid item> */}
+            <Switch
+              color="default"
+              size="small"
+              onChange={props.toggleCodeView}
+              checked={codeView}
+            />
+          </Tooltip>
           <Fade
             in={!codeView}
-            timeout={3000}
+            timeout={0}
             style={{
               display: codeView ? "none" : "block",
             }}
@@ -152,15 +159,13 @@ function Topbar(props) {
           </Fade>
           <Fade
             in={codeView}
-            timeout={3000}
+            timeout={0}
             style={{
               display: !codeView ? "none" : "block",
             }}
           >
             <CodeIcon fontSize="large" className={classes.codeButton} />
           </Fade>
-          {/* </Grid>
-          </Grid> */}
         </Toolbar>
       </AppBar>
       <div className={classes.offset} />

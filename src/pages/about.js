@@ -4,6 +4,11 @@ import AboutView from "../components/About/AboutView";
 import TabbedCodeView from "../components/TabbedCodeView";
 
 class About extends Component {
+  //testing only
+  // componentDidMount = () => {
+  //   localStorage.removeItem("toggledBefore");
+  // };
+
   state = { codeView: false };
 
   toggleCodeView = (codeView) => {

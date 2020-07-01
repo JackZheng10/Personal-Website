@@ -46,6 +46,7 @@ const animations = {
 //todo: fix particlesBG being clumped when screen resizes
 //todo: responsive title text
 //todo: margin top and gap between arrow responsive?
+//todo: dont have just one image or bug with infinite scroll from first to left
 
 class ProjectsView extends Component {
   constructor(props) {
