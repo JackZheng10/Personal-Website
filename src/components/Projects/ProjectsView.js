@@ -28,7 +28,6 @@ import {
 import { EM1 } from "../../images/Projects/EatMe";
 import { PS1 } from "../../images/Projects/PersonalSite";
 import PropTypes from "prop-types";
-import ProjectCarousel from "./components/ProjectCarousel";
 import ProjectCard from "./components/ProjectCard";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import projectsViewStyles from "../../styles/projectsViewStyles";
@@ -40,12 +39,7 @@ const animations = {
   hidden: { opacity: 0 },
 };
 
-//todo: use blur on about cards before they fade in? keep visible after first time or this blur visible on screen all the time
-//todo: maybe change font. this is default wordpress font so ppl might think i used wordpress :(
-//todo: fix FOUC: https://github.com/gatsbyjs/gatsby/issues/15097
 //todo: fix particlesBG being clumped when screen resizes
-//todo: responsive title text
-//todo: margin top and gap between arrow responsive?
 //todo: dont have just one image or bug with infinite scroll from first to left
 
 class ProjectsView extends Component {

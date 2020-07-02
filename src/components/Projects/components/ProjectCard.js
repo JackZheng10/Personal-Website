@@ -12,19 +12,17 @@ import {
   CardActions,
   Icon,
   Button,
-  IconButton,
 } from "@material-ui/core";
+import { IconButton } from "gatsby-theme-material-ui";
 import { Carousel } from "react-responsive-carousel";
 import PropTypes from "prop-types";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import projectCardStyles from "../../../styles/projectCardStyles";
 import ArrowBackIosOutlinedIcon from "@material-ui/icons/ArrowBackIosOutlined";
 import ArrowForwardIosOutlinedIcon from "@material-ui/icons/ArrowForwardIosOutlined";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 //todo: movile - shows whitespace at bottom when swiping since doesnt resize automatically?
-//todo: the messed up images are due to the actual image...the codesanbox image works right
-//todo: responsive resize text
 
 class ProjectCard extends Component {
   handleCodeLink = () => {

@@ -6,10 +6,16 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-material-ui`,
+      resolve: `gatsby-theme-material-ui`,
       options: {
-        stylesProvider: {
-          injectFirst: true,
+        webFontsConfig: {
+          fonts: {
+            google: [
+              {
+                family: "Cairo",
+              },
+            ],
+          },
         },
       },
     },

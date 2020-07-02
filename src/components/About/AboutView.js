@@ -7,25 +7,14 @@ import {
   withWidth,
   Paper,
 } from "@material-ui/core";
+import { UF, Dev, Hockey, Laundr, UFCoEng, UFCoEd } from "../../images/AboutMe";
 import { motion } from "framer-motion";
-import {
-  Me,
-  UF,
-  Dev,
-  Hockey,
-  Laundr,
-  UFCoEng,
-  UFCoEd,
-} from "../../images/AboutMe";
+import { Me } from "../GraphQLImages";
 import PropTypes from "prop-types";
 import VizSensor from "react-visibility-sensor";
 import AboutCard from "./components/AboutCard";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import aboutViewStyles from "../../styles/aboutViewStyles";
-
-//test
-// import FlareComponent from "flare-react"
-// import Success from "../temp/Success.flr"
 
 const cron = require("node-cron");
 
@@ -34,17 +23,9 @@ const animations = {
   hidden: { opacity: 0 },
 };
 
-//todo: test on mobile: when small enough, change the topbar buttons to just iconbuttons + resize bottom images as they cause bleedings
 //todo: fix br spacings hehe
 //todo: use the window scroll to on every page to force starting at the top
-//todo: stay visible after shown, just use prev state, if true then keep true? w/viz sensor
-//todo: find out why sometimes when switching to this, the about cards flash as if it was visible
-//todo: redo visibility stuff. and fading as well.
-//todo: maybe change timings back (to before 6/14)
 //todo: add dates to experience cards?
-//todo: margin vs padding? get this together.
-//todo: boxshadow to top of the paper
-//todo: restructure images. rename, move to own folder, do imports like projects
 
 class AboutView extends Component {
   constructor(props) {
@@ -215,16 +196,11 @@ class AboutView extends Component {
               alignItems="center"
             >
               <Grid item className={classes.profilePic}>
-                {/* <Fade in={this.state.showPic} timeout={3000}> */}
-                <img
-                  src={Me}
-                  alt="Profile Pic"
-                  className={classes.profilePicSrc}
-                />
-                {/* </Fade> */}
+                <div className={classes.profilePicSrc}>
+                  <Me />
+                </div>
               </Grid>
               <Grid item className={classes.bio}>
-                {/* <Fade in={this.state.showBio} timeout={3000}> */}
                 <motion.div
                   variants={animations}
                   animate="slide"
@@ -256,15 +232,12 @@ class AboutView extends Component {
                     Aspiring Software Engineer
                   </Typography>
                 </motion.div>
-                {/* </Fade> */}
               </Grid>
             </Grid>
           </Grid>
           <br />
           <br />
           <Paper className={classes.infoSection}>
-            {/* <br />
-            <br /> */}
             <Grid item className={classes.sectionContent}>
               <Grid
                 container
@@ -375,16 +348,12 @@ class AboutView extends Component {
                 </Grid>
               </Grid>
             </Grid>
-            {/* <br />
-            <br /> */}
           </Paper>
           <br />
           <br />
           <br />
           <br />
           <Paper className={classes.infoSection}>
-            {/* <br />
-            <br /> */}
             <Grid item className={classes.sectionContent}>
               <Grid
                 container
@@ -394,11 +363,6 @@ class AboutView extends Component {
                 alignItems="center"
               >
                 <Grid item>
-                  {/* <VizSensor
-                    onChange={(isVisible) => {
-                      this.renderLearnExp(isVisible);
-                    }}
-                  > */}
                   <Grid item>
                     <Fade in={this.state.showLearnMore} timeout={3000}>
                       <Typography
@@ -409,7 +373,6 @@ class AboutView extends Component {
                       </Typography>
                     </Fade>
                   </Grid>
-                  {/* </VizSensor> */}
                 </Grid>
                 <Grid item>
                   <Grid
@@ -419,11 +382,6 @@ class AboutView extends Component {
                     justify="center"
                     alignItems="center"
                   >
-                    {/* <VizSensor
-                      onChange={(isVisible) => {
-                        this.renderArrow2(isVisible);
-                      }}
-                    > */}
                     <Grid item>
                       <Fade in={this.state.showArrow} timeout={990}>
                         <KeyboardArrowDownIcon
@@ -432,7 +390,6 @@ class AboutView extends Component {
                         />
                       </Fade>
                     </Grid>
-                    {/* </VizSensor> */}
                   </Grid>
                 </Grid>
                 <br />
@@ -524,8 +481,6 @@ class AboutView extends Component {
                 </Grid>
               </Grid>
             </Grid>
-            {/* <br />
-            <br /> */}
           </Paper>
         </Grid>
       </React.Fragment>

@@ -1,19 +1,18 @@
 import React from "react";
-import { Link } from "gatsby";
-import PropTypes from "prop-types";
 import {
   AppBar,
   Toolbar,
   Button,
   withStyles,
-  IconButton,
   Hidden,
   Switch,
   Fade,
   Tooltip,
   Typography,
 } from "@material-ui/core";
+import { Link, IconButton } from "gatsby-theme-material-ui";
 import { motion } from "framer-motion";
+import PropTypes from "prop-types";
 import PersonIcon from "@material-ui/icons/Person";
 import BuildIcon from "@material-ui/icons/Build";
 import FindInPageIcon from "@material-ui/icons/FindInPage";
@@ -22,9 +21,6 @@ import CropOriginalIcon from "@material-ui/icons/CropOriginal";
 import topbarStyles from "../../../styles/topbarStyles";
 
 //todo: maybe indicator for which page youre on, just extract from path
-//todo: maybe change when mobile buttons appear. when vertical view starts @750. probably use fade since hidden doesnt have a true/false
-//todo: eh style the buttons better
-//todo: maybe dont fade toggle icon in since will fade on every page/refresh
 
 function Topbar(props) {
   let codeView = false;
@@ -130,42 +126,49 @@ function Topbar(props) {
             </motion.div>
           </Hidden>
           <div className={classes.flexGrow} />
-          <Tooltip
-            open={!toggledBefore}
-            title={
-              <Typography variant="body1">
-                Click to toggle code view!
-              </Typography>
-            }
-            TransitionComponent={Fade}
-            TransitionProps={{ timeout: 0 }}
-            arrow
-          >
-            <Switch
-              color="default"
-              size="small"
-              onChange={props.toggleCodeView}
-              checked={codeView}
-            />
-          </Tooltip>
-          <Fade
-            in={!codeView}
-            timeout={0}
-            style={{
-              display: codeView ? "none" : "block",
-            }}
-          >
-            <CropOriginalIcon fontSize="large" className={classes.codeButton} />
-          </Fade>
-          <Fade
-            in={codeView}
-            timeout={0}
-            style={{
-              display: !codeView ? "none" : "block",
-            }}
-          >
-            <CodeIcon fontSize="large" className={classes.codeButton} />
-          </Fade>
+          {!props.hideToggle && (
+            <React.Fragment>
+              <Tooltip
+                open={!toggledBefore}
+                title={
+                  <Typography variant="body1">
+                    Click to toggle code view!
+                  </Typography>
+                }
+                TransitionComponent={Fade}
+                TransitionProps={{ timeout: 0 }}
+                arrow
+              >
+                <Switch
+                  color="default"
+                  size="small"
+                  onChange={props.toggleCodeView}
+                  checked={codeView}
+                />
+              </Tooltip>
+              <Fade
+                in={!codeView}
+                timeout={0}
+                style={{
+                  display: codeView ? "none" : "block",
+                }}
+              >
+                <CropOriginalIcon
+                  fontSize="large"
+                  className={classes.codeButton}
+                />
+              </Fade>
+              <Fade
+                in={codeView}
+                timeout={0}
+                style={{
+                  display: !codeView ? "none" : "block",
+                }}
+              >
+                <CodeIcon fontSize="large" className={classes.codeButton} />
+              </Fade>
+            </React.Fragment>
+          )}
         </Toolbar>
       </AppBar>
       <div className={classes.offset} />

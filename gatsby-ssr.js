@@ -1,18 +1,7 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
-
 import React from "react";
-import { CssBaseline, ThemeProvider } from "@material-ui/core";
 import { Helmet } from "react-helmet";
-import { StylesProvider } from "@material-ui/styles";
-import theme from "./src/styles/theme";
-import "./src/styles/particlesStyles.css";
-
-//testing
 import Particles from "react-particles-js";
+import "./src/styles/particlesStyles.css";
 
 function Wrapper(props) {
   return (
@@ -56,14 +45,9 @@ function Wrapper(props) {
         }}
         id="particlesBG"
       />
-      <ThemeProvider theme={theme}>
-        <StylesProvider injectFirst>
-          <CssBaseline />
-          {props.children}
-        </StylesProvider>
-      </ThemeProvider>
+      {props.children}
     </React.StrictMode>
   );
 }
 
-export const wrapRootElement = ({ element }) => <Wrapper>{element}</Wrapper>;
+export const wrapPageElement = ({ element }) => <Wrapper>{element}</Wrapper>;

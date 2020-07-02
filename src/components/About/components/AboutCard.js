@@ -9,14 +9,32 @@ import {
   Divider,
   Grid,
 } from "@material-ui/core";
+import { graphql, StaticQuery } from "gatsby";
+import Img from "gatsby-image";
 import PropTypes from "prop-types";
 import aboutCardStyles from "../../../styles/aboutCardStyles";
 
-//todo: weird corner clipping w/solid main background
-//todo: for images: https://mui.wertarbyte.com/#material-ui-image
-//todo: for image auto resize see: https://codesandbox.io/s/material-ui-card-4r83e?file=/src/index.js:700-720
-//todo: ^^ make image fit into 16:9 box!
 //todo: hovers? https://codesandbox.io/s/material-ui-card-styling-example-ewc5j?file=/src/index.js
+
+const imagesQuery = graphql`
+  query {
+    UF: file(relativePath: { eq: "AboutMe/UF.png" }) {
+      childImageSharp {
+        fixed(height: 900, width: 1600) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+
+    LI: file(relativePath: { eq: "Footer/LinkedIn.png" }) {
+      childImageSharp {
+        fixed(height: 34, width: 138) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }
+`;
 
 function AboutCard(props) {
   const classes = props.classes;
@@ -24,13 +42,24 @@ function AboutCard(props) {
   return (
     <div className={classes.layout}>
       <Card className={classes.root} elevation={10}>
-        {/* <Card className={classes.card}> */}
         <CardHeader
           title={props.title}
           titleTypographyProps={{ variant: "h5", className: classes.title }}
           className={classes.cardHeader}
         />
         <Divider />
+        {/* <StaticQuery
+          query={imagesQuery}
+          render={(data) => <Img fixed={data.UF.childImageSharp.fixed} />}
+        /> */}
+        {/* <StaticQuery
+          query={imagesQuery}
+          render={(data) => (
+            <CardMedia title={props.alt} className={classes.media}>
+              <Img fixed={data.UF.childImageSharp.fixed} />
+            </CardMedia>
+          )}
+        /> */}
         <CardMedia
           image={props.image}
           title={props.alt}
