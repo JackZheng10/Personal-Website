@@ -227,17 +227,17 @@ class AboutView extends Component {
                     query {
                       file(relativePath: { eq: "AboutMe/Me.png" }) {
                         childImageSharp {
-                          # Specify the image processing specifications right in the query.
-                          # Makes it trivial to update as your page's design changes.
-                          fixed(width: 444) {
-                            ...GatsbyImageSharpFixed
+                          fluid(maxWidth: 1000) {
+                            ...GatsbyImageSharpFluid
                           }
                         }
                       }
                     }
                   `}
                   render={(data) => (
-                    <Img fixed={data.file.childImageSharp.fixed} />
+                    <div className={classes.profilePicSrc}>
+                      <Img fluid={data.file.childImageSharp.fluid} />
+                    </div>
                   )}
                 />
               </Grid>

@@ -204,6 +204,7 @@ export default (theme) => ({
     order: 1,
   },
   profilePicSrc: {
+    width: 444,
     [theme.breakpoints.down(471)]: {
       width: "90vw",
       height: "auto",
