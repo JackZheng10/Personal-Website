@@ -17,15 +17,13 @@ import {
   UFCoEng,
   UFCoEd,
 } from "../../images/AboutMe";
+import { graphql, StaticQuery } from "gatsby";
+import Img from "gatsby-image";
 import PropTypes from "prop-types";
 import VizSensor from "react-visibility-sensor";
 import AboutCard from "./components/AboutCard";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import aboutViewStyles from "../../styles/aboutViewStyles";
-
-//test
-import { graphql, StaticQuery } from "gatsby";
-import Img from "gatsby-image";
 
 const cron = require("node-cron");
 
@@ -228,7 +226,7 @@ class AboutView extends Component {
                       file(relativePath: { eq: "AboutMe/Me.png" }) {
                         childImageSharp {
                           fluid(maxWidth: 1000) {
-                            ...GatsbyImageSharpFluid
+                            ...GatsbyImageSharpFluid_tracedSVG
                           }
                         }
                       }

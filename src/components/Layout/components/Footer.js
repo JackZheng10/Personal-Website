@@ -8,6 +8,8 @@ import {
   Hidden,
   IconButton,
 } from "@material-ui/core";
+import { graphql, StaticQuery } from "gatsby";
+import Img from "gatsby-image";
 import { GitHub, LinkedIn, Email } from "../../../images/Footer";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
@@ -15,6 +17,34 @@ import EmailIcon from "@material-ui/icons/Email";
 import footerStyles from "../../../styles/footerStyles";
 
 //todo: use icons when on mobile for footer images? or just resize.
+
+const imagesQuery = graphql`
+  query {
+    GH: file(relativePath: { eq: "Footer/GitHub.png" }) {
+      childImageSharp {
+        fixed(height: 52, width: 125) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+
+    LI: file(relativePath: { eq: "Footer/LinkedIn.png" }) {
+      childImageSharp {
+        fixed(height: 34, width: 138) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+
+    email: file(relativePath: { eq: "Footer/Email.png" }) {
+      childImageSharp {
+        fixed(height: 52, width: 52) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }
+`;
 
 class Footer extends Component {
   redirectGH = () => {
@@ -98,30 +128,48 @@ class Footer extends Component {
                 </Hidden>
                 <Hidden only={["xs"]}>
                   <Grid item>
-                    <img
+                    <StaticQuery
+                      query={imagesQuery}
+                      render={(data) => (
+                        <Img fixed={data.GH.childImageSharp.fixed} />
+                      )}
+                    />
+                    {/* <img
                       src={GitHub}
                       className={classes.GH}
                       alt="GitHub Logo"
                       onClick={this.redirectGH}
-                    />
+                    /> */}
                     &nbsp;&nbsp;&nbsp;
                   </Grid>
                   <Grid item>
-                    <img
+                    <StaticQuery
+                      query={imagesQuery}
+                      render={(data) => (
+                        <Img fixed={data.LI.childImageSharp.fixed} />
+                      )}
+                    />
+                    {/* <img
                       src={LinkedIn}
                       className={classes.LI}
                       alt="LinkedIn Logo"
                       onClick={this.redirectLI}
-                    />
+                    /> */}
                     &nbsp;&nbsp;&nbsp;
                   </Grid>
                   <Grid item>
-                    <img
+                    <StaticQuery
+                      query={imagesQuery}
+                      render={(data) => (
+                        <Img fixed={data.email.childImageSharp.fixed} />
+                      )}
+                    />
+                    {/* <img
                       src={Email}
                       className={classes.email}
                       alt="Email Logo"
                       onClick={this.redirectEmail}
-                    />
+                    /> */}
                   </Grid>
                 </Hidden>
               </Grid>
