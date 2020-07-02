@@ -58,7 +58,7 @@ function Wrapper(props) {
       />
       {/* <ThemeProvider theme={theme}>
         <StylesProvider injectFirst> */}
-      <CssBaseline />
+      {/* <CssBaseline /> */}
       {props.children}
       {/* </StylesProvider>
       </ThemeProvider> */}
@@ -66,4 +66,4 @@ function Wrapper(props) {
   );
 }
 
-export const wrapRootElement = ({ element }) => <Wrapper>{element}</Wrapper>;
+export const wrapPageElement = ({ element }) => <Wrapper>{element}</Wrapper>;

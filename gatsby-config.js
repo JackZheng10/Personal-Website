@@ -12,7 +12,7 @@ module.exports = {
           fonts: {
             google: [
               {
-                family: `Titillium Web`,
+                family: "Cairo",
               },
             ],
           },
