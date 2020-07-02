@@ -1,28 +1,14 @@
 import React, { Component } from "react";
 import { Fade, Button, withStyles, Grid, Typography } from "@material-ui/core";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import {
-  // vs,
-  // atomDark,
-  // prism,
-  // tomorrow,
-  okaidia,
-  // solarizedlight,
-  // xonokai,
-} from "react-syntax-highlighter/dist/esm/styles/prism";
+import { okaidia } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 import { About as AboutCode } from "../codeFiles/About/About";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import tabbedCodeViewStyles from "../styles/tabbedCodeViewStyles";
 
-//test
-// import FlareComponent from "flare-react";
-// import Success from "../temp/Success.flr";
-
-//todo: make the code view button very obviously a toggle
 //todo: do the code file exports like the material dashboard ppl did, just export out of the file!
-//todo: spacing={2} creates weird padding when screen is small enough
 
 const cron = require("node-cron");
 

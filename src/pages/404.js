@@ -13,7 +13,7 @@ class NotFound extends Component {
 
   render() {
     return (
-      <Layout toggleCodeView={this.toggleCodeView}>
+      <Layout toggleCodeView={this.toggleCodeView} hideToggle={true}>
         <br />
         <br />
         <Typography
