@@ -12,8 +12,8 @@ import {
   CardActions,
   Icon,
   Button,
-  IconButton,
 } from "@material-ui/core";
+import { IconButton } from "gatsby-theme-material-ui";
 import { Carousel } from "react-responsive-carousel";
 import PropTypes from "prop-types";
 import GitHubIcon from "@material-ui/icons/GitHub";

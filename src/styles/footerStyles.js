@@ -10,19 +10,7 @@ export default (theme) => ({
     color: "white",
     paddingTop: 10,
   },
-  GH: {
-    height: 52,
-    width: 125,
-    cursor: "pointer",
-  },
-  LI: {
-    height: 34,
-    width: 138,
-    cursor: "pointer",
-  },
-  email: {
-    height: 52,
-    width: 52,
+  pointer: {
     cursor: "pointer",
   },
   centerText: {

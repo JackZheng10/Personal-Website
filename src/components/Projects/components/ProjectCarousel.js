@@ -6,9 +6,9 @@ import {
   Typography,
   Button,
   Fade,
-  IconButton,
   withWidth,
 } from "@material-ui/core";
+import { IconButton } from "gatsby-theme-material-ui";
 // import { FaChevronCircleRight, FaChevronCircleLeft } from "react-icons/fa";
 import PropTypes from "prop-types";
 import projectCarouselStyles from "../../../styles/projectCarouselStyles";

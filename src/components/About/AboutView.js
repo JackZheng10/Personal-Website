@@ -7,7 +7,6 @@ import {
   withWidth,
   Paper,
 } from "@material-ui/core";
-import { motion } from "framer-motion";
 import {
   Me,
   UF,
@@ -18,6 +17,7 @@ import {
   UFCoEd,
 } from "../../images/AboutMe";
 import { graphql, StaticQuery } from "gatsby";
+import { motion } from "framer-motion";
 import Img from "gatsby-image";
 import PropTypes from "prop-types";
 import VizSensor from "react-visibility-sensor";
@@ -44,7 +44,17 @@ const animations = {
 //todo: boxshadow to top of the paper
 //todo: restructure images. rename, move to own folder, do imports like projects
 
-//graphQL testing
+const imagesQuery = graphql`
+  query {
+    me: file(relativePath: { eq: "AboutMe/Me.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+  }
+`;
 
 class AboutView extends Component {
   constructor(props) {
@@ -221,20 +231,10 @@ class AboutView extends Component {
                   className={classes.profilePicSrc}
                 /> */}
                 <StaticQuery
-                  query={graphql`
-                    query {
-                      file(relativePath: { eq: "AboutMe/Me.png" }) {
-                        childImageSharp {
-                          fluid(maxWidth: 1000) {
-                            ...GatsbyImageSharpFluid_tracedSVG
-                          }
-                        }
-                      }
-                    }
-                  `}
+                  query={imagesQuery}
                   render={(data) => (
                     <div className={classes.profilePicSrc}>
-                      <Img fluid={data.file.childImageSharp.fluid} />
+                      <Img fluid={data.me.childImageSharp.fluid} />
                     </div>
                   )}
                 />

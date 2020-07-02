@@ -1,19 +1,18 @@
 import React from "react";
-import { Link } from "gatsby";
-import PropTypes from "prop-types";
 import {
   AppBar,
   Toolbar,
   Button,
   withStyles,
-  IconButton,
   Hidden,
   Switch,
   Fade,
   Tooltip,
   Typography,
 } from "@material-ui/core";
+import { Link, IconButton } from "gatsby-theme-material-ui";
 import { motion } from "framer-motion";
+import PropTypes from "prop-types";
 import PersonIcon from "@material-ui/icons/Person";
 import BuildIcon from "@material-ui/icons/Build";
 import FindInPageIcon from "@material-ui/icons/FindInPage";

@@ -1,16 +1,9 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
-import {
-  withStyles,
-  Grid,
-  Typography,
-  Link,
-  Hidden,
-  IconButton,
-} from "@material-ui/core";
+import { withStyles, Grid, Typography, Hidden } from "@material-ui/core";
+import { Link, IconButton } from "gatsby-theme-material-ui";
 import { graphql, StaticQuery } from "gatsby";
+import PropTypes from "prop-types";
 import Img from "gatsby-image";
-import { GitHub, LinkedIn, Email } from "../../../images/Footer";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import EmailIcon from "@material-ui/icons/Email";
@@ -61,7 +54,7 @@ class Footer extends Component {
 
   redirectEmail = () => {
     if (typeof window !== `undefined`) {
-      window.open("mailto:jackzheng10@yahoo.com");
+      window.open("mailto:jackzheng10@yahoo.com", "_self");
     }
   };
 
@@ -131,7 +124,15 @@ class Footer extends Component {
                     <StaticQuery
                       query={imagesQuery}
                       render={(data) => (
-                        <Img fixed={data.GH.childImageSharp.fixed} />
+                        <a
+                          href="https://github.com/JackZheng10"
+                          target="_blank"
+                        >
+                          <Img
+                            fixed={data.GH.childImageSharp.fixed}
+                            className={classes.pointer}
+                          />
+                        </a>
                       )}
                     />
                     {/* <img
@@ -146,7 +147,15 @@ class Footer extends Component {
                     <StaticQuery
                       query={imagesQuery}
                       render={(data) => (
-                        <Img fixed={data.LI.childImageSharp.fixed} />
+                        <a
+                          href="https://www.linkedin.com/in/jackzheng10/"
+                          target="_blank"
+                        >
+                          <Img
+                            fixed={data.LI.childImageSharp.fixed}
+                            className={classes.pointer}
+                          />
+                        </a>
                       )}
                     />
                     {/* <img
@@ -161,7 +170,12 @@ class Footer extends Component {
                     <StaticQuery
                       query={imagesQuery}
                       render={(data) => (
-                        <Img fixed={data.email.childImageSharp.fixed} />
+                        <a href="mailto:jackzheng10@yahoo.com">
+                          <Img
+                            fixed={data.email.childImageSharp.fixed}
+                            className={classes.pointer}
+                          />
+                        </a>
                       )}
                     />
                     {/* <img
