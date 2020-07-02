@@ -24,8 +24,8 @@ import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import aboutViewStyles from "../../styles/aboutViewStyles";
 
 //test
-// import FlareComponent from "flare-react"
-// import Success from "../temp/Success.flr"
+import { graphql, StaticQuery } from "gatsby";
+import Img from "gatsby-image";
 
 const cron = require("node-cron");
 
@@ -45,6 +45,8 @@ const animations = {
 //todo: margin vs padding? get this together.
 //todo: boxshadow to top of the paper
 //todo: restructure images. rename, move to own folder, do imports like projects
+
+//graphQL testing
 
 class AboutView extends Component {
   constructor(props) {
@@ -215,13 +217,29 @@ class AboutView extends Component {
               alignItems="center"
             >
               <Grid item className={classes.profilePic}>
-                {/* <Fade in={this.state.showPic} timeout={3000}> */}
-                <img
+                {/* <img
                   src={Me}
                   alt="Profile Pic"
                   className={classes.profilePicSrc}
+                /> */}
+                <StaticQuery
+                  query={graphql`
+                    query {
+                      file(relativePath: { eq: "AboutMe/Me.png" }) {
+                        childImageSharp {
+                          # Specify the image processing specifications right in the query.
+                          # Makes it trivial to update as your page's design changes.
+                          fixed(width: 444) {
+                            ...GatsbyImageSharpFixed
+                          }
+                        }
+                      }
+                    }
+                  `}
+                  render={(data) => (
+                    <Img fixed={data.file.childImageSharp.fixed} />
+                  )}
                 />
-                {/* </Fade> */}
               </Grid>
               <Grid item className={classes.bio}>
                 {/* <Fade in={this.state.showBio} timeout={3000}> */}
