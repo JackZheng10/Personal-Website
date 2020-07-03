@@ -9,32 +9,10 @@ import {
   Divider,
   Grid,
 } from "@material-ui/core";
-import { graphql, StaticQuery } from "gatsby";
-import Img from "gatsby-image";
 import PropTypes from "prop-types";
 import aboutCardStyles from "../../../styles/aboutCardStyles";
 
 //todo: hovers? https://codesandbox.io/s/material-ui-card-styling-example-ewc5j?file=/src/index.js
-
-const imagesQuery = graphql`
-  query {
-    UF: file(relativePath: { eq: "AboutMe/UF.png" }) {
-      childImageSharp {
-        fixed(height: 900, width: 1600) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-
-    LI: file(relativePath: { eq: "Footer/LinkedIn.png" }) {
-      childImageSharp {
-        fixed(height: 34, width: 138) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-  }
-`;
 
 function AboutCard(props) {
   const classes = props.classes;

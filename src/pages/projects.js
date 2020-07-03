@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Helmet } from "react-helmet";
 import Layout from "../components/Layout/Layout";
 import ProjectsView from "../components/Projects/ProjectsView";
 import TabbedCodeView from "../components/TabbedCodeView";
@@ -37,15 +38,23 @@ class Projects extends Component {
 
   render() {
     return (
-      <Layout toggleCodeView={this.toggleCodeView}>
-        <br />
-        <br />
-        {this.renderView()}
-        <br />
-        <br />
-        <br />
-        <br />
-      </Layout>
+      <React.Fragment>
+        <Helmet>
+          <meta
+            name="Description"
+            content="Explore some of the projects I've worked on."
+          />
+        </Helmet>
+        <Layout toggleCodeView={this.toggleCodeView}>
+          <br />
+          <br />
+          {this.renderView()}
+          <br />
+          <br />
+          <br />
+          <br />
+        </Layout>
+      </React.Fragment>
     );
   }
 }

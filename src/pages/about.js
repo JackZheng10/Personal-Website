@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Helmet } from "react-helmet";
 import Layout from "../components/Layout/Layout";
 import AboutView from "../components/About/AboutView";
 import TabbedCodeView from "../components/TabbedCodeView";
@@ -33,15 +34,20 @@ class About extends Component {
 
   render() {
     return (
-      <Layout toggleCodeView={this.toggleCodeView}>
-        <br />
-        <br />
-        {this.renderView()}
-        <br />
-        <br />
-        <br />
-        <br />
-      </Layout>
+      <React.Fragment>
+        <Helmet>
+          <meta name="Description" content="Learn more about me." />
+        </Helmet>
+        <Layout toggleCodeView={this.toggleCodeView}>
+          <br />
+          <br />
+          {this.renderView()}
+          <br />
+          <br />
+          <br />
+          <br />
+        </Layout>
+      </React.Fragment>
     );
   }
 }

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { withStyles, Grid, Typography, Fade } from "@material-ui/core";
 import { motion } from "framer-motion";
-
 import PropTypes from "prop-types";
 import ProjectCard from "./components/ProjectCard";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
