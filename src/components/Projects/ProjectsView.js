@@ -32,17 +32,16 @@ const animations = {
   hidden: { opacity: 0 },
 };
 
-//todo: fix particlesBG being clumped when screen resizes
-//todo: dont have just one image or bug with infinite scroll from first to left
-
 class ProjectsView extends Component {
   constructor(props) {
     super(props);
 
+    if (typeof window !== `undefined`) {
+      window.scrollTo(0, 0);
+    }
+
     this.state = {
-      showIntro: false,
       showArrow: false,
-      showProjects: false,
     };
 
     this.flashArrow = cron.schedule(
@@ -56,16 +55,8 @@ class ProjectsView extends Component {
 
   componentDidMount = () => {
     setTimeout(() => {
-      this.setState({ showIntro: true });
-    }, 500);
-
-    setTimeout(() => {
       this.flashArrow.start();
     }, 1000);
-
-    setTimeout(() => {
-      this.setState({ showProjects: true });
-    }, 2500);
   };
 
   render() {
@@ -88,7 +79,6 @@ class ProjectsView extends Component {
               alignItems="center"
             >
               <Grid item>
-                {/* <Fade in={this.state.showIntro} timeout={3000}> */}
                 <motion.div
                   variants={animations}
                   animate="slide"
@@ -99,7 +89,6 @@ class ProjectsView extends Component {
                     Explore some of the projects I've worked on
                   </Typography>
                 </motion.div>
-                {/* </Fade> */}
               </Grid>
             </Grid>
           </Grid>
@@ -118,10 +107,8 @@ class ProjectsView extends Component {
               </Grid>
             </Grid>
           </Grid>
-          <br />
-          <br />
+          <div style={{ height: 20 }} />
           <Grid item>
-            {/* <Fade in={this.state.showProjects} timeout={3000}> */}
             <div style={{ padding: 16 }}>
               <Grid
                 container
@@ -252,7 +239,6 @@ class ProjectsView extends Component {
                 </Grid>
               </Grid>
             </div>
-            {/* </Fade> */}
           </Grid>
         </Grid>
       </React.Fragment>

@@ -27,19 +27,16 @@ const animations = {
   hidden: { opacity: 0 },
 };
 
-//todo: give placeholder height for loading element so the page doesnt collapse randomly on refresh
-//todo: make download button ripple, see MUI button page below custom
-
 class ResumeView extends Component {
   constructor(props) {
     super(props);
 
+    if (typeof window !== `undefined`) {
+      window.scrollTo(0, 0);
+    }
+
     this.state = {
-      showIntro: false,
       showArrow: false,
-      showResume: false,
-      numPages: null,
-      pageNumber: 1,
     };
 
     this.flashArrow = cron.schedule(
@@ -85,7 +82,6 @@ class ResumeView extends Component {
         <Grid item>
           <Grid container direction="row" justify="center" alignItems="center">
             <Grid item>
-              {/* <Fade in={this.state.showIntro} timeout={3000}> */}
               <motion.div
                 variants={animations}
                 animate="slide"
@@ -96,7 +92,6 @@ class ResumeView extends Component {
                   Download the latest version of my resume
                 </Typography>
               </motion.div>
-              {/* </Fade> */}
             </Grid>
           </Grid>
         </Grid>
@@ -115,8 +110,7 @@ class ResumeView extends Component {
             </Grid>
           </Grid>
         </Grid>
-        <br />
-        <br />
+        <div style={{ height: 20 }} />
         <Grid item>
           <Grid
             container
@@ -126,7 +120,6 @@ class ResumeView extends Component {
             alignItems="center"
           >
             <Grid item>
-              {/* <Fade in={this.state.showResume} timeout={3000}> */}
               <motion.div
                 variants={animations}
                 animate="slide"
@@ -144,7 +137,7 @@ class ResumeView extends Component {
                     <Divider />
                     <CardContent className={classes.cardContent}>
                       <SizeMe
-                        monitorWidth //or height?
+                        monitorWidth
                         refreshRate={144}
                         refreshMode={"debounce"}
                         render={({ size }) => (
@@ -159,7 +152,6 @@ class ResumeView extends Component {
                   </Card>
                 </div>
               </motion.div>
-              {/* </Fade> */}
             </Grid>
           </Grid>
         </Grid>

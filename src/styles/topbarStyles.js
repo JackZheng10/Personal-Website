@@ -1,10 +1,5 @@
 export default (theme) => ({
   root: {
-    //backgroundImage: "linear-gradient(to right, #0575e6, #021b79)",
-    // backgroundImage:
-    //   "linear-gradient(to top, #58151A, #BC2909, #BA6D09, #71A8EE, #3072EB, #1552C6, #0542A8);",
-    // backgroundImage:
-    //   "linear-gradient( 136deg, rgb(0, 153, 255) 15%, rgb(0, 153, 255) 50%, rgb(0, 153, 255) 100%)",
     backgroundColor: "rgb(0, 153, 255)",
     height: "auto",
   },

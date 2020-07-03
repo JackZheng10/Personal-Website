@@ -197,7 +197,6 @@ export default (theme) => ({
       marginRight: -120,
     },
     [theme.breakpoints.down(751)]: {
-      //actually only applies at 750 AND down. should test for up too
       marginRight: "auto",
       order: 2,
     },
@@ -226,5 +225,3 @@ export default (theme) => ({
     [theme.breakpoints.down(751)]: {},
   },
 });
-
-//STARTING AT 750: vertical view

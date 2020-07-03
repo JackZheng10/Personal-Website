@@ -1,10 +1,4 @@
 export default (theme) => ({
-  //   card: {
-  //     width: 400,
-  //     [theme.breakpoints.down("xs")]: {
-  //       width: "auto",
-  //     },
-  //   },
   root: {
     width: "100%",
     height: "100%",
@@ -13,7 +7,7 @@ export default (theme) => ({
   layout: {
     marginLeft: "auto",
     marginRight: "auto",
-    minHeight: 400, //todo: fine, but make text centered vertically. might change depending on final font
+    minHeight: 400,
     [theme.breakpoints.up(450)]: {
       width: 400,
     },
@@ -47,7 +41,7 @@ export default (theme) => ({
   },
   media: {
     height: 0,
-    paddingTop: "56.25%", // 16:9
+    paddingTop: "56.25%",
     marginTop: 5,
     marginBottom: 5,
   },

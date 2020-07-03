@@ -8,15 +8,6 @@ import { About as AboutCode } from "../codeFiles/About/About";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import tabbedCodeViewStyles from "../styles/tabbedCodeViewStyles";
 
-//todo: do the code file exports like the material dashboard ppl did, just export out of the file!
-
-const cron = require("node-cron");
-
-const animations = {
-  slide: { y: [50, 0], opacity: [0, 0.5, 1] },
-  hidden: { opacity: 0 },
-};
-
 const code = `const b = "Five"
 const c = "Six";
 console.log("Seven")`;
@@ -27,6 +18,13 @@ console.log("Seven")
 const b = "Five"
 const c = "Six";
 console.log("Seven")`;
+
+const cron = require("node-cron");
+
+const animations = {
+  slide: { y: [50, 0], opacity: [0, 0.5, 1] },
+  hidden: { opacity: 0 },
+};
 
 const commonFiles = [
   { name: "TabbedCodeView.js", code: code },
@@ -53,6 +51,10 @@ class TabbedCodeView extends Component {
   constructor(props) {
     super(props);
 
+    if (typeof window !== `undefined`) {
+      window.scrollTo(0, 0);
+    }
+
     let files = [];
 
     if (typeof window !== `undefined`) {
@@ -61,11 +63,7 @@ class TabbedCodeView extends Component {
     }
 
     this.state = {
-      showIntro: false,
       showArrow: false,
-      showButtons: false,
-      showCode: false,
-
       files: files,
       currentCode: files[0].code,
     };
@@ -81,20 +79,8 @@ class TabbedCodeView extends Component {
 
   componentDidMount = () => {
     setTimeout(() => {
-      this.setState({ showIntro: true });
-    }, 1000);
-
-    setTimeout(() => {
       this.flashArrow.start();
     }, 1000);
-
-    setTimeout(() => {
-      this.setState({ showButtons: true });
-    }, 3000);
-
-    setTimeout(() => {
-      this.setState({ showCode: true });
-    }, 3000);
   };
 
   getFiles = (page) => {
@@ -170,14 +156,6 @@ class TabbedCodeView extends Component {
 
     return (
       <React.Fragment>
-        {/* <FlareComponent
-          width={200}
-          height={200}
-          animationName="coding"
-          file={Success}
-          width={500}
-          height={500}
-        /> */}
         <Grid
           container
           direction="column"
@@ -193,7 +171,6 @@ class TabbedCodeView extends Component {
               alignItems="center"
             >
               <Grid item>
-                {/* <Fade in={this.state.showIntro} timeout={3000}> */}
                 <motion.div
                   variants={animations}
                   animate="slide"
@@ -204,7 +181,6 @@ class TabbedCodeView extends Component {
                     Here's (most of) the code that makes this page work
                   </Typography>
                 </motion.div>
-                {/* </Fade> */}
               </Grid>
             </Grid>
           </Grid>
@@ -226,7 +202,6 @@ class TabbedCodeView extends Component {
           <br />
           <br />
           <Grid item>
-            {/* <Fade in={this.state.showButtons} timeout={3000}> */}
             <motion.div
               variants={animations}
               animate="slide"
@@ -243,10 +218,7 @@ class TabbedCodeView extends Component {
                 {this.renderFileButtons(classes)}
               </Grid>
             </motion.div>
-            {/* </Fade> */}
           </Grid>
-          {/* <Fade in={this.state.showCode} timeout={3000}> */}
-
           <div style={{ width: "90%" }}>
             <motion.div
               variants={animations}
@@ -259,8 +231,6 @@ class TabbedCodeView extends Component {
               </SyntaxHighlighter>
             </motion.div>
           </div>
-
-          {/* </Fade> */}
         </Grid>
       </React.Fragment>
     );

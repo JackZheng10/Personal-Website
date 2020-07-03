@@ -20,8 +20,6 @@ import CodeIcon from "@material-ui/icons/Code";
 import CropOriginalIcon from "@material-ui/icons/CropOriginal";
 import topbarStyles from "../../../styles/topbarStyles";
 
-//todo: maybe indicator for which page youre on, just extract from path
-
 function Topbar(props) {
   let codeView = false;
   let toggledBefore = false;
@@ -145,7 +143,7 @@ function Topbar(props) {
                 <Switch
                   color="default"
                   size="small"
-                  aria-label="Toggle Code View"
+                  inputProps={{ "aria-label": "Toggle Code View" }}
                   onChange={props.toggleCodeView}
                   checked={codeView}
                 />

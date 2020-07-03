@@ -12,8 +12,6 @@ import {
 import PropTypes from "prop-types";
 import aboutCardStyles from "../../../styles/aboutCardStyles";
 
-//todo: hovers? https://codesandbox.io/s/material-ui-card-styling-example-ewc5j?file=/src/index.js
-
 function AboutCard(props) {
   const classes = props.classes;
 
@@ -26,18 +24,6 @@ function AboutCard(props) {
           className={classes.cardHeader}
         />
         <Divider />
-        {/* <StaticQuery
-          query={imagesQuery}
-          render={(data) => <Img fixed={data.UF.childImageSharp.fixed} />}
-        /> */}
-        {/* <StaticQuery
-          query={imagesQuery}
-          render={(data) => (
-            <CardMedia title={props.alt} className={classes.media}>
-              <Img fixed={data.UF.childImageSharp.fixed} />
-            </CardMedia>
-          )}
-        /> */}
         <CardMedia
           image={props.image}
           title={props.alt}
@@ -63,12 +49,3 @@ AboutCard.propTypes = {
 };
 
 export default withStyles(aboutCardStyles)(AboutCard);
-
-// state = { elevation: 0 };
-
-//   toggleElevation = () => {
-//     this.setState({ elevation: this.state.elevation === 0 ? 20 : 0 });
-//   };
-
-// onMouseOver={this.toggleElevation}
-// onMouseOut={this.toggleElevation}

@@ -23,10 +23,6 @@ const animations = {
   hidden: { opacity: 0 },
 };
 
-//todo: fix br spacings hehe
-//todo: use the window scroll to on every page to force starting at the top
-//todo: add dates to experience cards?
-
 class AboutView extends Component {
   constructor(props) {
     super(props);
@@ -124,22 +120,6 @@ class AboutView extends Component {
     }
   };
 
-  renderLearnExp = (isVisible) => {
-    this.setState({ showLearnExp: isVisible });
-  };
-
-  renderArrow2 = (isVisible) => {
-    if (isVisible) {
-      setTimeout(() => {
-        this.flashArrow2.start();
-      }, 1000);
-    } else {
-      this.setState({ showArrow2: false }); //review this change, wanted to see if it fixed the arrow not disppearing
-      //grid container causes the syntax highlighter to have an auto width
-      this.flashArrow2.stop();
-    }
-  };
-
   render() {
     const classes = this.props.classes;
 
@@ -176,7 +156,7 @@ class AboutView extends Component {
                     Hey there, I'm Jack Zheng
                   </Typography>
                 </motion.div>
-                <br />
+                <div style={{ height: 10 }} />
                 <motion.div
                   variants={animations}
                   animate="slide"
@@ -200,8 +180,7 @@ class AboutView extends Component {
               </Grid>
             </Grid>
           </Grid>
-          <br />
-          <br />
+          <div style={{ height: 40 }} />
           <Paper className={classes.infoSection}>
             <Grid item className={classes.sectionContent}>
               <Grid
@@ -226,8 +205,7 @@ class AboutView extends Component {
                     />
                   </Fade>
                 </Grid>
-                <br />
-                <br />
+                <div style={{ height: 40 }} />
                 <Grid item>
                   <Grid
                     container
@@ -253,8 +231,9 @@ class AboutView extends Component {
                               alt="UF Logo"
                               title="I am a..."
                               text="I'm a Junior at the University of Florida 
-                    studying computer science. I'm grateful for everything that I'm learning along the way, and
-                     I can't wait to see where my future takes me."
+                              studying computer science. I'm grateful for everything 
+                              that I'm learning along the way, and I can't
+                              wait to see where my future takes me."
                             />
                           </div>
                         </Fade>
@@ -277,9 +256,9 @@ class AboutView extends Component {
                               alt="Dev Logo"
                               title="I like to..."
                               text="I like to learn about new technologies and topics, 
-                    so I spend a lot of time working on personal projects. 
-                    I'm very interested in full-stack web development, 
-                    but I've also worked with mobile applications before."
+                              so I spend a lot of time working on personal projects. 
+                              I'm very interested in full-stack web development, 
+                              but I've also worked with mobile applications before."
                             />
                           </div>
                         </Fade>
@@ -301,9 +280,10 @@ class AboutView extends Component {
                               image={Hockey}
                               alt="Hockey Logo"
                               title="In my free time..."
-                              text="When I'm not doing anything related to computer science, 
-                              you'll likely find me at the gym, playing hockey (wherever I can find a rink), 
-                            or chilling out with some music. Hit me up for some good recommendations. "
+                              text="When I'm not doing anything related to computer 
+                              science, you'll likely find me at the gym, playing hockey
+                              (wherever I can find a rink), or chilling out with some music.
+                              Hit me up for some good recommendations. "
                             />
                           </div>
                         </Fade>
@@ -314,10 +294,7 @@ class AboutView extends Component {
               </Grid>
             </Grid>
           </Paper>
-          <br />
-          <br />
-          <br />
-          <br />
+          <div style={{ height: 80 }} />
           <Paper className={classes.infoSection}>
             <Grid item className={classes.sectionContent}>
               <Grid
@@ -357,8 +334,7 @@ class AboutView extends Component {
                     </Grid>
                   </Grid>
                 </Grid>
-                <br />
-                <br />
+                <div style={{ height: 40 }} />
                 <Grid item>
                   <Grid
                     container
@@ -384,10 +360,11 @@ class AboutView extends Component {
                               image={Laundr}
                               alt="Laundr Logo"
                               title="Laundr"
-                              text="I'm a Software Engineering Intern at Laundr, an on-demand laundry service.
-                               I work with Xamarin Forms, ASP.NET, MySQL, and C# to implement and debug features on their
-                               iOS and Android application. I'm also the sole developer for their upcoming web application
-                                that's built with the MERN stack."
+                              text="I'm a Software Engineering Intern at Laundr, an 
+                              on-demand laundry service.  I work with Xamarin Forms, ASP.NET, MySQL,
+                              and C# to implement and debug features on their iOS and Android application.
+                              I'm also the sole developer for their upcoming web application
+                              that's built with the MERN stack."
                             />
                           </div>
                         </Fade>
@@ -409,9 +386,10 @@ class AboutView extends Component {
                               image={UFCoEng}
                               alt="UF College of Engineering Logo"
                               title="UF College of Engineering"
-                              text="I'm a teaching assistant for CEN3031 (Introduction to Software Engineering) and COP3503
-                               (Programming Fundamentals 2). I deal with topics related to programming concepts, C++, the MERN stack, and software development.
-                               I lead weekly labs, lessons, and office hours as well as produce instructional videos."
+                              text="I'm a teaching assistant for CEN3031 (Introduction to Software Engineering) 
+                              and COP3503 (Programming Fundamentals 2). I deal with topics related to programming
+                              concepts, C++, the MERN stack, and software development. I lead weekly labs, lessons,
+                              and office hours as well as produce instructional videos."
                             />
                           </div>
                         </Fade>

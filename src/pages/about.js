@@ -5,11 +5,6 @@ import AboutView from "../components/About/AboutView";
 import TabbedCodeView from "../components/TabbedCodeView";
 
 class About extends Component {
-  //testing only
-  // componentDidMount = () => {
-  //   localStorage.removeItem("toggledBefore");
-  // };
-
   state = { codeView: false };
 
   toggleCodeView = (codeView) => {
@@ -24,10 +19,8 @@ class About extends Component {
     }
 
     if (!codeView) {
-      console.log("Rendering bio");
       return <AboutView />;
     } else {
-      console.log("Rendering code view");
       return <TabbedCodeView />;
     }
   };
@@ -39,13 +32,9 @@ class About extends Component {
           <meta name="Description" content="Learn more about me." />
         </Helmet>
         <Layout toggleCodeView={this.toggleCodeView}>
-          <br />
-          <br />
+          <div style={{ height: 40 }} />
           {this.renderView()}
-          <br />
-          <br />
-          <br />
-          <br />
+          <div style={{ height: 80 }} />
         </Layout>
       </React.Fragment>
     );

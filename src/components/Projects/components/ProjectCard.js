@@ -19,8 +19,6 @@ import ArrowBackIosOutlinedIcon from "@material-ui/icons/ArrowBackIosOutlined";
 import ArrowForwardIosOutlinedIcon from "@material-ui/icons/ArrowForwardIosOutlined";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-//todo: movile - shows whitespace at bottom when swiping since doesnt resize automatically?
-
 class ProjectCard extends Component {
   handleCodeLink = () => {
     if (typeof window !== `undefined`) {
@@ -114,7 +112,6 @@ class ProjectCard extends Component {
               {this.props.description}
             </Typography>
           </CardContent>
-          {/* <Divider /> */}
           <CardActions className={classes.cardActions}>
             <Grid container justify="center">
               <Grid item className={classes.buttonContainer}>
