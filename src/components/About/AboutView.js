@@ -7,7 +7,6 @@ import {
   withWidth,
   Paper,
 } from "@material-ui/core";
-import { UF, Dev, Hockey, Laundr, UFCoEng, UFCoEd } from "../../images/AboutMe";
 import { motion } from "framer-motion";
 import { Me } from "../GraphQLImages";
 import PropTypes from "prop-types";
@@ -249,7 +248,7 @@ class AboutView extends Component {
                         >
                           <div>
                             <AboutCard
-                              image={UF}
+                              image="https://i.imgur.com/vxtnd3W.png"
                               alt="UF Logo"
                               title="I am a..."
                               text="I'm a Junior at the University of Florida 
@@ -273,7 +272,7 @@ class AboutView extends Component {
                         >
                           <div>
                             <AboutCard
-                              image={Dev}
+                              image="https://i.imgur.com/Nt9213B.png"
                               alt="Dev Logo"
                               title="I like to..."
                               text="I like to learn about new technologies and topics, 
@@ -298,7 +297,7 @@ class AboutView extends Component {
                         >
                           <div>
                             <AboutCard
-                              image={Hockey}
+                              image="https://i.imgur.com/WC3lwwW.png"
                               alt="Hockey Logo"
                               title="In my free time..."
                               text="When I'm not doing anything related to computer science, 
@@ -381,7 +380,7 @@ class AboutView extends Component {
                         >
                           <div>
                             <AboutCard
-                              image={Laundr}
+                              image="https://i.imgur.com/KX7Lqr1.png"
                               alt="Laundr Logo"
                               title="Laundr"
                               text="I'm a Software Engineering Intern at Laundr, an on-demand laundry service.
@@ -406,7 +405,7 @@ class AboutView extends Component {
                         >
                           <div>
                             <AboutCard
-                              image={UFCoEng}
+                              image="https://i.imgur.com/MKKDxSM.png?1"
                               alt="UF CoE Logo"
                               title="UF College of Engineering"
                               text="I'm a teaching assistant for CEN3031 (Introduction to Software Engineering) and COP3503
@@ -430,7 +429,7 @@ class AboutView extends Component {
                         >
                           <div>
                             <AboutCard
-                              image={UFCoEd}
+                              image="https://i.imgur.com/xQlGBGa.png"
                               alt="UF CoE Logo"
                               title="UF College of Education"
                               text="I was formerly an Undergraduate Research Assistant under Dr. Zhihui Fang,

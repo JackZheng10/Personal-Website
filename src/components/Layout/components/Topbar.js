@@ -148,6 +148,7 @@ function Topbar(props) {
                 <Switch
                   color="default"
                   size="small"
+                  for="Toggle Code View"
                   onChange={props.toggleCodeView}
                   checked={codeView}
                 />
