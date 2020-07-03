@@ -52,7 +52,7 @@ class ProjectCard extends Component {
         <IconButton
           className={classes.imageButtonLeft}
           onClick={onClickHandler}
-          aria-label="Prev"
+          aria-label="Previous"
         >
           <ArrowBackIosOutlinedIcon fontSize="large" />
         </IconButton>

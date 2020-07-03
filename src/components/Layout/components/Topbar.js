@@ -145,6 +145,7 @@ function Topbar(props) {
                 <Switch
                   color="default"
                   size="small"
+                  aria-label="Toggle Code View"
                   onChange={props.toggleCodeView}
                   checked={codeView}
                 />
