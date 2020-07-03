@@ -64,7 +64,7 @@ class Footer extends Component {
               >
                 <Hidden only={["lg", "xl", "md", "sm"]}>
                   <Grid item>
-                    <IconButton onClick={this.redirectGH}>
+                    <IconButton onClick={this.redirectGH} aria-label="GitHub">
                       <GitHubIcon
                         fontSize="large"
                         className={classes.GHMobile}
@@ -72,7 +72,7 @@ class Footer extends Component {
                     </IconButton>
                   </Grid>
                   <Grid item>
-                    <IconButton onClick={this.redirectLI}>
+                    <IconButton onClick={this.redirectLI} aria-label="LinkedIn">
                       <LinkedInIcon
                         fontSize="large"
                         className={classes.LIMobile}
@@ -80,7 +80,7 @@ class Footer extends Component {
                     </IconButton>
                   </Grid>
                   <Grid item>
-                    <IconButton onClick={this.redirectEmail}>
+                    <IconButton onClick={this.redirectEmail} aria-label="Email">
                       <EmailIcon
                         fontSize="large"
                         className={classes.emailMobile}
