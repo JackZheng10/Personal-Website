@@ -7,6 +7,17 @@ import {
   withWidth,
 } from "@material-ui/core";
 import { motion } from "framer-motion";
+import { Icon } from "@iconify/react";
+import {
+  FaReact,
+  FaNodeJs,
+  FaYelp,
+  FaRegCalendar,
+  FaStripeS,
+  FaPython,
+} from "react-icons/fa";
+import { DiMongodb } from "react-icons/di";
+import { GrGatsbyjs } from "react-icons/gr";
 import {
   LWA1,
   LWA2,
@@ -26,6 +37,9 @@ import {
 } from "../../images/Projects/GonzaloLawClientPortal";
 import { EM1 } from "../../images/Projects/EatMe";
 import { PS1 } from "../../images/Projects/PersonalSite";
+import netlifyIcon from "@iconify/icons-cib/netlify";
+import jsIcon from "@iconify/icons-cib/js";
+import googleCloud from "@iconify/icons-cib/google-cloud";
 import PropTypes from "prop-types";
 import ProjectCard from "./components/ProjectCard";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
@@ -165,6 +179,33 @@ class ProjectsView extends Component {
                           alt: "Driver Dashboard",
                         },
                       ]}
+                      techStack={[
+                        {
+                          name: "React.js",
+                          icon: <FaReact />,
+                          color: "#61DBFB",
+                        },
+                        {
+                          name: "MongoDB",
+                          icon: <DiMongodb />,
+                          color: "#4DB33D",
+                        },
+                        {
+                          name: "Node.js",
+                          icon: <FaNodeJs />,
+                          color: "#68A063",
+                        },
+                        {
+                          name: "Express.js",
+                          icon: <Icon icon={jsIcon} />,
+                          color: "#f3df1e",
+                        },
+                        {
+                          name: "Stripe.js",
+                          icon: <FaStripeS />,
+                          color: "#4379FF",
+                        },
+                      ]}
                       link="https://github.com/JackZheng10/Laundr-Web-App"
                       showArrows={true}
                       showDots={showDots}
@@ -189,6 +230,28 @@ class ProjectsView extends Component {
                         { src: SS3, alt: "Statistics" },
                         { src: SS4, alt: "Purchase History" },
                         { src: SS5, alt: "Purchase Details" },
+                      ]}
+                      techStack={[
+                        {
+                          name: "React Native",
+                          icon: <FaReact />,
+                          color: "#61DBFB",
+                        },
+                        {
+                          name: "Node.js",
+                          icon: <FaNodeJs />,
+                          color: "#68A063",
+                        },
+                        {
+                          name: "Python 3",
+                          icon: <FaPython />,
+                          color: "#FFE873",
+                        },
+                        {
+                          name: "Google Cloud",
+                          icon: <Icon icon={googleCloud} />,
+                          color: "#609cf3",
+                        },
                       ]}
                       link="https://github.com/JackZheng10/SwampHacks2020_SnapScan"
                       showArrows={true}
@@ -215,6 +278,33 @@ class ProjectsView extends Component {
                         { src: GLCP4, alt: "Project Details" },
                         { src: GLCP5, alt: "Calendar" },
                       ]}
+                      techStack={[
+                        {
+                          name: "React.js",
+                          icon: <FaReact />,
+                          color: "#61DBFB",
+                        },
+                        {
+                          name: "MongoDB",
+                          icon: <DiMongodb />,
+                          color: "#4DB33D",
+                        },
+                        {
+                          name: "Node.js",
+                          icon: <FaNodeJs />,
+                          color: "#68A063",
+                        },
+                        {
+                          name: "Express.js",
+                          icon: <Icon icon={jsIcon} />,
+                          color: "#f3df1e",
+                        },
+                        {
+                          name: "Google Calendar",
+                          icon: <FaRegCalendar />,
+                          color: "#609cf3",
+                        },
+                      ]}
                       link="https://github.com/JackZheng10/Gonzalo-Law-Client-Portal"
                       showArrows={true}
                       showDots={showDots}
@@ -234,6 +324,33 @@ class ProjectsView extends Component {
                       swipe-and-match experience. Users can evaluate a variety of factors including price, Yelp rating, and distance. Spend less 
                       time deciding and more time eating! Currently a work in progress."
                       images={[{ src: EM1, alt: "Coming Soon" }]}
+                      techStack={[
+                        {
+                          name: "React Native",
+                          icon: <FaReact />,
+                          color: "#61DBFB",
+                        },
+                        {
+                          name: "MongoDB",
+                          icon: <DiMongodb />,
+                          color: "#4DB33D",
+                        },
+                        {
+                          name: "Node.js",
+                          icon: <FaNodeJs />,
+                          color: "#68A063",
+                        },
+                        {
+                          name: "Express.js",
+                          icon: <Icon icon={jsIcon} />,
+                          color: "#f3df1e",
+                        },
+                        {
+                          name: "Yelp",
+                          icon: <FaYelp />,
+                          color: "#F15C4F",
+                        },
+                      ]}
                       link="https://github.com/JackZheng10/Eat-Me"
                       showArrows={false}
                       showDots={false}
@@ -251,6 +368,28 @@ class ProjectsView extends Component {
                       title="Personal Website"
                       description="The website you're on right now, made to showcase information about myself!"
                       images={[{ src: PS1, alt: "About Me" }]}
+                      techStack={[
+                        {
+                          name: "React.js",
+                          icon: <FaReact />,
+                          color: "#61DBFB",
+                        },
+                        {
+                          name: "Node.js",
+                          icon: <FaNodeJs />,
+                          color: "#68A063",
+                        },
+                        {
+                          name: "Gatsby.js",
+                          icon: <GrGatsbyjs />,
+                          color: "#663399",
+                        },
+                        {
+                          name: "Netlify",
+                          icon: <Icon icon={netlifyIcon} />,
+                          color: "#00C7B7",
+                        },
+                      ]}
                       link="https://github.com/JackZheng10/Personal-Website"
                       showArrows={false}
                       showDots={false}

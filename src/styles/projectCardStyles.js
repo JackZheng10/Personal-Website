@@ -80,4 +80,8 @@ export default (theme) => ({
     zIndex: 2,
     left: 10,
   },
+  chip: {
+    margin: theme.spacing(0.5),
+    color: "black",
+  },
 });

@@ -19,10 +19,8 @@ class Projects extends Component {
     }
 
     if (!codeView) {
-      console.log("Rendering bio");
       return <ProjectsView />;
     } else {
-      console.log("Rendering code view");
       return <TabbedCodeView />;
     }
   };

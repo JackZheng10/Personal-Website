@@ -9,6 +9,7 @@ import {
   CardMedia,
   CardActions,
   Button,
+  Chip,
 } from "@material-ui/core";
 import { IconButton } from "gatsby-theme-material-ui";
 import { Carousel } from "react-responsive-carousel";
@@ -20,6 +21,12 @@ import ArrowForwardIosOutlinedIcon from "@material-ui/icons/ArrowForwardIosOutli
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 class ProjectCard extends Component {
+  constructor(props) {
+    super(props);
+
+    this.techStack = this.props.techStack;
+  }
+
   handleCodeLink = () => {
     if (typeof window !== `undefined`) {
       window.open(this.props.link);
@@ -71,6 +78,21 @@ class ProjectCard extends Component {
     });
   };
 
+  renderTechChips = (classes) => {
+    return this.techStack.map((tech, index) => {
+      return (
+        <Chip
+          icon={tech.icon}
+          label={tech.name}
+          key={index}
+          size="small"
+          style={{ backgroundColor: tech.color }}
+          className={classes.chip}
+        />
+      );
+    });
+  };
+
   render() {
     const classes = this.props.classes;
 
@@ -111,6 +133,7 @@ class ProjectCard extends Component {
             <Typography variant="body1" className={classes.contentText}>
               {this.props.description}
             </Typography>
+            {this.renderTechChips(classes)}
           </CardContent>
           <CardActions className={classes.cardActions}>
             <Grid container justify="center">

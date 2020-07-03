@@ -58,7 +58,7 @@ class AboutView extends Component {
 
     setTimeout(() => {
       this.flashArrow.start();
-    }, 3000);
+    }, 2800);
   };
 
   renderCard = (isVisible, number) => {

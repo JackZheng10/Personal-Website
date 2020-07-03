@@ -19,10 +19,8 @@ class Resume extends Component {
     }
 
     if (!codeView) {
-      console.log("Rendering resume");
       return <ResumeView />;
     } else {
-      console.log("Rendering code view");
       return <TabbedCodeView />;
     }
   };
