@@ -131,7 +131,11 @@ class Footer extends Component {
                     className={classes.centerText}
                     gutterBottom
                   >
-                    Created by me with ❤️!{" "}
+                    Created by me with{" "}
+                    <span role="img" aria-label="heart-emoji">
+                      ❤️
+                    </span>
+                    !{" "}
                     <Link
                       color="primary"
                       target="_blank"

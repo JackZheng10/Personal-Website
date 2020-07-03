@@ -5,6 +5,9 @@ module.exports = {
     author: `@JackZheng10`,
   },
   plugins: [
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-theme-material-ui`,
       options: {
@@ -19,7 +22,6 @@ module.exports = {
         },
       },
     },
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -27,8 +29,6 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -41,10 +41,11 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site. //todo: figure out this configuration. add title, use helmet: https://www.gatsbyjs.org/docs/add-page-metadata/
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`, https://www.gatsbyjs.org/docs/add-a-manifest-file/#:~:text=Quoting%20Google%3A,file%20on%20every%20site%20build.
-    // https://www.google.com/search?q=gatsby+change+tab+name&oq=gatsby+change+tab+name&aqs=chrome..69i57j33.3571j0j4&sourceid=chrome&ie=UTF-8
-    // test site w/ web.dev and lighthouse
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: [`/about/`, `/projects/`, `/resume/`],
+      },
+    },
   ],
 };

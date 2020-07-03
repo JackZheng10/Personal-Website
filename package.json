@@ -27,8 +27,7 @@
     "react-responsive-carousel": "^3.2.8",
     "react-sizeme": "^2.6.12",
     "react-syntax-highlighter": "^12.2.1",
-    "react-visibility-sensor": "^5.1.1",
-    "typeface-titillium-web": "0.0.72"
+    "react-visibility-sensor": "^5.1.1"
   },
   "devDependencies": {
     "prettier": "2.0.5"

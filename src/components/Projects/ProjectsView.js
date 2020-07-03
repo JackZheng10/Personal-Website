@@ -1,12 +1,5 @@
 import React, { Component } from "react";
-import {
-  Slide,
-  withStyles,
-  Grid,
-  Typography,
-  Button,
-  Fade,
-} from "@material-ui/core";
+import { withStyles, Grid, Typography, Fade } from "@material-ui/core";
 import { motion } from "framer-motion";
 import {
   LWA1,

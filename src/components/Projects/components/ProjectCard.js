@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import {
-  Fade,
   withStyles,
   Grid,
   Typography,
@@ -8,9 +7,7 @@ import {
   CardHeader,
   CardContent,
   CardMedia,
-  Divider,
   CardActions,
-  Icon,
   Button,
 } from "@material-ui/core";
 import { IconButton } from "gatsby-theme-material-ui";
@@ -33,7 +30,11 @@ class ProjectCard extends Component {
 
   renderNextButton = (onClickHandler, classes) => {
     return (
-      <IconButton className={classes.imageButtonRight} onClick={onClickHandler}>
+      <IconButton
+        className={classes.imageButtonRight}
+        onClick={onClickHandler}
+        aria-label="Next"
+      >
         <ArrowForwardIosOutlinedIcon fontSize="large" />
       </IconButton>
     );
@@ -41,7 +42,11 @@ class ProjectCard extends Component {
 
   renderPrevButton = (onClickHandler, classes) => {
     return (
-      <IconButton className={classes.imageButtonLeft} onClick={onClickHandler}>
+      <IconButton
+        className={classes.imageButtonLeft}
+        onClick={onClickHandler}
+        aria-label="Prev"
+      >
         <ArrowBackIosOutlinedIcon fontSize="large" />
       </IconButton>
     );
@@ -103,6 +108,7 @@ class ProjectCard extends Component {
                   className={classes.button}
                   startIcon={<GitHubIcon />}
                   onClick={this.handleCodeLink}
+                  aria-label="Source Code"
                 >
                   Source Code
                 </Button>

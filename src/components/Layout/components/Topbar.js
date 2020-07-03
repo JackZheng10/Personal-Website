@@ -46,6 +46,7 @@ function Topbar(props) {
               size="small"
               component={Link}
               to="/about"
+              aria-label="About Me"
             >
               <PersonIcon />
             </IconButton>
@@ -54,6 +55,7 @@ function Topbar(props) {
               size="small"
               component={Link}
               to="/projects"
+              aria-label="Projects"
             >
               <BuildIcon />
             </IconButton>
@@ -62,6 +64,7 @@ function Topbar(props) {
               size="small"
               component={Link}
               to="/resume"
+              aria-label="Resume"
             >
               <FindInPageIcon />
             </IconButton>
@@ -82,6 +85,7 @@ function Topbar(props) {
                 startIcon={<PersonIcon />}
                 component={Link}
                 to="/about"
+                aria-label="About Me"
               >
                 About Me
               </Button>
@@ -101,6 +105,7 @@ function Topbar(props) {
                 startIcon={<BuildIcon />}
                 component={Link}
                 to="/projects"
+                aria-label="Projects"
               >
                 Projects
               </Button>
@@ -120,6 +125,7 @@ function Topbar(props) {
                 startIcon={<FindInPageIcon />}
                 component={Link}
                 to="/resume"
+                aria-label="Resume"
               >
                 Resume
               </Button>

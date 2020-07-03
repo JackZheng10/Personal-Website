@@ -36,19 +36,14 @@ class AboutView extends Component {
     }
 
     this.state = {
-      showGreeting: false,
-      showPic: false,
-      showBio: false,
-      showLearnMore: false,
+      showSectionHeader: false,
       showArrow: false,
       showCard1: false,
       showCard2: false,
       showCard3: false,
-      showLearnExp: false,
-      showArrow2: false,
-      showExp1: false,
-      showExp2: false,
-      showExp3: false,
+      showCard4: false,
+      showCard5: false,
+      showCard6: false,
     };
 
     this.flashArrow = cron.schedule(
@@ -58,32 +53,11 @@ class AboutView extends Component {
       },
       { scheduled: false }
     );
-
-    //todo: remove logic stuff for experience section viz sensor
-    this.flashArrow2 = cron.schedule(
-      "*/1 * * * * *",
-      () => {
-        this.setState({ showArrow2: !this.state.showArrow2 });
-      },
-      { scheduled: false }
-    );
   }
 
   componentDidMount = () => {
     setTimeout(() => {
-      this.setState({ showGreeting: true });
-    }, 500);
-
-    setTimeout(() => {
-      this.setState({ showPic: true });
-    }, 1000);
-
-    setTimeout(() => {
-      this.setState({ showBio: true });
-    }, 1000);
-
-    setTimeout(() => {
-      this.setState({ showLearnMore: true });
+      this.setState({ showSectionHeader: true });
     }, 2000);
 
     setTimeout(() => {
@@ -91,20 +65,11 @@ class AboutView extends Component {
     }, 3000);
   };
 
-  //todo: testing delay on card vis so no ghost cards on switch back to normal view
-  renderAboutCards = (isVisible, number) => {
+  renderCard = (isVisible, number) => {
     let prevState = this.state["showCard" + number];
 
     if (!prevState && isVisible) {
       this.setState({ ["showCard" + number]: isVisible });
-    }
-  };
-
-  renderExperienceCards = (isVisible, number) => {
-    let prevState = this.state["showExp" + number];
-
-    if (!prevState && isVisible) {
-      this.setState({ ["showExp" + number]: isVisible });
     }
   };
 
@@ -247,7 +212,7 @@ class AboutView extends Component {
                 alignItems="center"
               >
                 <Grid item>
-                  <Fade in={this.state.showLearnMore} timeout={3000}>
+                  <Fade in={this.state.showSectionHeader} timeout={3000}>
                     <Typography variant="h3" className={classes.sectionHeader}>
                       Learn more about me
                     </Typography>
@@ -274,7 +239,7 @@ class AboutView extends Component {
                     <VizSensor
                       partialVisibility={this.handleXsVisible()}
                       onChange={(isVisible) => {
-                        this.renderAboutCards(isVisible, 1);
+                        this.renderCard(isVisible, 1);
                       }}
                     >
                       <Grid item style={{ padding: this.handleXsPadding() }}>
@@ -298,7 +263,7 @@ class AboutView extends Component {
                     <VizSensor
                       partialVisibility={this.handleXsVisible()}
                       onChange={(isVisible) => {
-                        this.renderAboutCards(isVisible, 2);
+                        this.renderCard(isVisible, 2);
                       }}
                     >
                       <Grid item style={{ padding: this.handleXsPadding() }}>
@@ -323,7 +288,7 @@ class AboutView extends Component {
                     <VizSensor
                       partialVisibility={this.handleXsVisible()}
                       onChange={(isVisible) => {
-                        this.renderAboutCards(isVisible, 3);
+                        this.renderCard(isVisible, 3);
                       }}
                     >
                       <Grid item style={{ padding: this.handleXsPadding() }}>
@@ -364,7 +329,7 @@ class AboutView extends Component {
               >
                 <Grid item>
                   <Grid item>
-                    <Fade in={this.state.showLearnMore} timeout={3000}>
+                    <Fade in={this.state.showSectionHeader} timeout={3000}>
                       <Typography
                         variant="h3"
                         className={classes.sectionHeader}
@@ -406,12 +371,12 @@ class AboutView extends Component {
                     <VizSensor
                       partialVisibility={this.handleXsVisible()}
                       onChange={(isVisible) => {
-                        this.renderExperienceCards(isVisible, 1);
+                        this.renderCard(isVisible, 4);
                       }}
                     >
                       <Grid item style={{ padding: this.handleXsPadding() }}>
                         <Fade
-                          in={this.state.showExp1}
+                          in={this.state.showCard4}
                           timeout={this.handleXsTimeout(1)}
                         >
                           <div>
@@ -431,12 +396,12 @@ class AboutView extends Component {
                     <VizSensor
                       partialVisibility={this.handleXsVisible()}
                       onChange={(isVisible) => {
-                        this.renderExperienceCards(isVisible, 2);
+                        this.renderCard(isVisible, 5);
                       }}
                     >
                       <Grid item style={{ padding: this.handleXsPadding() }}>
                         <Fade
-                          in={this.state.showExp2}
+                          in={this.state.showCard5}
                           timeout={this.handleXsTimeout(2)}
                         >
                           <div>
@@ -455,12 +420,12 @@ class AboutView extends Component {
                     <VizSensor
                       partialVisibility={this.handleXsVisible()}
                       onChange={(isVisible) => {
-                        this.renderExperienceCards(isVisible, 3);
+                        this.renderCard(isVisible, 6);
                       }}
                     >
                       <Grid item style={{ padding: this.handleXsPadding() }}>
                         <Fade
-                          in={this.state.showExp3}
+                          in={this.state.showCard6}
                           timeout={this.handleXsTimeout(3)}
                         >
                           <div>

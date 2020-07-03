@@ -146,6 +146,7 @@ class TabbedCodeView extends Component {
             <Button
               variant="contained"
               size="medium"
+              aria-label={`${file.name}`}
               key={index}
               className={classes.button}
               style={{
