@@ -46,7 +46,7 @@ function Topbar(props) {
               size="small"
               component={Link}
               to="/about"
-              aria-label="About Me"
+              label="About Me"
             >
               <PersonIcon />
             </IconButton>
@@ -55,7 +55,7 @@ function Topbar(props) {
               size="small"
               component={Link}
               to="/projects"
-              aria-label="Projects"
+              label="Projects"
             >
               <BuildIcon />
             </IconButton>
@@ -64,7 +64,7 @@ function Topbar(props) {
               size="small"
               component={Link}
               to="/resume"
-              aria-label="Resume"
+              label="Resume"
             >
               <FindInPageIcon />
             </IconButton>
@@ -148,7 +148,6 @@ function Topbar(props) {
                 <Switch
                   color="default"
                   size="small"
-                  for="Toggle Code View"
                   onChange={props.toggleCodeView}
                   checked={codeView}
                 />

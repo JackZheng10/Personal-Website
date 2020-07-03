@@ -1,6 +1,25 @@
 import React, { Component } from "react";
 import { withStyles, Grid, Typography, Fade } from "@material-ui/core";
 import { motion } from "framer-motion";
+import {
+  LWA1,
+  LWA2,
+  LWA3,
+  LWA4,
+  LWA5,
+  LWA6,
+  LWA7,
+} from "../../images/Projects/LaundrWebApp";
+import { SS1, SS2, SS3, SS4, SS5 } from "../../images/Projects/SnapScan";
+import {
+  GLCP1,
+  GLCP2,
+  GLCP3,
+  GLCP4,
+  GLCP5,
+} from "../../images/Projects/GonzaloLawClientPortal";
+import { EM1 } from "../../images/Projects/EatMe";
+import { PS1 } from "../../images/Projects/PersonalSite";
 import PropTypes from "prop-types";
 import ProjectCard from "./components/ProjectCard";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
@@ -124,15 +143,28 @@ class ProjectsView extends Component {
                       subscriptions, and track their order. Also lets drivers and washers handle orders. Comes with an admin
                       panel to manage everything! Currently a work in progress."
                       images={[
-                        "https://i.imgur.com/enlG4ru.jpg",
-                        "https://i.imgur.com/nx5qxLH.jpg",
-                        "https://i.imgur.com/PR4WuoS.jpg",
-                        "https://i.imgur.com/bAbLt32.jpg",
-                        "https://i.imgur.com/lwyYaCk.jpg",
-                        "https://i.imgur.com/Dw5yvaS.jpg",
-                        "https://i.imgur.com/OKGb4Fi.jpg",
+                        {
+                          src: LWA1,
+                          alt: "Login",
+                        },
+                        { src: LWA2, alt: "New Order" },
+                        { src: LWA3, alt: "Order Status" },
+                        { src: LWA4, alt: "Subscriptions" },
+                        {
+                          src: LWA5,
+                          alt: "Subscription Status",
+                        },
+                        {
+                          src: LWA6,
+                          alt: "Buy a Subscription",
+                        },
+                        {
+                          src: LWA7,
+                          alt: "Driver Dashboard",
+                        },
                       ]}
                       link="https://github.com/JackZheng10/Laundr-Web-App"
+                      showNav={true}
                     />
                   </motion.div>
                 </Grid>
@@ -149,13 +181,14 @@ class ProjectsView extends Component {
                       in a variety of categories by taking a picture of their receipts, extracting information on purchases, 
                       and generating thorough analyses based on purchase history."
                       images={[
-                        "https://i.imgur.com/Vb8rsyJ.jpg",
-                        "https://i.imgur.com/PlpvKzR.jpg",
-                        "https://i.imgur.com/1MdNJzV.jpg",
-                        "https://i.imgur.com/aIS8MwX.jpg",
-                        "https://i.imgur.com/FTL0Ljq.jpg",
+                        { src: SS1, alt: "Receipt Scan" },
+                        { src: SS2, alt: "Scan Results" },
+                        { src: SS3, alt: "Statistics" },
+                        { src: SS4, alt: "Purchase History" },
+                        { src: SS5, alt: "Purchase Details" },
                       ]}
                       link="https://github.com/JackZheng10/SwampHacks2020_SnapScan"
+                      showNav={true}
                     />
                   </motion.div>
                 </Grid>
@@ -172,13 +205,14 @@ class ProjectsView extends Component {
                       recover their password, view projects and their progress, download/upload files, and view their 
                       calendar. Admins can create/delete projects, update their progress, upload files, update user calendars, and delete users."
                       images={[
-                        "https://i.imgur.com/hnW0rG4.jpg",
-                        "https://i.imgur.com/FUson6V.jpg",
-                        "https://i.imgur.com/fPMQgs8.jpg",
-                        "https://i.imgur.com/MRRoarO.jpg",
-                        "https://i.imgur.com/CJrPd0b.jpg",
+                        { src: GLCP1, alt: "Login" },
+                        { src: GLCP2, alt: "Admin Dashboard" },
+                        { src: GLCP3, alt: "Projects" },
+                        { src: GLCP4, alt: "Project Details" },
+                        { src: GLCP5, alt: "Calendar" },
                       ]}
                       link="https://github.com/JackZheng10/Gonzalo-Law-Client-Portal"
+                      showNav={true}
                     />
                   </motion.div>
                 </Grid>
@@ -194,8 +228,9 @@ class ProjectsView extends Component {
                       description="A mobile application that allows users to group together and decide on a place to eat through an individual 
                       swipe-and-match experience. Users can evaluate a variety of factors including price, Yelp rating, and distance. Spend less 
                       time deciding and more time eating! Currently a work in progress."
-                      images={["https://i.imgur.com/x23Bd4b.jpg"]}
+                      images={[{ src: EM1, alt: "Coming Soon" }]}
                       link="https://github.com/JackZheng10/Eat-Me"
+                      showNav={false}
                     />
                   </motion.div>
                 </Grid>
@@ -209,8 +244,9 @@ class ProjectsView extends Component {
                     <ProjectCard
                       title="Personal Website"
                       description="The website you're on right now, made to showcase information about myself!"
-                      images={["https://i.imgur.com/tkssIcA.jpg"]}
+                      images={[{ src: PS1, alt: "About Me" }]}
                       link="https://github.com/JackZheng10/Personal-Website"
+                      showNav={false}
                     />
                   </motion.div>
                 </Grid>

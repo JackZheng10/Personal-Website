@@ -28,28 +28,36 @@ class ProjectCard extends Component {
     }
   };
 
-  renderNextButton = (onClickHandler, classes) => {
-    return (
-      <IconButton
-        className={classes.imageButtonRight}
-        onClick={onClickHandler}
-        aria-label="Next"
-      >
-        <ArrowForwardIosOutlinedIcon fontSize="large" />
-      </IconButton>
-    );
+  renderNextButton = (onClickHandler, classes, showNav) => {
+    if (!showNav) {
+      return null;
+    } else {
+      return (
+        <IconButton
+          className={classes.imageButtonRight}
+          onClick={onClickHandler}
+          aria-label="Next"
+        >
+          <ArrowForwardIosOutlinedIcon fontSize="large" />
+        </IconButton>
+      );
+    }
   };
 
-  renderPrevButton = (onClickHandler, classes) => {
-    return (
-      <IconButton
-        className={classes.imageButtonLeft}
-        onClick={onClickHandler}
-        aria-label="Prev"
-      >
-        <ArrowBackIosOutlinedIcon fontSize="large" />
-      </IconButton>
-    );
+  renderPrevButton = (onClickHandler, classes, showNav) => {
+    if (!showNav) {
+      return null;
+    } else {
+      return (
+        <IconButton
+          className={classes.imageButtonLeft}
+          onClick={onClickHandler}
+          aria-label="Prev"
+        >
+          <ArrowBackIosOutlinedIcon fontSize="large" />
+        </IconButton>
+      );
+    }
   };
 
   renderImages = (classes) => {
@@ -57,8 +65,8 @@ class ProjectCard extends Component {
       return (
         <CardMedia
           className={classes.media}
-          image={image}
-          title="Project Picture"
+          image={image.src}
+          title={image.alt}
           key={index}
         />
       );
@@ -78,10 +86,18 @@ class ProjectCard extends Component {
           />
           <Carousel
             renderArrowNext={(onClickHandler) => {
-              return this.renderNextButton(onClickHandler, classes);
+              return this.renderNextButton(
+                onClickHandler,
+                classes,
+                this.props.showNav
+              );
             }}
             renderArrowPrev={(onClickHandler) => {
-              return this.renderPrevButton(onClickHandler, classes);
+              return this.renderPrevButton(
+                onClickHandler,
+                classes,
+                this.props.showNav
+              );
             }}
             showStatus={false}
             showThumbs={false}
@@ -89,6 +105,7 @@ class ProjectCard extends Component {
             infiniteLoop
             transitionTime={1000}
             interval={15000}
+            showIndicators={this.props.showNav}
           >
             {this.renderImages(classes)}
           </Carousel>
