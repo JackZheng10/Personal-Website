@@ -1,5 +1,11 @@
 import React, { Component } from "react";
-import { withStyles, Grid, Typography, Fade } from "@material-ui/core";
+import {
+  withStyles,
+  Grid,
+  Typography,
+  Fade,
+  withWidth,
+} from "@material-ui/core";
 import { motion } from "framer-motion";
 import {
   LWA1,
@@ -59,8 +65,17 @@ class ProjectsView extends Component {
     }, 1000);
   };
 
+  handleXsDots = () => {
+    if (this.props.width === "xs") {
+      return false;
+    } else {
+      return true;
+    }
+  };
+
   render() {
     const classes = this.props.classes;
+    const showDots = this.handleXsDots();
 
     return (
       <React.Fragment>
@@ -151,7 +166,8 @@ class ProjectsView extends Component {
                         },
                       ]}
                       link="https://github.com/JackZheng10/Laundr-Web-App"
-                      showNav={true}
+                      showArrows={true}
+                      showDots={showDots}
                     />
                   </motion.div>
                 </Grid>
@@ -175,7 +191,8 @@ class ProjectsView extends Component {
                         { src: SS5, alt: "Purchase Details" },
                       ]}
                       link="https://github.com/JackZheng10/SwampHacks2020_SnapScan"
-                      showNav={true}
+                      showArrows={true}
+                      showDots={showDots}
                     />
                   </motion.div>
                 </Grid>
@@ -199,7 +216,8 @@ class ProjectsView extends Component {
                         { src: GLCP5, alt: "Calendar" },
                       ]}
                       link="https://github.com/JackZheng10/Gonzalo-Law-Client-Portal"
-                      showNav={true}
+                      showArrows={true}
+                      showDots={showDots}
                     />
                   </motion.div>
                 </Grid>
@@ -217,7 +235,8 @@ class ProjectsView extends Component {
                       time deciding and more time eating! Currently a work in progress."
                       images={[{ src: EM1, alt: "Coming Soon" }]}
                       link="https://github.com/JackZheng10/Eat-Me"
-                      showNav={false}
+                      showArrows={false}
+                      showDots={false}
                     />
                   </motion.div>
                 </Grid>
@@ -233,7 +252,8 @@ class ProjectsView extends Component {
                       description="The website you're on right now, made to showcase information about myself!"
                       images={[{ src: PS1, alt: "About Me" }]}
                       link="https://github.com/JackZheng10/Personal-Website"
-                      showNav={false}
+                      showArrows={false}
+                      showDots={false}
                     />
                   </motion.div>
                 </Grid>
@@ -248,6 +268,7 @@ class ProjectsView extends Component {
 
 ProjectsView.propTypes = {
   className: PropTypes.string,
+  width: PropTypes.oneOf(["lg", "md", "sm", "xl", "xs"]).isRequired,
 };
 
-export default withStyles(projectsViewStyles)(ProjectsView);
+export default withWidth()(withStyles(projectsViewStyles)(ProjectsView));

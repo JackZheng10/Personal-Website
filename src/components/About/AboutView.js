@@ -69,14 +69,6 @@ class AboutView extends Component {
     }
   };
 
-  handleXsVisible = () => {
-    return this.props.width === "xs" ||
-      this.props.width === "sm" ||
-      this.props.width === "md"
-      ? true
-      : false;
-  };
-
   handleXsTimeout = (card) => {
     if (
       this.props.width === "xs" ||
@@ -96,6 +88,14 @@ class AboutView extends Component {
           return 3000;
       }
     }
+  };
+
+  handleXsVisible = () => {
+    return this.props.width === "xs" ||
+      this.props.width === "sm" ||
+      this.props.width === "md"
+      ? true
+      : false;
   };
 
   handleXsSpacing = () => {
@@ -122,6 +122,9 @@ class AboutView extends Component {
 
   render() {
     const classes = this.props.classes;
+    const partialVis = this.handleXsVisible();
+    const spacing = this.handleXsSpacing();
+    const padding = this.handleXsPadding();
 
     return (
       <React.Fragment>
@@ -209,18 +212,18 @@ class AboutView extends Component {
                 <Grid item>
                   <Grid
                     container
-                    spacing={this.handleXsSpacing()}
+                    spacing={spacing}
                     direction="row"
                     justify="center"
                     alignItems="center"
                   >
                     <VizSensor
-                      partialVisibility={this.handleXsVisible()}
+                      partialVisibility={partialVis}
                       onChange={(isVisible) => {
                         this.renderCard(isVisible, 1);
                       }}
                     >
-                      <Grid item style={{ padding: this.handleXsPadding() }}>
+                      <Grid item style={{ padding: padding }}>
                         <Fade
                           in={this.state.showCard1}
                           timeout={this.handleXsTimeout(1)}
@@ -240,12 +243,12 @@ class AboutView extends Component {
                       </Grid>
                     </VizSensor>
                     <VizSensor
-                      partialVisibility={this.handleXsVisible()}
+                      partialVisibility={partialVis}
                       onChange={(isVisible) => {
                         this.renderCard(isVisible, 2);
                       }}
                     >
-                      <Grid item style={{ padding: this.handleXsPadding() }}>
+                      <Grid item style={{ padding: padding }}>
                         <Fade
                           in={this.state.showCard2}
                           timeout={this.handleXsTimeout(2)}
@@ -265,12 +268,12 @@ class AboutView extends Component {
                       </Grid>
                     </VizSensor>
                     <VizSensor
-                      partialVisibility={this.handleXsVisible()}
+                      partialVisibility={partialVis}
                       onChange={(isVisible) => {
                         this.renderCard(isVisible, 3);
                       }}
                     >
-                      <Grid item style={{ padding: this.handleXsPadding() }}>
+                      <Grid item style={{ padding: padding }}>
                         <Fade
                           in={this.state.showCard3}
                           timeout={this.handleXsTimeout(3)}
@@ -338,19 +341,19 @@ class AboutView extends Component {
                 <Grid item>
                   <Grid
                     container
-                    spacing={this.handleXsSpacing()}
-                    style={{ padding: this.handleXsPadding() }}
+                    spacing={spacing}
+                    style={{ padding: padding }}
                     direction="row"
                     justify="center"
                     alignItems="center"
                   >
                     <VizSensor
-                      partialVisibility={this.handleXsVisible()}
+                      partialVisibility={partialVis}
                       onChange={(isVisible) => {
                         this.renderCard(isVisible, 4);
                       }}
                     >
-                      <Grid item style={{ padding: this.handleXsPadding() }}>
+                      <Grid item style={{ padding: padding }}>
                         <Fade
                           in={this.state.showCard4}
                           timeout={this.handleXsTimeout(1)}
@@ -371,12 +374,12 @@ class AboutView extends Component {
                       </Grid>
                     </VizSensor>
                     <VizSensor
-                      partialVisibility={this.handleXsVisible()}
+                      partialVisibility={partialVis}
                       onChange={(isVisible) => {
                         this.renderCard(isVisible, 5);
                       }}
                     >
-                      <Grid item style={{ padding: this.handleXsPadding() }}>
+                      <Grid item style={{ padding: padding }}>
                         <Fade
                           in={this.state.showCard5}
                           timeout={this.handleXsTimeout(2)}
@@ -396,12 +399,12 @@ class AboutView extends Component {
                       </Grid>
                     </VizSensor>
                     <VizSensor
-                      partialVisibility={this.handleXsVisible()}
+                      partialVisibility={partialVis}
                       onChange={(isVisible) => {
                         this.renderCard(isVisible, 6);
                       }}
                     >
-                      <Grid item style={{ padding: this.handleXsPadding() }}>
+                      <Grid item style={{ padding: padding }}>
                         <Fade
                           in={this.state.showCard6}
                           timeout={this.handleXsTimeout(3)}

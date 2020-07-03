@@ -10,15 +10,12 @@ import {
   CardActions,
 } from "@material-ui/core";
 import { motion } from "framer-motion";
-import { SizeMe } from "react-sizeme";
-import { Document, Page, pdfjs } from "react-pdf";
+import PdfViewer from "pdf-react";
 import PropTypes from "prop-types";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import GetAppIcon from "@material-ui/icons/GetApp";
 import resumeViewStyles from "../../styles/resumeViewStyles";
 import Resume from "../../files/JackZheng_Resume.pdf";
-import "react-pdf/dist/Page/AnnotationLayer.css";
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const cron = require("node-cron");
 
@@ -136,17 +133,11 @@ class ResumeView extends Component {
                     </CardActions>
                     <Divider />
                     <CardContent className={classes.cardContent}>
-                      <SizeMe
-                        monitorWidth
-                        refreshRate={144}
-                        refreshMode={"debounce"}
-                        render={({ size }) => (
-                          <React.Fragment>
-                            <Document file={Resume}>
-                              <Page width={size.width} pageNumber={1} />
-                            </Document>
-                          </React.Fragment>
-                        )}
+                      <PdfViewer
+                        src={Resume}
+                        showProgress
+                        hideArrow
+                        hidePageNum
                       />
                     </CardContent>
                   </Card>

@@ -26,8 +26,8 @@ class ProjectCard extends Component {
     }
   };
 
-  renderNextButton = (onClickHandler, classes, showNav) => {
-    if (!showNav) {
+  renderNextButton = (onClickHandler, classes, showArrows) => {
+    if (!showArrows) {
       return null;
     } else {
       return (
@@ -42,8 +42,8 @@ class ProjectCard extends Component {
     }
   };
 
-  renderPrevButton = (onClickHandler, classes, showNav) => {
-    if (!showNav) {
+  renderPrevButton = (onClickHandler, classes, showArrows) => {
+    if (!showArrows) {
       return null;
     } else {
       return (
@@ -87,14 +87,14 @@ class ProjectCard extends Component {
               return this.renderNextButton(
                 onClickHandler,
                 classes,
-                this.props.showNav
+                this.props.showArrows
               );
             }}
             renderArrowPrev={(onClickHandler) => {
               return this.renderPrevButton(
                 onClickHandler,
                 classes,
-                this.props.showNav
+                this.props.showArrows
               );
             }}
             showStatus={false}
@@ -103,7 +103,7 @@ class ProjectCard extends Component {
             infiniteLoop
             transitionTime={1000}
             interval={15000}
-            showIndicators={this.props.showNav}
+            showIndicators={this.props.showDots}
           >
             {this.renderImages(classes)}
           </Carousel>
