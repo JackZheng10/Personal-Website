@@ -29,27 +29,34 @@ export default (theme) => ({
     marginLeft: "auto",
     marginRight: "auto",
     minHeight: "100vh",
-    // [theme.breakpoints.up(800)]: {
-    //   minHeight: 800,
-    // },
     [theme.breakpoints.up(830)]: {
       width: 800,
     },
     [theme.breakpoints.down(830)]: {
       width: "90vw",
-    },
-    [theme.breakpoints.down(660)]: {
       minHeight: "90vh",
     },
-    [theme.breakpoints.down(580)]: {
+    [theme.breakpoints.down(750)]: {
+      minHeight: "85vh",
+    },
+    [theme.breakpoints.down(710)]: {
       minHeight: "80vh",
     },
-    [theme.breakpoints.down(510)]: {
+    [theme.breakpoints.down(660)]: {
+      minHeight: "75vh",
+    },
+    [theme.breakpoints.down(615)]: {
       minHeight: "70vh",
     },
-    // [theme.breakpoints.down(480)]: {
-    //   minHeight: "60vh",
-    // },
+    [theme.breakpoints.down(665)]: {
+      minHeight: "65vh",
+    },
+    [theme.breakpoints.down(520)]: {
+      minHeight: "60vh",
+    },
+    [theme.breakpoints.down(480)]: {
+      minHeight: "50vh",
+    },
   },
   cardContent: {
     textAlign: "center",
