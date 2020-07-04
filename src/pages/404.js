@@ -10,9 +10,12 @@ class NotFound extends Component {
     return (
       <React.Fragment>
         <Helmet>
-          <body style={{ display: this.state.loaded ? "" : "none" }} />
+          {/* <body style={{ display: this.state.loaded ? "" : "none" }} /> */}
         </Helmet>
-        <Layout hideToggle={true} loaded={this.state.loaded}>
+        <Layout
+          hideToggle={true}
+          style={{ display: this.state.loaded ? "" : "none" }}
+        >
           <div style={{ height: 40 }} />
           <Typography
             variant="h3"

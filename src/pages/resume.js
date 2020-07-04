@@ -37,9 +37,12 @@ class Resume extends Component {
             name="Description"
             content="Download the latest version of my resume."
           />
-          <body style={{ display: this.state.loaded ? "" : "none" }} />
+          {/* <body style={{ display: this.state.loaded ? "" : "none" }} /> */}
         </Helmet>
-        <Layout toggleCodeView={this.toggleCodeView} loaded={this.state.loaded}>
+        <Layout
+          toggleCodeView={this.toggleCodeView}
+          style={{ display: this.state.loaded ? "" : "none" }}
+        >
           <br />
           <br />
           {this.renderView()}

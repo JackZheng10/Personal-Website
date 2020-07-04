@@ -34,9 +34,12 @@ class About extends Component {
       <React.Fragment>
         <Helmet>
           <meta name="Description" content="Learn more about me." />
-          <body style={{ display: this.state.loaded ? "" : "none" }} />
+          {/* <body style={{ display: this.state.loaded ? "" : "none" }} /> */}
         </Helmet>
-        <Layout toggleCodeView={this.toggleCodeView} loaded={this.state.loaded}>
+        <Layout
+          toggleCodeView={this.toggleCodeView}
+          style={{ display: this.state.loaded ? "" : "none" }}
+        >
           <div style={{ height: 40 }} />
           {this.renderView()}
           <div style={{ height: 80 }} />

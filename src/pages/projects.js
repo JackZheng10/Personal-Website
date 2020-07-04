@@ -37,9 +37,12 @@ class Projects extends Component {
             name="Description"
             content="Explore some of the projects I've worked on."
           />
-          <body style={{ display: this.state.loaded ? "" : "none" }} />
+          {/* <body style={{ display: this.state.loaded ? "" : "none" }} /> */}
         </Helmet>
-        <Layout toggleCodeView={this.toggleCodeView} loaded={this.state.loaded}>
+        <Layout
+          toggleCodeView={this.toggleCodeView}
+          style={{ display: this.state.loaded ? "" : "none" }}
+        >
           <div style={{ height: 40 }} />
           {this.renderView()}
           <div style={{ height: 80 }} />
