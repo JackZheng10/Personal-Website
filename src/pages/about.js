@@ -5,7 +5,11 @@ import AboutView from "../components/About/AboutView";
 import CodeView from "../components/CodeView";
 
 class About extends Component {
-  state = { codeView: false };
+  state = { loaded: false, codeView: false };
+
+  componentDidMount = () => {
+    this.setState({ loaded: true });
+  };
 
   toggleCodeView = (codeView) => {
     this.setState({ codeView });
@@ -30,6 +34,7 @@ class About extends Component {
       <React.Fragment>
         <Helmet>
           <meta name="Description" content="Learn more about me." />
+          <body style={{ display: this.state.loaded ? "" : "none" }} />
         </Helmet>
         <Layout toggleCodeView={this.toggleCodeView}>
           <div style={{ height: 40 }} />

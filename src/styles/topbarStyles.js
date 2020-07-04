@@ -28,5 +28,8 @@ export default (theme) => ({
     marginRight: 5,
     marginTop: 10,
     marginBottom: 10,
+    [theme.breakpoints.down(320)]: {
+      display: "none !important",
+    },
   },
 });

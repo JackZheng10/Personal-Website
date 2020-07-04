@@ -5,7 +5,11 @@ import ProjectsView from "../components/Projects/ProjectsView";
 import CodeView from "../components/CodeView";
 
 class Projects extends Component {
-  state = { codeView: false };
+  state = { loaded: false, codeView: false };
+
+  componentDidMount = () => {
+    this.setState({ loaded: true });
+  };
 
   toggleCodeView = (codeView) => {
     this.setState({ codeView });
@@ -33,6 +37,7 @@ class Projects extends Component {
             name="Description"
             content="Explore some of the projects I've worked on."
           />
+          <body style={{ display: this.state.loaded ? "" : "none" }} />
         </Helmet>
         <Layout toggleCodeView={this.toggleCodeView}>
           <div style={{ height: 40 }} />
