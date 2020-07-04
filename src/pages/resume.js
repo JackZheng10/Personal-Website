@@ -5,11 +5,7 @@ import ResumeView from "../components/Resume/ResumeView";
 import CodeView from "../components/CodeView";
 
 class Resume extends Component {
-  state = { loaded: false, codeView: false };
-
-  componentDidMount = () => {
-    this.setState({ loaded: true });
-  };
+  state = { codeView: false };
 
   toggleCodeView = (codeView) => {
     this.setState({ codeView });
@@ -37,12 +33,8 @@ class Resume extends Component {
             name="Description"
             content="Download the latest version of my resume."
           />
-          {/* <body style={{ display: this.state.loaded ? "" : "none" }} /> */}
         </Helmet>
-        <Layout
-          toggleCodeView={this.toggleCodeView}
-          style={{ display: this.state.loaded ? "" : "none" }}
-        >
+        <Layout toggleCodeView={this.toggleCodeView}>
           <br />
           <br />
           {this.renderView()}
