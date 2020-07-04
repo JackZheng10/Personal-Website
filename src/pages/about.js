@@ -15,7 +15,7 @@ class About extends Component {
     this.setState({ codeView });
   };
 
-  renderView = (loaded) => {
+  renderView = () => {
     let codeView = false;
 
     if (typeof localStorage !== "undefined") {
@@ -23,9 +23,9 @@ class About extends Component {
     }
 
     if (!codeView) {
-      return <AboutView style={{ display: loaded ? "" : "none" }} />;
+      return <AboutView />;
     } else {
-      return <CodeView style={{ display: loaded ? "" : "none" }} />;
+      return <CodeView />;
     }
   };
 
@@ -34,11 +34,11 @@ class About extends Component {
       <React.Fragment>
         <Helmet>
           <meta name="Description" content="Learn more about me." />
-          {/* <body style={{ display: this.state.loaded ? "" : "none" }} /> */}
+          <body style={{ display: this.state.loaded ? "" : "none" }} />
         </Helmet>
         <Layout toggleCodeView={this.toggleCodeView} loaded={this.state.loaded}>
           <div style={{ height: 40 }} />
-          {this.renderView(this.state.loaded)}
+          {this.renderView()}
           <div style={{ height: 80 }} />
         </Layout>
       </React.Fragment>

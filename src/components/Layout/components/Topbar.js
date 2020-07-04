@@ -7,9 +7,7 @@ import {
   Hidden,
   Switch,
   Fade,
-  Tooltip,
   Typography,
-  Popover,
   Paper,
 } from "@material-ui/core";
 import { Link, IconButton } from "gatsby-theme-material-ui";
@@ -130,26 +128,29 @@ function Topbar(props) {
           <div className={classes.flexGrow} />
           {!props.hideToggle && (
             <React.Fragment>
-              <Tooltip
-                open={!toggledBefore}
-                title={
-                  <Typography variant="body1">
-                    Click to toggle code view!
-                  </Typography>
-                }
-                TransitionComponent={Fade}
-                TransitionProps={{ timeout: 0 }}
-                arrow
-                id="Click to toggle code view!"
-              >
-                <Switch
-                  color="default"
-                  size="small"
-                  inputProps={{ "aria-label": "Toggle Code View" }}
-                  onChange={props.toggleCodeView}
-                  checked={codeView}
-                />
-              </Tooltip>
+              <Switch
+                color="default"
+                size="small"
+                inputProps={{ "aria-label": "Toggle Code View" }}
+                onChange={props.toggleCodeView}
+                checked={codeView}
+                id="codeToggle"
+                className={classes.switch}
+              />
+              {!toggledBefore && (
+                <div className={classes.tooltip}>
+                  <div className={classes.tipContainer}>
+                    <Paper className={classes.tip}>
+                      <Typography className={classes.tipText} variant="body1">
+                        Click to toggle code view!
+                      </Typography>
+                    </Paper>
+                  </div>
+                  <div className={classes.arrowContainer}>
+                    <div className={classes.arrowUp}></div>
+                  </div>
+                </div>
+              )}
               <Fade
                 in={!codeView}
                 timeout={0}
