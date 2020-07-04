@@ -3,21 +3,19 @@ import { Fade, Button, withStyles, Grid, Typography } from "@material-ui/core";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { okaidia } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { motion } from "framer-motion";
+import {
+  CodeViewCode,
+  Layout,
+  Topbar,
+  Footer,
+  GraphQLImages,
+} from "../codeFiles/CommonFiles";
+import { AboutView, AboutCard } from "../codeFiles/About";
+import { ProjectsView, ProjectCard } from "../codeFiles/Projects";
+import { ResumeView } from "../codeFiles/Resume";
 import PropTypes from "prop-types";
-import { About as AboutCode } from "../codeFiles/About/About";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
-import tabbedCodeViewStyles from "../styles/tabbedCodeViewStyles";
-
-const code = `const b = "Five"
-const c = "Six";
-console.log("Seven")`;
-
-const code2 = `const b = "Five"
-const c = "Six";
-console.log("Seven")
-const b = "Five"
-const c = "Six";
-console.log("Seven")`;
+import codeViewStyles from "../styles/codeViewStyles";
 
 const cron = require("node-cron");
 
@@ -27,27 +25,31 @@ const animations = {
 };
 
 const commonFiles = [
-  { name: "TabbedCodeView.js", code: code },
-  { name: "Topbar.js", code: code },
-  { name: "Footer.js", code: code },
-  { name: "App.js", code: code },
-  { name: "topbarStyles.js", code: code },
-  { name: "footerStyles.js", code: code },
+  { name: "CodeView.js", code: CodeViewCode },
+  { name: "Layout.js", code: Layout },
+  { name: "Topbar.js", code: Topbar },
+  { name: "Footer.js", code: Footer },
+  { name: "GraphQLImages.js", code: GraphQLImages },
 ];
 
 const aboutFiles = [
-  { name: "About.js", code: code },
-  { name: "AboutCard.js", code: code2 },
-  { name: "aboutStyles.js", code: code },
-  { name: "aboutCardStyles.js", code: code },
+  { name: "AboutView.js", code: AboutView },
+  { name: "AboutCard.js", code: AboutCard },
   ...commonFiles,
 ];
 
-const projectFiles = [{ name: "Projects.js", code: AboutCode }, ...commonFiles];
+const projectsFiles = [
+  { name: "ProjectsView.js", code: ProjectsView },
+  { name: "ProjectCard.js", code: ProjectCard },
+  ...commonFiles,
+];
 
-const resumeFiles = [{ name: "Resume.js", code: AboutCode }, ...commonFiles];
+const resumeFiles = [
+  { name: "ResumeView.js", code: ResumeView },
+  ...commonFiles,
+];
 
-class TabbedCodeView extends Component {
+class CodeView extends Component {
   constructor(props) {
     super(props);
 
@@ -84,17 +86,12 @@ class TabbedCodeView extends Component {
   };
 
   getFiles = (page) => {
-    switch (page) {
-      case "testTab":
-        return aboutFiles;
-      case "about":
-        return aboutFiles;
-      case "projects":
-        return projectFiles;
-      case "resume":
-        return resumeFiles;
-      default:
-        return commonFiles;
+    if (page === "about" || page === "about/") {
+      return aboutFiles;
+    } else if (page === "projects" || page === "projects/") {
+      return projectsFiles;
+    } else if (page === "resume" || page === "resume/") {
+      return resumeFiles;
     }
   };
 
@@ -125,7 +122,7 @@ class TabbedCodeView extends Component {
           <Button
             variant="contained"
             size="medium"
-            aria-label={`${file.name}`}
+            aria-label={file.name}
             key={index}
             className={classes.button}
             style={{
@@ -229,8 +226,8 @@ class TabbedCodeView extends Component {
   }
 }
 
-TabbedCodeView.propTypes = {
+CodeView.propTypes = {
   className: PropTypes.string,
 };
 
-export default withStyles(tabbedCodeViewStyles)(TabbedCodeView);
+export default withStyles(codeViewStyles)(CodeView);

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Helmet } from "react-helmet";
 import Layout from "../components/Layout/Layout";
 import ResumeView from "../components/Resume/ResumeView";
-import TabbedCodeView from "../components/TabbedCodeView";
+import CodeView from "../components/CodeView";
 
 class Resume extends Component {
   state = { codeView: false };
@@ -21,7 +21,7 @@ class Resume extends Component {
     if (!codeView) {
       return <ResumeView />;
     } else {
-      return <TabbedCodeView />;
+      return <CodeView />;
     }
   };
 

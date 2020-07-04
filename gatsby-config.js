@@ -8,6 +8,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-remove-trailing-slashes`,
     {
       resolve: `gatsby-theme-material-ui`,
       options: {
@@ -38,7 +39,7 @@ module.exports = {
         background_color: `#0099FF`,
         theme_color: `#0099FF`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site. //todo: figure out this configuration. add title, use helmet: https://www.gatsbyjs.org/docs/add-page-metadata/
+        icon: `src/images/gatsby-icon.png`,
       },
     },
     {
