@@ -39,7 +39,7 @@ class Projects extends Component {
           />
           <body style={{ display: this.state.loaded ? "" : "none" }} />
         </Helmet>
-        <Layout toggleCodeView={this.toggleCodeView}>
+        <Layout toggleCodeView={this.toggleCodeView} loaded={this.state.loaded}>
           <div style={{ height: 40 }} />
           {this.renderView()}
           <div style={{ height: 80 }} />

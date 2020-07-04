@@ -129,7 +129,7 @@ function Topbar(props) {
           {!props.hideToggle && (
             <React.Fragment>
               <Tooltip
-                open={!toggledBefore}
+                open={!toggledBefore && props.loaded}
                 title={
                   <Typography variant="body1">
                     Click to toggle code view!

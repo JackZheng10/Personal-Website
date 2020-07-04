@@ -39,7 +39,7 @@ class Resume extends Component {
           />
           <body style={{ display: this.state.loaded ? "" : "none" }} />
         </Helmet>
-        <Layout toggleCodeView={this.toggleCodeView}>
+        <Layout toggleCodeView={this.toggleCodeView} loaded={this.state.loaded}>
           <br />
           <br />
           {this.renderView()}

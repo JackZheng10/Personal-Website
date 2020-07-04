@@ -12,7 +12,7 @@ class NotFound extends Component {
         <Helmet>
           <body style={{ display: this.state.loaded ? "" : "none" }} />
         </Helmet>
-        <Layout hideToggle={true}>
+        <Layout hideToggle={true} loaded={this.state.loaded}>
           <div style={{ height: 40 }} />
           <Typography
             variant="h3"
