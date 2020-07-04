@@ -126,7 +126,7 @@ function Topbar(props) {
             </motion.div>
           </Hidden>
           <div className={classes.flexGrow} />
-          {!props.hideToggle && props.loaded && (
+          {!props.hideToggle && (
             <React.Fragment>
               <Tooltip
                 open={!toggledBefore}
@@ -139,13 +139,15 @@ function Topbar(props) {
                 TransitionProps={{ timeout: 0 }}
                 arrow
               >
-                <Switch
-                  color="default"
-                  size="small"
-                  inputProps={{ "aria-label": "Toggle Code View" }}
-                  onChange={props.toggleCodeView}
-                  checked={codeView}
-                />
+                <span>
+                  <Switch
+                    color="default"
+                    size="small"
+                    inputProps={{ "aria-label": "Toggle Code View" }}
+                    onChange={props.toggleCodeView}
+                    checked={codeView}
+                  />
+                </span>
               </Tooltip>
               <Fade
                 in={!codeView}
