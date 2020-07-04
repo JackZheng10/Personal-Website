@@ -77,7 +77,6 @@ function Topbar(props) {
             >
               <Button
                 variant="outlined"
-                color="primary"
                 size="medium"
                 className={classes.button}
                 startIcon={<PersonIcon />}
@@ -96,7 +95,6 @@ function Topbar(props) {
             >
               <Button
                 variant="outlined"
-                color="primary"
                 size="medium"
                 className={classes.button}
                 startIcon={<BuildIcon />}
@@ -115,7 +113,6 @@ function Topbar(props) {
             >
               <Button
                 variant="outlined"
-                color="primary"
                 size="medium"
                 className={classes.button}
                 startIcon={<FindInPageIcon />}

@@ -35,8 +35,8 @@ module.exports = {
         name: `Jack Zheng Personal Website`,
         short_name: `Jack Zheng Personal Website`,
         start_url: `/`,
-        background_color: `#0099ff`,
-        theme_color: `#0099ff`,
+        background_color: `#0099FF`,
+        theme_color: `#0099FF`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site. //todo: figure out this configuration. add title, use helmet: https://www.gatsbyjs.org/docs/add-page-metadata/
       },

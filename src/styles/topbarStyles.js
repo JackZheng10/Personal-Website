@@ -1,6 +1,6 @@
 export default (theme) => ({
   root: {
-    backgroundColor: "rgb(0, 153, 255)",
+    backgroundColor: "#0099FF",
     height: "auto",
   },
   flexGrow: {
@@ -11,7 +11,7 @@ export default (theme) => ({
     color: "white",
     borderColor: "white",
     "&:hover": {
-      backgroundColor: "#47b4fc",
+      backgroundColor: "#47B4FC",
       borderColor: "white",
     },
   },

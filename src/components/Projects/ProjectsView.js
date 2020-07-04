@@ -198,7 +198,7 @@ class ProjectsView extends Component {
                         {
                           name: "Express.js",
                           icon: <Icon icon={jsIcon} />,
-                          color: "#f3df1e",
+                          color: "#F3DF1E",
                         },
                         {
                           name: "Stripe.js",
@@ -250,7 +250,7 @@ class ProjectsView extends Component {
                         {
                           name: "Google Cloud",
                           icon: <Icon icon={googleCloud} />,
-                          color: "#609cf3",
+                          color: "#609CF3",
                         },
                       ]}
                       link="https://github.com/JackZheng10/SwampHacks2020_SnapScan"
@@ -297,12 +297,12 @@ class ProjectsView extends Component {
                         {
                           name: "Express.js",
                           icon: <Icon icon={jsIcon} />,
-                          color: "#f3df1e",
+                          color: "#F3DF1E",
                         },
                         {
                           name: "Google Calendar",
                           icon: <FaRegCalendar />,
-                          color: "#609cf3",
+                          color: "#609CF3",
                         },
                       ]}
                       link="https://github.com/JackZheng10/Gonzalo-Law-Client-Portal"
@@ -343,7 +343,7 @@ class ProjectsView extends Component {
                         {
                           name: "Express.js",
                           icon: <Icon icon={jsIcon} />,
-                          color: "#f3df1e",
+                          color: "#F3DF1E",
                         },
                         {
                           name: "Yelp",

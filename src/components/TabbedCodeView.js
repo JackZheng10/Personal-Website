@@ -104,7 +104,7 @@ class TabbedCodeView extends Component {
 
   handleSelectedBG = (code) => {
     if (this.state.currentCode === code) {
-      return "rgb(0, 153, 255)";
+      return "#0099FF";
     } else {
       return "white";
     }
@@ -114,7 +114,7 @@ class TabbedCodeView extends Component {
     if (this.state.currentCode === code) {
       return "white";
     } else {
-      return "rgb(0, 153, 255)";
+      return "#0099FF";
     }
   };
 
@@ -122,30 +122,22 @@ class TabbedCodeView extends Component {
     return this.state.files.map((file, index) => {
       return (
         <Grid item>
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            transformTemplate={(props, transform) =>
-              transform.replace(" translateZ(0)", "")
-            }
+          <Button
+            variant="contained"
+            size="medium"
+            aria-label={`${file.name}`}
+            key={index}
+            className={classes.button}
+            style={{
+              backgroundColor: this.handleSelectedBG(file.code),
+              color: this.handleSelectedText(file.code),
+            }}
+            onClick={() => {
+              this.setFile(file.code);
+            }}
           >
-            <Button
-              variant="contained"
-              size="medium"
-              aria-label={`${file.name}`}
-              key={index}
-              className={classes.button}
-              style={{
-                backgroundColor: this.handleSelectedBG(file.code),
-                color: this.handleSelectedText(file.code),
-              }}
-              onClick={() => {
-                this.setFile(file.code);
-              }}
-            >
-              {file.name}
-            </Button>
-          </motion.div>
+            {file.name}
+          </Button>
         </Grid>
       );
     });

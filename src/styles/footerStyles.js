@@ -1,7 +1,7 @@
 export default (theme) => ({
   footer: {
     marginTop: "auto",
-    backgroundColor: "rgb(0, 153, 255)",
+    backgroundColor: "#0099FF",
   },
   name: {
     color: "white",
@@ -17,7 +17,7 @@ export default (theme) => ({
     color: "black",
   },
   LIMobile: {
-    color: "#2464b4",
+    color: "#2464B4",
   },
   emailMobile: {
     color: "black",

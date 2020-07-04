@@ -137,7 +137,6 @@ class Footer extends Component {
                     </span>
                     !{" "}
                     <Link
-                      color="primary"
                       target="_blank"
                       rel="noopener"
                       href="https://github.com/JackZheng10/Personal-Website"

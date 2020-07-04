@@ -16,11 +16,11 @@ export default (theme) => ({
   },
   cardHeader: {
     textAlign: "center",
-    backgroundColor: "rgb(0, 153, 255)",
+    backgroundColor: "#0099FF",
   },
   cardContent: {
     textAlign: "center",
-    backgroundColor: "rgb(0, 153, 255)",
+    backgroundColor: "#0099FF",
     height: "100%",
   },
   contentText: {
@@ -56,10 +56,10 @@ export default (theme) => ({
     backgroundColor: "white",
   },
   button: {
-    backgroundColor: "rgb(0, 153, 255)",
+    backgroundColor: "#0099FF",
     color: "white",
     "&:hover": {
-      backgroundColor: "#47b4fc",
+      backgroundColor: "#47B4FC",
     },
   },
   media: {
@@ -67,14 +67,14 @@ export default (theme) => ({
     paddingTop: "56.25%",
   },
   imageButtonRight: {
-    color: "rgb(0, 153, 255)",
+    color: "#0099FF",
     position: "absolute",
     top: "45%",
     zIndex: 2,
     right: 10,
   },
   imageButtonLeft: {
-    color: "rgb(0, 153, 255)",
+    color: "#0099FF",
     position: "absolute",
     top: "45%",
     zIndex: 2,

@@ -8,6 +8,7 @@ import {
   CardContent,
   Divider,
   CardActions,
+  Button,
 } from "@material-ui/core";
 import { SizeMe } from "react-sizeme";
 import { Document, Page, pdfjs } from "react-pdf";
@@ -128,11 +129,16 @@ class ResumeView extends Component {
               >
                 <div className={classes.layout}>
                   <Card className={classes.root} elevation={10}>
-                    <CardActions
-                      className={classes.cardActions}
-                      onClick={this.handleDownload}
-                    >
-                      <GetAppIcon fontSize="large" className={classes.icon} />
+                    <CardActions className={classes.cardActions}>
+                      <Button
+                        variant="contained"
+                        size="medium"
+                        onClick={this.handleDownload}
+                        className={classes.button}
+                        startIcon={<GetAppIcon />}
+                      >
+                        Download
+                      </Button>
                     </CardActions>
                     <Divider />
                     <CardContent className={classes.cardContent}>

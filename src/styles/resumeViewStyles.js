@@ -60,15 +60,22 @@ export default (theme) => ({
   },
   cardContent: {
     textAlign: "center",
-    backgroundColor: "#ededed",
+    backgroundColor: "#EDEDED",
     height: "100%",
   },
   cardActions: {
     justifyContent: "center",
-    backgroundColor: "rgb(0, 153, 255)",
+    backgroundColor: "#0099FF",
     cursor: "pointer",
   },
   icon: {
     color: "white",
+  },
+  button: {
+    backgroundColor: "#3BADF7",
+    color: "white",
+    "&:hover": {
+      backgroundColor: "#63C1FF",
+    },
   },
 });

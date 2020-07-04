@@ -140,7 +140,6 @@ class ProjectCard extends Component {
               <Grid item className={classes.buttonContainer}>
                 <Button
                   variant="contained"
-                  color="primary"
                   size="large"
                   className={classes.button}
                   startIcon={<GitHubIcon />}
