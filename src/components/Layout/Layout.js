@@ -39,10 +39,9 @@ class Layout extends Component {
         <Topbar
           toggleCodeView={this.toggleCodeView}
           hideToggle={this.props.hideToggle}
-          loaded={this.props.loaded}
         />
         {this.props.children}
-        <Footer />
+        <Footer style={{ display: this.props.loaded ? "" : "none" }} />
       </div>
     );
   }

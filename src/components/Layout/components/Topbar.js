@@ -9,6 +9,8 @@ import {
   Fade,
   Tooltip,
   Typography,
+  Popover,
+  Paper,
 } from "@material-ui/core";
 import { Link, IconButton } from "gatsby-theme-material-ui";
 import { motion } from "framer-motion";
@@ -126,10 +128,10 @@ function Topbar(props) {
             </motion.div>
           </Hidden>
           <div className={classes.flexGrow} />
-          {!props.hideToggle && props.loaded && (
+          {!props.hideToggle && (
             <React.Fragment>
               <Tooltip
-                open={!toggledBefore && props.loaded}
+                open={!toggledBefore}
                 title={
                   <Typography variant="body1">
                     Click to toggle code view!
@@ -138,16 +140,15 @@ function Topbar(props) {
                 TransitionComponent={Fade}
                 TransitionProps={{ timeout: 0 }}
                 arrow
+                id="Click to toggle code view!"
               >
-                <span>
-                  <Switch
-                    color="default"
-                    size="small"
-                    inputProps={{ "aria-label": "Toggle Code View" }}
-                    onChange={props.toggleCodeView}
-                    checked={codeView}
-                  />
-                </span>
+                <Switch
+                  color="default"
+                  size="small"
+                  inputProps={{ "aria-label": "Toggle Code View" }}
+                  onChange={props.toggleCodeView}
+                  checked={codeView}
+                />
               </Tooltip>
               <Fade
                 in={!codeView}
