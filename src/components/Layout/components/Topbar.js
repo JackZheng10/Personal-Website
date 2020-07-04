@@ -12,6 +12,7 @@ import {
 } from "@material-ui/core";
 import { Link, IconButton } from "gatsby-theme-material-ui";
 import { motion } from "framer-motion";
+import { Logo } from "../../GraphQLImages";
 import PropTypes from "prop-types";
 import PersonIcon from "@material-ui/icons/Person";
 import BuildIcon from "@material-ui/icons/Build";
@@ -38,10 +39,11 @@ function Topbar(props) {
     <React.Fragment>
       <AppBar className={classes.root} position="fixed">
         <Toolbar>
+          <Logo className={classes.logo} alt="Logo" />
           <Hidden only={["lg", "xl", "md", "sm"]}>
             <IconButton
               className={classes.mobileButton}
-              size="small"
+              size="medium"
               component={Link}
               to="/about"
               aria-label="About Me"
@@ -50,7 +52,7 @@ function Topbar(props) {
             </IconButton>
             <IconButton
               className={classes.mobileButton}
-              size="small"
+              size="medium"
               component={Link}
               to="/projects"
               aria-label="Projects"
@@ -59,7 +61,7 @@ function Topbar(props) {
             </IconButton>
             <IconButton
               className={classes.mobileButton}
-              size="small"
+              size="medium"
               component={Link}
               to="/resume"
               aria-label="Resume"

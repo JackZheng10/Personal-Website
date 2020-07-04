@@ -297,6 +297,7 @@ import {
 } from "@material-ui/core";
 import { Link, IconButton } from "gatsby-theme-material-ui";
 import { motion } from "framer-motion";
+import { Logo } from "../../GraphQLImages";
 import PropTypes from "prop-types";
 import PersonIcon from "@material-ui/icons/Person";
 import BuildIcon from "@material-ui/icons/Build";
@@ -323,10 +324,11 @@ function Topbar(props) {
     <React.Fragment>
       <AppBar className={classes.root} position="fixed">
         <Toolbar>
+          <Logo className={classes.logo} alt="Logo" />
           <Hidden only={["lg", "xl", "md", "sm"]}>
             <IconButton
               className={classes.mobileButton}
-              size="small"
+              size="medium"
               component={Link}
               to="/about"
               aria-label="About Me"
@@ -335,7 +337,7 @@ function Topbar(props) {
             </IconButton>
             <IconButton
               className={classes.mobileButton}
-              size="small"
+              size="medium"
               component={Link}
               to="/projects"
               aria-label="Projects"
@@ -344,7 +346,7 @@ function Topbar(props) {
             </IconButton>
             <IconButton
               className={classes.mobileButton}
-              size="small"
+              size="medium"
               component={Link}
               to="/resume"
               aria-label="Resume"
@@ -532,7 +534,11 @@ class Footer extends Component {
               >
                 <Hidden only={["lg", "xl", "md", "sm"]}>
                   <Grid item>
-                    <IconButton onClick={this.redirectGH} aria-label="GitHub">
+                    <IconButton
+                      className={classes.mobileButton}
+                      onClick={this.redirectGH}
+                      aria-label="GitHub"
+                    >
                       <GitHubIcon
                         fontSize="large"
                         className={classes.GHMobile}
@@ -540,7 +546,11 @@ class Footer extends Component {
                     </IconButton>
                   </Grid>
                   <Grid item>
-                    <IconButton onClick={this.redirectLI} aria-label="LinkedIn">
+                    <IconButton
+                      className={classes.mobileButton}
+                      onClick={this.redirectLI}
+                      aria-label="LinkedIn"
+                    >
                       <LinkedInIcon
                         fontSize="large"
                         className={classes.LIMobile}
@@ -548,7 +558,11 @@ class Footer extends Component {
                     </IconButton>
                   </Grid>
                   <Grid item>
-                    <IconButton onClick={this.redirectEmail} aria-label="Email">
+                    <IconButton
+                      className={classes.mobileButton}
+                      onClick={this.redirectEmail}
+                      aria-label="Email"
+                    >
                       <EmailIcon
                         fontSize="large"
                         className={classes.emailMobile}
@@ -563,9 +577,8 @@ class Footer extends Component {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <GH />
+                      <GH className={classes.button} alt="GitHub" />
                     </a>
-                    &nbsp;&nbsp;&nbsp;
                   </Grid>
                   <Grid item>
                     <a
@@ -573,13 +586,12 @@ class Footer extends Component {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <LI />
+                      <LI className={classes.button} alt="LinkedIn" />
                     </a>
-                    &nbsp;&nbsp;&nbsp;
                   </Grid>
                   <Grid item>
                     <a href="mailto:jackzheng10@yahoo.com">
-                      <Email />
+                      <Email className={classes.button} alt="Email" />
                     </a>
                   </Grid>
                 </Hidden>
@@ -637,6 +649,14 @@ function withImageData(WrappedComponent) {
     <StaticQuery
       query={graphql'
         query {
+          logo: file(relativePath: { eq: "Logo.png" }) {
+            childImageSharp {
+              fixed(height: 45, width: 45) {
+                ...GatsbyImageSharpFixed_noBase64
+              }
+            }
+          }
+
           me: file(relativePath: { eq: "AboutMe/Me.png" }) {
             childImageSharp {
               fluid(maxWidth: 1000) {
@@ -648,7 +668,7 @@ function withImageData(WrappedComponent) {
           GH: file(relativePath: { eq: "Footer/GitHub.png" }) {
             childImageSharp {
               fixed(height: 52, width: 125) {
-                ...GatsbyImageSharpFixed
+                ...GatsbyImageSharpFixed_noBase64
               }
             }
           }
@@ -656,7 +676,7 @@ function withImageData(WrappedComponent) {
           LI: file(relativePath: { eq: "Footer/LinkedIn.png" }) {
             childImageSharp {
               fixed(height: 34, width: 138) {
-                ...GatsbyImageSharpFixed
+                ...GatsbyImageSharpFixed_noBase64
               }
             }
           }
@@ -664,7 +684,7 @@ function withImageData(WrappedComponent) {
           email: file(relativePath: { eq: "Footer/Email.png" }) {
             childImageSharp {
               fixed(height: 52, width: 52) {
-                ...GatsbyImageSharpFixed
+                ...GatsbyImageSharpFixed_noBase64
               }
             }
           }
@@ -675,20 +695,24 @@ function withImageData(WrappedComponent) {
   );
 }
 
+const Logo = withImageData((props) => (
+  <Img fixed={props.imageData.logo.childImageSharp.fixed} {...props} />
+));
+
 const Me = withImageData((props) => (
-  <Img fluid={props.imageData.me.childImageSharp.fluid} />
+  <Img fluid={props.imageData.me.childImageSharp.fluid} {...props} />
 ));
 
 const GH = withImageData((props) => (
-  <Img fixed={props.imageData.GH.childImageSharp.fixed} />
+  <Img fixed={props.imageData.GH.childImageSharp.fixed} {...props} />
 ));
 
 const LI = withImageData((props) => (
-  <Img fixed={props.imageData.LI.childImageSharp.fixed} />
+  <Img fixed={props.imageData.LI.childImageSharp.fixed} {...props} />
 ));
 
 const Email = withImageData((props) => (
-  <Img fixed={props.imageData.email.childImageSharp.fixed} />
+  <Img fixed={props.imageData.email.childImageSharp.fixed} {...props} />
 ));
 
-export { Me, GH, LI, Email };`;
+export { Logo, Me, GH, LI, Email };`;

@@ -64,7 +64,11 @@ class Footer extends Component {
               >
                 <Hidden only={["lg", "xl", "md", "sm"]}>
                   <Grid item>
-                    <IconButton onClick={this.redirectGH} aria-label="GitHub">
+                    <IconButton
+                      className={classes.mobileButton}
+                      onClick={this.redirectGH}
+                      aria-label="GitHub"
+                    >
                       <GitHubIcon
                         fontSize="large"
                         className={classes.GHMobile}
@@ -72,7 +76,11 @@ class Footer extends Component {
                     </IconButton>
                   </Grid>
                   <Grid item>
-                    <IconButton onClick={this.redirectLI} aria-label="LinkedIn">
+                    <IconButton
+                      className={classes.mobileButton}
+                      onClick={this.redirectLI}
+                      aria-label="LinkedIn"
+                    >
                       <LinkedInIcon
                         fontSize="large"
                         className={classes.LIMobile}
@@ -80,7 +88,11 @@ class Footer extends Component {
                     </IconButton>
                   </Grid>
                   <Grid item>
-                    <IconButton onClick={this.redirectEmail} aria-label="Email">
+                    <IconButton
+                      className={classes.mobileButton}
+                      onClick={this.redirectEmail}
+                      aria-label="Email"
+                    >
                       <EmailIcon
                         fontSize="large"
                         className={classes.emailMobile}
@@ -95,9 +107,8 @@ class Footer extends Component {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <GH />
+                      <GH className={classes.button} alt="GitHub" />
                     </a>
-                    &nbsp;&nbsp;&nbsp;
                   </Grid>
                   <Grid item>
                     <a
@@ -105,13 +116,12 @@ class Footer extends Component {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <LI />
+                      <LI className={classes.button} alt="LinkedIn" />
                     </a>
-                    &nbsp;&nbsp;&nbsp;
                   </Grid>
                   <Grid item>
                     <a href="mailto:jackzheng10@yahoo.com">
-                      <Email />
+                      <Email className={classes.button} alt="Email" />
                     </a>
                   </Grid>
                 </Hidden>

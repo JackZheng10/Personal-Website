@@ -22,4 +22,11 @@ export default (theme) => ({
   emailMobile: {
     color: "black",
   },
+  button: {
+    marginLeft: 8,
+    marginRight: 8,
+  },
+  mobileButton: {
+    marginRight: 4,
+  },
 });

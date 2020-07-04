@@ -7,7 +7,8 @@ export default (theme) => ({
     flexGrow: 1,
   },
   button: {
-    margin: theme.spacing(1),
+    marginLeft: 8,
+    marginRight: 8,
     color: "white",
     borderColor: "white",
     "&:hover": {
@@ -18,9 +19,14 @@ export default (theme) => ({
   offset: theme.mixins.toolbar,
   mobileButton: {
     color: "white",
-    marginRight: 25,
+    marginRight: 4,
   },
   codeButton: {
     color: "white",
+  },
+  logo: {
+    marginRight: 5,
+    marginTop: 10,
+    marginBottom: 10,
   },
 });

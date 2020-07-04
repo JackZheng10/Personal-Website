@@ -145,7 +145,7 @@ class AboutView extends Component {
             >
               <Grid item className={classes.profilePic}>
                 <div className={classes.profilePicSrc}>
-                  <Me />
+                  <Me alt="Me" />
                 </div>
               </Grid>
               <Grid item className={classes.bio}>
