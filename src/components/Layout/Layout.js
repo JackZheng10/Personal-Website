@@ -14,22 +14,28 @@ class Layout extends Component {
             localStorage.setItem("toggledBefore", true);
           }
 
-          this.props.toggleCodeView(event.newValue);
+          this.props.setView(event.newValue);
         }
       });
     });
   };
 
-  toggleCodeView = (event) => {
+  toggleCodeView = () => {
+    let codeView = false;
+
     if (typeof localStorage !== "undefined") {
-      localStorage.setItem("codeView", event.target.checked);
+      codeView = JSON.parse(localStorage.getItem("codeView")) || false;
+    }
+
+    if (typeof localStorage !== "undefined") {
+      localStorage.setItem("codeView", !codeView);
     }
 
     if (typeof localStorage !== "undefined") {
       localStorage.setItem("toggledBefore", true);
     }
 
-    this.props.toggleCodeView(event.target.checked);
+    this.props.setView(!codeView);
   };
 
   render() {

@@ -7,7 +7,7 @@ import CodeView from "../components/CodeView";
 class About extends Component {
   state = { codeView: false };
 
-  toggleCodeView = (codeView) => {
+  setView = (codeView) => {
     this.setState({ codeView });
   };
 
@@ -31,7 +31,7 @@ class About extends Component {
         <Helmet>
           <meta name="Description" content="Learn more about me." />
         </Helmet>
-        <Layout toggleCodeView={this.toggleCodeView}>
+        <Layout setView={this.setView}>
           <div style={{ height: 40 }} />
           {this.renderView()}
           <div style={{ height: 80 }} />
