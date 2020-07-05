@@ -11,6 +11,7 @@ class About extends Component {
     this.setState({ initialized: true });
   };
 
+  //used for switching the view by updating state to rerender
   setView = (codeView) => {
     this.setState({ codeView });
   };
