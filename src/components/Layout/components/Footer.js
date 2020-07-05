@@ -10,19 +10,19 @@ import footerStyles from "../../../styles/footerStyles";
 
 class Footer extends Component {
   redirectGH = () => {
-    if (typeof window !== `undefined`) {
+    if (typeof window !== "undefined") {
       window.open("https://github.com/JackZheng10");
     }
   };
 
   redirectLI = () => {
-    if (typeof window !== `undefined`) {
+    if (typeof window !== "undefined") {
       window.open("https://www.linkedin.com/in/jackzheng10/");
     }
   };
 
   redirectEmail = () => {
-    if (typeof window !== `undefined`) {
+    if (typeof window !== "undefined") {
       window.open("mailto:jackzheng10@yahoo.com", "_self");
     }
   };

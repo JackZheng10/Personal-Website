@@ -56,7 +56,7 @@ class ProjectsView extends Component {
   constructor(props) {
     super(props);
 
-    if (typeof window !== `undefined`) {
+    if (typeof window !== "undefined") {
       window.scrollTo(0, 0);
     }
 

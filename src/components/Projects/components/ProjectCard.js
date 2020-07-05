@@ -28,7 +28,7 @@ class ProjectCard extends Component {
   }
 
   handleCodeLink = () => {
-    if (typeof window !== `undefined`) {
+    if (typeof window !== "undefined") {
       window.open(this.props.link);
     }
   };
