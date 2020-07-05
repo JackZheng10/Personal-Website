@@ -53,9 +53,9 @@ class CodeView extends Component {
   constructor(props) {
     super(props);
 
-    // if (typeof window !== "undefined") {
-    //   window.scrollTo(0, 0);
-    // }
+    if (typeof window !== "undefined") {
+      window.scrollTo(0, 0);
+    }
 
     let files = [];
 
