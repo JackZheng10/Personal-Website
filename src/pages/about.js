@@ -5,7 +5,11 @@ import AboutView from "../components/About/AboutView";
 import CodeView from "../components/CodeView";
 
 class About extends Component {
-  state = { codeView: false };
+  state = { codeView: false, initialized: false };
+
+  componentDidMount = () => {
+    this.setState({ initialized: true });
+  };
 
   setView = (codeView) => {
     this.setState({ codeView });
@@ -18,10 +22,16 @@ class About extends Component {
       codeView = JSON.parse(localStorage.getItem("codeView")) || false;
     }
 
-    if (!codeView) {
-      return <AboutView />;
+    if (this.state.initialized) {
+      // alert("initialized 1: " + this.state.initialized);
+      if (!codeView) {
+        return <AboutView />;
+      } else {
+        return <CodeView />;
+      }
     } else {
-      return <CodeView />;
+      // alert("initialized 2: " + this.state.initialized);
+      return null;
     }
   };
 

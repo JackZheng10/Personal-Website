@@ -27,11 +27,11 @@ function Wrapper(props) {
               value: 5,
             },
             color: {
-              value: "#0099FF",
+              value: "#63C1FF",
             },
             links: {
               color: {
-                value: "#0099FF",
+                value: "#63C1FF",
               },
             },
           },
