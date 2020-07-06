@@ -253,7 +253,4 @@ export default (theme) => ({
       marginBottom: 15,
     },
   },
-  pageContainer: {
-    [theme.breakpoints.down(751)]: {},
-  },
 });

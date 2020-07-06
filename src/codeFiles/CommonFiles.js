@@ -53,13 +53,13 @@ class CodeView extends Component {
   constructor(props) {
     super(props);
 
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       window.scrollTo(0, 0);
     }
 
     let files = [];
 
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       let page = window.location.pathname.substring(1);
       files = this.getFiles(page);
     }
@@ -515,19 +515,19 @@ import footerStyles from "../../../styles/footerStyles";
 
 class Footer extends Component {
   redirectGH = () => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       window.open("https://github.com/JackZheng10");
     }
   };
 
   redirectLI = () => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       window.open("https://www.linkedin.com/in/jackzheng10/");
     }
   };
 
   redirectEmail = () => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       window.open("mailto:jackzheng10@yahoo.com", "_self");
     }
   };
@@ -695,7 +695,7 @@ function withImageData(WrappedComponent) {
           me: file(relativePath: { eq: "AboutMe/Me.png" }) {
             childImageSharp {
               fluid(maxWidth: 444) {
-                ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluid_noBase64
               }
             }
           }

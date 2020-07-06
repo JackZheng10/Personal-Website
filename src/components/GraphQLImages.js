@@ -18,7 +18,7 @@ function withImageData(WrappedComponent) {
           me: file(relativePath: { eq: "AboutMe/Me.png" }) {
             childImageSharp {
               fluid(maxWidth: 444) {
-                ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluid_noBase64
               }
             }
           }

@@ -27,7 +27,7 @@ class AboutView extends Component {
   constructor(props) {
     super(props);
 
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       window.scrollTo(0, 0);
     }
 
@@ -128,13 +128,7 @@ class AboutView extends Component {
 
     return (
       <React.Fragment>
-        <Grid
-          container
-          direction="column"
-          justify="center"
-          alignItems="center"
-          className={classes.pageContainer}
-        >
+        <Grid container direction="column" justify="center" alignItems="center">
           <Grid item>
             <Grid
               container
@@ -144,9 +138,7 @@ class AboutView extends Component {
               alignItems="center"
             >
               <Grid item className={classes.profilePic}>
-                <div className={classes.profilePicSrc}>
-                  <Me alt="Me" />
-                </div>
+                <Me alt="Me" className={classes.profilePicSrc} />
               </Grid>
               <Grid item className={classes.bio}>
                 <motion.div

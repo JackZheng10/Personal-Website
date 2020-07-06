@@ -32,7 +32,7 @@ class ResumeView extends Component {
   constructor(props) {
     super(props);
 
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       window.scrollTo(0, 0);
     }
 
@@ -64,7 +64,7 @@ class ResumeView extends Component {
   };
 
   handleDownload = () => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       window.open(Resume);
     }
   };

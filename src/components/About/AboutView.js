@@ -10,7 +10,6 @@ import {
 import { motion } from "framer-motion";
 import { Me } from "../GraphQLImages";
 import { UF, Dev, Hockey, Laundr, UFCoEng, UFCoEd } from "../../images/AboutMe";
-import meTemp from "../../images/AboutMe/Me.png";
 import PropTypes from "prop-types";
 import VizSensor from "react-visibility-sensor";
 import AboutCard from "./components/AboutCard";
@@ -129,18 +128,7 @@ class AboutView extends Component {
 
     return (
       <React.Fragment>
-        {/* <img src={meTemp} alt="1" /> */}
-        <div>
-          <Me alt="Me" className={classes.combinedTest} />
-        </div>
-
-        <Grid
-          container
-          direction="column"
-          justify="center"
-          alignItems="center"
-          className={classes.pageContainer}
-        >
+        <Grid container direction="column" justify="center" alignItems="center">
           <Grid item>
             <Grid
               container
@@ -151,22 +139,6 @@ class AboutView extends Component {
             >
               <Grid item className={classes.profilePic}>
                 <Me alt="Me" className={classes.profilePicSrc} />
-              </Grid>
-              <Grid item className={classes.profilePic}>
-                <div>
-                  <img src={meTemp} className={classes.profilePicSrc} />
-                </div>
-              </Grid>
-              <Grid item>
-                <Me alt="Me" className={classes.combinedTest} />
-              </Grid>
-              <Grid item>
-                <img src={meTemp} className={classes.combinedTest} />
-              </Grid>
-              <Grid item>
-                <div>
-                  <Me alt="Me" className={classes.combinedTest} />
-                </div>
               </Grid>
               <Grid item className={classes.bio}>
                 <motion.div
