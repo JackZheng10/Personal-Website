@@ -129,6 +129,7 @@ class AboutView extends Component {
 
     return (
       <React.Fragment>
+        <img src={meTemp} className={classes.profilePicSrc} alt="1" />
         <Grid
           container
           direction="column"
@@ -151,7 +152,7 @@ class AboutView extends Component {
                 {/* </div> */}
               </Grid>
               <Grid item className={classes.profilePic}>
-                <div className={classes.profilePicSrc}>
+                <div>
                   <img src={meTemp} className={classes.profilePicSrc} />
                 </div>
               </Grid>
