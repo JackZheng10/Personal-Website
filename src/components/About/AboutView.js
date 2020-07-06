@@ -129,7 +129,11 @@ class AboutView extends Component {
 
     return (
       <React.Fragment>
-        {/* <img src={meTemp} className={classes.profilePicSrc} alt="1" /> */}
+        {/* <img src={meTemp} alt="1" /> */}
+        <div>
+          <Me alt="Me" className={classes.combinedTest} />
+        </div>
+
         <Grid
           container
           direction="column"
@@ -146,14 +150,22 @@ class AboutView extends Component {
               alignItems="center"
             >
               <Grid item className={classes.profilePic}>
-                {/* <div className={classes.profilePicSrc}> */}
                 <Me alt="Me" className={classes.profilePicSrc} />
-
-                {/* </div> */}
               </Grid>
               <Grid item className={classes.profilePic}>
                 <div>
                   <img src={meTemp} className={classes.profilePicSrc} />
+                </div>
+              </Grid>
+              <Grid item>
+                <Me alt="Me" className={classes.combinedTest} />
+              </Grid>
+              <Grid item>
+                <img src={meTemp} className={classes.combinedTest} />
+              </Grid>
+              <Grid item>
+                <div>
+                  <Me alt="Me" className={classes.combinedTest} />
                 </div>
               </Grid>
               <Grid item className={classes.bio}>

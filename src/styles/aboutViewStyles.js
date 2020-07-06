@@ -179,7 +179,7 @@ export default (theme) => ({
   profilePic: {
     marginLeft: "auto",
     marginRight: "auto",
-    zIndex: -1,
+    zIndex: 0,
     marginBottom: -100,
     [theme.breakpoints.down(1230)]: {
       marginRight: -50,
@@ -209,10 +209,42 @@ export default (theme) => ({
       height: "auto",
     },
   },
+  combinedTest: {
+    marginLeft: "auto",
+    marginRight: "auto",
+    zIndex: 0,
+    order: 1,
+    width: 444,
+    marginBottom: -100,
+    [theme.breakpoints.down(1230)]: {
+      marginRight: -50,
+    },
+    [theme.breakpoints.down(920)]: {
+      marginRight: -80,
+    },
+    [theme.breakpoints.down(860)]: {
+      marginRight: -90,
+    },
+    [theme.breakpoints.down(800)]: {
+      marginRight: -100,
+    },
+    [theme.breakpoints.down(780)]: {
+      marginRight: -120,
+    },
+    [theme.breakpoints.down(751)]: {
+      marginRight: "auto",
+      order: 2,
+    },
+    [theme.breakpoints.down(471)]: {
+      width: "90vw",
+      height: "auto",
+    },
+  },
   infoSection: {
     backgroundColor: "#0099FF",
     width: "100%",
     boxShadow: "0 0 20px",
+    zIndex: 1,
   },
   bio: {
     order: 2,
