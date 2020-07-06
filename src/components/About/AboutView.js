@@ -10,6 +10,7 @@ import {
 import { motion } from "framer-motion";
 import { Me } from "../GraphQLImages";
 import { UF, Dev, Hockey, Laundr, UFCoEng, UFCoEd } from "../../images/AboutMe";
+import meTemp from "../../images/AboutMe/Me.png";
 import PropTypes from "prop-types";
 import VizSensor from "react-visibility-sensor";
 import AboutCard from "./components/AboutCard";
@@ -144,8 +145,14 @@ class AboutView extends Component {
               alignItems="center"
             >
               <Grid item className={classes.profilePic}>
+                {/* <div className={classes.profilePicSrc}> */}
+                <Me alt="Me" className={classes.profilePicSrc} />
+
+                {/* </div> */}
+              </Grid>
+              <Grid item className={classes.profilePic}>
                 <div className={classes.profilePicSrc}>
-                  <Me alt="Me" />
+                  <img src={meTemp} className={classes.profilePicSrc} />
                 </div>
               </Grid>
               <Grid item className={classes.bio}>
