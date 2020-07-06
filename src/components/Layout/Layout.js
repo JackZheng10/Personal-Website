@@ -3,15 +3,19 @@ import Topbar from "./components/Topbar";
 import Footer from "./components/Footer";
 
 class Layout extends Component {
-  componentDidMount = () => {
-    window.addEventListener("storage", (event) => {
-      if (event.key === "codeView") {
-        if (typeof localStorage !== "undefined") {
-          localStorage.setItem("toggledBefore", true);
-        }
+  state = { loaded: false };
 
-        this.props.setView(event.newValue);
-      }
+  componentDidMount = () => {
+    this.setState({ loaded: true }, () => {
+      window.addEventListener("storage", (event) => {
+        if (event.key === "codeView") {
+          if (typeof localStorage !== "undefined") {
+            localStorage.setItem("toggledBefore", true);
+          }
+
+          this.props.setView(event.newValue);
+        }
+      });
     });
   };
 
@@ -29,19 +33,21 @@ class Layout extends Component {
 
   render() {
     return (
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          minHeight: "100vh",
-        }}
-      >
-        <Topbar
-          toggleCodeView={this.toggleCodeView}
-          hideToggle={this.props.hideToggle}
-        />
-        {this.props.children}
-        <Footer />
+      <div style={{ display: this.state.loaded ? "" : "none" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            minHeight: "100vh",
+          }}
+        >
+          <Topbar
+            toggleCodeView={this.toggleCodeView}
+            hideToggle={this.props.hideToggle}
+          />
+          {this.props.children}
+          <Footer />
+        </div>
       </div>
     );
   }
