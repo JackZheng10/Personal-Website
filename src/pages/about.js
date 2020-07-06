@@ -11,27 +11,24 @@ class About extends Component {
     this.setState({ initialized: true });
   };
 
-  //used for switching the view by updating state to rerender
   setView = (codeView) => {
     this.setState({ codeView });
   };
 
   renderView = () => {
-    let codeView = false;
-
-    if (typeof localStorage !== "undefined") {
-      codeView = JSON.parse(localStorage.getItem("codeView")) || false;
-    }
-
     if (this.state.initialized) {
-      // alert("initialized 1: " + this.state.initialized);
+      let codeView = false;
+
+      if (typeof localStorage !== "undefined") {
+        codeView = JSON.parse(localStorage.getItem("codeView")) || false;
+      }
+
       if (!codeView) {
         return <AboutView />;
       } else {
         return <CodeView />;
       }
     } else {
-      // alert("initialized 2: " + this.state.initialized);
       return null;
     }
   };

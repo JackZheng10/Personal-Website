@@ -5,23 +5,31 @@ import ResumeView from "../components/Resume/ResumeView";
 import CodeView from "../components/CodeView";
 
 class Resume extends Component {
-  state = { codeView: false };
+  state = { codeView: false, initialized: false };
+
+  componentDidMount = () => {
+    this.setState({ initialized: true });
+  };
 
   setView = (codeView) => {
     this.setState({ codeView });
   };
 
   renderView = () => {
-    let codeView = false;
+    if (this.state.initialized) {
+      let codeView = false;
 
-    if (typeof localStorage !== "undefined") {
-      codeView = JSON.parse(localStorage.getItem("codeView")) || false;
-    }
+      if (typeof localStorage !== "undefined") {
+        codeView = JSON.parse(localStorage.getItem("codeView")) || false;
+      }
 
-    if (!codeView) {
-      return <ResumeView />;
+      if (!codeView) {
+        return <ResumeView />;
+      } else {
+        return <CodeView />;
+      }
     } else {
-      return <CodeView />;
+      return null;
     }
   };
 
