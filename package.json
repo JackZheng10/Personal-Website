@@ -1,7 +1,7 @@
 {
   "name": "personal-website",
   "private": true,
-  "description": "Jack Zheng's personal website",
+  "description": "Personal website/portfolio for Jack Zheng",
   "version": "0.1.0",
   "author": "Jack Zheng",
   "dependencies": {

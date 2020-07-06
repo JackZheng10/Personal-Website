@@ -365,7 +365,7 @@ class ProjectsView extends Component {
                     transition={{ delay: 4.5, duration: 1, ease: "easeOut" }}
                   >
                     <ProjectCard
-                      title="Personal Website"
+                      title="Personal Website/Portfolio"
                       description="The website you're on right now, made to showcase information about myself!"
                       images={[{ src: PS1, alt: "About Me" }]}
                       techStack={[
