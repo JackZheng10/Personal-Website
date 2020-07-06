@@ -129,7 +129,7 @@ class AboutView extends Component {
 
     return (
       <React.Fragment>
-        <img src={meTemp} className={classes.profilePicSrc} alt="1" />
+        {/* <img src={meTemp} className={classes.profilePicSrc} alt="1" /> */}
         <Grid
           container
           direction="column"

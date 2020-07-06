@@ -121,6 +121,7 @@ class ProjectCard extends Component {
             }}
             showStatus={false}
             showThumbs={false}
+            swipeable={false}
             autoPlay
             infiniteLoop
             transitionTime={1000}
