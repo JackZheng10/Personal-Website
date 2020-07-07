@@ -85,9 +85,14 @@ class ProjectCard extends Component {
           icon={tech.icon}
           label={tech.name}
           key={index}
+          onClick={() => {
+            if (typeof window !== "undefined") {
+              window.open(tech.link);
+            }
+          }}
           size="small"
-          style={{ backgroundColor: tech.color }}
           className={classes.chip}
+          style={{ backgroundColor: tech.color }}
         />
       );
     });

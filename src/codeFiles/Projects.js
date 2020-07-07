@@ -16,7 +16,7 @@ import {
   FaStripeS,
   FaPython,
 } from "react-icons/fa";
-import { DiMongodb } from "react-icons/di";
+import { DiMongodb, DiHeroku } from "react-icons/di";
 import { GrGatsbyjs } from "react-icons/gr";
 import {
   LWA1,
@@ -184,26 +184,31 @@ class ProjectsView extends Component {
                           name: "React.js",
                           icon: <FaReact />,
                           color: "#61DBFB",
+                          link: "https://reactjs.org/",
                         },
                         {
                           name: "MongoDB",
                           icon: <DiMongodb />,
                           color: "#4DB33D",
+                          link: "https://www.mongodb.com/",
                         },
                         {
                           name: "Node.js",
                           icon: <FaNodeJs />,
                           color: "#68A063",
+                          link: "https://nodejs.org/",
                         },
                         {
                           name: "Express.js",
                           icon: <Icon icon={jsIcon} />,
                           color: "#F3DF1E",
+                          link: "https://expressjs.com/",
                         },
                         {
                           name: "Stripe.js",
                           icon: <FaStripeS />,
                           color: "#4379FF",
+                          link: "https://stripe.com/docs/js",
                         },
                       ]}
                       link="https://github.com/JackZheng10/Laundr-Web-App"
@@ -236,21 +241,25 @@ class ProjectsView extends Component {
                           name: "React Native",
                           icon: <FaReact />,
                           color: "#61DBFB",
+                          link: "https://reactnative.dev/",
                         },
                         {
                           name: "Node.js",
                           icon: <FaNodeJs />,
                           color: "#68A063",
+                          link: "https://nodejs.org/",
                         },
                         {
                           name: "Python 3",
                           icon: <FaPython />,
                           color: "#FFE873",
+                          link: "https://www.python.org/",
                         },
                         {
                           name: "Google Cloud",
                           icon: <Icon icon={googleCloud} />,
                           color: "#609CF3",
+                          link: "https://cloud.google.com/",
                         },
                       ]}
                       link="https://github.com/JackZheng10/SwampHacks2020_SnapScan"
@@ -283,26 +292,37 @@ class ProjectsView extends Component {
                           name: "React.js",
                           icon: <FaReact />,
                           color: "#61DBFB",
+                          link: "https://reactjs.org/",
                         },
                         {
                           name: "MongoDB",
                           icon: <DiMongodb />,
                           color: "#4DB33D",
+                          link: "https://www.mongodb.com/",
                         },
                         {
                           name: "Node.js",
                           icon: <FaNodeJs />,
                           color: "#68A063",
+                          link: "https://nodejs.org/",
                         },
                         {
                           name: "Express.js",
                           icon: <Icon icon={jsIcon} />,
                           color: "#F3DF1E",
+                          link: "https://expressjs.com/",
                         },
                         {
                           name: "Google Calendar",
                           icon: <FaRegCalendar />,
                           color: "#609CF3",
+                          link: "https://developers.google.com/calendar",
+                        },
+                        {
+                          name: "Heroku",
+                          icon: <DiHeroku />,
+                          color: "#C9C3E6",
+                          link: "https://www.heroku.com/",
                         },
                       ]}
                       link="https://github.com/JackZheng10/Gonzalo-Law-Client-Portal"
@@ -329,26 +349,31 @@ class ProjectsView extends Component {
                           name: "React Native",
                           icon: <FaReact />,
                           color: "#61DBFB",
+                          link: "https://reactnative.dev/",
                         },
                         {
                           name: "MongoDB",
                           icon: <DiMongodb />,
                           color: "#4DB33D",
+                          link: "https://www.mongodb.com/",
                         },
                         {
                           name: "Node.js",
                           icon: <FaNodeJs />,
                           color: "#68A063",
+                          link: "https://nodejs.org/",
                         },
                         {
                           name: "Express.js",
                           icon: <Icon icon={jsIcon} />,
                           color: "#F3DF1E",
+                          link: "https://expressjs.com/",
                         },
                         {
                           name: "Yelp",
                           icon: <FaYelp />,
                           color: "#F15C4F",
+                          link: "https://www.yelp.com/developers",
                         },
                       ]}
                       link="https://github.com/JackZheng10/Eat-Me"
@@ -373,21 +398,25 @@ class ProjectsView extends Component {
                           name: "React.js",
                           icon: <FaReact />,
                           color: "#61DBFB",
+                          link: "https://reactjs.org/",
                         },
                         {
                           name: "Node.js",
                           icon: <FaNodeJs />,
                           color: "#68A063",
+                          link: "https://nodejs.org/",
                         },
                         {
                           name: "Gatsby.js",
                           icon: <GrGatsbyjs />,
                           color: "#663399",
+                          link: "https://www.gatsbyjs.org/",
                         },
                         {
                           name: "Netlify",
                           icon: <Icon icon={netlifyIcon} />,
                           color: "#00C7B7",
+                          link: "https://www.netlify.com/",
                         },
                       ]}
                       link="https://github.com/JackZheng10/Personal-Website"
@@ -499,6 +528,11 @@ class ProjectCard extends Component {
           icon={tech.icon}
           label={tech.name}
           key={index}
+          onClick={() => {
+            if (typeof window !== "undefined") {
+              window.open(tech.link);
+            }
+          }}
           size="small"
           style={{ backgroundColor: tech.color }}
           className={classes.chip}
