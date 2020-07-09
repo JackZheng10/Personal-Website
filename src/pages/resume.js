@@ -43,13 +43,9 @@ class Resume extends Component {
           />
         </Helmet>
         <Layout setView={this.setView}>
-          <br />
-          <br />
+          <div style={{ height: 40 }} />
           {this.renderView()}
-          <br />
-          <br />
-          <br />
-          <br />
+          <div style={{ height: 80 }} />
         </Layout>
       </React.Fragment>
     );

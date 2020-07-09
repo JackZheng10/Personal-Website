@@ -21,10 +21,6 @@ export default (theme) => ({
       fontSize: 48 * Math.pow(0.92, 6),
     },
   },
-  root: {
-    width: "100%",
-    height: "100%",
-  },
   layout: {
     marginLeft: "auto",
     marginRight: "auto",

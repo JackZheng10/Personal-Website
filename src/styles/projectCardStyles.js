@@ -84,7 +84,7 @@ export default (theme) => ({
     margin: theme.spacing(0.5),
     color: "black",
     "&:hover": {
-      backgroundColor: "#F5F1ED !important",
+      backgroundColor: "#ebe6e1 !important",
     },
   },
 });

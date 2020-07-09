@@ -51,16 +51,8 @@ class ResumeView extends Component {
 
   componentDidMount = () => {
     setTimeout(() => {
-      this.setState({ showIntro: true });
-    }, 500);
-
-    setTimeout(() => {
       this.flashArrow.start();
     }, 1000);
-
-    setTimeout(() => {
-      this.setState({ showResume: true });
-    }, 2500);
   };
 
   handleDownload = () => {
@@ -73,13 +65,7 @@ class ResumeView extends Component {
     const classes = this.props.classes;
 
     return (
-      <Grid
-        container
-        direction="column"
-        justify="center"
-        alignItems="center"
-        className={classes.root}
-      >
+      <Grid container direction="column" justify="center" alignItems="center">
         <Grid item>
           <Grid container direction="row" justify="center" alignItems="center">
             <Grid item>

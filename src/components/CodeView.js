@@ -145,13 +145,7 @@ class CodeView extends Component {
 
     return (
       <React.Fragment>
-        <Grid
-          container
-          direction="column"
-          justify="center"
-          alignItems="center"
-          className={classes.root}
-        >
+        <Grid container direction="column" justify="center" alignItems="center">
           <Grid item>
             <Grid
               container
@@ -188,8 +182,7 @@ class CodeView extends Component {
               </Grid>
             </Grid>
           </Grid>
-          <br />
-          <br />
+          <div style={{ height: 40 }} />
           <Grid item>
             <motion.div
               variants={animations}

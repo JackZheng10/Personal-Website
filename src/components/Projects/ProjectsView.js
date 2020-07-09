@@ -40,6 +40,7 @@ import { PS1 } from "../../images/Projects/PersonalSite";
 import netlifyIcon from "@iconify/icons-cib/netlify";
 import jsIcon from "@iconify/icons-cib/js";
 import googleCloud from "@iconify/icons-cib/google-cloud";
+import expoIcon from "@iconify/icons-cib/expo";
 import PropTypes from "prop-types";
 import ProjectCard from "./components/ProjectCard";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
@@ -93,13 +94,7 @@ class ProjectsView extends Component {
 
     return (
       <React.Fragment>
-        <Grid
-          container
-          direction="column"
-          justify="center"
-          alignItems="center"
-          className={classes.root}
-        >
+        <Grid container direction="column" justify="center" alignItems="center">
           <Grid item>
             <Grid
               container
@@ -261,6 +256,12 @@ class ProjectsView extends Component {
                           color: "#609CF3",
                           link: "https://cloud.google.com/",
                         },
+                        {
+                          name: "Expo",
+                          icon: <Icon icon={expoIcon} />,
+                          color: "white",
+                          link: "https://expo.io/",
+                        },
                       ]}
                       link="https://github.com/JackZheng10/SwampHacks2020_SnapScan"
                       showArrows={true}
@@ -374,6 +375,12 @@ class ProjectsView extends Component {
                           icon: <FaYelp />,
                           color: "#F15C4F",
                           link: "https://www.yelp.com/developers",
+                        },
+                        {
+                          name: "Expo",
+                          icon: <Icon icon={expoIcon} />,
+                          color: "white",
+                          link: "https://expo.io/",
                         },
                       ]}
                       link="https://github.com/JackZheng10/Eat-Me"
