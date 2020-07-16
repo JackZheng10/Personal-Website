@@ -546,7 +546,7 @@ class Footer extends Component {
                 alignItems="center"
               >
                 <Grid item>
-                  <Typography variant="h5" className={classes.name}>
+                  <Typography variant="h5" className={classes.message}>
                     Connect with me.
                   </Typography>
                 </Grid>

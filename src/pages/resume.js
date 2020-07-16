@@ -41,6 +41,7 @@ class Resume extends Component {
             name="Description"
             content="Download the latest version of my resume."
           />
+          <link rel="canonical" href="https://jackzheng.dev/resume" />
         </Helmet>
         <Layout setView={this.setView}>
           <div style={{ height: 40 }} />

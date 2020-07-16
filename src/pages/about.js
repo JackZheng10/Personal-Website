@@ -38,6 +38,7 @@ class About extends Component {
       <React.Fragment>
         <Helmet>
           <meta name="Description" content="Learn more about me." />
+          <link rel="canonical" href="https://jackzheng.dev/about" />
         </Helmet>
         <Layout setView={this.setView}>
           <div style={{ height: 40 }} />

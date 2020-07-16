@@ -3,9 +3,10 @@ export default (theme) => ({
     marginTop: "auto",
     backgroundColor: "#0099FF",
   },
-  name: {
+  message: {
     color: "white",
     paddingTop: 10,
+    textAlign: "center",
   },
   pointer: {
     cursor: "pointer",
