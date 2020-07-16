@@ -1,9 +1,17 @@
 import React from "react";
 import { Router, Redirect } from "@reach/router";
+import { Helmet } from "react-helmet";
 
 function App() {
   return (
     <React.Fragment>
+      <Helmet>
+        <meta
+          name="Description"
+          content="Personal website/portfolio for Jack Zheng"
+        />
+        <link rel="canonical" href="https://jackzheng.dev/" />
+      </Helmet>
       <Router>
         <Redirect noThrow from="/" to="/about" path="/" />
       </Router>
