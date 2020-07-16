@@ -9,7 +9,6 @@ function Wrapper(props) {
       <Helmet>
         <meta charSet="utf-8" />
         <html lang="en" />
-        <title>Jack Zheng Portfolio</title>
       </Helmet>
       <Particles
         params={{

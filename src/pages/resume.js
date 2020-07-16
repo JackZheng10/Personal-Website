@@ -37,8 +37,9 @@ class Resume extends Component {
     return (
       <React.Fragment>
         <Helmet>
+          <title>Resume</title>
           <meta
-            name="Description"
+            name="description"
             content="Download the latest version of my resume."
           />
           <link rel="canonical" href="https://jackzheng.dev/resume" />

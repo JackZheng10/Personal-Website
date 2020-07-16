@@ -37,7 +37,8 @@ class About extends Component {
     return (
       <React.Fragment>
         <Helmet>
-          <meta name="Description" content="Learn more about me." />
+          <title>About</title>
+          <meta name="description" content="Learn more about me." />
           <link rel="canonical" href="https://jackzheng.dev/about" />
         </Helmet>
         <Layout setView={this.setView}>

@@ -37,8 +37,9 @@ class Projects extends Component {
     return (
       <React.Fragment>
         <Helmet>
+          <title>Projects</title>
           <meta
-            name="Description"
+            name="description"
             content="Explore some of the projects I've worked on."
           />
           <link rel="canonical" href="https://jackzheng.dev/projects" />
