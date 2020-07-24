@@ -11,7 +11,7 @@ function App() {
           name="description"
           content="Personal website/portfolio for Jack Zheng"
         />
-        <link rel="canonical" href="https://jackzheng.dev" />
+        <link rel="canonical" href="https://jackzheng.dev/" />
       </Helmet>
       <Router>
         <Redirect noThrow from="/" to="/about" path="/" />
