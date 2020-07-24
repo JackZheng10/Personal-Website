@@ -63,7 +63,7 @@ class Topbar extends Component {
                   className={classes.mobileButton}
                   size="medium"
                   component={Link}
-                  to="/about"
+                  to="/about/"
                   aria-label="About Me"
                 >
                   <PersonIcon />
@@ -72,7 +72,7 @@ class Topbar extends Component {
                   className={classes.mobileButton}
                   size="medium"
                   component={Link}
-                  to="/projects"
+                  to="/projects/"
                   aria-label="Projects"
                 >
                   <BuildIcon />
@@ -81,7 +81,7 @@ class Topbar extends Component {
                   className={classes.mobileButton}
                   size="medium"
                   component={Link}
-                  to="/resume"
+                  to="/resume/"
                   aria-label="Resume"
                 >
                   <FindInPageIcon />
@@ -101,7 +101,7 @@ class Topbar extends Component {
                     className={classes.button}
                     startIcon={<PersonIcon />}
                     component={Link}
-                    to="/about"
+                    to="/about/"
                   >
                     About Me
                   </Button>
@@ -119,7 +119,7 @@ class Topbar extends Component {
                     className={classes.button}
                     startIcon={<BuildIcon />}
                     component={Link}
-                    to="/projects"
+                    to="/projects/"
                   >
                     Projects
                   </Button>
@@ -137,7 +137,7 @@ class Topbar extends Component {
                     className={classes.button}
                     startIcon={<FindInPageIcon />}
                     component={Link}
-                    to="/resume"
+                    to="/resume/"
                   >
                     Resume
                   </Button>
