@@ -3,11 +3,13 @@ module.exports = {
     title: `Jack Zheng Portfolio`,
     description: `Personal website/portfolio for Jack Zheng`,
     author: `@JackZheng10`,
+    siteUrl: `https://jackzheng.dev/`,
   },
   plugins: [
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-theme-material-ui`,
       options: {
