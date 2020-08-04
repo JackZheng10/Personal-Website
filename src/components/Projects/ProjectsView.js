@@ -41,6 +41,8 @@ import netlifyIcon from "@iconify/icons-cib/netlify";
 import jsIcon from "@iconify/icons-cib/js";
 import googleCloud from "@iconify/icons-cib/google-cloud";
 import expoIcon from "@iconify/icons-cib/expo";
+import nextjsIcon from "@iconify/icons-logos/nextjs";
+import twilioIcon from "@iconify/icons-cib/twilio";
 import PropTypes from "prop-types";
 import ProjectCard from "./components/ProjectCard";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
@@ -204,6 +206,18 @@ class ProjectsView extends Component {
                           icon: <FaStripeS />,
                           color: "#4379FF",
                           link: "https://stripe.com/docs/js",
+                        },
+                        {
+                          name: "Twilio",
+                          icon: <Icon icon={twilioIcon} />,
+                          color: "#F22F46",
+                          link: "https://www.twilio.com/",
+                        },
+                        {
+                          name: "Next.js",
+                          icon: <Icon icon={nextjsIcon} />,
+                          color: "white",
+                          link: "https://nextjs.org/",
                         },
                       ]}
                       link="https://github.com/JackZheng10/Laundr-Web-App"
@@ -375,6 +389,12 @@ class ProjectsView extends Component {
                           icon: <FaYelp />,
                           color: "#F15C4F",
                           link: "https://www.yelp.com/developers",
+                        },
+                        {
+                          name: "Twilio",
+                          icon: <Icon icon={twilioIcon} />,
+                          color: "#F22F46",
+                          link: "https://www.twilio.com/",
                         },
                         {
                           name: "Expo",
