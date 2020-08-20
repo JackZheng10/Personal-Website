@@ -220,7 +220,7 @@ class ProjectsView extends Component {
                           link: "https://nextjs.org/",
                         },
                       ]}
-                      link="https://github.com/JackZheng10/Laundr-Web-App"
+                      link="https://github.com/JackZheng10/Laundr-Web-App-Frontend"
                       showArrows={true}
                       showDots={showDots}
                     />
