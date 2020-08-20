@@ -54,6 +54,7 @@ export default (theme) => ({
   tipText: {
     padding: 5,
     color: "white",
+    textAlign: "center",
   },
   arrowUp: {
     width: 0,
