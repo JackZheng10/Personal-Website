@@ -7,10 +7,10 @@ export default (theme) => ({
     marginLeft: "auto",
     marginRight: "auto",
     height: "auto",
-    [theme.breakpoints.up(800)]: {
-      width: 750,
+    [theme.breakpoints.up(855)]: {
+      width: 795,
     },
-    [theme.breakpoints.down(800)]: {
+    [theme.breakpoints.down(855)]: {
       width: "90vw",
     },
   },

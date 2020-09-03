@@ -99,22 +99,6 @@ class CodeView extends Component {
     this.setState({ currentCode: code });
   };
 
-  handleSelectedBG = (code) => {
-    if (this.state.currentCode === code) {
-      return "#0099FF";
-    } else {
-      return "white";
-    }
-  };
-
-  handleSelectedText = (code) => {
-    if (this.state.currentCode === code) {
-      return "white";
-    } else {
-      return "#0099FF";
-    }
-  };
-
   renderFileButtons = (classes) => {
     return this.state.files.map((file, index) => {
       return (
@@ -126,8 +110,9 @@ class CodeView extends Component {
             key={index}
             className={classes.button}
             style={{
-              backgroundColor: this.handleSelectedBG(file.code),
-              color: this.handleSelectedText(file.code),
+              backgroundColor:
+                this.state.currentCode === file.code ? "#0099FF" : "white",
+              color: this.state.currentCode === file.code ? "white" : "#0099FF",
             }}
             onClick={() => {
               this.setFile(file.code);

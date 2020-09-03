@@ -15,6 +15,7 @@ import {
   FaRegCalendar,
   FaStripeS,
   FaPython,
+  FaAws,
 } from "react-icons/fa";
 import { DiMongodb, DiHeroku } from "react-icons/di";
 import { GrGatsbyjs } from "react-icons/gr";
@@ -41,6 +42,7 @@ import netlifyIcon from "@iconify/icons-cib/netlify";
 import jsIcon from "@iconify/icons-cib/js";
 import googleCloud from "@iconify/icons-cib/google-cloud";
 import expoIcon from "@iconify/icons-cib/expo";
+import socketIo from "@iconify/icons-cib/socket-io";
 import nextjsIcon from "@iconify/icons-logos/nextjs";
 import twilioIcon from "@iconify/icons-cib/twilio";
 import PropTypes from "prop-types";
@@ -219,6 +221,32 @@ class ProjectsView extends Component {
                           color: "white",
                           link: "https://nextjs.org/",
                         },
+                        {
+                          name: "Vercel",
+                          icon: (
+                            <svg
+                              width="116"
+                              height="100"
+                              viewBox="0 0 116 100"
+                              fill="grey"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M57.5 0L115 100H0L57.5 0z"
+                              />
+                            </svg>
+                          ),
+                          color: "white",
+                          link: "https://vercel.com/home",
+                        },
+                        {
+                          name: "AWS EB",
+                          icon: <FaAws />,
+                          color: "#FF9900",
+                          link: "https://aws.amazon.com/elasticbeanstalk/",
+                        },
                       ]}
                       link="https://github.com/JackZheng10/Laundr-Web-App-Frontend"
                       showArrows={true}
@@ -395,6 +423,12 @@ class ProjectsView extends Component {
                           icon: <Icon icon={twilioIcon} />,
                           color: "#F22F46",
                           link: "https://www.twilio.com/",
+                        },
+                        {
+                          name: "Socket.IO",
+                          icon: <Icon icon={socketIo} />,
+                          color: "white",
+                          link: "https://socket.io/",
                         },
                         {
                           name: "Expo",
