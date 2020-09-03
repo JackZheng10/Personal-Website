@@ -431,6 +431,7 @@ class Topbar extends Component {
                           <Typography
                             className={classes.tipText}
                             variant="body1"
+                            style={{ textAlign: "center" }}
                           >
                             Click to toggle code view!
                           </Typography>
