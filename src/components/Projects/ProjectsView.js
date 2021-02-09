@@ -242,10 +242,10 @@ class ProjectsView extends Component {
                           link: "https://vercel.com/home",
                         },
                         {
-                          name: "AWS EB",
+                          name: "AWS",
                           icon: <FaAws />,
                           color: "#FF9900",
-                          link: "https://aws.amazon.com/elasticbeanstalk/",
+                          link: "https://aws.amazon.com/",
                         },
                       ]}
                       link="https://github.com/JackZheng10/Laundr-Web-App-Frontend"
